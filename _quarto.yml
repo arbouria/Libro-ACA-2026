@@ -1,0 +1,14 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Libro ACA 2026"
+  author: "Arturo Bouzas"
+  chapters:
+    - index.qmd
+    # Agrega aquí tus otros capítulos si ya los tienes, ej:
+    # - intro.qmd
+
+execute:
+  enabled: false
