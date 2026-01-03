@@ -1,0 +1,49 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# MWeb
+.mweb/
+*.mwebinfo
+
+# Thumbnails
+Thumbs.db
+
+# Editor backups
+*~
+*.bak
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+.Trash-*/
+
+# Quarto
+/.quarto/
+/_site/
+/_book/
+/.luarc.json
+
+# R/RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Personal notes (opcional)
+# notas-personales/
+# privado/
