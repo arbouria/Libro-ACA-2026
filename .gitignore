@@ -47,3 +47,5 @@ npm-debug.log*
 # Personal notes (opcional)
 # notas-personales/
 # privado/
+
+**/*.quarto_ipynb
