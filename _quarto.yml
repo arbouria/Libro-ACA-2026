@@ -7,8 +7,8 @@ book:
   author: "Arturo Bouzas"
   chapters:
     - index.qmd
-    # Agrega aquí tus otros capítulos si ya los tienes, ej:
-    # - intro.qmd
 
 execute:
   enabled: true
+  echo: false
+  
