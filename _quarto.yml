@@ -11,4 +11,3 @@ book:
 execute:
   enabled: true
   echo: false
-  
