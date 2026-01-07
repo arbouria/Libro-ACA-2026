@@ -11,4 +11,4 @@ book:
     # - intro.qmd
 
 execute:
-  enabled: false
+  enabled: true
