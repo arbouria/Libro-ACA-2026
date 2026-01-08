@@ -271,3 +271,23 @@ Si funcionan para ti—como estudiante o instructor—compártelas. Si encuentra
 **Ahora, comencemos.**
 
 En el siguiente capítulo abordaremos una pregunta fundamental: **¿Qué significa "explicar" un fenómeno conductual?** Veremos que diferentes preguntas requieren diferentes tipos de respuestas, y que la confusión entre niveles de explicación ha generado debates estériles en la historia de nuestra disciplina. Entender los niveles de análisis nos permitirá apreciar por qué los modelos formales, los algoritmos, y las soluciones óptimas no compiten entre sí—son respuestas complementarias a preguntas diferentes.
+
+```{python}
+#| label: fig-aprendizaje
+#| fig-cap: "Curva teórica de aprendizaje"
+#| echo: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)
+y = 1 / (1 + np.exp(-x + 5))  # Función sigmoide
+
+plt.figure(figsize=(8, 4))
+plt.plot(x, y, color='green', linewidth=2)
+plt.title("Progreso esperado")
+plt.xlabel("Tiempo")
+plt.ylabel("Conocimiento")
+plt.grid(True, linestyle='--')
+plt.show()
+```
