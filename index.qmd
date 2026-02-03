@@ -37,7 +37,7 @@ Todos los modelos en este libro son implementables. No son solo ecuaciones abstr
 
 ### Simuladores Interactivos
 
-Este libro incluye simuladores embebidos y enlaces a notebooks interactivos (Google Colab) donde puedes manipular parámetros y observar resultados inmediatos, implementar algoritmos desde cero, replicar experimentos clásicos y explorar extensiones creativas. Accede a todos los simuladores y tutoriales de matemáticas en Bouzas Lab.
+Este libro incluye simuladores embebidos y enlaces a notebooks interactivos (Google Colab) donde puedes manipular parámetros y observar resultados inmediatos, implementar algoritmos desde cero, replicar experimentos clásicos y explorar extensiones creativas. Accede a todos los simuladores y tutoriales de matemáticas en [Lab 25](https://www.bouzaslab25.com).
 
 ## Cómo Usar Este Libro
 
@@ -52,7 +52,7 @@ Este libro puede usarse como texto principal en un curso de dos semestres sobre 
 ## Recursos Adicionales
 
 Todos los recursos (simuladores, código fuente, tutoriales) están disponibles en:  
-**https://www.bouzaslab25.com**
+[Lab 25](https://www.bouzaslab25.com)
 
 Para reportar errores o contribuir al proyecto, visita el repositorio GitHub.
 
