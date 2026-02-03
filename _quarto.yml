@@ -2,13 +2,89 @@ project:
   type: book
   output-dir: docs
 
+# ========================================
+# CONFIGURACIÓN DEL LIBRO
+# ========================================
 book:
-  title: "Libro ACA 2026"
-  author: "Arturo Bouzas"
+  title: "Aprendizaje y Comportamiento Adaptable"
+  date: today
+  date-format: "D MMMM YYYY"
+  
+  author: 
+    - name: "Arturo Bouzas"
+      affiliations:
+        - name: "Universidad Nacional Autónoma de México"
+          department: "Facultad de Psicología"
+
+  page-navigation: true
+  
+  # --- AQUÍ ESTÁ EL BUSCADOR NUEVO ---
+  search:
+    location: sidebar
+    type: overlay
+  
+  # Estructura de capítulos
   chapters:
     - index.qmd
-    - introducción.qmd
+    - Introducción.qmd  
+    # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
+
+  sidebar:
+    style: floating
+    collapse-level: 2
+    pinned: true
+    tools:
+      - icon: github
+        text: "Ver en GitHub"
+        href: https://github.com/bouzaslab25/libro-aca
+
+  page-footer:
+    left: |
+      © 2026 Arturo Bouzas. 
+      Licencia CC BY-NC-SA 4.0
+    right: |
+      Construido con Quarto
 
 execute:
-  enabled: true
-  echo: false
+  freeze: auto
+  echo: true
+  
+jupyter: python3
+
+# ========================================
+# FORMATO VISUAL (AQUÍ ESTÁ LA MAGIA)
+# ========================================
+format:
+  html:
+    # --- MODO CLARO / OSCURO ---
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles/custom.css
+    
+    # Opciones
+    code-fold: false
+    code-copy: true
+    
+    fig-width: 8
+    fig-height: 6
+    fig-align: center
+    
+    toc: true
+    toc-title: "En esta página"
+    number-sections: true
+    
+    crossref:
+      fig-title: "Figura"
+      tbl-title: "Tabla"
+      eq-title: "Ecuación"
+      fig-prefix: "Fig."
+      eq-prefix: "Ec."
+    
+    html-math-method: mathjax
+
+language:
+  section-title-abstract: "Resumen"
+  section-title-references: "Referencias"
+  page-navigation-previous: "Anterior"
+  page-navigation-next: "Siguiente"

@@ -1,0 +1,273 @@
+# # Capítulo 0: Una Nueva Forma de Estudiar el Comportamiento Adaptable
+
+## El Problema con la Enseñanza Tradicional
+
+Imagina a un estudiante que acaba de terminar un curso introductorio de "Psicología del Aprendizaje". Ha dedicado un semestre a estudiar condicionamiento clásico (Pavlov y sus perros), condicionamiento operante (Skinner y sus palomas), programas de refuerzo (razón fija, intervalo variable), y quizás, si tuvo suerte, un capítulo final sobre "temas avanzados" donde aparece brevemente la igualación de Herrnstein. Al final del curso, ¿qué tiene en su cabeza? Un catálogo de fenómenos: bloqueo, ensombrecimiento, moldeamiento, extinción, recuperación espontánea, efecto de contraste. Una lista de nombres: Pavlov, Thorndike, Watson, Skinner, Tolman. Una colección de protocolos experimentales: cajas de condicionamiento, laberintos en T, programas de refuerzo.
+
+Lo que probablemente *no* tiene es una visión coherente de los principios que unifican estos fenómenos, ni una comprensión de por qué este campo sigue siendo relevante en el siglo XXI. Los hallazgos aparecen desconectados entre sí y, peor aún, desconectados de desarrollos contemporáneos en neurociencias, inteligencia artificial, economía conductual y teoría de la decisión.
+
+La estrategia pedagógica tradicional para enseñar aprendizaje y comportamiento adaptable, reflejada en la organización típica de los libros de texto, presenta casi exclusivamente las principales regularidades empíricas derivadas de más de 100 años de investigación, organizadas alrededor de protocolos experimentales específicos (condicionamiento clásico, instrumental, entre otros). Si bien este enfoque tiene valor histórico y permite apreciar la riqueza empírica del campo, puede dejar frecuentemente al estudiante con la impresión de que este es un área de conocimiento estática, fragmentada y predominantemente de interés histórico, llena de hallazgos aislados y con escasa coherencia conceptual.
+
+Este curso adopta una estrategia diferente.
+
+## La Promesa de Este Curso
+
+### Un Problema Adaptativo Fundamental
+
+En el centro de este curso está un problema biológico fundamental que todos los organismos deben resolver: **cómo distribuir su comportamiento en el tiempo y en el espacio para maximizar la obtención de recursos necesarios para sobrevivir y reproducirse**.
+
+Un ratón buscando alimento, un estudiante decidiendo cuánto tiempo dedicar a cada materia, un algoritmo de ajedrez evaluando jugadas, una bacteria moviéndose hacia nutrientes—todos enfrentan variantes del mismo desafío. Deben aprender qué aspectos de su entorno predicen recompensas y castigos, y deben usar ese conocimiento para elegir cursos de acción que maximicen su éxito.
+
+### Dos Componentes Esenciales
+
+El estudio del comportamiento adaptable busca los principios que permiten resolver este problema. Podemos descomponerlo en dos componentes fundamentales:
+
+**1. El Problema del Conocimiento**: ¿Cómo detectar y aprender las propiedades estadísticas de la distribución de recursos relevantes desde el punto de vista biológico y psicológico? Es decir, ¿cómo aprender a predecir aquello fundamental para la supervivencia y reproducción? Este es el problema de la **asignación de crédito**: cuando un recurso aparece (o un peligro se presenta), ¿a cuál de los múltiples eventos, señales o acciones previas debe asignarse la responsabilidad? ¿Qué predice qué?
+
+**2. El Problema de la Acción**: ¿Cómo usar eficientemente ese conocimiento para distribuir óptimamente el comportamiento en el tiempo y en el espacio? Dado que sabemos algo sobre dónde y cuándo aparecen los recursos, ¿cómo decidimos qué hacer? Este es el problema de la **elección** bajo restricciones: el tiempo es finito, los comportamientos compiten entre sí, y las decisiones tienen costos de oportunidad.
+
+Estas dos preguntas—*¿qué predice qué?* y *¿qué hago ahora?*—organizan todo el curso.
+
+### Dos Orígenes de Soluciones
+
+Las soluciones a estos problemas adaptativos tienen dos orígenes temporales diferentes:
+
+**1. Soluciones Filogenéticas (Selección Natural)**: En entornos relativamente constantes a lo largo de generaciones, la selección natural puede codificar directamente en el genoma las respuestas apropiadas. El resultado es lo que llamamos **comportamiento adaptado**: reflejos, instintos, sesgos perceptuales y atencionales que no requieren aprendizaje individual. Un ejemplo es la "impronta" en aves—los polluelos siguen al primer objeto en movimiento que ven después de nacer, típicamente su madre.
+
+**2. Soluciones Ontogenéticas (Aprendizaje)**: En entornos variables, volátiles e inciertos—la norma para la mayoría de los organismos—la selección natural no puede anticipar todas las contingencias. En estos casos, evoluciona algo diferente: mecanismos que permiten **comportamiento adaptable**, la capacidad de ajustar el comportamiento dentro de la vida del organismo en respuesta a la experiencia. A esto le llamamos **aprendizaje**.
+
+La teoría de la selección natural de Darwin resolvió el enigma de cómo los rasgos pueden parecer diseñados sin necesidad de un diseñador: variación, selección por consecuencias, y retención de lo exitoso. Veremos que los mecanismos del aprendizaje operan según el mismo principio abstracto—ensayo, error y selección—pero a una escala temporal ontogenética en lugar de filogenética.
+
+### Mecanismos Reutilizables: Las "Tuercas y Tornillos"
+
+A lo largo del curso identificaremos un conjunto pequeño de mecanismos generales—verdaderas "tuercas y tornillos" en el cajón de herramientas de la adaptación—que aparecen una y otra vez en diferentes contextos:
+
+- **Comparación** (sucesiva vs. simultánea): Detectar diferencias entre estados del mundo
+- **Reducción de error**: Ajustar predicciones cuando difieren de resultados observados
+- **Exploración vs. Explotación**: El dilema entre muestrear nuevas opciones y aprovechar lo conocido
+- **Sistemas de retroalimentación**: Lazos cerrados donde la acción modifica las condiciones que la provocan
+- **Descuento temporal**: Valorar más las consecuencias cercanas que las lejanas
+- **Optimización bajo restricciones**: Encontrar la mejor distribución posible de comportamiento dadas las limitaciones del entorno
+
+Estos mecanismos no son curiosidades teóricas. Son implementables, operan en robots y algoritmos de inteligencia artificial, y pueden estudiarse tanto a nivel conductual como neural.
+
+## De Asociacionismo a Optimización: Un Siglo de Transformaciones
+
+Para apreciar la novedad del enfoque de este curso, es útil entender brevemente cómo evolucionó el estudio del comportamiento adaptable durante el último siglo.
+
+### La Tradición Asociacionista
+
+Desde Descartes en el siglo XVII hasta mediados del siglo XIX, el estudio del conocimiento estuvo dominado por el asociacionismo: la idea de que aprendemos mediante la asociación de ideas que ocurren juntas en el tiempo. Los filósofos empiristas propusieron que el conocimiento se adquiere a través de la experiencia y consiste en asociaciones formadas principalmente por **contigüidad temporal**—si dos eventos ocurren juntos repetidamente, se asocian.
+
+Para los fisiólogos de esa época, los elementos básicos de la acción eran **estímulos** y **respuestas** discretas organizadas en **reflejos**. Un estímulo dispara (provoca) una respuesta según un conjunto de leyes del reflejo. Este esquema mecanicista fue elegante pero limitado: no explicaba cómo aparecen comportamientos nuevos, ni cómo esos comportamientos parecen diseñados para lograr metas específicas.
+
+Ivan Pavlov desarrolló el protocolo del **condicionamiento clásico** que permitió estudiar experimentalmente el asociacionismo. Mostró que un estímulo neutral (un tono) podía adquirir la capacidad de provocar una respuesta (salivación) si se apareaba repetidamente con un estímulo que ya la provocaba (comida). El principio clave seguía siendo la contigüidad temporal.
+
+### El Funcionalismo: James y Dewey
+
+**William James** fue la figura que jugó el papel más importante en incorporar la teoría evolutiva a la psicología. Resaltó la importancia de la acción y su comprensión en términos de la **función** que juega en la supervivencia de un organismo. Al enfatizar la función del comportamiento, James explícitamente llamó la atención sobre la obtención de metas como parte central del estudio de la psicología. En sus palabras: "la persecución de metas futuras y la elección de los medios para obtenerlas, son la marca y el criterio de la presencia de mentalidad... todos usamos esta prueba para discriminar una ejecución inteligente de una mecánica". James logró, con la perspectiva funcionalista que propuso, que la psicología tuviera la estructura de una ciencia empírica y experimental.
+
+**John Dewey** extendió y consolidó el funcionalismo de James, añadiendo una crítica fundamental al esquema asociacionista dominante. Rechazó que la asociación entre un estímulo y una respuesta—como entidades discretas separables que conforman "arcos reflejos"—fuese la unidad de análisis adecuada para la psicología. Argumentó que los organismos no son entidades pasivas, meros receptores de estimulación. Por el contrario, detrás de cada estímulo encontramos una acción que lo produce. De ahí que la **relación de interdependencia entre organismo y entorno** sea la unidad de análisis fundamental para la psicología. Esta idea, revolucionaria en su momento, anticipa lo que décadas después se formalizaría como sistemas de retroalimentación: el comportamiento no solo responde al entorno, lo modifica, y esas modificaciones a su vez afectan el comportamiento subsecuente.
+
+### Primera Transformación: Selección por Consecuencias
+
+La publicación de *El Origen de las Especies* de Darwin en 1859 cambió radicalmente la forma de pensar sobre la adaptación. La teoría de la selección natural explicaba cómo los rasgos podían parecer diseñados sin necesidad de intención o previsión: mediante un proceso de **ensayo y error** a escala evolutiva. Los organismos con rasgos que resultan en mayor éxito reproductivo dejan más descendencia; esos rasgos se vuelven más comunes en la población.
+
+Edward Thorndike, estudiante de James, reconoció que este mismo principio podría aplicarse al comportamiento individual. En sus experimentos con gatos escapando de cajas-problema, observó que los animales probaban múltiples respuestas y gradualmente retenían aquellas que eran exitosas. Propuso la primera versión de la **Ley del Efecto** (1898):
+
+> "De entre las múltiples respuestas que pueden ocurrir ante una situación, aquella que vaya seguida de un estado de cosas satisfactorio será la que se asocia con esa situación."
+
+Tres elementos fueron revolucionarios aquí: (1) el énfasis en las **consecuencias** del comportamiento como motor del aprendizaje, no solo la contigüidad; (2) la idea de **valor**: no cualquier consecuencia modifica el comportamiento, solo aquellas "satisfactorias" para el organismo; (3) el mecanismo de **ensayo y error**, análogo a la selección natural pero operando en tiempo real.
+
+Sin embargo, Thorndike no escapó completamente de la tradición asociacionista: seguía asumiendo que lo que se aprende son conexiones estímulo-respuesta (E-R).
+
+### Segunda Transformación: De Respuestas Provocadas a Comportamiento Continuo
+
+B.F. Skinner (1938) liberó el estudio del comportamiento de su anclaje en el reflejo. Postuló que la mayoría de las respuestas son **emitidas**, no provocadas por un estímulo identificable. Estas respuestas ocurren a lo largo del tiempo, y la forma natural de medirlas es por su **tasa de ocurrencia** (número de respuestas por unidad de tiempo).
+
+Skinner reformuló la ley del efecto: las respuestas seguidas por un reforzador incrementan su probabilidad futura de ocurrencia. Diseñó espacios experimentales (las famosas "cajas de Skinner") donde los animales podían responder libremente, permitiendo estudiar la distribución del comportamiento en el tiempo. Introdujo los **programas de refuerzo**—reglas que especifican la relación entre la distribución de respuestas y la distribución de reforzadores—que resultaron mucho más ricos que el simple "cada respuesta se refuerza".
+
+Skinner también distinguió dos tipos de estímulos: aquellos que **provocan** respuestas reflejas, y los **estímulos discriminativos** que no provocan sino que **disponen la ocasión** para que una respuesta sea reforzada. Estos estímulos indican al organismo los contextos apropiados para diferentes acciones.
+
+Con Skinner, el comportamiento se convirtió en un continuo temporal que puede ser moldeado, no una colección de reflejos discretos.
+
+### Tercera Transformación: De Hábitos E-R a Representaciones y Optimización
+
+Edward C. Tolman, contemporáneo de Skinner, cuestionó la idea de que el aprendizaje consiste únicamente en fortalecer conexiones E-R. Sus experimentos con ratas en laberintos mostraron que los animales aprenden sobre la **estructura del entorno**, no solo qué respuestas fueron reforzadas.
+
+En el famoso experimento de **aprendizaje latente**, ratas que exploraron un laberinto sin recibir refuerzo aprendieron más rápido cuando posteriormente se les reforzó por encontrar la salida, comparadas con ratas sin esa experiencia exploratoria. Tolman propuso que las ratas formaban **mapas cognitivos**—representaciones espaciales del entorno—y no solo cadenas de respuestas.
+
+Tolman también fue el primero en enfatizar explícitamente que el comportamiento es **propositivo**: orientado a metas, no meramente mecánico. Los organismos no solo aprenden qué respuestas producen reforzadores; aprenden qué consecuencias están vinculadas con qué respuestas, y eligen en función del valor de esas consecuencias.
+
+### La Integración Contemporánea (1960-Presente)
+
+A partir de la década de 1960, el estudio del comportamiento adaptable experimentó una transformación profunda mediante la integración con otras disciplinas.
+
+**Richard Herrnstein**, estudiante de Skinner, extendió el estudio de la tasa de respuesta al estudio de la **elección**. En programas concurrentes (donde dos o más opciones están simultáneamente disponibles), descubrió una regularidad empírica fundamental: la **ley de igualación**, que establece que los organismos distribuyen sus respuestas entre opciones en proporción a los reforzadores obtenidos de cada una. Este hallazgo conectó el comportamiento con modelos económicos de elección.
+
+**Howard Rachlin y John Staddon**, estudiantes de Herrnstein, desarrollaron **modelos de optimización en equilibrio** inspirados en la microeconomía y la ecología del comportamiento. Propusieron que:
+- Los comportamientos compiten por tiempo finito
+- Los programas de refuerzo imponen restricciones sobre las posibles distribuciones de comportamiento  
+- En equilibrio, se observa la distribución que **maximiza el valor obtenido** dadas las restricciones
+
+Estos modelos transformaron la ley del efecto de un principio de fortalecimiento a un principio de **optimización bajo restricciones**.
+
+Simultáneamente, nuevos protocolos experimentales revelaron limitaciones del asociacionismo clásico. El fenómeno de **bloqueo** (Kamin, 1969) mostró que la contigüidad no es suficiente para el aprendizaje: un estímulo redundante no se aprende aunque esté perfectamente correlacionado con el reforzador. **Rescorla y Wagner (1972)** propusieron que el motor del aprendizaje no es la contigüidad sino la **reducción del error de predicción**: aprendemos cuando el resultado difiere de lo esperado.
+
+Esta idea del error de predicción conectó la psicología del aprendizaje con la **teoría de control** en ingeniería y, décadas después, con el **aprendizaje por refuerzo** en inteligencia artificial. El algoritmo de **diferencias temporales** (Sutton, 1988) generalizó el modelo de Rescorla-Wagner a secuencias de acciones, resolviendo el problema de la **asignación de crédito temporal**: ¿cuál de las múltiples acciones en una secuencia fue responsable del reforzador que apareció al final?
+
+Hoy, los mismos principios formales—error de predicción, optimización bajo restricciones, exploración vs. explotación—aparecen en:
+- **Neurociencias**: El sistema dopaminérgico codifica errores de predicción de recompensa
+- **Inteligencia Artificial**: Q-learning, Actor-Crítico, y otros algoritmos de aprendizaje por refuerzo
+- **Economía Conductual**: Funciones de utilidad, descuento temporal, teoría de la perspectiva
+- **Robótica**: Navegación, control motor adaptativo, toma de decisiones autónomas
+
+El estudio del comportamiento adaptable ha madurado hacia una ciencia cuantitativa y predictiva con aplicaciones que trascienden ampliamente la psicología tradicional.
+
+## El Enfoque de Este Curso
+
+### Una Perspectiva Ingenieril
+
+Este curso adopta lo que podríamos llamar una **perspectiva ingenieril**: tratamos el comportamiento como una **solución a problemas adaptativos específicos**. Para cada fenómeno, preguntaremos no solo "¿qué hacen los organismos?" sino también:
+
+- **¿Qué problema adaptativo están resolviendo?** (¿Por qué esto es importante para sobrevivir y reproducirse?)
+- **¿Qué debería hacer un agente ideal?** (¿Cuál es la solución óptima dado el problema y las restricciones?)
+- **¿Cómo lo logran?** (¿Qué algoritmos o mecanismos implementan esa solución o se aproximan a ella?)
+
+Esta perspectiva conecta naturalmente con la distinción de niveles de análisis propuesta por David Marr (1982) y relacionada con las cuatro preguntas de Tinbergen (1963):
+
+**Nivel Computacional (¿Por Qué?)**: ¿Qué problema está resolviendo el sistema? ¿Cuál es la lógica de la tarea? Ejemplos: maximizar la tasa de obtención de energía, minimizar incertidumbre sobre la ocurrencia de recursos, encontrar el camino más corto en un laberinto.
+
+**Nivel Algorítmico (¿Cómo?)**: ¿Qué representaciones y procesos implementan la solución? Ejemplos: comparación sucesiva de estados ambientales, actualización de valores mediante error de predicción, elección probabilística proporcional a valores estimados.
+
+**Nivel de Implementación (¿Con Qué?)**: ¿Qué estructuras físicas (neurales, genéticas) realizan el algoritmo? Ejemplos: neuronas dopaminérgicas, circuitos cortico-estriatales, expresión génica inducida por experiencia.
+
+Estos niveles no compiten entre sí—son **complementarios**. Una explicación completa requiere los tres. En este curso nos enfocaremos principalmente en los niveles computacional y algorítmico, aunque haremos referencias al nivel de implementación cuando sea relevante.
+
+### Modelos Formales como Lenguaje Natural
+
+Los modelos matemáticos que emplearemos—ecuaciones diferenciales, funciones de probabilidad, algoritmos de optimización—no son ornamentos técnicos para impresionar. Son el **lenguaje natural** para expresar con precisión los principios del comportamiento adaptable.
+
+Considera la **ley de igualación** de Herrnstein: describe algo profundo con elegancia compacta. Los organismos distribuyen su comportamiento entre opciones en proporción exacta a los reforzadores obtenidos de cada una. Si una paloma obtiene el doble de reforzadores picando la tecla izquierda que la derecha, picará el doble de veces la tecla izquierda. No solo *describe* el patrón empírico; sugiere un **mecanismo** (igualación como proceso de equilibrio) y permite **predicciones cuantitativas** para nuevas condiciones: si cambio la proporción de reforzadores, puedo predecir cómo cambiará la proporción de respuestas.
+
+O considera el **algoritmo de diferencias temporales**: imagina que vas camino a cenar en un restaurante nuevo. Tu experiencia se divide en momentos: caminando tienes cierta expectativa, ves una entrada fea y tu expectativa baja, entras y la mesera es amable (tu expectativa mejora), la comida resulta increíble. El algoritmo captura algo fundamental: no esperas al final para aprender. En cada momento actualizas tu estimación comparando lo que esperabas con algo mejor: lo que acabas de obtener *más* tu nueva expectativa del futuro. La diferencia—lo que llamamos **error de predicción temporal**—es precisamente lo que las neuronas dopaminérgicas del cerebro de mamíferos codifican cuando un animal aprende.
+
+Las matemáticas no ocultan los principios—los revelan. Y los simuladores que acompañan estas notas están diseñados para hacer estas ideas formales accesibles e intuitivas.
+
+### Los Simuladores como Herramientas de Descubrimiento
+
+Los modelos formales que revisaremos pueden parecer abstractos cuando se presentan solo como ecuaciones en papel. Los **simuladores interactivos** que acompañan estas notas están diseñados para transformar símbolos abstractos en comportamiento observable.
+
+Cada simulador te permite:
+- **Manipular parámetros** y observar efectos inmediatos sobre el comportamiento del sistema
+- **Reproducir experimentos clásicos** con diferentes condiciones para ver qué cambia y qué permanece constante
+- **Desarrollar intuición** sobre el comportamiento de sistemas complejos antes de formalizar esa intuición matemáticamente
+- **Descubrir por ti mismo** relaciones que el texto describe, convirtiendo la lectura pasiva en exploración activa
+
+Los simuladores no son "extras" opcionales o meras ilustraciones—son parte integral de la estrategia pedagógica de este curso. Están organizados por tema y disponibles en:
+
+**🔗 https://www.bouzaslab25.com/**
+
+A lo largo de las notas encontrarás secciones claramente marcadas que te dirigen a simuladores específicos, con sugerencias sobre qué explorar y qué preguntas hacerte. Usa estas herramientas. Experimenta. Rompe las cosas (en el simulador, no en la realidad). El aprendizaje más profundo ocurre cuando descubres, no solo cuando lees.
+
+## Mapa del Curso
+
+El curso está organizado en bloques temáticos que siguen la lógica del problema adaptativo que planteamos al inicio:
+
+### **Bloque 0: Fundamentos Conceptuales** (Capítulos 0-3)
+Establecemos el marco teórico general: niveles de explicación, el problema de la adaptabilidad, y la teoría de la selección natural como primera solución. 
+
+### **Bloque I: Mecanismos Sin Integración de Historia** (Capítulos 4-5)
+Estudiamos dos mecanismos fundamentales que permiten adaptación en tiempo real sin requerir integración de experiencias pasadas: **ascenso de colina** (comparación sucesiva) y **sistemas de retroalimentación** (comparación simultánea). Estos son los "nuts and bolts" más básicos.
+
+### **Bloque II: Marcos para Decisión Bajo Incertidumbre** (Capítulos 6-7)
+Antes de abordar modelos específicos de aprendizaje, introducimos dos marcos conceptuales generales: **Teoría de Detección de Señales** (separar sensibilidad de criterio de decisión) e **Inferencia Bayesiana** (actualizar creencias con evidencia). Estos marcos nos darán el lenguaje para entender los modelos posteriores.
+
+### **Bloque III: El Problema del Conocimiento - Asignación de Crédito** (Capítulos 8-12)
+Abordamos el problema central: cuando un reforzador aparece, ¿a qué se le asigna el crédito? Revisamos modelos clásicos (Rescorla-Wagner) y sus extensiones contemporáneas, incluyendo modelos basados en teoría de la información y filtros bayesianos.
+
+### **Bloque IV: El Problema de la Acción - Elección y Optimización** (Capítulos 13-17)
+Dado que hemos aprendido qué predice qué, ¿cómo distribuimos nuestro comportamiento? Estudiamos la ley del efecto, programas de refuerzo, la ley de igualación, y culminamos con modelos de optimización en equilibrio que integran economía conductual.
+
+### **Bloque V: Aprendizaje Secuencial** (Segundo Semestre)
+Extendemos el análisis a secuencias de acciones donde el reforzador aparece al final (problema de asignación de crédito temporal). Introducimos algoritmos de aprendizaje por refuerzo: diferencias temporales, Q-learning, Actor-Crítico.
+
+### **Bloque VI: Incertidumbre y Estados Ocultos** (Segundo Semestre)
+Finalmente, relajamos el supuesto de que el agente siempre sabe en qué estado del mundo se encuentra. Estudiamos entornos volátiles, POMDPs, y modelos bayesianos avanzados.
+
+---
+
+**Diagrama Conceptual del Curso:**
+
+```
+                    PROBLEMA ADAPTATIVO FUNDAMENTAL
+                    ¿Cómo distribuir comportamiento para
+                         maximizar recursos?
+                                 |
+                    +------------+------------+
+                    |                         |
+              CONOCIMIENTO                 ACCIÓN
+            ¿Qué predice qué?          ¿Qué hago ahora?
+                    |                         |
+         +----------+----------+              |
+         |                     |              |
+   Mecanismos          Asignación      Elección y
+   Sin Historia        de Crédito     Optimización
+   (Caps 4-5)          (Caps 8-12)    (Caps 13-17)
+         |                     |              |
+         +----------+----------+--------------|
+                    |                         |
+              Aprendizaje                Incertidumbre
+              Secuencial                 y Estados
+              (Caps 18-22)               Ocultos
+              [Semestre II]              (Caps 23-26)
+                                         [Semestre II]
+```
+
+## Cómo Usar Estas Notas
+
+### Para el Estudiante
+
+Estas notas están diseñadas para **lectura activa**, no pasiva. Algunas sugerencias:
+
+1. **Lee con lápiz y papel a la mano**. Cuando aparece una ecuación, no la saltes—desarróllala. Verifica las derivaciones. Sustituye números concretos y calcula resultados.
+
+2. **Usa los simuladores inmediatamente**. Cuando un capítulo menciona un simulador, ve a explorarlo *antes* de seguir leyendo. Primero juega, luego formaliza.
+
+3. **Haz las preguntas incómodas**. Si un modelo predice X pero sabes que en la realidad ocurre Y, no asumas que te falta entender—quizás el modelo tiene limitaciones reales. Anótalas. Muchos avances científicos vienen de notar esas discrepancias.
+
+4. **Conecta con tus conocimientos previos**. Si has tomado cursos de estadística, teoría de la probabilidad, o programación, busca las conexiones. Estos temas no existen en silos.
+
+5. **Sé paciente con las matemáticas**. Algunas ecuaciones parecerán opacas al inicio. Regresa a ellas después de explorar el simulador. La intuición precede a la formalización.
+
+### Para el Instructor
+
+Estas notas pueden usarse de múltiples formas:
+
+- **Como texto principal** en un curso de dos semestres sobre aprendizaje y comportamiento adaptable
+- **Como complemento** a un texto tradicional, añadiendo la perspectiva formal y de optimización que esos textos omiten
+- **Como recurso para temas específicos** (e.g., solo los capítulos sobre aprendizaje por refuerzo, o solo los de modelos de optimización)
+
+Los simuladores permiten clases invertidas: los estudiantes exploran antes de clase, y el tiempo presencial se dedica a discusión, resolución de problemas, y profundización conceptual.
+
+## Un Argumento Final
+
+Muchos colegas me han dicho que es imposible enseñar estos temas—aprendizaje por refuerzo, modelos bayesianos, teoría de la información—a nivel introductorio. Que los estudiantes de licenciatura no tienen las herramientas matemáticas. Que es mejor mantener el enfoque tradicional, descriptivo, organizado por protocolos.
+
+Discrepo respetuosamente.
+
+Los estudiantes de hoy crecieron con algoritmos de recomendación, navegación GPS, y juegos con IA. Tienen una intuición operativa sobre aprendizaje de máquinas que generaciones previas no tenían. Lo que les falta no es capacidad—es un puente entre esa intuición informal y los principios formales.
+
+Los simuladores interactivos, ejemplos concretos, y la conexión explícita con aplicaciones contemporáneas construyen ese puente. Las matemáticas no necesitan ser una barrera; pueden ser una revelación.
+
+Más importante, privar a los estudiantes de esta perspectiva integradora—mantenerlos en el mundo de fenómenos desconectados del siglo XX—es hacerles un flaco favor. El comportamiento adaptable no es un museo de curiosidades históricas. Es un campo vivo con aplicaciones en robótica, neurociencias computacionales, economía conductual, diseño de interfaces, y políticas públicas.
+
+Estas notas son un experimento pedagógico. No tienen el pulido de un libro de editorial, ni las restricciones de extensión o contenido que imponen los mercados académicos. Son un recurso abierto, en evolución, diseñado para estudiantes que no le temen a los formalismos matemáticos y que merecen algo mejor que listas de fenómenos inconexos.
+
+Si funcionan para ti—como estudiante o instructor—compártelas. Si encuentras errores, omisiones, o secciones poco claras, comunícamelo. Este es un proyecto colaborativo en el mejor espíritu de la ciencia abierta.
+
+---
+
+**Ahora, comencemos.**
+
+En el siguiente capítulo abordaremos una pregunta fundamental: **¿Qué significa "explicar" un fenómeno conductual?** Veremos que diferentes preguntas requieren diferentes tipos de respuestas, y que la confusión entre niveles de explicación ha generado debates estériles en la historia de nuestra disciplina. Entender los niveles de análisis nos permitirá apreciar por qué los modelos formales, los algoritmos, y las soluciones óptimas no compiten entre sí—son respuestas complementarias a preguntas diferentes.

@@ -1,0 +1,20 @@
+/* --- custom.css --- */
+
+/* Títulos principales (h1, h2, h3...) en Azul Ciencia */
+h1, h2, h3, h4, h5, h6 {
+  color: #258bd2;  /* Este es un azul claro profesional */
+  font-weight: 600; /* Un poco más gorditas las letras */
+}
+
+/* Ajuste para que se vea bien también en Modo Oscuro */
+/* (En fondo negro, el azul brilla un poco más) */
+body.quarto-dark h1, 
+body.quarto-dark h2, 
+body.quarto-dark h3 {
+  color: #4db3ff; 
+}
+
+/* Opcional: Hacer los enlaces del mismo tono */
+a {
+  color: #258bd2;
+}

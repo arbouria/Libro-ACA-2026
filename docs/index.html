@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Arturo Bouzas">
+<meta name="dcterms.date" content="2026-02-02">
 
-<title>Libro ACA 2026</title>
+<title>Aprendizaje y Comportamiento Adaptable</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,17 +22,51 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introducción.html" rel="next">
+<link href="./Introducción.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -39,23 +74,26 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-99913b7803b80b0c1d2b970a25816663.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-04217e8441264b33581845d082f8f104.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
-  "type": "textbox",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -72,9 +110,172 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -93,30 +294,30 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Libro ACA 2026</a> 
+      <a href="./">Aprendizaje y Comportamiento Adaptable</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introducción.html" class="sidebar-item-text sidebar-link">
+  <a href="./Introducción.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Capítulo 0: Una Nueva Forma de Estudiar el Comportamiento Adaptable</span></span></a>
   </div>
 </li>
@@ -125,26 +326,74 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a>
+  <ul class="collapse">
+  <li><a href="#prefacio-1" id="toc-prefacio-1" class="nav-link" data-scroll-target="#prefacio-1"><span class="header-section-number">0.0.1</span> Prefacio</a></li>
+  </ul></li>
+  <li><a href="#prefacio-2" id="toc-prefacio-2" class="nav-link" data-scroll-target="#prefacio-2"><span class="header-section-number">1</span> Prefacio</a>
+  <ul class="collapse">
+  <li><a href="#principios-y-modelos" id="toc-principios-y-modelos" class="nav-link" data-scroll-target="#principios-y-modelos"><span class="header-section-number">1.1</span> Principios y Modelos</a></li>
+  <li><a href="#para-quién-es-este-libro" id="toc-para-quién-es-este-libro" class="nav-link" data-scroll-target="#para-quién-es-este-libro"><span class="header-section-number">1.2</span> ¿Para Quién es Este Libro?</a></li>
+  <li><a href="#filosofía-del-libro" id="toc-filosofía-del-libro" class="nav-link" data-scroll-target="#filosofía-del-libro"><span class="header-section-number">1.3</span> Filosofía del Libro</a>
+  <ul class="collapse">
+  <li><a href="#marco-conceptual-unificado" id="toc-marco-conceptual-unificado" class="nav-link" data-scroll-target="#marco-conceptual-unificado"><span class="header-section-number">1.3.1</span> Marco Conceptual Unificado</a></li>
+  <li><a href="#énfasis-en-principios-generales" id="toc-énfasis-en-principios-generales" class="nav-link" data-scroll-target="#énfasis-en-principios-generales"><span class="header-section-number">1.3.2</span> Énfasis en Principios Generales</a></li>
+  <li><a href="#implementación-computacional" id="toc-implementación-computacional" class="nav-link" data-scroll-target="#implementación-computacional"><span class="header-section-number">1.3.3</span> Implementación Computacional</a></li>
+  <li><a href="#simuladores-interactivos" id="toc-simuladores-interactivos" class="nav-link" data-scroll-target="#simuladores-interactivos"><span class="header-section-number">1.3.4</span> Simuladores Interactivos</a></li>
+  </ul></li>
+  <li><a href="#cómo-usar-este-libro" id="toc-cómo-usar-este-libro" class="nav-link" data-scroll-target="#cómo-usar-este-libro"><span class="header-section-number">1.4</span> Cómo Usar Este Libro</a>
+  <ul class="collapse">
+  <li><a href="#para-estudiantes" id="toc-para-estudiantes" class="nav-link" data-scroll-target="#para-estudiantes"><span class="header-section-number">1.4.1</span> Para Estudiantes</a></li>
+  <li><a href="#para-instructores" id="toc-para-instructores" class="nav-link" data-scroll-target="#para-instructores"><span class="header-section-number">1.4.2</span> Para Instructores</a></li>
+  </ul></li>
+  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales"><span class="header-section-number">1.5</span> Recursos Adicionales</a></li>
+  <li><a href="#licencia-y-uso" id="toc-licencia-y-uso" class="nav-link" data-scroll-target="#licencia-y-uso"><span class="header-section-number">1.6</span> Licencia y Uso</a></li>
+  <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos"><span class="header-section-number">1.7</span> Agradecimientos</a></li>
+  <li><a href="#cómo-citar-este-libro" id="toc-cómo-citar-este-libro" class="nav-link" data-scroll-target="#cómo-citar-este-libro"><span class="header-section-number">1.8</span> Cómo Citar Este Libro</a></li>
+  <li><a href="#contacto" id="toc-contacto" class="nav-link" data-scroll-target="#contacto"><span class="header-section-number">1.9</span> Contacto</a></li>
+  <li><a href="#aviso-libro-en-desarrollo" id="toc-aviso-libro-en-desarrollo" class="nav-link" data-scroll-target="#aviso-libro-en-desarrollo"><span class="header-section-number">1.10</span> Aviso: Libro en Desarrollo</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Libro ACA 2026</h1>
+<h1 class="title">Aprendizaje y Comportamiento Adaptable</h1>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
+<div class="quarto-title-meta-author column-body">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
     <div class="quarto-title-meta-contents">
-             <p>Arturo Bouzas </p>
-          </div>
+    <p class="author">Arturo Bouzas </p>
   </div>
-    
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Universidad Nacional Autónoma de México
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta column-body">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2 February 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -154,26 +403,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="cell-fig-onda" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="fig-onda" class="quarto-float quarto-figure quarto-figure-center anchored" height="357" width="665">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-onda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-onda-output-1.png" id="fig-onda" width="665" height="357" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-onda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="prefacio" class="level1 unnumbered">
+<h1 class="unnumbered">Prefacio</h1>
+<section id="prefacio-1" class="level3" data-number="0.0.1">
+<h3 data-number="0.0.1" class="anchored" data-anchor-id="prefacio-1"><span class="header-section-number">0.0.1</span> Prefacio</h3>
+</section>
+</section>
+<section id="prefacio-2" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Prefacio</h1>
+<section id="principios-y-modelos" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="principios-y-modelos"><span class="header-section-number">1.1</span> Principios y Modelos</h2>
+<p>Este libro es una edición revisada y extendida del libro de notas <em>Aprendizaje y Comportamiento Adaptable</em>. Su origen se encuentra en las presentaciones que desarrollé a lo largo de los años para los tres cursos de Aprendizaje y Comportamiento Adaptable que imparto en la Facultad de Psicología de la UNAM. El libro ofrece una introducción rigurosa pero accesible a los principios y modelos del aprendizaje y comportamiento adaptable. A diferencia de los textos que suelen organizarse como un catálogo histórico de protocolos experimentales (condicionamiento clásico, instrumental, etc.), este libro se estructura alrededor de problemas de adaptación. Aquí no solo preguntamos qué hacen los organismos, sino qué problemas están resolviendo y qué algoritmos han evolucionado para resolverlos.</p>
+</section>
+<section id="para-quién-es-este-libro" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="para-quién-es-este-libro"><span class="header-section-number">1.2</span> ¿Para Quién es Este Libro?</h2>
+<ol type="1">
+<li><p><strong>Estudiantes de licenciatura</strong> en psicología, neurociencia o ciencia cognitiva que buscan ir más allá de la descripción verbal y desean una introducción a los modelos matemáticos del comportamiento adaptable. Se asume conocimiento básico de matemáticas a nivel bachillerato. Si necesitas refrescar estos temas, consulta los tutoriales en Bouzas Lab.</p></li>
+<li><p><strong>Estudiantes de posgrado</strong> que necesitan un puente conceptual para conectar psicología experimental con la neurociencia computacional y el aprendizaje de máquinas (machine learning).</p></li>
+<li><p><strong>Profesionales en transición</strong> de física, matemáticas, ingeniería o ciencias de la computación hacia neurociencia o ciencia cognitiva. El libro aprovecha principios cuantitativos que ya conoces para introducirte al estudio formal del comportamiento.</p></li>
+</ol>
+</section>
+<section id="filosofía-del-libro" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="filosofía-del-libro"><span class="header-section-number">1.3</span> Filosofía del Libro</h2>
+<section id="marco-conceptual-unificado" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="marco-conceptual-unificado"><span class="header-section-number">1.3.1</span> Marco Conceptual Unificado</h3>
+<p>La introducción presenta el marco general que guía al libro. Aprenderás a distinguir entre nivel computacional (¿qué problema adaptativo se resuelve?), nivel algorítmico (¿qué procedimientos generan el comportamiento?), y nivel de implementación (¿qué circuitos neuronales lo realizan?). Este marco evita confusiones comunes y te permite entender por qué diferentes tipos de modelos coexisten sin competir.</p>
+</section>
+<section id="énfasis-en-principios-generales" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="énfasis-en-principios-generales"><span class="header-section-number">1.3.2</span> Énfasis en Principios Generales</h3>
+<p>En lugar de memorizar el resultado de protocolos particulares, aprenderás algoritmos generales necesarios para la solución de diferentes problemas de adaptación.</p>
+</section>
+<section id="implementación-computacional" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="implementación-computacional"><span class="header-section-number">1.3.3</span> Implementación Computacional</h3>
+<p>Todos los modelos en este libro son implementables. No son solo ecuaciones abstractas: puedes programarlos, simularlos y experimentar con ellos.</p>
+</section>
+<section id="simuladores-interactivos" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="simuladores-interactivos"><span class="header-section-number">1.3.4</span> Simuladores Interactivos</h3>
+<p>Este libro incluye simuladores embebidos y enlaces a notebooks interactivos (Google Colab) donde puedes manipular parámetros y observar resultados inmediatos, implementar algoritmos desde cero, replicar experimentos clásicos y explorar extensiones creativas. Accede a todos los simuladores y tutoriales de matemáticas en Bouzas Lab.</p>
+</section>
+</section>
+<section id="cómo-usar-este-libro" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="cómo-usar-este-libro"><span class="header-section-number">1.4</span> Cómo Usar Este Libro</h2>
+<section id="para-estudiantes" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="para-estudiantes"><span class="header-section-number">1.4.1</span> Para Estudiantes</h3>
+<p>Estas notas están diseñadas para lectura activa, no pasiva. Lee la Introducción completa antes de continuar con los capítulos, ya que establece el marco conceptual necesario. Cuando un capítulo menciona un simulador, explóralo antes de seguir leyendo. La Introducción contiene estrategias detalladas de lectura activa que maximizarán tu aprendizaje.</p>
+</section>
+<section id="para-instructores" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="para-instructores"><span class="header-section-number">1.4.2</span> Para Instructores</h3>
+<p>Este libro puede usarse como texto principal en un curso de dos semestres sobre aprendizaje y comportamiento adaptable, como complemento a un texto tradicional añadiendo la perspectiva formal y de optimización que esos textos omiten, o como recurso para temas específicos. Los simuladores permiten clases invertidas donde los estudiantes exploran antes de clase, y el tiempo presencial se dedica a discusión, resolución de problemas y profundización conceptual. La Introducción incluye sugerencias específicas para implementar este modelo pedagógico.</p>
+</section>
+</section>
+<section id="recursos-adicionales" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="recursos-adicionales"><span class="header-section-number">1.5</span> Recursos Adicionales</h2>
+<p>Todos los recursos (simuladores, código fuente, tutoriales) están disponibles en:<br>
+<strong>https://www.bouzaslab25.com</strong></p>
+<p>Para reportar errores o contribuir al proyecto, visita el repositorio GitHub.</p>
+</section>
+<section id="licencia-y-uso" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="licencia-y-uso"><span class="header-section-number">1.6</span> Licencia y Uso</h2>
+<p>Este libro se distribuye bajo licencia Creative Commons BY-NC-SA 4.0. Esto significa que puedes compartir (copiar y redistribuir el material) y adaptar (remezclar, transformar y construir sobre el material) bajo las siguientes condiciones: debes dar crédito apropiado (Atribución), no puedes usar el material con fines comerciales (No Comercial), y si remezclas debes distribuir bajo la misma licencia (Compartir Igual).</p>
+</section>
+<section id="agradecimientos" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="agradecimientos"><span class="header-section-number">1.7</span> Agradecimientos</h2>
+<p>La primera edición del libro mejoró significativamente gracias al excelente trabajo editorial de Rodrigo Álvarez. La estructura de esta página web fue adaptada del diseño original de Christian Badillo, quien siempre apoyó que este proyecto se concretara.</p>
+<p>Mi agradecimiento a varias generaciones del Laboratorio 25 por desarrollar los simuladores interactivos que se encuentran en la página del Laboratorio.</p>
+<p>Finalmente, extiendo un agradecimiento especial a los cientos de estudiantes que en mis cursos han sufrido pacientemente mis intentos por enseñar los principios fundamentales del estudio del comportamiento adaptable.</p>
+<p>La elaboración de esta página web fue financiada por los proyectos PAPIME PE309624 y PAPIME PE302221.</p>
+</section>
+<section id="cómo-citar-este-libro" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="cómo-citar-este-libro"><span class="header-section-number">1.8</span> Cómo Citar Este Libro</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">bouzas2025aca</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> = {Aprendizaje y Comportamiento Adaptable: Principios y Modelos},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Bouzas, Arturo},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> = {2026},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Lab25, UNAM},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span> = {https://github.com/bouzaslab25/libro-aca},</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span> = {Licencia CC BY-NC-SA 4.0}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="contacto" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="contacto"><span class="header-section-number">1.9</span> Contacto</h2>
+<p><strong>Arturo Bouzas</strong><br>
+Facultad de Psicología<br>
+Universidad Nacional Autónoma de México<br>
+arbouria@unam.mx<br>
+<strong>https://www.bouzaslab25.com</strong></p>
+</section>
+<section id="aviso-libro-en-desarrollo" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="aviso-libro-en-desarrollo"><span class="header-section-number">1.10</span> Aviso: Libro en Desarrollo</h2>
+<p>Este es un proyecto vivo. El contenido se actualiza regularmente basándose en feedback de estudiantes e instructores, nuevos desarrollos en el campo, y mejoras en simuladores y código. Verifica el repositorio GitHub para la versión más reciente.</p>
+<p><strong>Versión actual:</strong> v1.0 (Enero 2026)</p>
+<hr>
+<p>¿Listo para comenzar? Pasa a la <strong>Introducción al Curso</strong></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -572,16 +914,29 @@ Figure&nbsp;1
     }
   });
   </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introducción.html" class="pagination-link" aria-label="Capítulo 0: Una Nueva Forma de Estudiar el Comportamiento Adaptable">
+      <a href="./Introducción.html" class="pagination-link" aria-label="Capítulo 0: Una Nueva Forma de Estudiar el Comportamiento Adaptable">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Capítulo 0: Una Nueva Forma de Estudiar el Comportamiento Adaptable</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 
