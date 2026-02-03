@@ -28,7 +28,7 @@ book:
     - index.qmd
     - intro.qmd  
     # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
-
+  downloads: [pdf] 
   sidebar:
     style: floating
     collapse-level: 2
@@ -61,7 +61,8 @@ format:
       light: cosmo
       dark: darkly
     css: styles/custom.css
-    
+  pdf:             
+    documentclass: scrreprt
     # Opciones
     code-fold: false
     code-copy: true
