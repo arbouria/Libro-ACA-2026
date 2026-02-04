@@ -1,3 +1,10 @@
+license: "CC BY-NC-SA"
+
+citation:
+  type: book
+  url: "https://arbouria.github.io/Libro-ACA-2026/"
+  publisher: "Lab25, UNAM"
+
 project:
   type: book
   output-dir: docs
@@ -6,7 +13,7 @@ project:
 # CONFIGURACIÓN DEL LIBRO
 # ========================================
 book:
-  title: "Aprendizaje y Comportamiento Adaptable"
+  title: "Aprendizaje y Comportamiento Adaptable: Principios y Modelos"
   date: today
   date-format: "D MMMM YYYY"
   
@@ -15,6 +22,9 @@ book:
       affiliations:
         - name: "Universidad Nacional Autónoma de México"
           department: "Facultad de Psicología"
+          
+
+
 
   page-navigation: true
   

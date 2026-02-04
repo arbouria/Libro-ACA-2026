@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "",
     "text": "Prefacio",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#principios-y-modelos",
     "href": "index.html#principios-y-modelos",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.1 Principios y Modelos",
     "text": "1.1 Principios y Modelos\nEste libro es una edición revisada y extendida del libro de notas Aprendizaje y Comportamiento Adaptable. Su origen se encuentra en las presentaciones que desarrollé a lo largo de los años para los tres cursos de Aprendizaje y Comportamiento Adaptable que imparto en la Facultad de Psicología de la UNAM. El libro ofrece una introducción rigurosa pero accesible a los principios y modelos del aprendizaje y comportamiento adaptable. A diferencia de los textos que suelen organizarse como un catálogo histórico de protocolos experimentales (condicionamiento clásico, instrumental, etc.), este libro se estructura alrededor de problemas de adaptación. Aquí no solo preguntamos qué hacen los organismos, sino qué problemas están resolviendo y qué algoritmos han evolucionado para resolverlos.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#para-quién-es-este-libro",
     "href": "index.html#para-quién-es-este-libro",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.2 ¿Para Quién es Este Libro?",
     "text": "1.2 ¿Para Quién es Este Libro?\n\nEstudiantes de licenciatura en psicología, neurociencia o ciencia cognitiva que buscan ir más allá de la descripción verbal y desean una introducción a los modelos matemáticos del comportamiento adaptable. Se asume conocimiento básico de matemáticas a nivel bachillerato. Si necesitas refrescar estos temas, consulta los tutoriales en Bouzas Lab.\nEstudiantes de posgrado que necesitan un puente conceptual para conectar psicología experimental con la neurociencia computacional y el aprendizaje de máquinas (machine learning).\nProfesionales en transición de física, matemáticas, ingeniería o ciencias de la computación hacia neurociencia o ciencia cognitiva. El libro aprovecha principios cuantitativos que ya conoces para introducirte al estudio formal del comportamiento.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#filosofía-del-libro",
     "href": "index.html#filosofía-del-libro",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.3 Filosofía del Libro",
     "text": "1.3 Filosofía del Libro\n\n1.3.1 Marco Conceptual Unificado\nLa introducción presenta el marco general que guía al libro. Aprenderás a distinguir entre nivel computacional (¿qué problema adaptativo se resuelve?), nivel algorítmico (¿qué procedimientos generan el comportamiento?), y nivel de implementación (¿qué circuitos neuronales lo realizan?). Este marco evita confusiones comunes y te permite entender por qué diferentes tipos de modelos coexisten sin competir.\n\n\n1.3.2 Énfasis en Principios Generales\nEn lugar de memorizar el resultado de protocolos particulares, aprenderás algoritmos generales necesarios para la solución de diferentes problemas de adaptación.\n\n\n1.3.3 Implementación Computacional\nTodos los modelos en este libro son implementables. No son solo ecuaciones abstractas: puedes programarlos, simularlos y experimentar con ellos.\n\n\n1.3.4 Simuladores Interactivos\nEste libro incluye simuladores embebidos y enlaces a notebooks interactivos (Google Colab) donde puedes manipular parámetros y observar resultados inmediatos, implementar algoritmos desde cero, replicar experimentos clásicos y explorar extensiones creativas. Accede a todos los simuladores y tutoriales de matemáticas en Lab 25.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#cómo-usar-este-libro",
     "href": "index.html#cómo-usar-este-libro",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.4 Cómo Usar Este Libro",
     "text": "1.4 Cómo Usar Este Libro\n\n1.4.1 Para Estudiantes\nEstas notas están diseñadas para lectura activa, no pasiva. Lee la Introducción completa antes de continuar con los capítulos, ya que establece el marco conceptual necesario. Cuando un capítulo menciona un simulador, explóralo antes de seguir leyendo. La Introducción contiene estrategias detalladas de lectura activa que maximizarán tu aprendizaje.\n\n\n1.4.2 Para Instructores\nEste libro puede usarse como texto principal en un curso de dos semestres sobre aprendizaje y comportamiento adaptable, como complemento a un texto tradicional añadiendo la perspectiva formal y de optimización que esos textos omiten, o como recurso para temas específicos. Los simuladores permiten clases invertidas donde los estudiantes exploran antes de clase, y el tiempo presencial se dedica a discusión, resolución de problemas y profundización conceptual. La Introducción incluye sugerencias específicas para implementar este modelo pedagógico.",
     "crumbs": [
@@ -52,7 +52,7 @@
   {
     "objectID": "index.html#recursos-adicionales",
     "href": "index.html#recursos-adicionales",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.5 Recursos Adicionales",
     "text": "1.5 Recursos Adicionales\nTodos los recursos (simuladores, código fuente, tutoriales) están disponibles en:\nLab 25\nPara reportar errores o contribuir al proyecto, visita el repositorio GitHub.",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "index.html#licencia-y-uso",
     "href": "index.html#licencia-y-uso",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.6 Licencia y Uso",
     "text": "1.6 Licencia y Uso\nEste libro se distribuye bajo licencia Creative Commons BY-NC-SA 4.0. Esto significa que puedes compartir (copiar y redistribuir el material) y adaptar (remezclar, transformar y construir sobre el material) bajo las siguientes condiciones: debes dar crédito apropiado (Atribución), no puedes usar el material con fines comerciales (No Comercial), y si remezclas debes distribuir bajo la misma licencia (Compartir Igual).",
     "crumbs": [
@@ -72,7 +72,7 @@
   {
     "objectID": "index.html#agradecimientos",
     "href": "index.html#agradecimientos",
-    "title": "Aprendizaje y Comportamiento Adaptable",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
     "section": "1.7 Agradecimientos",
     "text": "1.7 Agradecimientos\nLa primera edición del libro mejoró significativamente gracias al excelente trabajo editorial de Rodrigo Álvarez. La estructura de esta página web fue adaptada del diseño original de Christian Badillo, quien siempre apoyó que este proyecto se concretara.\nMi agradecimiento a varias generaciones del Laboratorio 25 por desarrollar los simuladores interactivos que se encuentran en la página del Laboratorio.\nFinalmente, extiendo un agradecimiento especial a los cientos de estudiantes que en mis cursos han sufrido pacientemente mis intentos por enseñar los principios fundamentales del estudio del comportamiento adaptable.\nLa elaboración de esta página web fue financiada por los proyectos PAPIME PE309624 y PAPIME PE302221.",
     "crumbs": [
@@ -80,21 +80,11 @@
     ]
   },
   {
-    "objectID": "index.html#cómo-citar-este-libro",
-    "href": "index.html#cómo-citar-este-libro",
-    "title": "Aprendizaje y Comportamiento Adaptable",
-    "section": "1.8 Cómo Citar Este Libro",
-    "text": "1.8 Cómo Citar Este Libro\n@book{bouzas2025aca,\n  title = {Aprendizaje y Comportamiento Adaptable: Principios y Modelos},\n  author = {Bouzas, Arturo},\n  year = {2026},\n  publisher = {Lab25, UNAM},\n  url = {https://github.com/bouzaslab25/libro-aca},\n  note = {Licencia CC BY-NC-SA 4.0}\n}",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Notas de Aprendizaje y Comportamiento Adaptable</span>"
-    ]
-  },
-  {
     "objectID": "index.html#contacto",
     "href": "index.html#contacto",
-    "title": "Aprendizaje y Comportamiento Adaptable",
-    "section": "1.9 Contacto",
-    "text": "1.9 Contacto\nArturo Bouzas\nFacultad de Psicología\nUniversidad Nacional Autónoma de México\narbouria@unam.mx\nhttps://www.bouzaslab25.com",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
+    "section": "1.8 Contacto",
+    "text": "1.8 Contacto\nArturo Bouzas\nFacultad de Psicología\nUniversidad Nacional Autónoma de México\narbouria@unam.mx\nLab 25",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Notas de Aprendizaje y Comportamiento Adaptable</span>"
     ]
@@ -102,9 +92,9 @@
   {
     "objectID": "index.html#aviso-libro-en-desarrollo",
     "href": "index.html#aviso-libro-en-desarrollo",
-    "title": "Aprendizaje y Comportamiento Adaptable",
-    "section": "1.10 Aviso: Libro en Desarrollo",
-    "text": "1.10 Aviso: Libro en Desarrollo\nEste es un proyecto vivo. El contenido se actualiza regularmente basándose en feedback de estudiantes e instructores, nuevos desarrollos en el campo, y mejoras en simuladores y código. Verifica el repositorio GitHub para la versión más reciente.\nVersión actual: v1.0 (Enero 2026)\n\n¿Listo para comenzar? Pasa a la Introducción al Curso",
+    "title": "Aprendizaje y Comportamiento Adaptable: Principios y Modelos",
+    "section": "1.9 Aviso: Libro en Desarrollo",
+    "text": "1.9 Aviso: Libro en Desarrollo\nEste es un proyecto vivo. El contenido se actualiza regularmente basándose en feedback de estudiantes e instructores, nuevos desarrollos en el campo, y mejoras en simuladores y código. Verifica el repositorio GitHub para la versión más reciente.\nVersión actual: v1.0 (Enero 2026)\n\n¿Listo para comenzar? Pasa a la Introducción al Curso",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Notas de Aprendizaje y Comportamiento Adaptable</span>"
     ]

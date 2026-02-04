@@ -11,7 +11,7 @@ page-layout: full
 # Prefacio
 ## Principios y Modelos
 
-Este libro es una edición revisada y extendida del libro de notas *Aprendizaje y Comportamiento Adaptable*. Su origen se encuentra en las presentaciones que desarrollé a lo largo de los años para los tres cursos de Aprendizaje y Comportamiento Adaptable que imparto en la Facultad de Psicología de la UNAM. El libro ofrece una introducción rigurosa pero accesible a los principios y modelos del aprendizaje y comportamiento adaptable. A diferencia de los textos que suelen organizarse como un catálogo histórico de protocolos experimentales (condicionamiento clásico, instrumental, etc.), este libro se estructura alrededor de problemas de adaptación. Aquí no solo preguntamos qué hacen los organismos, sino qué problemas están resolviendo y qué algoritmos han evolucionado para resolverlos.
+Este libro es una edición revisada y extendida del libro de notas [Aprendizaje y Comportamiento Adaptable](https://arbouria.github.io/Notas-Aprendizaje-y-Comportamiento-Adaptable-I/). Su origen se encuentra en las presentaciones que desarrollé a lo largo de los años para los tres cursos de Aprendizaje y Comportamiento Adaptable que imparto en la Facultad de Psicología de la UNAM. El libro ofrece una introducción rigurosa pero accesible a los principios y modelos del aprendizaje y comportamiento adaptable. A diferencia de los textos que suelen organizarse como un catálogo histórico de protocolos experimentales (condicionamiento clásico, instrumental, etc.), este libro se estructura alrededor de problemas de adaptación. Aquí no solo preguntamos qué hacen los organismos, sino qué problemas están resolviendo y qué algoritmos han evolucionado para resolverlos.
 
 ## ¿Para Quién es Este Libro?
 
@@ -70,18 +70,6 @@ Finalmente, extiendo un agradecimiento especial a los cientos de estudiantes que
 
 La elaboración de esta página web fue financiada por los proyectos PAPIME PE309624 y PAPIME PE302221.
 
-## Cómo Citar Este Libro
-
-```bibtex
-@book{bouzas2025aca,
-  title = {Aprendizaje y Comportamiento Adaptable: Principios y Modelos},
-  author = {Bouzas, Arturo},
-  year = {2026},
-  publisher = {Lab25, UNAM},
-  url = {https://github.com/bouzaslab25/libro-aca},
-  note = {Licencia CC BY-NC-SA 4.0}
-}
-```
 
 ## Contacto
 
@@ -89,7 +77,7 @@ La elaboración de esta página web fue financiada por los proyectos PAPIME PE30
 Facultad de Psicología  
 Universidad Nacional Autónoma de México  
 arbouria@unam.mx  
-**https://www.bouzaslab25.com**
+[Lab 25](https://www.bouzaslab25.com)
 
 ## Aviso: Libro en Desarrollo
 
