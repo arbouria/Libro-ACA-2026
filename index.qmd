@@ -1,7 +1,5 @@
 ---
 title: "Notas de Aprendizaje y Comportamiento Adaptable"
-format: html
-page-layout: full
 ---
 
 # Prefacio {.unnumbered}
