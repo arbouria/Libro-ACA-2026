@@ -36,7 +36,8 @@ book:
   # Estructura de capítulos
   chapters:
     - index.qmd
-    - intro.qmd  
+    - intro.qmd 
+    - explicacion.qmd 
     # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
   downloads: [pdf] 
   sidebar:

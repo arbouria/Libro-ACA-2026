@@ -1,6 +1,6 @@
-# Capítulo 8: El Problema de la Asignación de Crédito {#sec-asignacion-credito}
+# Capítulo 6: El Problema de la Asignación de Crédito 
+{#sec-asignacion-credito}
 
-## Introducción: El Detective Causal
 
 Al interactuar con su entorno, un agente se encuentra con un constante flujo de estímulos y respuestas que se despliegan en el tiempo. Algunos de los sucesos que encuentra son biológicamente significativos, importantes para su éxito reproductivo o su supervivencia inmediata. El encuentro inesperado con un suceso biológicamente importante (SBI) echa a andar dos mecanismos: uno que controla la respuesta inmediata al SBI—consumir la comida, huir del depredador—y un segundo mecanismo que permite predecir su futura ocurrencia y, cuando sea posible, controlarlo. Es este segundo mecanismo el que nos interesa en este capítulo.
 

@@ -1,9 +1,4 @@
-# Capítulo 8: El Problema de la Asignación de Crédito {#sec-asignacion-credito}
-
-## Objetivos del Capítulo
-
-Al finalizar este capítulo, deberías ser capaz de explicar por qué el problema de la asignación de crédito es computacionalmente intratable sin mecanismos de filtrado, y cómo la evolución resolvió este problema mediante sesgos inductivos específicos. En particular, comprenderás que la contigüidad temporal, aunque útil, no es ni necesaria ni suficiente para el aprendizaje, y que el sistema nervioso opera como un detector de información que asigna crédito basándose en reducción de incertidumbre más que en simple co-ocurrencia. Identificarás los principales sesgos inductivos—sistemas de comportamiento, relevancia biológica, novedad, saliencia—y reconocerás evidencia empírica de competencia entre elementos por asignación de crédito en fenómenos como el ensombrecimiento y el bloqueo. Finalmente, comprenderás cómo estos hallazgos preparan el terreno para modelos formales basados en error de predicción que estudiaremos en el próximo capítulo.
-
+# Capítulo 8: El Problema de la Asignación de Crédito 
 ---
 
 ## Introducción: El Detective Causal
@@ -120,7 +115,7 @@ El fenómeno de bloqueo es evidencia contundente de que la contigüidad entre un
 
 Esta interpretación sugiere que el aprendizaje no es sobre contigüidad, sino sobre *predictibilidad* o, equivalentemente, sobre *reducción de incertidumbre*. Un estímulo recibe crédito en la medida en que su presencia reduce la incertidumbre sobre la ocurrencia del SBI. Si el SBI ya es perfectamente predecible (incertidumbre cero), nuevos estímulos contiguos no reciben crédito porque no hay incertidumbre adicional que reducir.
 
-Esta idea—que el aprendizaje se trata de reducir la sorpresa o el error de predicción—se convertirá en el principio central de los modelos formales que estudiaremos en el próximo capítulo. El modelo de Rescorla-Wagner, que formalizó las intuiciones derivadas del experimento de bloqueo, propone precisamente que el aprendizaje es proporcional a la discrepancia entre lo que ocurre y lo que se espera. Si la luz ya predice perfectamente la descarga, no hay discrepancia cuando la descarga ocurre—incluso si un tono está presente—y por lo tanto no hay aprendizaje sobre el tono.
+Esta idea—que el aprendizaje se trata de reducir la sorpresa o el error de predicción—se convertirá en el principio central de los modelos formales que estudiaremos en el  capítulo. sobre el  modelo de Rescorla-Wagner, que formalizó las intuiciones derivadas del experimento de bloqueo, propone precisamente que el aprendizaje es proporcional a la discrepancia entre lo que ocurre y lo que se espera. Si la luz ya predice perfectamente la descarga, no hay discrepancia cuando la descarga ocurre—incluso si un tono está presente—y por lo tanto no hay aprendizaje sobre el tono.
 
 ---
 

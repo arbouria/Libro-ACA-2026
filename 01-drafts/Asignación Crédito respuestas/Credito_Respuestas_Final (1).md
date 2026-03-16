@@ -1,10 +1,6 @@
-# Capítulo 9: Asignación de Crédito a Respuestas {#sec-asignacion-respuestas}
+# Capítulo 7: Asignación de Crédito a Respuestas
+
 ## De la Predicción al Control
-
-## Objetivos del Capítulo
-
-Al finalizar este capítulo, deberías ser capaz de explicar la diferencia fundamental entre aprender relaciones predictivas (estímulo → SBI) y relaciones causales (respuesta → SBI), y comprender por qué el problema de asignación de crédito para respuestas requiere dos mecanismos complementarios: generación de variabilidad conductual y selección de respuestas exitosas. Evaluarás críticamente la Ley del Efecto de Thorndike y reconocerás sus limitaciones, distinguiendo entre contigüidad temporal y contingencia estadística. Comprenderás que la contigüidad no es ni necesaria ni suficiente para el aprendizaje de respuestas, y que los organismos son sensibles a relaciones causales genuinas, no solo a proximidad temporal. Finalmente, entenderás el concepto de conducta inducida como sesgo inductivo que estructura el espacio de respuestas candidatas, y cómo los organismos perciben causalidad de manera sofisticada, modulando esta percepción basándose en costos y beneficios.
-
 ---
 
 ## Introducción: El Salto de la Predicción al Control
@@ -181,7 +177,6 @@ Finalmente, los experimentos de Killeen sobre percepción de causalidad revelaro
 
 Las conclusiones de este capítulo complementan y extienden las del capítulo anterior. En ambos casos—asignación de crédito a estímulos y a respuestas—la contigüidad temporal juega un papel, pero no es ni necesaria ni suficiente. Los organismos son detectores de estructura causal más profunda: contingencias estadísticas, correlaciones a largo plazo, reducción de incertidumbre. Los sesgos inductivos—relevancia biológica, novedad, conducta inducida, sistemas de comportamiento—estructuran el espacio de búsqueda, haciendo el problema computacional tratable. Y la selección opera no sobre contigüidades momentáneas sino sobre patrones de covariación que revelan las verdaderas estructuras causales del ambiente.
 
-Estos principios nos preparan para el próximo capítulo, donde estudiaremos modelos formales que capturan matemáticamente estos procesos. El modelo de Rescorla-Wagner, originalmente propuesto para condicionamiento clásico, puede extenderse al aprendizaje de respuestas. Los algoritmos de aprendizaje por refuerzo en inteligencia artificial—diferencias temporales, Q-learning—formalizan precisamente estos principios de asignación de crédito temporal y detección de contingencia. Veremos que la distinción entre escalas moleculares y molares tiene paralelos directos en algoritmos de aprendizaje basados en valor versus basados en política. Y el concepto de conducta inducida como estructura innata que guía el aprendizaje tiene paralelos con el diseño de arquitecturas de red con sesgos inductivos en machine learning contemporáneo.
 
 El estudio del aprendizaje de respuestas no es solo historia de la psicología. Es el estudio de cómo agentes autónomos—biológicos o artificiales—pueden descubrir y explotar la estructura causal de su ambiente para maximizar resultados valiosos. Los principios que emergen son generales y siguen siendo fundamentales para nuestra comprensión del comportamiento adaptativo y el diseño de sistemas artificiales inteligentes.
 
