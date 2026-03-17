@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="520" fill="#f8f9fa" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Figura 2.1 — El Paisaje Adaptativo</text>
+
+  <!-- === LEFT PANEL: Landscape view === -->
+  <text x="205" y="58" text-anchor="middle" font-size="12" fill="#555" font-style="italic">(a) Picos, valles y trayectorias de la población</text>
+
+  <!-- Axes -->
+  <line x1="40" y1="440" x2="390" y2="440" stroke="#999" stroke-width="1.5"/>
+  <line x1="40" y1="440" x2="40" y2="70" stroke="#999" stroke-width="1.5"/>
+  <text x="215" y="468" text-anchor="middle" font-size="11" fill="#666">Espacio fenotípico (rasgo)</text>
+  <text x="18" y="260" text-anchor="middle" font-size="11" fill="#666" transform="rotate(-90 18 260)">Fitness (éxito reproductivo)</text>
+
+  <!-- Landscape fill - the mountain profile -->
+  <defs>
+    <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a9e6b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#a8d5b5" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="valleyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0c4de" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d0e8f0" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mountain profile path (two peaks) -->
+  <path d="M40,440 
+           L70,430 L90,410 L110,370 L130,310 L150,250 L165,210 L175,185 L185,200 L200,235 
+           L215,260 L230,240 L245,200 L255,160 L265,120 L270,100 L275,120 L280,145 
+           L295,185 L315,230 L335,280 L355,340 L375,400 L390,440 Z"
+        fill="url(#mountainGrad)" stroke="#3a8a5a" stroke-width="2"/>
+
+  <!-- Valley shading -->
+  <path d="M165,210 L175,185 L185,200 L200,235 L215,260 L230,240 L245,200 L255,160 L255,440 L165,440 Z"
+        fill="#e8f0f8" opacity="0.3"/>
+
+  <!-- Peak labels -->
+  <!-- Local optimum (left peak) -->
+  <circle cx="175" cy="183" r="6" fill="#e74c3c" stroke="white" stroke-width="2"/>
+  <text x="148" y="170" font-size="10" fill="#c0392b" font-weight="bold">Óptimo</text>
+  <text x="148" y="182" font-size="10" fill="#c0392b" font-weight="bold">local</text>
+
+  <!-- Global optimum (right peak) -->
+  <circle cx="270" cy="98" r="6" fill="#2ecc71" stroke="white" stroke-width="2"/>
+  <text x="278" y="88" font-size="10" fill="#27ae60" font-weight="bold">Óptimo</text>
+  <text x="278" y="100" font-size="10" fill="#27ae60" font-weight="bold">global</text>
+
+  <!-- Valley label -->
+  <text x="213" y="300" text-anchor="middle" font-size="10" fill="#7f8c8d" font-style="italic">valle</text>
+
+  <!-- Population trajectory (trapped in local optimum) -->
+  <path d="M90,408 L105,390 L118,365 L130,335 L143,305 L155,273 L163,245 L169,220 L173,200"
+        fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="6,3"
+        marker-end="url(#arrowRed)"/>
+  
+  <!-- Population start dot -->
+  <circle cx="90" cy="408" r="7" fill="#e74c3c" opacity="0.7"/>
+  <text x="55" y="418" font-size="10" fill="#c0392b">Población</text>
+  <text x="55" y="430" font-size="10" fill="#c0392b">inicial</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3498db"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Second population path (reaches global optimum with drift) -->
+  <path d="M330,390 L315,350 L300,305 L288,265 L278,225 L272,170 L270,118"
+        fill="none" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,3"
+        marker-end="url(#arrowGreen)"/>
+  <circle cx="330" cy="390" r="7" fill="#27ae60" opacity="0.7"/>
+
+  <!-- Bracket showing valley must be crossed -->
+  <path d="M178,320 Q215,290 252,320" fill="none" stroke="#7f8c8d" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="215" y="340" text-anchor="middle" font-size="9" fill="#7f8c8d">requiere cruzar</text>
+  <text x="215" y="351" text-anchor="middle" font-size="9" fill="#7f8c8d">el valle →</text>
+
+  <!-- === RIGHT PANEL: Nested constraints === -->
+  <text x="610" y="58" text-anchor="middle" font-size="12" fill="#555" font-style="italic">(b) Restricciones que limitan el espacio accesible</text>
+
+  <!-- Concentric zones (nested constraints) -->
+  <!-- Outermost: theoretically possible -->
+  <ellipse cx="610" cy="270" rx="185" ry="165" fill="#f0f4ff" stroke="#bdc3d0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Physically possible -->
+  <ellipse cx="605" cy="272" rx="150" ry="132" fill="#e0eaff" stroke="#a0aec0" stroke-width="1.5"/>
+  
+  <!-- Biologically realizable -->
+  <ellipse cx="600" cy="275" rx="112" ry="98" fill="#c8deff" stroke="#7090c0" stroke-width="1.5"/>
+  
+  <!-- Phylogenetically accessible -->
+  <ellipse cx="597" cy="278" rx="78" ry="66" fill="#9bbff0" stroke="#5070b0" stroke-width="1.5"/>
+  
+  <!-- High fitness region -->
+  <ellipse cx="594" cy="280" rx="40" ry="32" fill="#4a9e6b" stroke="#2d7a50" stroke-width="2"/>
+  <text x="594" y="283" text-anchor="middle" font-size="9" fill="white" font-weight="bold">alto</text>
+  <text x="594" y="293" text-anchor="middle" font-size="9" fill="white" font-weight="bold">fitness</text>
+
+  <!-- Labels for zones (right side) -->
+  <text x="780" y="118" font-size="9.5" fill="#8896aa" text-anchor="end">Teóricamente posible</text>
+  <line x1="782" y1="116" x2="762" y2="130" stroke="#bdc3d0" stroke-width="1"/>
+
+  <text x="790" y="150" font-size="9.5" fill="#6080a0" text-anchor="end">Físicamente posible</text>
+  <line x1="792" y1="148" x2="755" y2="162" stroke="#a0aec0" stroke-width="1"/>
+
+  <text x="795" y="185" font-size="9.5" fill="#5070b0" text-anchor="end">Biológicamente realizable</text>
+  <line x1="797" y1="183" x2="714" y2="198" stroke="#7090c0" stroke-width="1"/>
+
+  <text x="798" y="222" font-size="9.5" fill="#3858a0" text-anchor="end">Accesible para este linaje</text>
+  <line x1="800" y1="220" x2="677" y2="233" stroke="#5070b0" stroke-width="1"/>
+
+  <!-- Legend for left panel -->
+  <line x1="42" y1="470" x2="68" y2="470" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <circle cx="80" cy="470" r="5" fill="#e74c3c" opacity="0.7"/>
+  <text x="88" y="474" font-size="10" fill="#444">Población atrapada en óptimo local</text>
+
+  <line x1="205" y1="470" x2="231" y2="470" stroke="#27ae60" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <circle cx="243" cy="470" r="5" fill="#27ae60" opacity="0.7"/>
+  <text x="251" y="474" font-size="10" fill="#444">Población que alcanza óptimo global</text>
+
+  <!-- Caption -->
+  <text x="410" y="505" text-anchor="middle" font-size="10" fill="#666" font-style="italic">
+    (a) La selección lleva a la población hacia picos de fitness, pero puede quedarla atrapada en óptimos locales.
+  </text>
+  <text x="410" y="518" text-anchor="middle" font-size="10" fill="#666" font-style="italic">
+    (b) Las restricciones reducen progresivamente el espacio de rasgos accesibles.
+  </text>
+
+</svg>

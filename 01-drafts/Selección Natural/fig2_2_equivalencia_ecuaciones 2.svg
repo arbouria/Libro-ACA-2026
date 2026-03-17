@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="820" height="480" fill="#f8f9fa" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Figura 2.2 — La Misma Estructura en Dos Dominios</text>
+  <text x="410" y="50" text-anchor="middle" font-size="11" fill="#666" font-style="italic">Selección natural y aprendizaje por refuerzo como instancias del mismo algoritmo</text>
+
+  <!-- === LEFT COLUMN: Evolution === -->
+  <rect x="30" y="65" width="355" height="370" rx="10" fill="white" stroke="#3a8a5a" stroke-width="2"/>
+  <rect x="30" y="65" width="355" height="38" rx="10" fill="#3a8a5a"/>
+  <!-- Fix top corners of header fill -->
+  <rect x="30" y="88" width="355" height="15" fill="#3a8a5a"/>
+  <text x="207" y="89" text-anchor="middle" font-size="13" font-weight="bold" fill="white">SELECCIÓN NATURAL</text>
+  <text x="207" y="104" text-anchor="middle" font-size="10" fill="#c8e6d0">escala: generaciones · sustrato: genes</text>
+
+  <!-- Evolution equation box -->
+  <rect x="50" y="118" width="315" height="52" rx="6" fill="#e8f5ee" stroke="#3a8a5a" stroke-width="1.5"/>
+  <text x="207" y="138" text-anchor="middle" font-size="11" fill="#555">Ecuación de Price (simplificada)</text>
+  <text x="207" y="158" text-anchor="middle" font-size="18" font-weight="bold" fill="#2d7a50" font-family="Georgia, serif">Δz̄ = Cov(w, z) / w̄</text>
+
+  <!-- Evolution components -->
+  <!-- Component 1: Space -->
+  <rect x="50" y="182" width="315" height="52" rx="5" fill="#f0faf4" stroke="#a8d5b5" stroke-width="1"/>
+  <text x="68" y="200" font-size="10" font-weight="bold" fill="#2d7a50">ESPACIO DE POSIBILIDADES</text>
+  <text x="68" y="215" font-size="11" fill="#333">Espacio fenotípico</text>
+  <text x="68" y="227" font-size="10" fill="#666" font-style="italic">todos los posibles valores del rasgo z</text>
+
+  <!-- Component 2: Evaluation -->
+  <rect x="50" y="244" width="315" height="52" rx="5" fill="#f0faf4" stroke="#a8d5b5" stroke-width="1"/>
+  <text x="68" y="262" font-size="10" font-weight="bold" fill="#2d7a50">FUNCIÓN DE EVALUACIÓN</text>
+  <text x="68" y="277" font-size="11" fill="#333">Fitness  w</text>
+  <text x="68" y="289" font-size="10" fill="#666" font-style="italic">éxito reproductivo de cada variante</text>
+
+  <!-- Component 3: Discrepancy signal -->
+  <rect x="50" y="306" width="315" height="52" rx="5" fill="#f0faf4" stroke="#a8d5b5" stroke-width="1"/>
+  <text x="68" y="324" font-size="10" font-weight="bold" fill="#2d7a50">SEÑAL DE ACTUALIZACIÓN</text>
+  <text x="68" y="339" font-size="11" fill="#333">Cov(w, z)  — covarianza rasgo-fitness</text>
+  <text x="68" y="351" font-size="10" fill="#666" font-style="italic">¿covaria el rasgo con el éxito?</text>
+
+  <!-- Component 4: Update -->
+  <rect x="50" y="368" width="315" height="52" rx="5" fill="#f0faf4" stroke="#a8d5b5" stroke-width="1"/>
+  <text x="68" y="386" font-size="10" font-weight="bold" fill="#2d7a50">RESULTADO</text>
+  <text x="68" y="401" font-size="11" fill="#333">Cambio en la media del rasgo  Δz̄</text>
+  <text x="68" y="413" font-size="10" fill="#666" font-style="italic">la población se desplaza en el paisaje</text>
+
+  <!-- === RIGHT COLUMN: Reinforcement Learning === -->
+  <rect x="435" y="65" width="355" height="370" rx="10" fill="white" stroke="#2980b9" stroke-width="2"/>
+  <rect x="435" y="65" width="355" height="38" rx="10" fill="#2980b9"/>
+  <rect x="435" y="88" width="355" height="15" fill="#2980b9"/>
+  <text x="612" y="89" text-anchor="middle" font-size="13" font-weight="bold" fill="white">APRENDIZAJE POR REFUERZO</text>
+  <text x="612" y="104" text-anchor="middle" font-size="10" fill="#bdd9f0">escala: ensayos · sustrato: valores asociativos</text>
+
+  <!-- RL equation box -->
+  <rect x="455" y="118" width="315" height="52" rx="6" fill="#e8f0fa" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="612" y="138" text-anchor="middle" font-size="11" fill="#555">Regla delta (Rescorla-Wagner)</text>
+  <text x="612" y="158" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a6090" font-family="Georgia, serif">ΔV = α × (R − V)</text>
+
+  <!-- RL Component 1: Space -->
+  <rect x="455" y="182" width="315" height="52" rx="5" fill="#f0f4fa" stroke="#90b8d8" stroke-width="1"/>
+  <text x="473" y="200" font-size="10" font-weight="bold" fill="#1a6090">ESPACIO DE POSIBILIDADES</text>
+  <text x="473" y="215" font-size="11" fill="#333">Espacio de valores  V</text>
+  <text x="473" y="227" font-size="10" fill="#666" font-style="italic">todos los posibles valores de estímulos/respuestas</text>
+
+  <!-- RL Component 2: Evaluation -->
+  <rect x="455" y="244" width="315" height="52" rx="5" fill="#f0f4fa" stroke="#90b8d8" stroke-width="1"/>
+  <text x="473" y="262" font-size="10" font-weight="bold" fill="#1a6090">FUNCIÓN DE EVALUACIÓN</text>
+  <text x="473" y="277" font-size="11" fill="#333">Resultado obtenido  R</text>
+  <text x="473" y="289" font-size="10" fill="#666" font-style="italic">suceso biológicamente importante</text>
+
+  <!-- RL Component 3: Discrepancy signal -->
+  <rect x="455" y="306" width="315" height="52" rx="5" fill="#f0f4fa" stroke="#90b8d8" stroke-width="1"/>
+  <text x="473" y="324" font-size="10" font-weight="bold" fill="#1a6090">SEÑAL DE ACTUALIZACIÓN</text>
+  <text x="473" y="339" font-size="11" fill="#333">(R − V)  — error de predicción</text>
+  <text x="473" y="351" font-size="10" fill="#666" font-style="italic">¿cuánto difirió el resultado de lo esperado?</text>
+
+  <!-- RL Component 4: Update -->
+  <rect x="455" y="368" width="315" height="52" rx="5" fill="#f0f4fa" stroke="#90b8d8" stroke-width="1"/>
+  <text x="473" y="386" font-size="10" font-weight="bold" fill="#1a6090">RESULTADO</text>
+  <text x="473" y="401" font-size="11" fill="#333">Cambio en el valor asociativo  ΔV</text>
+  <text x="473" y="413" font-size="10" fill="#666" font-style="italic">el organismo ajusta su predicción</text>
+
+  <!-- === CONNECTING ARROWS & LABELS === -->
+  <!-- Arrow for space -->
+  <line x1="365" y1="208" x2="455" y2="208" stroke="#888" stroke-width="1.5"/>
+  <polygon points="449,204 457,208 449,212" fill="#888"/>
+  <rect x="378" y="198" width="64" height="20" rx="3" fill="#fff8e0" stroke="#e0c840" stroke-width="1"/>
+  <text x="410" y="212" text-anchor="middle" font-size="9" fill="#806000" font-weight="bold">≡ mismo rol</text>
+
+  <!-- Arrow for evaluation -->
+  <line x1="365" y1="270" x2="455" y2="270" stroke="#888" stroke-width="1.5"/>
+  <polygon points="449,266 457,270 449,274" fill="#888"/>
+  <rect x="378" y="260" width="64" height="20" rx="3" fill="#fff8e0" stroke="#e0c840" stroke-width="1"/>
+  <text x="410" y="274" text-anchor="middle" font-size="9" fill="#806000" font-weight="bold">≡ mismo rol</text>
+
+  <!-- Arrow for discrepancy -->
+  <line x1="365" y1="332" x2="455" y2="332" stroke="#888" stroke-width="1.5"/>
+  <polygon points="449,328 457,332 449,336" fill="#888"/>
+  <rect x="378" y="322" width="64" height="20" rx="3" fill="#fff8e0" stroke="#e0c840" stroke-width="1"/>
+  <text x="410" y="336" text-anchor="middle" font-size="9" fill="#806000" font-weight="bold">≡ mismo rol</text>
+
+  <!-- Arrow for result -->
+  <line x1="365" y1="394" x2="455" y2="394" stroke="#888" stroke-width="1.5"/>
+  <polygon points="449,390 457,394 449,398" fill="#888"/>
+  <rect x="378" y="384" width="64" height="20" rx="3" fill="#fff8e0" stroke="#e0c840" stroke-width="1"/>
+  <text x="410" y="398" text-anchor="middle" font-size="9" fill="#806000" font-weight="bold">≡ mismo rol</text>
+
+  <!-- Bottom note -->
+  <text x="410" y="453" text-anchor="middle" font-size="10" fill="#555" font-style="italic">
+    La diferencia entre las dos columnas es de implementación, no de lógica.
+  </text>
+  <text x="410" y="467" text-anchor="middle" font-size="10" fill="#555" font-style="italic">
+    El esquema — variación, evaluación, actualización proporcional a una discrepancia — es el mismo.
+  </text>
+
+</svg>
