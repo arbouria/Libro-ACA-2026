@@ -1,12 +1,10 @@
-# Capítulo 2: Evolución y Adaptación
-
-**Borrador**
+---
+title: "Teoría de la Selección Natural"
+---
 
 Para cualquier observador del mundo natural, dos propiedades resultan sorprendentes y merecen explicación. La primera es la enorme variabilidad en la morfología, fisiología y comportamiento de los organismos que habitan este planeta. La segunda es que esa variabilidad parece estar finamente ajustada a las características del entorno donde viven esos organismos. La teoría de la selección natural, propuesta por Charles Darwin en 1859, ofrece una explicación unificada de ambas observaciones a partir de tres principios sorprendentemente simples.
 
 Este capítulo tiene dos propósitos. El primero es presentar esos principios, que constituyen uno de los logros más importantes de la ciencia. El segundo, menos obvio pero igualmente importante para este curso, es mostrar que la estructura conceptual de la selección natural es la misma que subyace a los procesos de aprendizaje que estudiaremos en los bloques siguientes. Para hacer esa conexión con precisión, introduciremos hacia el final del capítulo un modelo matemático del cambio evolutivo —la ecuación de Price en su versión simplificada— que revelará por qué la similitud entre evolución y aprendizaje no es solo una metáfora cómoda sino una identidad estructural.
-
----
 
 ## La Variabilidad y el Ajuste al Entorno
 
@@ -15,8 +13,6 @@ Un recorrido por cualquier parque, zoológico, o incluso una búsqueda rápida e
 Lo que Darwin notó en su viaje en el Beagle, y que constituye el punto de partida de su teoría, es que esta variabilidad no es aleatoria con respecto al entorno: está correlacionada con él. En los archipiélagos de las Galápagos, pájaros genéticamente relacionados presentaban picos radicalmente diferentes según el tipo de alimento disponible en la isla que habitaban: picos largos y delgados para acceder al néctar de flores, picos cortos y fuertes para romper semillas duras. Esta coincidencia entre la forma del organismo y las demandas del entorno es lo que llamamos *adaptación*, y es el fenómeno que requiere explicación.
 
 A mediados del siglo XIX también se sabía, gracias al análisis de fósiles y la datación de capas geológicas, que la diversidad biológica había cambiado a lo largo del tiempo: había especies que habían desaparecido y otras que habían surgido en épocas geológicas más recientes. Era evidente que el mundo biológico no había sido "creado" todo a la vez, y que podía hablarse de una *evolución* de los organismos. La pregunta era: ¿qué proceso explica tanto el cambio a lo largo del tiempo como el ajuste al entorno?
-
----
 
 ## Los Tres Principios de la Selección Natural
 
@@ -32,8 +28,6 @@ Cuando estos tres principios operan a la vez, ocurre selección natural: generac
 
 Vale la pena detenerse en algo que sorprende a muchos estudiantes al encontrarse con estos principios por primera vez: ninguno de ellos requiere intención, planificación ni dirección consciente. La selección natural es un proceso automático. Las bacterias no "intentan" desarrollar resistencia a los antibióticos; simplemente, aquellas que por variación aleatoria ya tenían cierta resistencia sobreviven y se reproducen más, y su descendencia hereda esa característica. La dirección adaptativa emerge de la interacción entre variación aleatoria y el filtro del entorno, sin necesidad de un agente que la dirija.
 
----
-
 ## Las Fuentes de la Variabilidad
 
 La teoría darwiniana original reconocía la existencia de variación heredable, pero no conocía sus mecanismos —la genética mendeliana se integró décadas después, en lo que se conoce como la Síntesis Moderna. Hoy sabemos que la variabilidad surge principalmente de tres fuentes.
@@ -43,8 +37,6 @@ Las **mutaciones genéticas** son cambios en el material genético que pueden oc
 La **reproducción sexual y recombinación** no crea alelos nuevos, pero genera nuevas combinaciones de los existentes. Cada descendiente recibe una mezcla única de genes de ambos progenitores, lo que produce variación en los fenotipos incluso entre hermanos. La reproducción sexual es una máquina extraordinariamente eficiente para generar diversidad combinatoria.
 
 Finalmente, los **eventos geográficos y ecológicos** pueden separar poblaciones y forzarlas a evolucionar de manera independiente. El aislamiento geográfico —la formación de una barrera que divide una población— divide el acervo genético en dos. Con el tiempo, cada subpoblación acumula mutaciones distintas y puede diverger hasta dar origen a nuevas especies.
-
----
 
 ## El Entorno como Filtro
 
@@ -94,6 +86,8 @@ Esta estructura de restricciones anidadas es análoga a lo que en el capítulo s
 
 Una limitación adicional de la selección natural como algoritmo de búsqueda proviene de la naturaleza misma del proceso de ascenso por el paisaje adaptativo. Imaginemos a alguien con los ojos vendados que intenta llegar al punto más alto de una cordillera. La regla que sigue es simple: en cada paso, explora las alturas cercanas y se desplaza hacia la más alta. Si la cordillera tiene un único pico, esta regla lo llevará allí. Pero si hay varios picos separados por valles, la persona quedará atrapada en el primero que encuentre, aunque haya picos más altos en otras regiones.
 
+<img src="Figuras/fig3_2_óptimos_locales.png" width="750" style="display: block; margin: 0 auto;">
+
 La selección natural enfrenta exactamente este problema. Una población bien adaptada a su entorno actual puede quedar "atrapada" en un óptimo local: cualquier pequeño cambio la llevaría a un estado menos exitoso, aunque existan configuraciones mucho mejores que requieren pasar por estados intermedios desfavorables. Para escapar de un óptimo local se necesita suficiente variación —exploración— como para "saltar" el valle, pero aumentar la variación tiene costos: también puede sacar a la población de picos donde ya estaba.
 
 Este dilema entre explorar nuevas regiones y explotar lo conocido aparece en todos los algoritmos de búsqueda y aprendizaje. Lo encontraremos en el contexto del forrajeo, la elección entre opciones, el aprendizaje secuencial. La evolución no lo resuelve de manera perfecta; tampoco lo hacen los organismos que aprenden.
@@ -130,15 +124,17 @@ $$I(t+1) = r \times I(t)$$
 
 donde $I(t)$ es el número de infectados en el tiempo $t$, y $r$ es la tasa de reproducción —cuántas personas, en promedio, infecta cada persona infectada. Si $r > 1$, los casos crecen exponencialmente; si $r < 1$, decrecen. Esta simple ecuación captura la dinámica del contagio. La esencia de las ecuaciones en diferencia es esta: expresar el cambio de forma recursiva, de modo que cada nuevo valor $t+1$ se convierte en el punto de partida del siguiente paso.
 
-[**Simulador 2: Ecuaciones en diferencia — explorar distintos valores de** $r$ **y condiciones iniciales**]
+Para explorar estos conceptos, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 2.
 
----
 
 ## Covarianza: La Relación entre Rasgo y Éxito Reproductivo
 
 En teoría evolutiva queremos una ecuación que nos diga cómo cambia la distribución de rasgos en una población de una generación a la siguiente. Consideremos un rasgo cuantitativo —altura, velocidad, longitud del pico. En la generación $t$, ese rasgo tiene un valor promedio en la población que llamamos $\bar{z}(t)$. En la siguiente generación, tendrá un nuevo valor promedio $\bar{z}(t+1)$. El cambio es:
 
 $$\Delta \bar{z} = \bar{z}(t+1) - \bar{z}(t)$$
+
+Para explorar la covarianza, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 3.
+
 
 Esta diferencia nos dice si el rasgo, en promedio, aumentó, disminuyó o se mantuvo igual. La pregunta fundamental es: ¿de qué depende $\Delta \bar{z}$? ¿Qué determina la dirección y magnitud del cambio evolutivo?
 
@@ -162,8 +158,6 @@ Una covarianza positiva significa que cuando $z$ está por encima de su media, $
 
 En el contexto evolutivo, $\text{Cov}(w, z)$ nos dice: ¿los organismos con valores altos del rasgo $z$ tienden a tener más descendientes? Si la respuesta es sí, la covarianza es positiva, y ese rasgo tenderá a incrementarse en la población.
 
-[**Simulador 3: Covarianza — manipular distribuciones de rasgo y fitness, observar la covarianza resultante**]
-
 ---
 
 ## La Ecuación del Cambio Evolutivo
@@ -182,11 +176,13 @@ Esta ecuación es elegante porque destila la selección natural a su esencia est
 
 Notemos además que esta es una ecuación en diferencia. Nos dice cómo calcular $\bar{z}(t+1)$ dado $\bar{z}(t)$, exactamente como las ecuaciones que modelaron el crecimiento de COVID. La evolución, al igual que esos procesos, es un sistema dinámico que se actualiza recursivamente.
 
+Para explorar el cambio evolutivo, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 4.
+
+
 ## La Equivalencia con los Modelos de Aprendizaje
 
 La ecuación de Price no es solo un resumen matemático de la selección natural. Tiene una estructura que reaparecerá, con distinto sustrato y distinta escala temporal, cuando estudiemos cómo los organismos aprenden de su experiencia. En ambos casos, el sistema se actualiza en proporción a una discrepancia entre lo que ocurrió y lo que se esperaba —o entre un rasgo y su contribución al éxito. Anticipar esta conexión aquí no es un detalle técnico: es el argumento central de este libro. Los mecanismos de aprendizaje que estudiaremos en los bloques siguientes no son procesos independientes de la evolución, sino instancias del mismo algoritmo operando en una escala de tiempo diferente y sobre un sustrato diferente.
 
-[**Simulador 4: Comparación lado a lado — evolución (ecuación de Price) y aprendizaje (regla delta), con los mismos parámetros de tasa de actualización y condiciones iniciales**]
 
 ### El Problema de la Asignación de Crédito
 

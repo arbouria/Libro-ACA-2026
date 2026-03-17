@@ -38,6 +38,7 @@ book:
     - index.qmd
     - intro.qmd 
     - explicacion.qmd 
+    - evolucion.qmd
     # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
   downloads: [pdf] 
   sidebar:
