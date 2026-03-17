@@ -180,23 +180,7 @@ Notemos además que esta es una ecuación en diferencia. Nos dice cómo calcular
 
 ## La Equivalencia con los Modelos de Aprendizaje
 
-Llegamos ahora al corazón de lo que este capítulo quiere mostrar. La ecuación de Price no es solo una herramienta para describir la evolución —es el prototipo de una clase de algoritmos que reaparecerá, con variaciones, en cada bloque del curso.
-
-Veamos la comparación directamente. En la ecuación de Price, el cambio en el rasgo promedio de la población es proporcional a la covarianza entre ese rasgo y el éxito reproductivo:
-
-$$\Delta \bar{z} = \frac{\text{Cov}(w, z)}{\bar{w}}$$
-
-En los modelos de aprendizaje por refuerzo que veremos en el Bloque II, el cambio en el valor asociativo de un estímulo o respuesta es proporcional al *error de predicción*:
-
-$$\Delta V = \alpha \times (R - V)$$
-
-donde $V$ es el valor actual del estímulo o respuesta, $R$ es el resultado obtenido (el suceso biológicamente importante), y $(R - V)$ es la discrepancia entre lo que ocurrió y lo que se esperaba —el error de predicción.
-
-¿Cuál es la similitud estructural? En ambos casos, el sistema se actualiza en función de una *discrepancia*: en evolución, la discrepancia entre el rasgo de un individuo y el promedio poblacional, ponderada por su éxito reproductivo relativo; en aprendizaje, la discrepancia entre el resultado obtenido y el resultado esperado. En ambos casos, el sistema no necesita conocer la "respuesta correcta" por adelantado —solo necesita medir la brecha entre lo que tiene y lo que el entorno le devuelve, y ajustarse en consecuencia.
-
-Esta no es una metáfora. Es una identidad de estructura algorítmica. La selección natural y el aprendizaje por refuerzo son instancias del mismo principio general: un sistema que se actualiza iterativamente usando retroalimentación del entorno para reducir la brecha entre su estado actual y un estado más exitoso.
-
-Las diferencias son de implementación, no de lógica. En la evolución, el "sistema" es una población y la actualización ocurre en escala de generaciones vía herencia diferencial. En el aprendizaje, el "sistema" es un organismo individual y la actualización ocurre en escala de ensayos vía modificación de valores asociativos. Pero el esquema —variación, evaluación mediante retroalimentación, actualización proporcional a la discrepancia— es el mismo.
+La ecuación de Price no es solo un resumen matemático de la selección natural. Tiene una estructura que reaparecerá, con distinto sustrato y distinta escala temporal, cuando estudiemos cómo los organismos aprenden de su experiencia. En ambos casos, el sistema se actualiza en proporción a una discrepancia entre lo que ocurrió y lo que se esperaba —o entre un rasgo y su contribución al éxito. Anticipar esta conexión aquí no es un detalle técnico: es el argumento central de este libro. Los mecanismos de aprendizaje que estudiaremos en los bloques siguientes no son procesos independientes de la evolución, sino instancias del mismo algoritmo operando en una escala de tiempo diferente y sobre un sustrato diferente.
 
 [**Simulador 4: Comparación lado a lado — evolución (ecuación de Price) y aprendizaje (regla delta), con los mismos parámetros de tasa de actualización y condiciones iniciales**]
 
@@ -208,7 +192,6 @@ Imaginemos un organismo con múltiples rasgos: velocidad de carrera, agudeza vis
 
 Exactamente el mismo problema aparece en el aprendizaje: cuando ocurre un suceso biológicamente importante, ¿a cuál de todos los estímulos y respuestas que precedieron ese suceso se le debe asignar la responsabilidad? Esta pregunta —el *problema de la asignación de crédito*— es el tema central del Bloque II. Lo fascinante es que, aunque la solución evolutiva (covarianza estadística) y la solución del aprendizaje (reducción del error de predicción) parecen diferentes, ambas atacan el mismo problema fundamental: dado un resultado, inferir qué cambios en el sistema llevarán a mejores resultados futuros.
 
----
 
 ## Conexiones con el Resto del Curso
 
@@ -216,7 +199,7 @@ Este capítulo establece tres conexiones que reaparecerán a lo largo del libro.
 
 La primera es la equivalencia entre selección natural y aprendizaje como instancias del mismo algoritmo de actualización iterativa. Cuando en el Bloque II veamos los modelos de asignación de crédito, y en el Bloque III los modelos de elección y optimización, reconocerán la misma estructura que identificamos aquí: espacio de posibilidades, función de evaluación, regla de actualización proporcional a una discrepancia.
 
-La segunda es el papel de las restricciones. En la evolución, las restricciones físicas, genéticas y filogenéticas limitan el espacio de rasgos posibles. En el aprendizaje, los *sesgos inductivos* cumplen la misma función: reducen el espacio de hipótesis y hacen manejable la búsqueda. Veremos esto con detalle en el capítulo sobre asignación de crédito.
+La segunda es el papel de las restricciones. En la evolución, las restricciones físicas, genéticas y filogenéticas limitan el espacio de rasgos posibles. En el aprendizaje, los *sesgos inductivos* cumplen la misma función: reducen el espacio de hipótesis y hacen manejable la búsqueda. Veremos esto con detalle en el capítulo sobre asignación de crédito. Igualmente veremos que los programas de refuerzo son restricciones entre diferentes distribuciones de respuestas.
 
 La tercera es el dilema exploración-explotación. La tensión entre explorar nuevas regiones del espacio de posibilidades y explotar lo conocido aparece en la evolución, en el aprendizaje, y en la elección. Es uno de los problemas fundamentales de la adaptación, y dedicaremos atención específica a sus soluciones en varios capítulos del curso.
 
@@ -231,8 +214,6 @@ La ecuación de Price formaliza este proceso: el cambio en la media de un rasgo 
 La selección natural y el aprendizaje no son metafóricamente similares —son estructuralmente equivalentes. Entender esta equivalencia desde el principio del curso nos dará una ventaja considerable cuando encontremos esas mismas ideas en dominios aparentemente distintos: el condicionamiento, la elección, la planificación secuencial.
 
 # Preguntas de Estudio — Capítulo 2: Evolución y Adaptación
-
----
 
 ## Sección I: Comprensión conceptual
 
@@ -250,8 +231,6 @@ Estas preguntas verifican que los conceptos centrales del capítulo quedaron cla
 
 **6.** ¿Por qué el paisaje adaptativo no es fijo? Describe dos razones por las que puede cambiar a lo largo del tiempo y explica cómo esto complica la idea de que la evolución "optimiza" a los organismos.
 
----
-
 ## Sección II: Restricciones y espacio fenotípico
 
 **7.** El capítulo describe tres tipos de restricciones que limitan el espacio fenotípico accesible: físicas, genético-del desarrollo, y filogenéticas. Da un ejemplo de cada tipo y explica cómo cada una reduce el espacio de posibilidades disponibles para la selección.
@@ -259,8 +238,6 @@ Estas preguntas verifican que los conceptos centrales del capítulo quedaron cla
 **8.** ¿Por qué las restricciones filogenéticas son especialmente relevantes para entender la evolución comparada con un proceso de optimización desde cero? Usa el ejemplo del ojo humano mencionado en el texto o propón uno propio.
 
 **9.** El capítulo conecta las restricciones evolutivas con los "sesgos inductivos" que veremos en aprendizaje. ¿Qué tienen en común? ¿En qué sentido las restricciones no son obstáculos al proceso sino parte de cómo funciona?
-
----
 
 ## Sección III: El modelo matemático
 
@@ -278,40 +255,3 @@ $$\Delta \bar{z} = \frac{\text{Cov}(w, z)}{\bar{w}}$$
 
 **14.** ¿Por qué la ecuación de Price es también una ecuación en diferencia? Escribe explícitamente cómo $\bar{z}(t+1)$ depende de $\bar{z}(t)$ y señala la analogía con el modelo de COVID.
 
----
-
-## Sección IV: La equivalencia con el aprendizaje
-
-**15.** El capítulo presenta esta comparación:
-
-| Selección natural | Aprendizaje por refuerzo |
-|---|---|
-| $\Delta \bar{z} = \text{Cov}(w,z) / \bar{w}$ | $\Delta V = \alpha(R - V)$ |
-
-Identifica el término en cada ecuación que cumple el papel de "señal de actualización" y explica en qué sentido ambos términos miden una *discrepancia*.
-
-**16.** ¿En qué se diferencian la evolución y el aprendizaje por refuerzo en cuanto a escala temporal, sustrato y tipo de "sistema" que se actualiza? ¿Por qué el capítulo afirma que estas diferencias son "de implementación, no de lógica"?
-
-**17.** Describe el problema de la asignación de crédito tal como se presenta en la evolución. Luego reformúlalo en términos de aprendizaje: ¿cuál sería el equivalente del problema cuando un animal aprende qué estímulos predicen comida?
-
----
-
-## Sección V: Aplicación e integración
-
-**18.** Un estudiante dice: "La selección natural es básicamente lo mismo que el aprendizaje —la naturaleza aprende qué rasgos funcionan". Evalúa esta afirmación: ¿en qué sentido es correcta? ¿En qué sentido es imprecisa o incompleta?
-
-**19.** El dilema exploración-explotación aparece tanto en evolución (mutación vs. selección) como en aprendizaje. Describe concretamente en qué consiste este dilema en cada dominio y explica por qué no existe una solución óptima única.
-
-**20.** Al inicio del capítulo se afirman dos observaciones sobre el mundo natural: la variabilidad y el ajuste al entorno. Al finalizar la lectura, ¿cómo explica la teoría de la selección natural cada una de estas observaciones? Construye una respuesta que integre los conceptos de variabilidad heredable, selección diferencial, herencia, paisaje adaptativo y restricciones.
-
----
-
-## Preguntas de profundización (optativas)
-
-Estas preguntas no tienen respuesta única y están diseñadas para discusión o reflexión adicional.
-
-**P1.** Si la selección natural es análoga a un algoritmo de búsqueda, ¿qué ventajas y desventajas tendría frente a un algoritmo que diseña soluciones desde cero? ¿Podría la evolución producir soluciones que un diseñador racional nunca consideraría?
-
-**P2.** El capítulo afirma que la adaptación "es siempre relativa al contexto". ¿Qué implicaciones tiene esto para el concepto de progreso evolutivo? ¿Tiene sentido decir que los humanos son "más evolucionados" que las bacterias?
-
-**P3.** La ecuación de Price fue derivada en 1970. Antes de su existencia, ¿cómo creen que los biólogos describían el cambio evolutivo? ¿Qué ganó la teoría al tener esta formalización matemática?
