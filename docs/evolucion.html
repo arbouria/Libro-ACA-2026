@@ -29,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./Restricciones.html" rel="next">
 <link href="./explicacion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -326,6 +327,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -471,40 +478,13 @@ window.Quarto = {
 <p>donde <span class="math inline">\(f\)</span> es alguna función que transforma el estado actual en el estado siguiente. Veamos un ejemplo familiar: el crecimiento de casos de COVID-19. En los modelos epidemiológicos más simples, el número de personas infectadas en la semana siguiente depende del número de infectados esta semana:</p>
 <p><span class="math display">\[I(t+1) = r \times I(t)\]</span></p>
 <p>donde <span class="math inline">\(I(t)\)</span> es el número de infectados en el tiempo <span class="math inline">\(t\)</span>, y <span class="math inline">\(r\)</span> es la tasa de reproducción —cuántas personas, en promedio, infecta cada persona infectada. Si <span class="math inline">\(r &gt; 1\)</span>, los casos crecen exponencialmente; si <span class="math inline">\(r &lt; 1\)</span>, decrecen. Esta simple ecuación captura la dinámica del contagio. La esencia de las ecuaciones en diferencia es esta: expresar el cambio de forma recursiva, de modo que cada nuevo valor <span class="math inline">\(t+1\)</span> se convierte en el punto de partida del siguiente paso.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>🕹️ ¡Prueba el Simulador Interactivo!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Para profundizar en los conceptos de este capítulo, hemos preparado un simulador.</p>
-<p>Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 2:</p>
-<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb" target="_blank"><strong>Abrir Simuladores en Google Colab</strong></a></p>
-</div>
-</div>
+<p>Para explorar estos conceptos, abra los <a href="https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0" target="_blank">Simuladores en Google Colab</a> y siga las instrucciones de la introducción para dirigirse al simulador 2.</p>
 </section>
 <section id="covarianza-la-relación-entre-rasgo-y-éxito-reproductivo" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="covarianza-la-relación-entre-rasgo-y-éxito-reproductivo"><span class="header-section-number">4.8</span> Covarianza: La Relación entre Rasgo y Éxito Reproductivo</h2>
 <p>En teoría evolutiva queremos una ecuación que nos diga cómo cambia la distribución de rasgos en una población de una generación a la siguiente. Consideremos un rasgo cuantitativo —altura, velocidad, longitud del pico. En la generación <span class="math inline">\(t\)</span>, ese rasgo tiene un valor promedio en la población que llamamos <span class="math inline">\(\bar{z}(t)\)</span>. En la siguiente generación, tendrá un nuevo valor promedio <span class="math inline">\(\bar{z}(t+1)\)</span>. El cambio es:</p>
 <p><span class="math display">\[\Delta \bar{z} = \bar{z}(t+1) - \bar{z}(t)\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>🕹️ ¡Prueba el Simulador Interactivo!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 3:</p>
-<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb" target="_blank"><strong>Abrir Simuladores en Google Colab</strong></a></p>
-</div>
-</div>
+<p>Para explorar la covarianza, abra los <a href="https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0" target="_blank">Simuladores en Google Colab</a> y siga las instrucciones de la introducción para dirigirse al simulador 3.</p>
 <p>Esta diferencia nos dice si el rasgo, en promedio, aumentó, disminuyó o se mantuvo igual. La pregunta fundamental es: ¿de qué depende <span class="math inline">\(\Delta \bar{z}\)</span>? ¿Qué determina la dirección y magnitud del cambio evolutivo?</p>
 <p>La respuesta involucra la relación estadística entre el rasgo y el éxito reproductivo. Para medirla necesitamos un concepto: la <strong>covarianza</strong>.</p>
 <p>Imaginemos que medimos dos cosas en cada organismo de una población: el valor de algún rasgo <span class="math inline">\(z\)</span> —digamos, largo de alas— y su éxito reproductivo <span class="math inline">\(w\)</span> —número de descendientes. Queremos saber si estas dos variables están relacionadas: cuando <span class="math inline">\(z\)</span> es grande, ¿<span class="math inline">\(w\)</span> tiende a ser grande también? ¿O tiende a ser pequeño? ¿O no hay relación?</p>
@@ -527,20 +507,7 @@ window.Quarto = {
 <p>La lógica es directa. Si <span class="math inline">\(\text{Cov}(w, z) &gt; 0\)</span>, entonces <span class="math inline">\(\Delta \bar{z} &gt; 0\)</span>: el rasgo aumenta en promedio. Los individuos con valores altos del rasgo tienden a tener más descendientes, y el promedio poblacional se desplaza hacia arriba. Si <span class="math inline">\(\text{Cov}(w, z) &lt; 0\)</span>, entonces <span class="math inline">\(\Delta \bar{z} &lt; 0\)</span>: el rasgo disminuye. Si <span class="math inline">\(\text{Cov}(w, z) = 0\)</span>, entonces <span class="math inline">\(\Delta \bar{z} = 0\)</span>: no hay cambio. El rasgo no está asociado con el éxito reproductivo y la selección no tiene base para alterarlo.</p>
 <p>Esta ecuación es elegante porque destila la selección natural a su esencia estadística: <strong>el cambio en la media de un rasgo depende de qué tanto ese rasgo covaria con el éxito reproductivo</strong>. No necesita conocer nada sobre mecanismos genéticos, estructuras moleculares ni historias individuales; solo necesita la relación estadística entre rasgo y éxito.</p>
 <p>Notemos además que esta es una ecuación en diferencia. Nos dice cómo calcular <span class="math inline">\(\bar{z}(t+1)\)</span> dado <span class="math inline">\(\bar{z}(t)\)</span>, exactamente como las ecuaciones que modelaron el crecimiento de COVID. La evolución, al igual que esos procesos, es un sistema dinámico que se actualiza recursivamente.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>🕹️ ¡Prueba el Simulador Interactivo!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 4:</p>
-<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb" target="_blank"><strong>Abrir Simuladores en Google Colab</strong></a></p>
-</div>
-</div>
+<p>Para explorar el cambio evolutivo, abra los <a href="https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0" target="_blank">Simuladores en Google Colab</a> y siga las instrucciones de la introducción para dirigirse al simulador 4.</p>
 </section>
 <section id="la-equivalencia-con-los-modelos-de-aprendizaje" class="level2" data-number="4.10">
 <h2 data-number="4.10" class="anchored" data-anchor-id="la-equivalencia-con-los-modelos-de-aprendizaje"><span class="header-section-number">4.10</span> La Equivalencia con los Modelos de Aprendizaje</h2>
@@ -1019,6 +986,9 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Restricciones.html" class="pagination-link" aria-label="El Papel de las Restricciones en la Evolución del  Comportamiento Adaptable">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

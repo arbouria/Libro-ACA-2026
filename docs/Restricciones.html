@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Arturo Bouzas">
-<meta name="dcterms.date" content="2026-03-21">
 
-<title>Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<title>5&nbsp; El Papel de las Restricciones en la Evolución del Comportamiento Adaptable – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./evolucion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -74,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles/custom.css">
 </head>
@@ -249,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Restricciones.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -277,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
   </div>
 </li>
@@ -301,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
   </div>
 </li>
@@ -315,31 +342,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a>
+  <li><a href="#las-restricciones-del-organismo" id="toc-las-restricciones-del-organismo" class="nav-link active" data-scroll-target="#las-restricciones-del-organismo"><span class="header-section-number">5.1</span> Las Restricciones del Organismo</a></li>
+  <li><a href="#las-restricciones-del-entorno" id="toc-las-restricciones-del-entorno" class="nav-link" data-scroll-target="#las-restricciones-del-entorno"><span class="header-section-number">5.2</span> Las Restricciones del Entorno</a></li>
+  <li><a href="#dos-tipos-de-algoritmos-adaptativos" id="toc-dos-tipos-de-algoritmos-adaptativos" class="nav-link" data-scroll-target="#dos-tipos-de-algoritmos-adaptativos"><span class="header-section-number">5.3</span> Dos Tipos de Algoritmos Adaptativos</a></li>
+  <li><a href="#las-propiedades-estadísticas-del-entorno" id="toc-las-propiedades-estadísticas-del-entorno" class="nav-link" data-scroll-target="#las-propiedades-estadísticas-del-entorno"><span class="header-section-number">5.4</span> Las Propiedades Estadísticas del Entorno</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">5.5</span> Conclusión</a></li>
+  <li><a href="#preguntas-de-estudio" id="toc-preguntas-de-estudio" class="nav-link" data-scroll-target="#preguntas-de-estudio"><span class="header-section-number">6</span> Preguntas de Estudio</a>
   <ul class="collapse">
-  <li><a href="#prefacio-1" id="toc-prefacio-1" class="nav-link" data-scroll-target="#prefacio-1"><span class="header-section-number">0.0.1</span> Prefacio</a></li>
-  </ul></li>
-  <li><a href="#prefacio-2" id="toc-prefacio-2" class="nav-link" data-scroll-target="#prefacio-2"><span class="header-section-number">1</span> Prefacio</a>
-  <ul class="collapse">
-  <li><a href="#principios-y-modelos" id="toc-principios-y-modelos" class="nav-link" data-scroll-target="#principios-y-modelos"><span class="header-section-number">1.1</span> Principios y Modelos</a></li>
-  <li><a href="#para-quién-es-este-libro" id="toc-para-quién-es-este-libro" class="nav-link" data-scroll-target="#para-quién-es-este-libro"><span class="header-section-number">1.2</span> ¿Para Quién es Este Libro?</a></li>
-  <li><a href="#filosofía-del-libro" id="toc-filosofía-del-libro" class="nav-link" data-scroll-target="#filosofía-del-libro"><span class="header-section-number">1.3</span> Filosofía del Libro</a>
-  <ul class="collapse">
-  <li><a href="#marco-conceptual-unificado" id="toc-marco-conceptual-unificado" class="nav-link" data-scroll-target="#marco-conceptual-unificado"><span class="header-section-number">1.3.1</span> Marco Conceptual Unificado</a></li>
-  <li><a href="#énfasis-en-principios-generales" id="toc-énfasis-en-principios-generales" class="nav-link" data-scroll-target="#énfasis-en-principios-generales"><span class="header-section-number">1.3.2</span> Énfasis en Principios Generales</a></li>
-  <li><a href="#implementación-computacional" id="toc-implementación-computacional" class="nav-link" data-scroll-target="#implementación-computacional"><span class="header-section-number">1.3.3</span> Implementación Computacional</a></li>
-  <li><a href="#simuladores-interactivos" id="toc-simuladores-interactivos" class="nav-link" data-scroll-target="#simuladores-interactivos"><span class="header-section-number">1.3.4</span> Simuladores Interactivos</a></li>
-  </ul></li>
-  <li><a href="#cómo-usar-este-libro" id="toc-cómo-usar-este-libro" class="nav-link" data-scroll-target="#cómo-usar-este-libro"><span class="header-section-number">1.4</span> Cómo Usar Este Libro</a>
-  <ul class="collapse">
-  <li><a href="#para-estudiantes" id="toc-para-estudiantes" class="nav-link" data-scroll-target="#para-estudiantes"><span class="header-section-number">1.4.1</span> Para Estudiantes</a></li>
-  <li><a href="#para-instructores" id="toc-para-instructores" class="nav-link" data-scroll-target="#para-instructores"><span class="header-section-number">1.4.2</span> Para Instructores</a></li>
-  </ul></li>
-  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales"><span class="header-section-number">1.5</span> Recursos Adicionales</a></li>
-  <li><a href="#licencia-y-uso" id="toc-licencia-y-uso" class="nav-link" data-scroll-target="#licencia-y-uso"><span class="header-section-number">1.6</span> Licencia y Uso</a></li>
-  <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos"><span class="header-section-number">1.7</span> Agradecimientos</a></li>
-  <li><a href="#contacto" id="toc-contacto" class="nav-link" data-scroll-target="#contacto"><span class="header-section-number">1.8</span> Contacto</a></li>
-  <li><a href="#aviso-libro-en-desarrollo" id="toc-aviso-libro-en-desarrollo" class="nav-link" data-scroll-target="#aviso-libro-en-desarrollo"><span class="header-section-number">1.9</span> Aviso: Libro en Desarrollo</a></li>
+  <li><a href="#sección-i-restricciones-del-organismo-y-del-entorno" id="toc-sección-i-restricciones-del-organismo-y-del-entorno" class="nav-link" data-scroll-target="#sección-i-restricciones-del-organismo-y-del-entorno"><span class="header-section-number">6.0.1</span> Sección I: Restricciones del organismo y del entorno</a></li>
+  <li><a href="#sección-ii-comportamiento-adaptado-y-comportamiento-adaptable" id="toc-sección-ii-comportamiento-adaptado-y-comportamiento-adaptable" class="nav-link" data-scroll-target="#sección-ii-comportamiento-adaptado-y-comportamiento-adaptable"><span class="header-section-number">6.0.2</span> Sección II: Comportamiento adaptado y comportamiento adaptable</a></li>
+  <li><a href="#sección-iii-los-dos-tipos-de-algoritmos-adaptativos" id="toc-sección-iii-los-dos-tipos-de-algoritmos-adaptativos" class="nav-link" data-scroll-target="#sección-iii-los-dos-tipos-de-algoritmos-adaptativos"><span class="header-section-number">6.0.3</span> Sección III: Los dos tipos de algoritmos adaptativos</a></li>
+  <li><a href="#sección-iv-las-propiedades-estadísticas-del-entorno" id="toc-sección-iv-las-propiedades-estadísticas-del-entorno" class="nav-link" data-scroll-target="#sección-iv-las-propiedades-estadísticas-del-entorno"><span class="header-section-number">6.0.4</span> Sección IV: Las propiedades estadísticas del entorno</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -350,33 +363,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Arturo Bouzas </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Universidad Nacional Autónoma de México
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">21 March 2026</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -386,87 +380,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="prefacio" class="level1 unnumbered">
-<h1 class="unnumbered">Prefacio</h1>
-<section id="prefacio-1" class="level3" data-number="0.0.1">
-<h3 data-number="0.0.1" class="anchored" data-anchor-id="prefacio-1"><span class="header-section-number">0.0.1</span> Prefacio</h3>
+<p>Suponga que es ingeniero y su empresa le pide diseñar un robot de servicio autónomo para hogares. En su primera versión, el dueño conecta el robot a una toma de corriente antes de acostarse, como lo hace con su celular. Durante la noche el robot trabaja con esa energía, y por la mañana, cuando la batería se agota, se detiene. Usted puede mejorar la autonomía con baterías de mayor duración, pero el problema no desaparece: más tarde o más temprano, sin recarga, el robot se inmoviliza.</p>
+<p>Un robot verdaderamente autónomo tendría que recargarse por sí mismo. Pero qué solución de diseño es la correcta depende de dónde va a operar. Si todas las casas fueran idénticas y la toma de corriente siempre estuviera en el mismo lugar, bastaría programar la ruta: a tal hora, dirigirse al punto X. Pero si las casas varían —que es el caso real— el robot necesita un algoritmo que le permita <em>aprender</em> la ubicación de las tomas en cada nuevo hogar. Y si el robot fuera a explorar un planeta desconocido, necesitaría algo más: algoritmos capaces de aprender en condiciones de incertidumbre profunda sobre cómo funciona ese entorno.</p>
+<p>La selección natural ha operado exactamente como ese ingeniero. Los agentes biológicos enfrentan el mismo problema fundamental: obtener los recursos necesarios para sobrevivir y reproducirse, lo que en este libro llamamos <strong>sucesos biológicamente importantes</strong> (SBI). Como vimos en el capítulo anterior, la variabilidad heredable en el acceso a los SBI genera diferencias en éxito reproductivo, y esas diferencias acumuladas producen adaptación. La pregunta de este capítulo es cuáles tipos de soluciones ha seleccionado la evolución y qué determina cuál es la apropiada en cada caso.</p>
+<p>La respuesta depende de dos conjuntos de restricciones: las que impone el propio organismo y las que impone el entorno.</p>
+<section id="las-restricciones-del-organismo" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="las-restricciones-del-organismo"><span class="header-section-number">5.1</span> Las Restricciones del Organismo</h2>
+<p>El comportamiento tiene costos. El primero y más fundamental es que cualquier comportamiento consume tiempo, y el tiempo disponible es finito. No existe tal cosa como un momento de inactividad en sentido estricto: incluso “permanecer quieto” o “dormir” es un comportamiento que ocupa tiempo y cumple funciones. Si sumamos la duración de todos los comportamientos posibles a lo largo de un período, obtenemos una identidad:</p>
+<p><span class="math display">\[T = t_1 + t_2 + t_3 \dots + t_n\]</span></p>
+<p>Esta ecuación expresa una <em>restricción lineal</em>: los diferentes comportamientos compiten entre sí por el tiempo disponible. Cada segundo dedicado a buscar alimento es un segundo menos disponible para vigilar depredadores, para aparearse, para descansar. A esto le llamamos <strong>costo de oportunidad</strong>: el valor de la mejor alternativa a la que se renuncia cuando se elige una opción. Un agente que dedica demasiado tiempo a esconderse tendrá poco tiempo para obtener alimento o encontrar pareja, y dependiendo del entorno, eso puede resultar en menor éxito reproductivo que un animal con una distribución más equilibrada.</p>
+<p>Estos <strong>trade-offs</strong> son ubicuos en biología porque las restricciones fundamentales —tiempo finito, energía limitada— hacen imposible maximizar todo simultáneamente. Como vimos al hablar de paisajes adaptativos, el óptimo es siempre un balance entre presiones en tensión. Esta restricción reaparecerá con fuerza en el Bloque III, cuando estudiemos cómo los organismos distribuyen su comportamiento entre opciones que compiten.</p>
+<p>Un segundo grupo de restricciones del organismo incluye su estructura biológica, metabólica, neuronal y física. Estas características delimitan el rango de comportamientos posibles —el <strong>espacio de posibilidades</strong>— y determinan el costo energético de cada uno. A estas restricciones se suman los <strong>costos cognitivos</strong> de los algoritmos mismos: algunos mecanismos de aprendizaje requieren mayor capacidad de memoria o procesamiento, lo que tampoco es gratuito.</p>
 </section>
+<section id="las-restricciones-del-entorno" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="las-restricciones-del-entorno"><span class="header-section-number">5.2</span> Las Restricciones del Entorno</h2>
+<p>Además de las limitaciones del organismo, el entorno impone sus propias condiciones. La más fundamental es si las condiciones que determinan la disponibilidad de los SBI son <strong>constantes o variables</strong> a lo largo del tiempo.</p>
+<p>Cuando las condiciones son relativamente constantes a lo largo de la historia evolutiva de una especie, la selección natural puede codificar directamente en el genoma las respuestas apropiadas. El resultado es el <strong>comportamiento adaptado</strong>: patrones conductuales que no requieren aprendizaje individual porque la solución ya está incorporada filogenéticamente. El reflejo de retirada ante un estímulo doloroso es un ejemplo: la relación entre calor intenso y daño tisular ha sido suficientemente constante durante millones de años. Otro ejemplo es la impronta en aves: los patitos siguen al primer objeto en movimiento que perciben después de la eclosión porque, en la historia de esa especie, ese objeto era invariablemente la madre. El ingeniero que escribe directamente en el código del robot la respuesta correcta está haciendo, en miniatura, lo que la selección natural hace con el comportamiento adaptado.</p>
+<p>Sin embargo, los entornos de la mayoría de los organismos son variables, volátiles e inciertos. En esas condiciones, una respuesta conductual genéticamente fija sería evolutivamente subóptima: el entorno cambia, pero la respuesta no puede hacerlo. Ante un entorno variable, la selección natural favorece algo radicalmente diferente: no codificar respuestas específicas, sino codificar <strong>algoritmos adaptativos</strong> que permitan al organismo ajustar su conducta a las condiciones particulares de su entorno, en tiempo real. A esto le llamamos <strong>comportamiento adaptable</strong>.</p>
 </section>
-<section id="prefacio-2" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Prefacio</h1>
-<section id="principios-y-modelos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="principios-y-modelos"><span class="header-section-number">1.1</span> Principios y Modelos</h2>
-<p>Este libro es una edición revisada y extendida del libro de notas <a href="https://arbouria.github.io/Notas-Aprendizaje-y-Comportamiento-Adaptable-I/">Aprendizaje y Comportamiento Adaptable</a>. Su origen se encuentra en las presentaciones que desarrollé a lo largo de los años para los tres cursos de Aprendizaje y Comportamiento Adaptable que imparto en la Facultad de Psicología de la UNAM. El libro ofrece una introducción rigurosa pero accesible a los principios y modelos del aprendizaje y comportamiento adaptable. A diferencia de los textos que suelen organizarse como un catálogo histórico de protocolos experimentales (condicionamiento clásico, instrumental, etc.), este libro se estructura alrededor de problemas de adaptación. Aquí no solo preguntamos qué hacen los organismos, sino qué problemas están resolviendo y qué algoritmos han evolucionado para resolverlos.</p>
+<section id="dos-tipos-de-algoritmos-adaptativos" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="dos-tipos-de-algoritmos-adaptativos"><span class="header-section-number">5.3</span> Dos Tipos de Algoritmos Adaptativos</h2>
+<p>Dentro del comportamiento adaptable pueden distinguirse dos grandes familias de algoritmos, según la estructura estadística del entorno al que responden.</p>
+<p>Considere la vida de una bacteria en el intestino. La glucosa está dispersa de manera impredecible y la bacteria carece de receptores que le permitan detectar la fuente a distancia. Una solución posible es el movimiento aleatorio; la que evolucionó es más efectiva: un algoritmo de ascenso de colina basado en comparaciones sucesivas de la concentración del nutriente. Si en este momento la concentración es mayor que hace un instante, continuar en la misma dirección; si es menor, cambiar. Este algoritmo no requiere memoria: utiliza solo información local del momento presente. En el Bloque I estudiaremos este tipo de mecanismos —todos reactivos, sin integración de experiencia previa.</p>
+<p>Cuando el entorno tiene una estructura causal —cuando los SBI no ocurren al azar sino correlacionados con ciertos tiempos, lugares, señales o acciones— surge la posibilidad de aprovechar esa estructura. Un organismo que recuerda dónde encontró alimento ayer puede regresar mañana; uno que aprendió que cierto sonido precede a un depredador puede anticiparse. Estos algoritmos, que llamamos <strong>aprendizaje</strong>, integran la experiencia previa para reducir la incertidumbre sobre el entorno. La diferencia respecto a los algoritmos reactivos no es de complejidad superficial sino de lógica: el aprendizaje solo tiene sentido si el entorno tiene estructura que pueda detectarse y aprovecharse.</p>
+<p>Esto nos lleva a una pregunta que es, en el sentido del capítulo sobre explicación, una pregunta de nivel computacional: ¿qué tipos de estructura estadística puede tener un entorno? Especificar esas propiedades es especificar los problemas que los mecanismos de aprendizaje deben resolver —y, por tanto, organizar qué mecanismos vale la pena estudiar.</p>
 </section>
-<section id="para-quién-es-este-libro" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="para-quién-es-este-libro"><span class="header-section-number">1.2</span> ¿Para Quién es Este Libro?</h2>
-<ol type="1">
-<li><p><strong>Estudiantes de licenciatura</strong> en psicología, neurociencia o ciencia cognitiva que buscan ir más allá de la descripción verbal y desean una introducción a los modelos matemáticos del comportamiento adaptable. Se asume conocimiento básico de matemáticas a nivel bachillerato. Si necesitas refrescar estos temas, consulta los tutoriales en Bouzas Lab.</p></li>
-<li><p><strong>Estudiantes de posgrado</strong> que necesitan un puente conceptual para conectar psicología experimental con la neurociencia computacional y el aprendizaje de máquinas (machine learning).</p></li>
-<li><p><strong>Profesionales en transición</strong> de física, matemáticas, ingeniería o ciencias de la computación hacia neurociencia o ciencia cognitiva. El libro aprovecha principios cuantitativos que ya conoces para introducirte al estudio formal del comportamiento.</p></li>
-</ol>
+<section id="las-propiedades-estadísticas-del-entorno" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="las-propiedades-estadísticas-del-entorno"><span class="header-section-number">5.4</span> Las Propiedades Estadísticas del Entorno</h2>
+<p>Un entorno puede tener estructura —información aprovechable— a lo largo de varias dimensiones. Cuáles de esas dimensiones son relevantes para un organismo determina qué clase de mecanismo debe evolucionar. Las siguientes seis propiedades han dominado el estudio del comportamiento adaptable y, no por casualidad, organizan los bloques de este libro.</p>
+<p><strong>1. Tiempo de Ocurrencia</strong></p>
+<p>Los SBI pueden distribuirse de manera uniforme a lo largo del tiempo o concentrarse en ciertos períodos. Las flores abren al amanecer; los búhos cazan de noche; los restaurantes tienen horarios. Un organismo que detecta esas regularidades puede dedicar su tiempo de búsqueda a los momentos rentables y usarlo en otras actividades el resto del día. Esta adaptación requiere mecanismos que midan intervalos y detecten periodicidades.</p>
+<p><strong>2. Lugar de Ocurrencia</strong></p>
+<p>Los SBI también pueden distribuirse de manera uniforme en el espacio o concentrarse en ciertos parches. El alimento se concentra en ciertas zonas; los depredadores frecuentan ciertos territorios. Los organismos que detectan esa estructura espacial pueden dirigir su búsqueda eficientemente: regresar a lugares previamente productivos, evitar lugares peligrosos, explorar zonas con alta probabilidad de contener recursos no descubiertos.</p>
+<p><strong>3. Covarianza con el Entorno y con el Comportamiento</strong></p>
+<p>Muchos SBI no son predecibles por tiempo o lugar per se, sino que están correlacionados con otras características del mundo. Las nubes oscuras predicen lluvia; ciertos olores indican la proximidad de un depredador; el patrón de coloración de algunas orugas señala su toxicidad. Un organismo que aprende estas relaciones puede anticipar los SBI antes de encontrarlos directamente.</p>
+<p>Una segunda forma de covarianza involucra las acciones del propio organismo: muchos SBI solo ocurren si se ejecutan ciertas respuestas. Las mascotas obtienen comida solo cuando realizan conductas específicas; el acceso a un servicio de taxis requiere abrir una aplicación. Aprender qué respuestas producen qué consecuencias permite al organismo no solo predecir, sino controlar activamente la ocurrencia de SBI.</p>
+<p>Estas dos formas de covarianza —con señales del entorno y con el comportamiento propio— comparten la misma lógica: detectar qué predice qué. Sin embargo, plantean problemas de asignación de crédito suficientemente distintos como para requerir dos capítulos separados en el Bloque II.</p>
+<p><strong>4. Detección de Cambios en el Estado del Entorno</strong></p>
+<p>Un problema distinto surge cuando las propiedades estadísticas del entorno cambian sin señales externas evidentes. Una reducción en la disponibilidad de presas puede reflejar variación aleatoria normal o un cambio real en el estado del entorno. Quien deja de recibir mensajes de una persona cercana debe decidir si se trata de algo fortuito o de un cambio genuino en la relación. En la literatura clásica, este problema se ha estudiado principalmente como extinción —la desaparición de un reforzador previamente presente—, pero es más general: se trata de inferir si el estado del mundo ha cambiado o si lo observado es simplemente ruido.</p>
+<p><strong>5. Tasa de Ocurrencia</strong></p>
+<p>Los organismos no solo detectan si un SBI ocurre o no, sino también con qué frecuencia. Para una abeja, no es suficiente saber que una zona del jardín tiene flores con néctar; importa la tasa —cuántas flores por minuto— porque esa tasa determina la rentabilidad de explotar esa zona frente a explorar otra. La noción de tasa de ocurrencia desempeña un papel central en las explicaciones contemporáneas del comportamiento de elección, como veremos en el Bloque III.</p>
+<p><strong>6. Incertidumbre Esperada e Inesperada</strong></p>
+<p>Cualquiera de las propiedades anteriores puede ser más o menos incierta. Cuando la variabilidad es estable —cuando existe una distribución de probabilidad constante que la describe— hablamos de <strong>incertidumbre esperada</strong>. El camión de transporte público no pasa siempre exactamente a la misma hora, pero la variación es predecible: tiene una distribución con media y dispersión conocidas. Cuando los parámetros de esa distribución cambian ellos mismos de acuerdo a otra distribución, el entorno se vuelve <strong>volátil</strong> y la incertidumbre es inesperada. En el metro de la Ciudad de México, la probabilidad de que el tren llegue en los próximos dos minutos es alta en hora pico y baja en horas de poca demanda: hay una distribución que cambia según otra distribución. El Bloque V está dedicado a los mecanismos que permiten aprender en entornos volátiles.</p>
+<p>Estas seis propiedades no son una taxonomía arbitraria. Son las dimensiones sobre las que un entorno puede tener estructura estadística que un agente puede, en principio, detectar y aprovechar. Si el entorno tiene regularidad en alguna de estas dimensiones y el organismo carece del mecanismo para detectarla, hay una oportunidad adaptativa sin explotar. Si la tiene, ese mecanismo tendrá ventaja selectiva. Los capítulos siguientes estudian, uno a uno, los mecanismos que evolucionaron para responder a cada tipo de estructura.</p>
 </section>
-<section id="filosofía-del-libro" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="filosofía-del-libro"><span class="header-section-number">1.3</span> Filosofía del Libro</h2>
-<section id="marco-conceptual-unificado" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="marco-conceptual-unificado"><span class="header-section-number">1.3.1</span> Marco Conceptual Unificado</h3>
-<p>La introducción presenta el marco general que guía al libro. Aprenderás a distinguir entre nivel computacional (¿qué problema adaptativo se resuelve?), nivel algorítmico (¿qué procedimientos generan el comportamiento?), y nivel de implementación (¿qué circuitos neuronales lo realizan?). Este marco evita confusiones comunes y te permite entender por qué diferentes tipos de modelos coexisten sin competir.</p>
+<section id="conclusión" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">5.5</span> Conclusión</h2>
+<p>El acceso a los sucesos biológicamente importantes está sujeto a restricciones que ningún organismo puede eludir: el tiempo es finito, la energía es limitada, y la estructura biológica delimita el espacio de comportamientos posibles. Estas restricciones hacen inevitable la competencia entre comportamientos y convierten la distribución del tiempo en un problema de optimización bajo restricciones, no de maximización sin límites.</p>
+<p>La forma que toma la solución evolutiva depende de la estructura del entorno. Cuando ese entorno ha sido históricamente estable, la selección codifica la respuesta directamente en el genoma —comportamiento adaptado, eficiente pero rígido. Cuando es variable, la solución es radicalmente distinta: codificar algoritmos que permitan al organismo ajustar su conducta en tiempo real. Dentro de esos algoritmos adaptativos, los reactivos operan con información local e inmediata sin integrar experiencia previa; los de aprendizaje acumulan historia para reducir incertidumbre futura, pero solo ofrecen ventaja cuando el entorno tiene estructura causal que pueda detectarse y aprovecharse.</p>
+<p>Esa estructura puede manifestarse en seis dimensiones —tiempo, espacio, covarianza con señales del entorno, covarianza con el comportamiento propio, cambios de estado, tasa de ocurrencia— que no son una clasificación arbitraria sino los problemas estadísticos concretos que los mecanismos de los bloques siguientes evolucionaron para resolver. Cada algoritmo que estudiaremos es una respuesta a uno de esos problemas. Entender el problema es la condición para entender por qué el mecanismo tiene la forma que tiene.</p>
 </section>
-<section id="énfasis-en-principios-generales" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="énfasis-en-principios-generales"><span class="header-section-number">1.3.2</span> Énfasis en Principios Generales</h3>
-<p>En lugar de memorizar el resultado de protocolos particulares, aprenderás algoritmos generales necesarios para la solución de diferentes problemas de adaptación.</p>
+<section id="preguntas-de-estudio" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Preguntas de Estudio</h1>
+<section id="sección-i-restricciones-del-organismo-y-del-entorno" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="sección-i-restricciones-del-organismo-y-del-entorno"><span class="header-section-number">6.0.1</span> Sección I: Restricciones del organismo y del entorno</h3>
+<p><strong>1.</strong> El capítulo presenta una ecuación aparentemente simple: <span class="math inline">\(T = t_1 + t_2 + \dots + t_n\)</span>. ¿Qué afirma esta ecuación sobre la naturaleza del comportamiento? ¿Por qué implica que los comportamientos <em>compiten</em> entre sí, en lugar de simplemente coexistir?</p>
+<p><strong>2.</strong> Define costo de oportunidad con tus propias palabras y da un ejemplo de tu vida cotidiana que no aparezca en el capítulo. Explica explícitamente qué se gana, qué se pierde, y por qué la restricción lineal de tiempo hace inevitable ese trade-off.</p>
+<p><strong>3.</strong> El capítulo distingue entre restricciones del organismo y restricciones del entorno. ¿Podría existir un agente adaptativo sin restricciones del organismo? ¿Qué implicaría eso para el problema de la distribución del comportamiento?</p>
+<p><strong>4.</strong> ¿Por qué una respuesta conductual genéticamente fija sería evolutivamente subóptima en un entorno variable? Construye un ejemplo concreto donde una respuesta fija que funcionó bien durante generaciones se vuelve desventajosa al cambiar el entorno.</p>
 </section>
-<section id="implementación-computacional" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="implementación-computacional"><span class="header-section-number">1.3.3</span> Implementación Computacional</h3>
-<p>Todos los modelos en este libro son implementables. No son solo ecuaciones abstractas: puedes programarlos, simularlos y experimentar con ellos.</p>
+<section id="sección-ii-comportamiento-adaptado-y-comportamiento-adaptable" class="level3" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="sección-ii-comportamiento-adaptado-y-comportamiento-adaptable"><span class="header-section-number">6.0.2</span> Sección II: Comportamiento adaptado y comportamiento adaptable</h3>
+<p><strong>5.</strong> La impronta en aves y el reflejo de retirada ante el dolor son ejemplos de comportamiento adaptado. ¿Qué tienen en común como soluciones evolutivas? ¿Qué condición del entorno hace que ambos sean soluciones apropiadas sin necesidad de aprendizaje individual?</p>
+<p><strong>7.</strong> ¿Por qué el capítulo llama <em>algoritmos</em> a los mecanismos de comportamiento adaptable? ¿Qué agrega esa palabra respecto a decir simplemente “mecanismos” o “respuestas aprendidas”?</p>
 </section>
-<section id="simuladores-interactivos" class="level3" data-number="1.3.4">
-<h3 data-number="1.3.4" class="anchored" data-anchor-id="simuladores-interactivos"><span class="header-section-number">1.3.4</span> Simuladores Interactivos</h3>
-<p>Este libro incluye simuladores embebidos y enlaces a notebooks interactivos (Google Colab) donde puedes manipular parámetros y observar resultados inmediatos, implementar algoritmos desde cero, replicar experimentos clásicos y explorar extensiones creativas. Accede a todos los simuladores y tutoriales de matemáticas en <a href="https://www.bouzaslab25.com">Lab 25</a>.</p>
+<section id="sección-iii-los-dos-tipos-de-algoritmos-adaptativos" class="level3" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="sección-iii-los-dos-tipos-de-algoritmos-adaptativos"><span class="header-section-number">6.0.3</span> Sección III: Los dos tipos de algoritmos adaptativos</h3>
+<p><strong>9.</strong> El capítulo afirma que el aprendizaje “solo tiene sentido si el entorno tiene estructura que pueda detectarse y aprovecharse.” ¿Qué significa esto? Describe un entorno hipotético donde el aprendizaje no ofrecería ninguna ventaja adaptativa sobre el movimiento aleatorio, y explica por qué.</p>
+<p><strong>10.</strong> ¿Cuál es la diferencia fundamental entre un algoritmo reactivo y un algoritmo de aprendizaje? No se trata solo de que uno use memoria y el otro no: ¿qué problema diferente resuelve cada uno?</p>
 </section>
-</section>
-<section id="cómo-usar-este-libro" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="cómo-usar-este-libro"><span class="header-section-number">1.4</span> Cómo Usar Este Libro</h2>
-<section id="para-estudiantes" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="para-estudiantes"><span class="header-section-number">1.4.1</span> Para Estudiantes</h3>
-<p>Estas notas están diseñadas para lectura activa, no pasiva. Lee la Introducción completa antes de continuar con los capítulos, ya que establece el marco conceptual necesario. Cuando un capítulo menciona un simulador, explóralo antes de seguir leyendo. La Introducción contiene estrategias detalladas de lectura activa que maximizarán tu aprendizaje.</p>
-</section>
-<section id="para-instructores" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="para-instructores"><span class="header-section-number">1.4.2</span> Para Instructores</h3>
-<p>Este libro puede usarse como texto principal en un curso de dos semestres sobre aprendizaje y comportamiento adaptable, como complemento a un texto tradicional añadiendo la perspectiva formal y de optimización que esos textos omiten, o como recurso para temas específicos. Los simuladores permiten clases invertidas donde los estudiantes exploran antes de clase, y el tiempo presencial se dedica a discusión, resolución de problemas y profundización conceptual. La Introducción incluye sugerencias específicas para implementar este modelo pedagógico.</p>
-</section>
-</section>
-<section id="recursos-adicionales" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="recursos-adicionales"><span class="header-section-number">1.5</span> Recursos Adicionales</h2>
-<p>Todos los recursos (simuladores, código fuente, tutoriales) están disponibles en:<br>
-<a href="https://www.bouzaslab25.com">Lab 25</a></p>
-<p>Para reportar errores o contribuir al proyecto, visita el repositorio GitHub.</p>
-</section>
-<section id="licencia-y-uso" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="licencia-y-uso"><span class="header-section-number">1.6</span> Licencia y Uso</h2>
-<p>Este libro se distribuye bajo licencia Creative Commons BY-NC-SA 4.0. Esto significa que puedes compartir (copiar y redistribuir el material) y adaptar (remezclar, transformar y construir sobre el material) bajo las siguientes condiciones: debes dar crédito apropiado (Atribución), no puedes usar el material con fines comerciales (No Comercial), y si remezclas debes distribuir bajo la misma licencia (Compartir Igual).</p>
-</section>
-<section id="agradecimientos" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="agradecimientos"><span class="header-section-number">1.7</span> Agradecimientos</h2>
-<p>La primera edición del libro mejoró significativamente gracias al excelente trabajo editorial de Rodrigo Álvarez. La estructura de esta página web fue adaptada del diseño original de Christian Badillo, quien siempre apoyó que este proyecto se concretara.</p>
-<p>Mi agradecimiento a varias generaciones del Laboratorio 25 por desarrollar los simuladores interactivos que se encuentran en la página del Laboratorio.</p>
-<p>Finalmente, extiendo un agradecimiento especial a los cientos de estudiantes que en mis cursos han sufrido pacientemente mis intentos por enseñar los principios fundamentales del estudio del comportamiento adaptable.</p>
-<p>La elaboración de esta página web fue financiada por los proyectos PAPIME PE309624 y PAPIME PE302221.</p>
-</section>
-<section id="contacto" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="contacto"><span class="header-section-number">1.8</span> Contacto</h2>
-<p><strong>Arturo Bouzas</strong><br>
-Facultad de Psicología<br>
-Universidad Nacional Autónoma de México<br>
-arbouria@unam.mx<br>
-<a href="https://www.bouzaslab25.com">Lab 25</a></p>
-</section>
-<section id="aviso-libro-en-desarrollo" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="aviso-libro-en-desarrollo"><span class="header-section-number">1.9</span> Aviso: Libro en Desarrollo</h2>
-<p>Este es un proyecto vivo. El contenido se actualiza regularmente basándose en feedback de estudiantes e instructores, nuevos desarrollos en el campo, y mejoras en simuladores y código. Verifica el repositorio GitHub para la versión más reciente.</p>
-<p><strong>Versión actual:</strong> v1.0 (Enero 2026)</p>
-<hr>
-<p>¿Listo para comenzar? Pasa a la <strong>Introducción al Curso</strong></p>
+<section id="sección-iv-las-propiedades-estadísticas-del-entorno" class="level3" data-number="6.0.4">
+<h3 data-number="6.0.4" class="anchored" data-anchor-id="sección-iv-las-propiedades-estadísticas-del-entorno"><span class="header-section-number">6.0.4</span> Sección IV: Las propiedades estadísticas del entorno</h3>
+<p><strong>11.</strong> El capítulo lista seis propiedades estadísticas del entorno. Elige dos de ellas y, para cada una, describe: (a) qué tipo de regularidad tiene el entorno, (b) qué mecanismo necesitaría el organismo para aprovecharla, y (c) qué desventaja sufriría un organismo que careciera de ese mecanismo.</p>
+<p><strong>12.</strong> La extinción —cuando un reforzador deja de presentarse— se ha estudiado clásicamente como un fenómeno del condicionamiento. El capítulo la reencuadra como un caso de detección de cambio en el estado del entorno. ¿Qué gana esa reinterpretación? ¿Qué pregunta diferente nos lleva a hacerle al fenómeno?</p>
+<p><strong>13.</strong> Para una abeja que forrajea en un jardín con dos zonas de flores, ¿qué información adicional ofrece la <em>tasa</em> de ocurrencia de néctar frente a saber simplemente si hay o no néctar en cada zona? ¿Por qué esa información adicional es adaptativamente relevante?</p>
+<p><strong>14.</strong> El capítulo distingue entre incertidumbre esperada e inesperada (volatilidad). Usa el ejemplo del metro de la Ciudad de México para explicar la diferencia. Luego propón un ejemplo de tu propia experiencia que ilustre la misma distinción.</p>
+<p><strong>15.</strong> El capítulo argumenta que las seis propiedades estadísticas del entorno no son una clasificación arbitraria. ¿Cuál es el criterio que las unifica? ¿Por qué ese criterio justifica estudiarlas como categorías separadas?</p>
+<p><strong>16.</strong> Considera el comportamiento de estudiar para un examen. Identifica al menos tres de las seis propiedades estadísticas del entorno que son relevantes para decidir cuándo, dónde y cómo estudiar. Para cada una, describe qué información estadística estaría usando un estudiante que distribuye bien su tiempo de estudio.</p>
 
 
 </section>
@@ -888,11 +878,11 @@ arbouria@unam.mx<br>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./evolucion.html" class="pagination-link" aria-label="Teoría de la Selección Natural">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -124,16 +124,8 @@ $$I(t+1) = r \times I(t)$$
 
 donde $I(t)$ es el número de infectados en el tiempo $t$, y $r$ es la tasa de reproducción —cuántas personas, en promedio, infecta cada persona infectada. Si $r > 1$, los casos crecen exponencialmente; si $r < 1$, decrecen. Esta simple ecuación captura la dinámica del contagio. La esencia de las ecuaciones en diferencia es esta: expresar el cambio de forma recursiva, de modo que cada nuevo valor $t+1$ se convierte en el punto de partida del siguiente paso.
 
-::: {.callout-tip}
-## 🕹️ ¡Prueba el Simulador Interactivo!
+Para explorar estos conceptos, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 2.
 
-Para profundizar en los conceptos de este capítulo, hemos preparado un simulador. 
-
-Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 2:
-
-[**Abrir Simuladores en Google Colab**](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb){target="_blank"}
-
-:::
 
 ## Covarianza: La Relación entre Rasgo y Éxito Reproductivo
 
@@ -141,14 +133,8 @@ En teoría evolutiva queremos una ecuación que nos diga cómo cambia la distrib
 
 $$\Delta \bar{z} = \bar{z}(t+1) - \bar{z}(t)$$
 
-::: {.callout-tip}
-## 🕹️ ¡Prueba el Simulador Interactivo!
+Para explorar la covarianza, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 3.
 
-Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 3:
-
-[**Abrir Simuladores en Google Colab**](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb){target="_blank"}
-
-:::
 
 Esta diferencia nos dice si el rasgo, en promedio, aumentó, disminuyó o se mantuvo igual. La pregunta fundamental es: ¿de qué depende $\Delta \bar{z}$? ¿Qué determina la dirección y magnitud del cambio evolutivo?
 
@@ -190,14 +176,7 @@ Esta ecuación es elegante porque destila la selección natural a su esencia est
 
 Notemos además que esta es una ecuación en diferencia. Nos dice cómo calcular $\bar{z}(t+1)$ dado $\bar{z}(t)$, exactamente como las ecuaciones que modelaron el crecimiento de COVID. La evolución, al igual que esos procesos, es un sistema dinámico que se actualiza recursivamente.
 
-::: {.callout-tip}
-## 🕹️ ¡Prueba el Simulador Interactivo!
-
-Haz clic en el siguiente enlace para abrirlo y sigue las instrucciones de la introducción para dirigirse al simulador 4:
-
-[**Abrir Simuladores en Google Colab**](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/selección_natural.ipynb){target="_blank"}
-
-:::
+Para explorar el cambio evolutivo, abra los [Simuladores en Google Colab](https://colab.research.google.com/drive/1jzI4TI74eFj9ORO63YleCOq99sq0aXO0){target="_blank"} y siga las instrucciones de la introducción para dirigirse al simulador 4.
 
 
 ## La Equivalencia con los Modelos de Aprendizaje

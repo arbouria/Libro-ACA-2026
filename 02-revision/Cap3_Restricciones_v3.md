@@ -1,6 +1,4 @@
-# Capítulo 3: El Papel de las Restricciones en la Evolución del  Comportamiento Adaptable
-
-### Borrador Final
+# Capítulo 3: Restricciones, Entorno y Comportamiento Adaptable
 
 Suponga que es ingeniero y su empresa le pide diseñar un robot de servicio autónomo para hogares. En su primera versión, el dueño conecta el robot a una toma de corriente antes de acostarse, como lo hace con su celular. Durante la noche el robot trabaja con esa energía, y por la mañana, cuando la batería se agota, se detiene. Usted puede mejorar la autonomía con baterías de mayor duración, pero el problema no desaparece: más tarde o más temprano, sin recarga, el robot se inmoviliza.
 
@@ -64,9 +62,9 @@ Los SBI también pueden distribuirse de manera uniforme en el espacio o concentr
 
 Muchos SBI no son predecibles por tiempo o lugar per se, sino que están correlacionados con otras características del mundo. Las nubes oscuras predicen lluvia; ciertos olores indican la proximidad de un depredador; el patrón de coloración de algunas orugas señala su toxicidad. Un organismo que aprende estas relaciones puede anticipar los SBI antes de encontrarlos directamente.
 
-Una segunda forma de covarianza involucra las acciones del propio organismo: muchos SBI solo ocurren si se ejecutan ciertas respuestas. Las mascotas obtienen comida solo cuando realizan conductas específicas; el acceso a un servicio de taxis requiere abrir una aplicación. Aprender qué respuestas producen qué consecuencias permite al organismo no solo predecir, sino controlar activamente la ocurrencia de SBI.
+Una segunda forma de covarianza involucra las acciones del propio organismo: muchos SBI solo ocurren si se ejecutan ciertas respuestas. Las mascotas obtienen comida solo cuando realizan conductas específicas; el acceso a un servicio de transporte requiere abrir una aplicación. Aprender qué respuestas producen qué consecuencias permite al organismo no solo predecir, sino controlar activamente la ocurrencia de SBI.
 
-Estas dos formas de covarianza —con señales del entorno y con el comportamiento propio— comparten la misma lógica: detectar qué predice qué. Sin embargo, plantean problemas de asignación de crédito suficientemente distintos como para requerir dos capítulos separados en el Bloque II.
+Estas dos formas de covarianza —con señales del entorno y con el comportamiento propio— comparten la misma lógica: detectar qué predice qué. Sin embargo, plantean problemas de asignación de crédito suficientemente distintos como para requerir tratamiento separado, primero en el Bloque II y luego en el Bloque III.
 
 **4. Detección de Cambios en el Estado del Entorno**
 
@@ -88,8 +86,8 @@ Estas seis propiedades no son una taxonomía arbitraria. Son las dimensiones sob
 
 ## Conclusión
 
-Este capítulo ha descrito las condiciones bajo las cuales la selección natural produce distintos tipos de soluciones conductuales. En entornos constantes, produce comportamiento adaptado: respuestas codificadas genéticamente que no requieren aprendizaje individual. En entornos variables, produce comportamiento adaptable: algoritmos que ajustan la conducta a la estructura estadística particular de cada entorno.
+El acceso a los sucesos biológicamente importantes está sujeto a restricciones que ningún organismo puede eludir: el tiempo es finito, la energía es limitada, y la estructura biológica delimita el espacio de comportamientos posibles. Estas restricciones hacen inevitable la competencia entre comportamientos y convierten la distribución del tiempo en un problema de optimización bajo restricciones, no de maximización sin límites.
 
-Dentro del comportamiento adaptable, la distinción entre algoritmos reactivos —efectivos cuando el control debe ser local e inmediato— y algoritmos de aprendizaje —necesarios cuando el entorno tiene estructura causal aprovechable— organiza los dos primeros bloques del libro. Los Bloques III y IV extienden el análisis a la elección entre opciones y al aprendizaje de secuencias. El Bloque V aborda entornos volátiles. El Bloque VI examina la estructura de las preferencias que determinan el valor de los SBI.
+La forma que toma la solución evolutiva depende de la estructura del entorno. Cuando ese entorno ha sido históricamente estable, la selección codifica la respuesta directamente en el genoma —comportamiento adaptado, eficiente pero rígido. Cuando es variable, la solución es radicalmente distinta: codificar algoritmos que permitan al organismo ajustar su conducta en tiempo real. Dentro de esos algoritmos adaptativos, los reactivos operan con información local e inmediata sin integrar experiencia previa; los de aprendizaje acumulan historia para reducir incertidumbre futura, pero solo ofrecen ventaja cuando el entorno tiene estructura causal que pueda detectarse y aprovecharse.
 
-Lo que conecta todos esos bloques es la lógica descrita en este capítulo: cada mecanismo que estudiaremos es una solución a un problema estadístico específico que el entorno plantea. Entender el problema es la condición para entender por qué el mecanismo tiene la forma que tiene.
+Esa estructura puede manifestarse en seis dimensiones —tiempo, espacio, covarianza con señales del entorno, covarianza con el comportamiento propio, cambios de estado, tasa de ocurrencia— que no son una clasificación arbitraria sino los problemas estadísticos concretos que los mecanismos de los bloques siguientes evolucionaron para resolver. Cada algoritmo que estudiaremos es una respuesta a uno de esos problemas. Entender el problema es la condición para entender por qué el mecanismo tiene la forma que tiene.
