@@ -1,0 +1,91 @@
+<svg viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, Palatino, serif">
+  <rect x="0" y="0" width="820" height="4" fill="#2C5282"/>
+  <rect x="0" y="4" width="820" height="416" fill="white"/>
+
+  <text x="410" y="36" text-anchor="middle" font-size="13" font-style="italic" fill="#2C5282">Sistema de retroalimentación negativa</text>
+
+  <!-- SET POINT -->
+  <rect x="18" y="118" width="108" height="60" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="72" y="141" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Set point</text>
+  <text x="72" y="156" text-anchor="middle" font-size="9" fill="#718096">valor</text>
+  <text x="72" y="170" text-anchor="middle" font-size="9" fill="#718096">deseado</text>
+
+  <!-- Arrow set point → comparator -->
+  <line x1="126" y1="148" x2="172" y2="148" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="172,148 164,143 164,153" fill="#2C5282"/>
+
+  <!-- COMPARATOR circle - larger radius to fit text -->
+  <circle cx="198" cy="148" r="26" fill="white" stroke="#2C5282" stroke-width="2"/>
+  <!-- Plus sign at entry top -->
+  <text x="188" y="138" text-anchor="middle" font-size="11" font-weight="bold" fill="#2C5282">+</text>
+  <!-- Minus sign at entry bottom (feedback comes from below) -->
+  <text x="188" y="168" text-anchor="middle" font-size="13" font-weight="bold" fill="#C05621">−</text>
+  <!-- Sigma centered -->
+  <text x="204" y="154" text-anchor="middle" font-size="15" fill="#2C5282">Σ</text>
+
+  <!-- Arrow comparator → controller with error label above -->
+  <line x1="224" y1="148" x2="282" y2="148" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="282,148 274,143 274,153" fill="#2C5282"/>
+  <text x="253" y="136" text-anchor="middle" font-size="8" fill="#C05621" font-style="italic">señal de error</text>
+
+  <!-- CONTROLLER -->
+  <rect x="282" y="118" width="120" height="60" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="342" y="141" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Controlador</text>
+  <text x="342" y="156" text-anchor="middle" font-size="9" fill="#718096">regla de</text>
+  <text x="342" y="170" text-anchor="middle" font-size="9" fill="#718096">acción</text>
+
+  <!-- Arrow controller → effector -->
+  <line x1="402" y1="148" x2="460" y2="148" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="460,148 452,143 452,153" fill="#2C5282"/>
+  <text x="431" y="136" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">comando</text>
+
+  <!-- EFFECTOR -->
+  <rect x="460" y="118" width="120" height="60" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="520" y="141" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Efector</text>
+  <text x="520" y="156" text-anchor="middle" font-size="9" fill="#718096">músculo /</text>
+  <text x="520" y="170" text-anchor="middle" font-size="9" fill="#718096">actuador</text>
+
+  <!-- Arrow effector → environment -->
+  <line x1="580" y1="148" x2="638" y2="148" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="638,148 630,143 630,153" fill="#2C5282"/>
+  <text x="609" y="136" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">acción</text>
+
+  <!-- ENVIRONMENT -->
+  <rect x="638" y="112" width="110" height="72" rx="5" fill="#E6F4ED" stroke="#276749" stroke-width="1.5"/>
+  <text x="693" y="136" text-anchor="middle" font-size="10" font-weight="bold" fill="#276749">Entorno</text>
+  <text x="693" y="151" text-anchor="middle" font-size="9" fill="#718096">variable</text>
+  <text x="693" y="165" text-anchor="middle" font-size="9" fill="#718096">controlada</text>
+  <text x="693" y="178" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">output</text>
+
+  <!-- FEEDBACK PATH -->
+  <!-- Down from environment -->
+  <line x1="693" y1="184" x2="693" y2="248" stroke="#2C5282" stroke-width="1.5"/>
+  <!-- Horizontal to sensor -->
+  <line x1="693" y1="248" x2="404" y2="248" stroke="#2C5282" stroke-width="1.5"/>
+
+  <!-- SENSOR box -->
+  <rect x="284" y="228" width="120" height="40" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="344" y="245" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Sensor</text>
+  <text x="344" y="260" text-anchor="middle" font-size="9" fill="#718096">receptor sensorial</text>
+
+  <!-- Sensor left → up to comparator -->
+  <line x1="284" y1="248" x2="198" y2="248" stroke="#2C5282" stroke-width="1.5"/>
+  <line x1="198" y1="248" x2="198" y2="174" stroke="#2C5282" stroke-width="1.5"/>
+  <polygon points="198,174 193,182 203,182" fill="#2C5282"/>
+
+  <!-- Feedback label -->
+  <text x="240" y="240" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">retroalimentación</text>
+
+  <!-- Key equation box — three short lines -->
+  <rect x="80" y="285" width="660" height="50" rx="4" fill="#EBF4FF" stroke="#2C5282" stroke-width="0.8"/>
+  <text x="410" y="301" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">señal de error  =  set point  −  retroalimentacion</text>
+  <text x="410" y="316" text-anchor="middle" font-size="9" fill="#2C5282">Cuando la señal de error es cero, el sistema no actua</text>
+  <text x="410" y="329" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">→  el comportamiento cesa cuando el estado deseado se alcanza</text>
+
+  <!-- Caption — left-aligned -->
+  <line x1="40" y1="355" x2="780" y2="355" stroke="#718096" stroke-width="0.5" opacity="0.4"/>
+  <text x="40" y="370" font-size="10" fill="#2C5282" font-weight="bold">Figura 7.5.</text>
+  <text x="126" y="370" font-size="10" fill="#718096">Diagrama generico de un sistema de retroalimentacion negativa con componentes nombrados.</text>
+  <text x="40" y="385" font-size="10" fill="#718096">El comparador calcula el error entre el set point y el estado actual medido por el sensor.</text>
+  <text x="40" y="400" font-size="10" fill="#718096">El sistema actua para reducir ese error: cuando error = 0 la accion cesa.</text>
+</svg>

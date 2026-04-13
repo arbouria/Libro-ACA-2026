@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; El Problema de la Asignación de Crédito – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./asignacionR.html" rel="next">
+<link href="./retroalimentacion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./asignacionE.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#el-problema-un-espacio-enorme-de-candidatos" id="toc-el-problema-un-espacio-enorme-de-candidatos" class="nav-link active" data-scroll-target="#el-problema-un-espacio-enorme-de-candidatos"><span class="header-section-number">8.1</span> El Problema: Un Espacio Enorme de Candidatos</a></li>
+  <li><a href="#el-genoma-como-archivo-causal" id="toc-el-genoma-como-archivo-causal" class="nav-link" data-scroll-target="#el-genoma-como-archivo-causal"><span class="header-section-number">8.2</span> El Genoma Como Archivo Causal</a></li>
+  <li><a href="#el-sistema-de-comportamiento-como-primer-filtro" id="toc-el-sistema-de-comportamiento-como-primer-filtro" class="nav-link" data-scroll-target="#el-sistema-de-comportamiento-como-primer-filtro"><span class="header-section-number">8.3</span> El Sistema de Comportamiento Como Primer Filtro</a></li>
+  <li><a href="#el-primer-sesgo-contigüidad-temporal" id="toc-el-primer-sesgo-contigüidad-temporal" class="nav-link" data-scroll-target="#el-primer-sesgo-contigüidad-temporal"><span class="header-section-number">8.4</span> El Primer Sesgo: Contigüidad Temporal</a>
+  <ul class="collapse">
+  <li><a href="#el-experimento-de-pavlov" id="toc-el-experimento-de-pavlov" class="nav-link" data-scroll-target="#el-experimento-de-pavlov"><span class="header-section-number">8.4.1</span> El Experimento de Pavlov</a></li>
+  </ul></li>
+  <li><a href="#es-la-contigüidad-condición-necesaria-el-experimento-de-garcía" id="toc-es-la-contigüidad-condición-necesaria-el-experimento-de-garcía" class="nav-link" data-scroll-target="#es-la-contigüidad-condición-necesaria-el-experimento-de-garcía"><span class="header-section-number">8.5</span> ¿Es la Contigüidad Condición Necesaria? El Experimento de García</a>
+  <ul class="collapse">
+  <li><a href="#la-relevancia-biológica-como-sesgo-evolutivo" id="toc-la-relevancia-biológica-como-sesgo-evolutivo" class="nav-link" data-scroll-target="#la-relevancia-biológica-como-sesgo-evolutivo"><span class="header-section-number">8.5.1</span> La Relevancia Biológica Como Sesgo Evolutivo</a></li>
+  <li><a href="#el-sesgo-de-novedad" id="toc-el-sesgo-de-novedad" class="nav-link" data-scroll-target="#el-sesgo-de-novedad"><span class="header-section-number">8.5.2</span> El Sesgo de Novedad</a></li>
+  </ul></li>
+  <li><a href="#es-la-contigüidad-condición-suficiente" id="toc-es-la-contigüidad-condición-suficiente" class="nav-link" data-scroll-target="#es-la-contigüidad-condición-suficiente"><span class="header-section-number">8.6</span> ¿Es la Contigüidad Condición Suficiente?</a>
+  <ul class="collapse">
+  <li><a href="#ensombrecimiento-los-estímulos-compiten" id="toc-ensombrecimiento-los-estímulos-compiten" class="nav-link" data-scroll-target="#ensombrecimiento-los-estímulos-compiten"><span class="header-section-number">8.6.1</span> Ensombrecimiento: Los Estímulos Compiten</a></li>
+  <li><a href="#bloqueo-la-historia-del-organismo-importa" id="toc-bloqueo-la-historia-del-organismo-importa" class="nav-link" data-scroll-target="#bloqueo-la-historia-del-organismo-importa"><span class="header-section-number">8.6.2</span> Bloqueo: La Historia del Organismo Importa</a></li>
+  </ul></li>
+  <li><a href="#optimalidad-cuándo-funciona-la-contigüidad-y-cuándo-falla" id="toc-optimalidad-cuándo-funciona-la-contigüidad-y-cuándo-falla" class="nav-link" data-scroll-target="#optimalidad-cuándo-funciona-la-contigüidad-y-cuándo-falla"><span class="header-section-number">8.7</span> Optimalidad: ¿Cuándo Funciona la Contigüidad y Cuándo Falla?</a></li>
+  <li><a href="#hacia-el-modelo-formal" id="toc-hacia-el-modelo-formal" class="nav-link" data-scroll-target="#hacia-el-modelo-formal"><span class="header-section-number">8.8</span> Hacia el Modelo Formal</a></li>
+  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">8.9</span> Conexiones</a>
+  <ul class="collapse">
+  <li><a href="#hacia-atrás-selección-natural-y-retroalimentación" id="toc-hacia-atrás-selección-natural-y-retroalimentación" class="nav-link" data-scroll-target="#hacia-atrás-selección-natural-y-retroalimentación"><span class="header-section-number">8.9.1</span> Hacia atrás: Selección Natural y Retroalimentación</a></li>
+  <li><a href="#hacia-adelante-asignación-de-crédito-a-respuestas-capítulo-9" id="toc-hacia-adelante-asignación-de-crédito-a-respuestas-capítulo-9" class="nav-link" data-scroll-target="#hacia-adelante-asignación-de-crédito-a-respuestas-capítulo-9"><span class="header-section-number">8.9.2</span> Hacia adelante: Asignación de Crédito a Respuestas (Capítulo 9)</a></li>
+  <li><a href="#hacia-adelante-bush-y-mosteller-y-el-error-de-predicción-capítulo-10" id="toc-hacia-adelante-bush-y-mosteller-y-el-error-de-predicción-capítulo-10" class="nav-link" data-scroll-target="#hacia-adelante-bush-y-mosteller-y-el-error-de-predicción-capítulo-10"><span class="header-section-number">8.9.3</span> Hacia adelante: Bush y Mosteller y el Error de Predicción (Capítulo 10)</a></li>
+  <li><a href="#hacia-adelante-rescorla-wagner-y-la-competencia-entre-estímulos-capítulo-11" id="toc-hacia-adelante-rescorla-wagner-y-la-competencia-entre-estímulos-capítulo-11" class="nav-link" data-scroll-target="#hacia-adelante-rescorla-wagner-y-la-competencia-entre-estímulos-capítulo-11"><span class="header-section-number">8.9.4</span> Hacia adelante: Rescorla-Wagner y la Competencia entre Estímulos (Capítulo 11)</a></li>
+  </ul></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">8.10</span> Resumen</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">8.11</span> Ejercicios</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">8.12</span> Lecturas Recomendadas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Al final del capítulo anterior dejamos a nuestro organismo en una situación paradójica. Los sistemas de retroalimentación que describimos son notablemente eficaces: pueden orientar un cuerpo hacia una fuente de luz, mantener la temperatura dentro de un margen preciso, seguir una presa en movimiento. Pero tienen una limitación que el ejemplo del conductor y las gasolineras ilustró de manera directa: responden a lo que está ocurriendo ahora, sin ninguna capacidad de anticipar lo que está por ocurrir. El conductor que carga gasolina solo cuando el tanque ya está vacío llegará varado tarde o temprano. El conductor experimentado actúa antes —carga cuando ve que se aproxima un tramo largo, porque ha aprendido que esa señal predice la necesidad futura.</p>
+<p>Ese salto, de reactivo a anticipatorio, requiere algo que los mecanismos del Bloque I no tenían: la capacidad de aprender que ciertos eventos del entorno predicen la llegada de sucesos biológicamente importantes. Pero esto introduce de inmediato un problema que no es trivial. Cuando ocurre algo importante —aparece comida, ataca un depredador, se produce un malestar— el entorno está lleno de estímulos simultáneos y el pasado está lleno de eventos candidatos. ¿A cuál de todos ellos se le debe atribuir la responsabilidad? ¿Qué evento, de entre los centenares que precedieron al suceso, fue realmente su causa?</p>
+<p>A este problema de adaptación se le conoce como el <strong>problema de la asignación de crédito</strong>, y es el tema central de este capítulo.</p>
+<section id="el-problema-un-espacio-enorme-de-candidatos" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="el-problema-un-espacio-enorme-de-candidatos"><span class="header-section-number">8.1</span> El Problema: Un Espacio Enorme de Candidatos</h2>
+<p>Considera la situación concreta de un perro callejero que encuentra comida en una banqueta. En ese momento hay docenas de estímulos presentes simultáneamente: el olor del asfalto húmedo, el sonido de una bocina lejana, la figura de un transeúnte que se aleja, el color de la bolsa que contenía la comida, la hora del día, el olor particular del barrio. Y más allá de los estímulos presentes, hay una historia de eventos que ocurrieron antes: algo cruzó por ahí cinco minutos atrás, hubo un camión de basura en la mañana, llovió ayer. Cualquiera de estos factores podría, en principio, predecir dónde y cuándo aparecerá comida en el futuro.</p>
+<p>O considera tu propia experiencia: regresas a casa después de comer en un restaurante nuevo y experimentas un fuerte malestar estomacal. ¿Qué lo causó? Las posibilidades son abrumadoras. Podría ser el platillo que ordenaste, el olor del restaurante, la música que sonaba, algo que comiste ayer, algo que tocaste en el transporte público, el estrés acumulado del día. Esta lista podría extenderse indefinidamente hacia el pasado. Sin algún mecanismo que filtre ese espacio de posibilidades, el aprendizaje sería computacionalmente intratable —un organismo que evaluara sistemáticamente cada candidato posible quedaría paralizado antes de poder actuar.</p>
+<p>Y sin embargo, la mayoría de los organismos aprenden relaciones predictivas con una eficiencia sorprendente, en tiempo real, sin acceso a bases de datos ni laboratorio de estadística. La pregunta es cómo.</p>
+<p>La respuesta es que los organismos no buscan en todo el espacio de candidatos. Buscan en un subconjunto reducido y ordenado, definido por un conjunto de reglas que llamamos <strong>sesgos inductivos</strong>. Estos sesgos hacen dos cosas: primero, reducen drásticamente el espacio de candidatos posibles; segundo, establecen un orden de prioridad para evaluarlos. Antes de examinarlos en detalle, conviene preguntarse de dónde vienen y por qué tienen la forma que tienen.</p>
+</section>
+<section id="el-genoma-como-archivo-causal" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="el-genoma-como-archivo-causal"><span class="header-section-number">8.2</span> El Genoma Como Archivo Causal</h2>
+<p>El genoma no es un acumulador indiferente de variación aleatoria. La fracción del genoma que ha sido modelada por la selección natural —la parte que afecta el éxito reproductivo y que ha cambiado bajo la presión del entorno— es, en sentido literal, un registro comprimido de las regularidades estadísticas del entorno ancestral: qué eventos tendían a co-ocurrir, con qué frecuencias, en qué secuencias temporales. Cada generación, los organismos con mecanismos mejor calibrados a esas regularidades dejaron más descendientes, y ese proceso iterativo —que la ecuación de Price formalizó en el capítulo sobre selección natural— produjo, acumulativamente, un sistema nervioso que llega al mundo ya “informado” sobre la estructura causal más probable de su entorno.</p>
+<p>Desde esta perspectiva, la selección natural es una forma de aprendizaje filogenético. No es el aprendizaje de un organismo individual durante su vida, sino el aprendizaje de una especie a lo largo de sus generaciones. Y al igual que el aprendizaje individual produce cambios en el organismo que reflejan las regularidades del entorno que ese individuo ha experimentado, el aprendizaje filogenético produce cambios en el acervo genético que reflejan las regularidades del entorno que esa especie ha habitado. Los sesgos inductivos son el producto más visible de ese proceso: no restricciones arbitrarias impuestas desde fuera, sino conocimiento filogenético sobre la estructura causal del mundo, destilado por selección durante escalas de tiempo inaccesibles para cualquier individuo.</p>
+<p>Veremos más adelante en el curso que hay una manera precisa de medir cuánta información contiene un organismo sobre su entorno, y que la selección natural puede entenderse como el proceso que maximiza esa cantidad, generación tras generación. Por ahora, lo que importa es la consecuencia directa para los sesgos: si el entorno ancestral tenía una estructura causal particular —si los eventos biológicamente importantes tendían a ser precedidos por ciertas clases de estímulos, con ciertas demoras temporales, en ciertos contextos sensoriales— entonces la selección favorecerá organismos que busquen primero en esa parte del espacio de candidatos. Eso es exactamente lo que observaremos.</p>
+</section>
+<section id="el-sistema-de-comportamiento-como-primer-filtro" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="el-sistema-de-comportamiento-como-primer-filtro"><span class="header-section-number">8.3</span> El Sistema de Comportamiento Como Primer Filtro</h2>
+<p>Antes de examinar los sesgos inductivos específicos, hay un nivel de organización más fundamental que los estructura a todos: los <strong>sistemas de comportamiento</strong>.</p>
+<p>Jerry Hogan y John Timberlake desarrollaron una perspectiva que ha sido influyente precisamente porque da sustrato funcional a la idea de relevancia biológica. Su propuesta es que el comportamiento de los organismos no es una colección arbitraria de respuestas inconexas, sino que está organizado en sistemas funcionales pre-estructurados por la evolución. Un sistema de comportamiento es un conjunto coordinado de mecanismos perceptuales, motivacionales y motores que evolucionó para resolver un problema adaptativo específico: el sistema de alimentación, el sistema de defensa ante depredadores, el sistema reproductivo. Cada uno tiene sus propias estructuras de detección, sus propias respuestas características, su propia lógica temporal.</p>
+<p>Lo que hace crucial esta organización para la asignación de crédito es la siguiente observación: cuando ocurre un suceso biológicamente importante, no genera una activación genérica del organismo. Activa el sistema de comportamiento apropiado para ese tipo de suceso. La presentación de comida activa el sistema de alimentación, con todas sus estructuras perceptuales y motoras. Un depredador activa el sistema de defensa. Y esta activación de un sistema específico tiene una consecuencia inmediata: reduce drásticamente el espacio de estímulos que serán siquiera considerados como candidatos a la asignación de crédito.</p>
+<p>Cuando el sistema de alimentación está activo, los estímulos relevantes para la alimentación —sabores, olores, señales visuales de comida— son procesados preferentemente. Los estímulos irrelevantes para la alimentación —sonidos ambientales neutros, características del suelo— reciben mucha menos atención. El sistema de comportamiento funciona así como un filtro atencional de primer orden: antes de que operen los sesgos específicos que examinaremos a continuación, el tipo de suceso biológicamente importante ya ha limitado severamente el espacio de búsqueda.</p>
+<p>En el lenguaje del aprendizaje automático contemporáneo, podríamos decir que los sistemas de comportamiento son <em>priors</em> estructurados: no comenzamos asignando probabilidades iguales a todos los estímulos del universo, sino con un espacio de hipótesis ya preconfigurado donde ciertas dimensiones de estimulación son a priori más probables de ser relevantes, dado el tipo de suceso que ocurrió. Este insight de Hogan y Timberlake no es solo teórico —lo veremos confirmado empíricamente en cada uno de los experimentos que siguen.</p>
+</section>
+<section id="el-primer-sesgo-contigüidad-temporal" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="el-primer-sesgo-contigüidad-temporal"><span class="header-section-number">8.4</span> El Primer Sesgo: Contigüidad Temporal</h2>
+<section id="el-experimento-de-pavlov" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="el-experimento-de-pavlov"><span class="header-section-number">8.4.1</span> El Experimento de Pavlov</h3>
+<p>Dentro del sistema de comportamiento que el suceso biológicamente importante ha activado, el primer sesgo que opera es la <strong>contigüidad temporal</strong>: los eventos que ocurrieron aproximadamente al mismo tiempo que el suceso son candidatos más plausibles que los que ocurrieron hace mucho tiempo. La intuición es directa —la mayoría de los mecanismos causales biológicamente relevantes producen sus efectos con relativa rapidez— y fue el primero en recibir atención sistemática.</p>
+<p>A principios del siglo XX, Ivan Pavlov le dio sentido experimental a este sesgo. El protocolo básico es conocido: a un perro se le presenta un estímulo auditivo —un tono— seguido por acceso a comida. El tono, inicialmente neutral, adquiere la capacidad de provocar salivación precisamente porque predice la llegada de la comida. Pavlov y sus sucesores exploraron sistemáticamente distintas variaciones temporales del procedimiento. En el condicionamiento de demora, el tono inicia primero y la comida llega mientras el tono sigue activo: el intervalo relevante es el que transcurre entre el inicio del tono y el inicio de la comida. Cuando ese intervalo es corto —de medio segundo a dos segundos— el aprendizaje es excelente; cuando se extiende a varios segundos o minutos, el aprendizaje disminuye sistemáticamente aunque el tono permanezca presente. En el condicionamiento de huella, el tono termina completamente antes de que inicie la comida, dejando un intervalo vacío entre ambos; el aprendizaje decrece con la duración de ese intervalo. Y en el condicionamiento hacia atrás —la comida se presenta primero, el tono después— el aprendizaje es mínimo o nulo.</p>
+<div id="fig-protocolos_temporales" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-protocolos_temporales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figuras/fig8_1_protocolos_temporales.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-protocolos_temporales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Protocolos temporales del condicionamiento clásico y gradiente de la demora.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción.</strong> Los cuatro procedimientos temporales básicos del condicionamiento clásico. Eje horizontal: tiempo. Las barras sólidas indican la duración de cada estímulo. De arriba a abajo: condicionamiento de demora corta (EC activo cuando llega el EI — máximo aprendizaje), demora larga (EC aún activo pero intervalo mayor), huella (EC apagado antes de que llegue el EI — intervalo de huella vacío), y condicionamiento hacia atrás (EI antes que EC — mínimo aprendizaje). La flecha lateral indica el gradiente de la demora: la fuerza del condicionamiento disminuye sistemáticamente conforme aumenta el intervalo entre el inicio del EC y el inicio del EI.</p>
+</div>
+</div>
+</div>
+<p>El patrón que emerge de estos estudios es el <strong>gradiente de la demora</strong>: la fuerza del condicionamiento disminuye sistemáticamente conforme aumenta el tiempo entre el estímulo candidato y el suceso biológicamente importante. Dependiendo de la preparación, después de menos de un minuto de intervalo frecuentemente no se observa aprendizaje alguno. Nota que este gradiente no es binario —contiguo o no contiguo— sino continuo: mientras más cercanos en el tiempo, mayor es el crédito asignado.</p>
+<p>El gradiente de la demora tiene una interpretación directa en términos del problema de asignación de crédito. Frente al espacio enorme de candidatos posibles, el organismo descarta todos los que no ocurrieron aproximadamente al mismo tiempo que el suceso. El espacio se reduce radicalmente. Pero conviene preguntarse de inmediato: ¿es siempre esto una buena política?</p>
+</section>
+</section>
+<section id="es-la-contigüidad-condición-necesaria-el-experimento-de-garcía" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="es-la-contigüidad-condición-necesaria-el-experimento-de-garcía"><span class="header-section-number">8.5</span> ¿Es la Contigüidad Condición Necesaria? El Experimento de García</h2>
+<p>El gradiente de la demora parecía establecer la contigüidad como un principio fundamental: sin proximidad temporal, no hay aprendizaje. Pero esta generalización ya había empezado a ceder antes de que alguien la pusiera explícitamente a prueba.</p>
+<p>A finales de los años cincuenta, John García trabajaba en un laboratorio de radiación estudiando los efectos de la exposición sobre ratas. Observó algo que nadie buscaba: las ratas desarrollaban aversión a su comida habitual después de ser irradiadas, aunque el malestar gástrico causado por la radiación tardara horas en aparecer. Nadie había diseñado ese experimento. Las horas de demora entre la ingesta y el malestar deberían haber hecho el aprendizaje imposible, según el gradiente que Pavlov había establecido. Y sin embargo ocurría.</p>
+<p>García diseñó entonces un experimento para explorar ese resultado de manera sistemática. El diseño publicado con Koelling en 1966 tiene una elegancia particular: en lugar de manipular una variable a la vez, pone en juego dos tipos de estímulos y dos tipos de consecuencia simultáneamente, de modo que los resultados de los cuatro grupos se iluminan mutuamente.</p>
+<p>A todas las ratas se les daba acceso a un bebedero con agua azucarada; cada lametazo producía simultáneamente un tono y un destello de luz. Así, el estímulo era siempre un compuesto: sabor por un lado, señal audiovisual por otro. Luego los grupos se separaban. A la mitad se les administraba una descarga eléctrica inmediata con cada lametazo; a la otra mitad se les inyectaba una sustancia que producía malestar gastrointestinal con un retraso de horas.</p>
+<div id="fig-garcia" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-garcia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figuras/fig8_2_garcia_koelling.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-garcia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Diseño y resultados del experimento de García y Koelling (1966).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción.</strong> En la fase de entrenamiento todos los animales reciben el compuesto sabor+audiovisual contiguo con su respectiva consecuencia: descarga eléctrica inmediata (grupo izquierdo) o malestar gastrointestinal con retraso de horas (grupo derecho). En la fase de prueba los estímulos se presentan por separado. El grupo con descarga desarrolla aversión al estímulo audiovisual pero no al sabor; el grupo con malestar desarrolla aversión al sabor pero no al audiovisual. El mismo compuesto produce resultados completamente distintos dependiendo del tipo de consecuencia, lo que demuestra que la naturaleza del suceso biológicamente importante determina qué dimensiones del estímulo entran en el espacio de candidatos para la asignación de crédito.</p>
+</div>
+</div>
+</div>
+<p>Los resultados cruzaron de manera llamativa. Las ratas con descarga eléctrica no dejaron de beber el agua dulce, pero sí evitaban el bebedero cuando este producía el tono y la luz. Las ratas con malestar gastrointestinal hacían exactamente lo contrario: dejaban de beber el agua dulce, pero no presentaban aversión al tono ni a la luz.</p>
+<p>Los dos grupos no ilustran el mismo fenómeno y vale la pena separarlos.</p>
+<p>En el grupo de descarga, ambos componentes del compuesto eran igualmente contiguos con la consecuencia —el shock llegaba con cada lametazo, sin demora. A pesar de esa igualdad temporal, el aprendizaje fue selectivo: solo el estímulo audiovisual adquirió valor aversivo. Este es el resultado más limpio del experimento. Con contigüidad idéntica para los dos componentes, el sistema de defensa seleccionó uno y descartó el otro. La contigüidad no decidió qué se aprendió: la naturaleza del suceso biológicamente importante sí lo hizo.</p>
+<p>En el grupo de enfermedad, el resultado es diferente en su estructura aunque paralelo en su forma: las ratas aprendieron a evitar el sabor, no el audiovisual. Pero la consecuencia llegó horas después —territorio completamente fuera del gradiente pavloviano. El aprendizaje ocurrió de todas maneras. La contigüidad no era condición necesaria. La explicación no está en el mecanismo sino en la función: para un omnívoro que puede ingerir toxinas naturales cuyo efecto tarda horas en manifestarse, un sistema de aprendizaje que requiriera contigüidad estricta entre sabor y malestar sería inútil. La selección natural produjo, en cambio, un sistema preparado para asociar sabores con consecuencias gastrointestinales a través de demoras que reflejan la firma temporal real de los venenos en el entorno ancestral.</p>
+<p>Que la contigüidad no sea condición necesaria no significa que sea irrelevante. Estudios posteriores que variaron la demora entre la ingesta y el malestar encontraron un gradiente: la aversión aprendida era más intensa cuando el intervalo era más corto. Y cuando se presentaban dos sabores antes de inducir el malestar, la aversión se formaba con mayor fuerza hacia el sabor temporalmente más cercano a la consecuencia. El sistema de aprendizaje sigue siendo sensible a la proximidad temporal —pero la ventana dentro de la cual esa sensibilidad opera es mucho más ancha que la que Pavlov había descrito, y esa anchura es en sí misma una adaptación evolutiva.</p>
+<p>A lo que acabamos de describir —la dependencia del tipo de estímulo que entra al espacio de candidatos respecto a la naturaleza del suceso biológicamente importante— se le conoce como el sesgo de <strong>relevancia biológica</strong>, también llamado <em>preparedness</em> en la literatura anglosajona.</p>
+<section id="la-relevancia-biológica-como-sesgo-evolutivo" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="la-relevancia-biológica-como-sesgo-evolutivo"><span class="header-section-number">8.5.1</span> La Relevancia Biológica Como Sesgo Evolutivo</h3>
+<p>Para las ratas omnívoras que viven principalmente en la oscuridad, cuando el suceso biológicamente importante es un malestar gastrointestinal, el espacio de candidatos relevantes está conformado por estímulos gustativos, no por estímulos visuales o auditivos. Al sentirnos mal del estómago, nosotros mismos hacemos lo mismo: lo primero que preguntamos es qué comimos, aunque nuestra última comida haya sido muchas horas antes. Rara vez nos preguntamos qué música escuchábamos.</p>
+<p>Este sesgo no es arbitrario. Refleja la historia evolutiva de la especie y su nicho ecológico. Para un omnívoro nocturno, la toxicidad de los alimentos se señaliza principalmente por el sabor; la visión no proporciona información confiable sobre toxicidad en entornos oscuros. Para las palomas, en cambio, que forrajean visualmente durante el día en ambientes abiertos, la dimensión relevante es la estimulación visual, no el sabor. Cuando a las palomas se les induce malestar gastrointestinal contiguo con una señal visual, aprenden la aversión con facilidad; no así cuando el estímulo es gustativo.</p>
+<p>La coevolución entre aves y polillas tóxicas ilustra con elegancia cómo los sesgos de relevancia biológica y las señales en el entorno se moldean mutuamente a lo largo del tiempo. Algunas polillas evolucionaron toxicidad, y simultáneamente evolucionaron patrones de coloración llamativos —el aposematismo— que señalizan esa toxicidad de manera visualmente detectable. Las aves que aprenden rápidamente a asociar esos patrones visuales con el malestar sobreviven mejor. Y otro grupo de polillas no tóxicas evolucionó para imitar esos patrones, aprovechando el sesgo de relevancia biológica visual de las aves para evadir la depredación: el mimetismo batesiano. El sistema completo —toxicidad, coloración aposemática, sesgo de aprendizaje visual de las aves, mimetismo— es un ejemplo de cómo la selección natural moldea simultáneamente las señales en el entorno y los sesgos que las detectan.</p>
+</section>
+<section id="el-sesgo-de-novedad" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="el-sesgo-de-novedad"><span class="header-section-number">8.5.2</span> El Sesgo de Novedad</h3>
+<p>Los estudios de García también revelaron un tercer sesgo: la <strong>novedad</strong>. Cuando antes de inducir el malestar gástrico se presenta a las ratas dos sabores —uno familiar, que han probado repetidamente en días previos, y uno novedoso, que prueban por primera vez—, ambos igualmente contiguos con la consecuencia, las ratas desarrollan aversión al sabor novedoso pero no al familiar. El sistema de aprendizaje prioriza estímulos que no han sido procesados previamente.</p>
+<p>La lógica adaptativa es clara. Si un organismo ha consumido un alimento familiar múltiples veces sin consecuencias aversivas, la probabilidad de que ese alimento sea la causa de un episodio aislado de enfermedad es baja. En cambio, un alimento nuevo es un candidato más plausible. El sesgo hacia la novedad reduce la probabilidad de desarrollar aversiones incorrectas a alimentos seguros y dirige la búsqueda hacia los verdaderos culpables.</p>
+</section>
+</section>
+<section id="es-la-contigüidad-condición-suficiente" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="es-la-contigüidad-condición-suficiente"><span class="header-section-number">8.6</span> ¿Es la Contigüidad Condición Suficiente?</h2>
+<p>Hasta aquí hemos visto que la contigüidad, modulada por la relevancia biológica y la novedad, es suficiente para generar aprendizaje cuando hay un solo candidato presente y el suceso es genuinamente nuevo. Pero el entorno natural raramente presenta un solo estímulo a la vez. El perro callejero que encuentra comida percibe simultáneamente docenas de estímulos, todos igualmente contiguos con el hallazgo. Si la contigüidad fuera suficiente, el perro aprendería que todos y cada uno de esos estímulos predicen comida, lo cual sería inútil: un predictor que siempre está presente no discrimina nada.</p>
+<p>La pregunta de si la contigüidad es condición suficiente se exploró sistemáticamente a finales de los años sesenta. La respuesta resultó ser negativa, de dos maneras distintas.</p>
+<section id="ensombrecimiento-los-estímulos-compiten" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="ensombrecimiento-los-estímulos-compiten"><span class="header-section-number">8.6.1</span> Ensombrecimiento: Los Estímulos Compiten</h3>
+<p>B. J. Reynolds realizó a finales de los años cincuenta un experimento sencillo con palomas. A dos palomas se les entrenó a discriminar entre dos teclas: una tecla positiva, que cuando era picada producía acceso al comedero, y una negativa, que no lo producía. Ambas teclas estaban iluminadas con compuestos de dos estímulos que variaban en forma y color: la tecla positiva mostraba un triángulo blanco sobre fondo rojo; la negativa, un círculo blanco sobre fondo verde. Después del entrenamiento, Reynolds presentó los cuatro estímulos por separado para determinar cuál había adquirido control sobre la conducta.</p>
+<div id="fig-reynolds" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reynolds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figuras/fig8_3_ensombrecimiento.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reynolds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Ensombrecimiento en el experimento de Reynolds (1961).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción.</strong> Fase de entrenamiento: ambas palomas reciben el mismo compuesto positivo (triángulo blanco sobre fondo rojo → comida) y el mismo compuesto negativo (círculo blanco sobre fondo verde → nada). Fase de prueba: cada componente se presenta por separado. La paloma 1 responde al fondo rojo pero no a la forma; la paloma 2 responde a la forma triangular pero no al color. Ninguna responde a ambos componentes del compuesto positivo, a pesar de que ambos fueron igualmente contiguos con el refuerzo durante el entrenamiento. Los estímulos compiten por la asignación de crédito.</p>
+</div>
+</div>
+</div>
+<p>El resultado fue que cada paloma respondía a solo uno de los dos componentes del compuesto positivo. Una paloma respondía al color rojo e ignoraba la forma; la otra respondía a la forma triangular e ignoraba el color. A pesar de que ambos elementos habían sido perfectamente contiguos con la recompensa durante el entrenamiento, solo uno de ellos adquirió control conductual en cada animal.</p>
+<p>A este fenómeno se le llama <strong>ensombrecimiento</strong>: un elemento saliente del compuesto —más intenso, más novedoso, más contrastante— “ensombrece” el aprendizaje sobre elementos menos salientes. La implicación es fundamental: los estímulos no aprenden en paralelo de manera independiente. Compiten entre sí por la asignación de crédito. Lo que aprende uno afecta lo que puede aprender el otro.</p>
+<p>Retomando el ejemplo del perro amenazante: si el perro te ataca, para algunos de ustedes el predictor establecido será el gruñido, para otros el color del pelaje, para otros la raza. Los factores que determinan cuál elemento gana la competencia incluyen la saliencia perceptual —qué tan intenso o contrastante es el estímulo— y las predisposiciones de relevancia biológica que acabamos de discutir. Lo que el ensombrecimiento establece es que esta competencia existe, y que ganarla no es simplemente cuestión de ser contiguo con el suceso.</p>
+</section>
+<section id="bloqueo-la-historia-del-organismo-importa" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="bloqueo-la-historia-del-organismo-importa"><span class="header-section-number">8.6.2</span> Bloqueo: La Historia del Organismo Importa</h3>
+<p>Si el ensombrecimiento muestra que la contigüidad no basta cuando dos estímulos compiten simultáneamente, el experimento de bloqueo de Leon Kamin demuestra algo más llamativo: la historia previa de un estímulo puede suprimir completamente el aprendizaje sobre otro estímulo, incluso cuando ambos son igualmente contiguos con el suceso biológicamente importante.</p>
+<p>El punto se entiende bien con un ejemplo cotidiano. Imagina que después de visitar varios restaurantes has aprendido que los manteles de tela son un buen predictor de la calidad de la comida. Visitas ahora un restaurante nuevo que tiene manteles de tela y, además, música clásica de fondo. La comida es igualmente buena. ¿Habrás aprendido que la música clásica predice buena comida? Para saberlo tendrías que observar si, al elegir entre dos restaurantes nuevos sin manteles de tela, preferirías el que tiene música clásica. La intuición sugiere que probablemente no. Una vez que el mantel de tela ya predecía perfectamente la buena comida, la música clásica no añadía información nueva.</p>
+<p>Leon Kamin puso a prueba esta intuición en 1969 en uno de los experimentos más influyentes en la historia del estudio del aprendizaje. El diseño trabajó con dos grupos de ratas. Al grupo experimental se le entrenó primero con luz sola seguida de descarga eléctrica, hasta que la luz era un predictor establecido. Luego, ese mismo grupo recibió presentaciones del compuesto luz más tono seguido de descarga. Al grupo control, se le presentó el compuesto desde el inicio, sin la fase previa con la luz. En ambos casos, la tercera fase consistió en presentar el tono solo para medir cuánto habían aprendido las ratas sobre él.</p>
+<div id="fig-kamin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kamin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figuras/fig8_4_bloqueo_kamin.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kamin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.4: Diseño del experimento de bloqueo de Kamin (1969).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción.</strong> La única diferencia entre grupos es la Fase 1: el grupo experimental llega a la Fase 2 con la luz ya establecida como predictor de la descarga; el grupo control no tiene historia previa. En la Fase 2 ambos grupos reciben el compuesto luz+tono seguido de descarga. En la prueba, solo el grupo control muestra respuesta condicionada al tono. El tono es igualmente contiguo con la descarga en ambos grupos — la diferencia es que en el grupo experimental la luz ya predice perfectamente la descarga, el error de predicción es cero, y no hay nada nuevo que aprender.</p>
+</div>
+</div>
+</div>
+<p>Los resultados fueron claros. Las ratas del grupo control —que no tenían experiencia previa con la luz— aprendieron a responder al tono. Las del grupo experimental —cuya luz ya era un predictor establecido— no mostraron prácticamente ningún aprendizaje sobre el tono. El término para este fenómeno es <strong>bloqueo</strong>: la experiencia previa con un predictor establecido bloquea el aprendizaje sobre nuevos estímulos incorporados al compuesto.</p>
+<p>¿Por qué ocurre el bloqueo? La interpretación que el experimento sugiere es que las ratas del grupo experimental, al encontrar el compuesto luz más tono seguido de descarga, no se sorprenden: la luz ya predecía la descarga. No hay nada nuevo que aprender. El tono es informacionalmente redundante —su presencia o ausencia no modifica la predictibilidad del suceso. Y si no hay información nueva, no hay razón para modificar el sistema.</p>
+<p>Esta interpretación revela algo profundo sobre la lógica del aprendizaje: el sistema no responde a la mera ocurrencia del suceso biológicamente importante, sino a la <em>sorpresa</em> que ese suceso produce. El aprendizaje es proporcional a la discrepancia entre lo que ocurrió y lo que se esperaba. Si la predicción era perfecta, el error es cero y no hay aprendizaje. Si ocurre algo inesperado, el error es distinto de cero y el sistema se actualiza. Kamin llamó a esta idea predictibilidad; en el capítulo siguiente la veremos formalizada con precisión matemática como <strong>error de predicción</strong>.</p>
+</section>
+</section>
+<section id="optimalidad-cuándo-funciona-la-contigüidad-y-cuándo-falla" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="optimalidad-cuándo-funciona-la-contigüidad-y-cuándo-falla"><span class="header-section-number">8.7</span> Optimalidad: ¿Cuándo Funciona la Contigüidad y Cuándo Falla?</h2>
+<p>Hemos descrito la contigüidad como un sesgo inductivo y hemos dicho que es el resultado de aprendizaje filogenético. Conviene ahora preguntarse con más precisión cuándo es una política óptima y cuándo no.</p>
+<p>Un sesgo es óptimo cuando la estructura del entorno para el que fue diseñado coincide con la estructura del entorno donde se aplica. La contigüidad temporal como heurística para causalidad funciona bien cuando los mecanismos causales biológicamente relevantes producen sus efectos con rapidez. Considera los casos más frecuentes en el entorno ancestral de la mayoría de los animales: un depredador que ataca produce dolor en segundos; un alimento que desencadena saciedad lo hace en minutos; una pareja potencial que emite una señal está presente cuando la emite. En estos contextos, la relación causal tiene una firma temporal característica: el efecto sigue a la causa con relativa inmediatez.</p>
+<p>En esos entornos, la contigüidad es una heurística potente porque permite ignorar la inmensa mayoría del historial de eventos pasados y concentrar la búsqueda en los candidatos temporalmente recientes. El costo de ignorar candidatos lejanos en el tiempo es bajo, porque causas lejanas son improbables dado el tipo de mecanismos que operan.</p>
+<p>Pensemos en el parámetro que controla la anchura del gradiente de la demora —qué tan rápido declina el aprendizaje conforme aumenta el intervalo entre estímulo y consecuencia. En los experimentos pavlovianos, ese parámetro está calibrado para intervalos de segundos a minutos. Esa calibración no es arbitraria: refleja la distribución real de demoras causales en el entorno ancestral. Un organismo con un gradiente demasiado estrecho —que solo aprende sobre eventos del último segundo— pierde muchas relaciones causales reales. Uno con un gradiente demasiado amplio —que considera como candidatos todo lo que ocurrió en la última semana— incluye tanto ruido que el espacio de candidatos vuelve a ser inmanejable. El valor óptimo está en algún punto entre estos extremos, y ese punto depende de la distribución de demoras causales en el entorno.</p>
+<p>El experimento de García es el contraejemplo perfecto al parámetro estándar. Las toxinas que producen malestar gastrointestinal tienen perfiles temporales peculiares: muchos venenos naturales requieren horas para ser absorbidos y producir síntomas. Un organismo cuyo gradiente de demora solo cubriera minutos sería incapaz de aprender a evitar la mayoría de los alimentos tóxicos en la naturaleza. La selección natural resolvió esto de manera elegante: para la clase específica de relación sabor-malestar gastrointestinal, el gradiente de la demora es mucho más ancho que para otras relaciones causales. Esto no contradice el principio general de la contigüidad —lo especializa: la anchura óptima del gradiente depende del mecanismo causal específico que se está detectando.</p>
+<p>El sesgo de relevancia biológica opera, en este sentido, en dos niveles simultáneos. Por un lado, define qué dimensiones del estímulo son siquiera candidatos para la asignación de crédito dado el tipo de consecuencia: sabores para el malestar gastrointestinal en omnívoros, señales visuales para el dolor externo. Por otro, calibra la anchura del gradiente de demora para cada tipo de relación: estrecho donde el mecanismo causal es rápido —depredador y dolor—, amplio donde es lento —toxina y malestar—. Y el sistema nervioso ha sido construido para que esta calibración diferencial ocurra de manera automática, dependiendo del tipo de suceso biológicamente importante que activa el sistema de comportamiento relevante.</p>
+<p>Nótese que esta es exactamente la lógica de los pasajes de optimalidad de los capítulos anteriores: el parámetro que controla la sensibilidad al error —<em>b</em> en kinesis, <em>k</em> en taxias— tiene un valor óptimo que depende del entorno, y la solución verdaderamente óptima es poder ajustar ese valor adaptativamente. La anchura del gradiente de la demora es otro parámetro con esta misma propiedad. La selección natural lo ha ajustado de manera diferenciada para diferentes clases de relaciones causales, pero ese ajuste es fijo para cada especie. El aprendizaje individual puede, dentro de ciertos límites, afinar esa calibración a las condiciones específicas del entorno del organismo.</p>
+<ul>
+<li></li>
+</ul>
+<p><em>Básico.</em> Antes de correr el simulador, predice: ¿a qué intervalo habrá caído la fuerza de condicionamiento a la mitad en cada preparación? Verifica tu predicción con el gráfico. (Pista: cuando exp(−t/τ) = 0.5, despeja t.)</p>
+<p><em>Intermedio.</em> Modifica <code>tau_pavlov</code> a 5, 15 y 60 segundos. Para cada valor, describe el tipo de entorno —¿qué clase de mecanismos causales predominan?— que haría óptimo ese gradiente. ¿Qué costo paga el organismo con un tau demasiado estrecho? ¿Y con uno demasiado amplio?</p>
+<p><em>Avanzado.</em> Diseña una “especie” con dos parámetros tau independientes: uno estrecho para relaciones audiovisuales y uno amplio para relaciones gustativas. ¿Cuándo y por cuánto supera la especie especializada a la generalista?</p>
+<hr>
+<p><em>Básico.</em> En el escenario de bloqueo, el estímulo B es tan contiguo con el EI como el estímulo A durante la Fase 2. ¿Por qué no aprende? Observa el valor de la variable <code>error</code> al inicio de la Fase 2 y explica qué ocurre con él.</p>
+<p><em>Intermedio.</em> Modifica el experimento de bloqueo de modo que <code>lam</code> cambie de 1.0 a 1.5 en la Fase 2 —el EI se vuelve más intenso. ¿Qué ocurre ahora con B? Este resultado tiene un nombre en la literatura experimental (el “desbloqueo”). ¿Por qué tiene sentido desde la perspectiva del error de predicción?</p>
+<p><em>Avanzado.</em> El ensombrecimiento depende de la diferencia en <code>alpha_A</code> y <code>alpha_B</code>. Encuentra el valor mínimo de esa diferencia para que el ensombrecimiento sea “completo” —es decir, para que B aprenda menos del 10% del máximo posible. ¿Cómo depende ese umbral del valor de <code>beta</code>? ¿Qué dice esto sobre la interacción entre saliencia del estímulo y tasa de aprendizaje del EI?</p>
+<hr>
+</section>
+<section id="hacia-el-modelo-formal" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="hacia-el-modelo-formal"><span class="header-section-number">8.8</span> Hacia el Modelo Formal</h2>
+<p>Los experimentos de Pavlov, García, Reynolds y Kamin describen, en conjunto, un sistema de aprendizaje con propiedades precisas. Es sensible a la contigüidad, pero no esclavamente. Está modulado por la relevancia biológica del suceso. Procesa estímulos en competencia, no de manera independiente. Y su motor no es la mera co-ocurrencia de un estímulo con un suceso, sino la información que ese estímulo aporta sobre la predicción de ese suceso.</p>
+<p>Estos hechos no son una colección de curiosidades —son las restricciones que debe satisfacer cualquier modelo formal del aprendizaje asociativo. El bloqueo, en particular, plantea un desafío conceptual preciso: ¿por qué un estímulo contiguo con un suceso biológicamente importante no aprende nada, si ese suceso ocurrió? La respuesta que los experimentos sugieren es que el sistema no responde a la ocurrencia del suceso —responde a la <em>sorpresa</em> que ese suceso produce. Si el suceso ya estaba predicho, su ocurrencia no es sorprendente y no hay información nueva que incorporar. El tono no aprende en el experimento de Kamin porque el error de predicción es cero: la luz ya predecía perfectamente la descarga, y la descarga ocurrió exactamente como se esperaba.</p>
+<p>Esta intuición se formaliza de manera precisa en el modelo propuesto por Bush y Mosteller en 1951, que estudiaremos en el capítulo siguiente. El modelo parte de una idea simple: lo que controla el aprendizaje no es el valor absoluto del suceso biológicamente importante, sino la discrepancia entre el suceso obtenido y el suceso predicho —el error de predicción. Cuando la predicción es perfecta, el error es cero y no hay aprendizaje. Cuando hay sorpresa, el error es distinto de cero y el sistema se actualiza.</p>
+<p>Noten la conexión con lo que ya conocen. El error de predicción es la misma operación que la señal de error en los sistemas de retroalimentación del capítulo 5: la discrepancia entre el estado deseado y el estado actual. Y es la misma operación que aparece en la ecuación de Price: la diferencia entre el rasgo del individuo y el promedio de la población, ponderada por el éxito relativo. El mismo principio reaparece ahora en el aprendizaje asociativo. El capítulo siguiente formaliza ese principio y muestra cómo una ecuación sorprendentemente simple captura el ensombrecimiento, el bloqueo, la extinción y docenas de otros fenómenos del condicionamiento clásico.</p>
+<hr>
+</section>
+<section id="conexiones" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">8.9</span> Conexiones</h2>
+<section id="hacia-atrás-selección-natural-y-retroalimentación" class="level3" data-number="8.9.1">
+<h3 data-number="8.9.1" class="anchored" data-anchor-id="hacia-atrás-selección-natural-y-retroalimentación"><span class="header-section-number">8.9.1</span> Hacia atrás: Selección Natural y Retroalimentación</h3>
+<p>Los sesgos inductivos son el resultado directo del proceso que describimos en el capítulo sobre selección natural. El genoma, actuando como archivo causal acumulado a lo largo de generaciones, codifica las regularidades estadísticas del entorno ancestral en forma de predisposiciones a aprender ciertas relaciones más fácilmente que otras. La ecuación de Price es el mecanismo mediante el cual esos sesgos fueron refinados: los organismos con sesgos mejor calibrados al entorno dejaron más descendientes, y esa covarianza entre el sesgo y el éxito reproductivo produjo el ajuste acumulativo que observamos hoy.</p>
+<p>La señal de error en los sistemas de retroalimentación —la discrepancia entre el set point y el valor actual— es la misma operación que ahora reaparece como error de predicción: la discrepancia entre lo que el organismo esperaba y lo que ocurrió. La arquitectura es la misma; cambia el tipo de variable que se compara.</p>
+</section>
+<section id="hacia-adelante-asignación-de-crédito-a-respuestas-capítulo-9" class="level3" data-number="8.9.2">
+<h3 data-number="8.9.2" class="anchored" data-anchor-id="hacia-adelante-asignación-de-crédito-a-respuestas-capítulo-9"><span class="header-section-number">8.9.2</span> Hacia adelante: Asignación de Crédito a Respuestas (Capítulo 9)</h3>
+<p>El problema que hemos abordado en este capítulo es la asignación de crédito a estímulos: ¿qué eventos del entorno predicen el suceso biológicamente importante? El capítulo 9 plantea el problema análogo para respuestas: ¿qué acciones del organismo <em>producen</em> ese suceso? Los principios son estructuralmente similares —contigüidad, relevancia, novedad, competencia— pero el hecho de que el organismo mismo genera la variabilidad sobre la que opera la selección introduce complejidades adicionales. El trabajo de Staddon y Simmelhag que veremos en ese capítulo conecta directamente con la teoría de sistemas de comportamiento introducida aquí.</p>
+</section>
+<section id="hacia-adelante-bush-y-mosteller-y-el-error-de-predicción-capítulo-10" class="level3" data-number="8.9.3">
+<h3 data-number="8.9.3" class="anchored" data-anchor-id="hacia-adelante-bush-y-mosteller-y-el-error-de-predicción-capítulo-10"><span class="header-section-number">8.9.3</span> Hacia adelante: Bush y Mosteller y el Error de Predicción (Capítulo 10)</h3>
+<p>El bloqueo de Kamin establece la evidencia central que motiva el primer modelo formal del aprendizaje asociativo. El aprendizaje no responde a la ocurrencia del suceso biológicamente importante sino a la <em>sorpresa</em> que ese suceso produce —la discrepancia entre lo que ocurrió y lo que el organismo esperaba. En 1951, Bush y Mosteller formalizaron esa intuición en una ecuación de actualización cuya estructura es simple: el valor de un estímulo se ajusta en cada ensayo en proporción a esa discrepancia. La velocidad del ajuste está controlada por un parámetro α que cumple la misma función que <em>b</em> en kinesis y <em>k</em> en taxias: determinar qué tanto le importa al sistema la diferencia entre predicción y resultado. El capítulo 8 desarrolla ese modelo a partir de los datos sobre aprendizaje de estímulos que hemos visto aquí.</p>
+</section>
+<section id="hacia-adelante-rescorla-wagner-y-la-competencia-entre-estímulos-capítulo-11" class="level3" data-number="8.9.4">
+<h3 data-number="8.9.4" class="anchored" data-anchor-id="hacia-adelante-rescorla-wagner-y-la-competencia-entre-estímulos-capítulo-11"><span class="header-section-number">8.9.4</span> Hacia adelante: Rescorla-Wagner y la Competencia entre Estímulos (Capítulo 11)</h3>
+<p>El modelo de Bush y Mosteller captura el error de predicción para un estímulo en solitario, pero no deriva el bloqueo. El bloqueo requiere algo adicional: que el error de predicción no se calcule sobre el valor de un estímulo individual sino sobre la suma de los valores de <em>todos</em> los estímulos presentes simultáneamente. Esa extensión —propuesta por Rescorla y Wagner en 1972— convierte la competencia entre estímulos en una consecuencia matemática de la ecuación, no en un supuesto adicional. Cuando A ya predice perfectamente el suceso biológicamente importante, la suma de valores iguala al máximo posible, el error es cero, y B no aprende nada aunque sea perfectamente contiguo. El capítulo 11 examina ese modelo y sus consecuencias, que van bastante más lejos del bloqueo.</p>
+<hr>
+</section>
+</section>
+<section id="resumen" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="resumen"><span class="header-section-number">8.10</span> Resumen</h2>
+<p>El problema de la asignación de crédito pregunta cuál de los innumerables eventos que preceden a un suceso biológicamente importante merece ser identificado como su predictor. El espacio de candidatos es enorme, y sin guía la búsqueda es computacionalmente intratable.</p>
+<p>Los organismos resuelven este problema con una cascada de sesgos inductivos que operan en distintos niveles. El primer filtro lo proporcionan los sistemas de comportamiento: el tipo de suceso biológicamente importante activa el sistema funcionalmente apropiado, y ese sistema determina qué dimensiones del entorno son siquiera relevantes. Dentro del sistema activo, la contigüidad temporal opera como primer sesgo: los eventos cercanos en el tiempo son candidatos prioritarios porque la mayoría de los mecanismos causales biológicamente relevantes operan con rapidez. La relevancia biológica especifica adicionalmente qué dimensiones del estímulo —sabor, sonido, imagen— son más probables de ser causalmente relevantes para cada tipo de consecuencia, reflejando la historia evolutiva de la especie en su nicho ecológico particular. La novedad prioriza estímulos nuevos sobre familiares, porque causas nuevas son más plausibles para efectos nuevos.</p>
+<p>Pero la contigüidad no es ni necesaria ni suficiente. No es necesaria porque las aversiones al sabor demuestran que se puede aprender con demoras de horas. No es suficiente porque el ensombrecimiento y el bloqueo demuestran que la contigüidad no garantiza aprendizaje cuando hay competencia entre estímulos. El principio subyacente, que el bloqueo de Kamin revela con especial claridad, es que el aprendizaje no es proporcional a la ocurrencia del suceso sino a la sorpresa que ese suceso produce —la discrepancia entre lo que ocurrió y lo que el organismo esperaba. Esa discrepancia es el error de predicción, concepto que los capítulos 8 y 9 formalizarán en dos pasos: primero para estímulos individuales, luego para estímulos en competencia.</p>
+<hr>
+</section>
+<section id="ejercicios" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">8.11</span> Ejercicios</h2>
+<p><strong>1.</strong> El capítulo propone que los sesgos inductivos son “conocimiento filogenético sobre la estructura causal del mundo”. Explica con tus propias palabras qué significa esto. ¿Qué tendría que haber sido cierto en el entorno ancestral de los roedores omnívoros para que el sesgo de relevancia biológica gustativa —buscar la causa del malestar gastrointestinal en los sabores recientes— haya evolucionado? ¿Qué tipo de entorno haría desadaptativo ese mismo sesgo?</p>
+<p><strong>2.</strong> El experimento de García usó un compuesto de sabor + estímulo audiovisual. Las ratas con malestar gastrointestinal aprendieron a evitar el sabor pero no el estímulo audiovisual; las ratas con descarga eléctrica hicieron lo contrario. Reformula este resultado en términos de sistemas de comportamiento: ¿qué sistema activa cada tipo de consecuencia, y cómo determina ese sistema qué dimensiones del estímulo entran en el espacio de candidatos? En el grupo de descarga, ambos componentes del compuesto eran igualmente contiguos con el shock; en el grupo de enfermedad, la consecuencia llegó horas después. ¿Cambia esta asimetría de demoras la interpretación del resultado en términos de sistemas de comportamiento, o el fenómeno es el mismo independientemente de la demora? Justifica tu respuesta.</p>
+<p><strong>3.</strong> El gradiente de la demora tiene un valor óptimo que depende del tipo de mecanismo causal. Para cada uno de los siguientes pares causa-efecto, razona cuál sería el rango de demoras que debería cubrir el gradiente óptimo, y por qué: (a) depredador → ataque, (b) toxina de digestión lenta → malestar, (c) pareja potencial → apareamiento. ¿Qué predice este análisis sobre las diferencias entre especies con dietas o nichos ecológicos distintos?</p>
+<p><strong>4.</strong> En el experimento de bloqueo de Kamin, el grupo control aprende sobre el tono aunque el tono es igualmente contiguo con la descarga para ambos grupos. Usa el concepto de error de predicción para explicar por qué el grupo control aprende y el experimental no. Luego predice qué ocurriría si en la Fase 2 del experimento la descarga fuera el doble de intensa que en la Fase 1. ¿Cambiaría el resultado para el grupo experimental? ¿Por qué?</p>
+<p><strong>5.</strong> Usa el Simulador 6.2 para explorar qué ocurre cuando <code>lam</code> cambia de 1.0 a 1.5 en la Fase 2 del bloqueo. Este resultado, llamado “desbloqueo”, fue una de las primeras evidencias experimentales a favor del modelo de Rescorla-Wagner. Explica en términos intuitivos —sin la ecuación formal, que veremos en el siguiente capítulo— por qué el cambio en la intensidad del EI “desbloquea” el aprendizaje sobre el estímulo que había sido bloqueado.</p>
+<p><strong>6.</strong> <em>(Reflexión)</em> El capítulo afirma que los sesgos inductivos son soluciones evolutivas a un problema computacional real, no limitaciones arbitrarias. Pero también pueden producir errores sistemáticos cuando el organismo se encuentra en un entorno diferente del ancestral. Describe dos situaciones del entorno humano contemporáneo en que los sesgos de contigüidad o relevancia biológica llevan a conclusiones erróneas sobre la causalidad. ¿Qué tienen en común esas situaciones? ¿Qué dice esto sobre el alcance y los límites del aprendizaje filogenético?</p>
+<hr>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">8.12</span> Lecturas Recomendadas</h2>
+<p><strong>García, J., &amp; Koelling, R. A. (1966).</strong> Relation of cue to consequence in avoidance learning. <em>Psychonomic Science, 4</em>, 123–124. — El artículo original en dos páginas. Imprescindible por su claridad y porque el experimento habla por sí mismo.</p>
+<p><strong>Kamin, L. J. (1969).</strong> Predictability, surprise, attention, and conditioning. En B. A. Campbell &amp; R. M. Church (Eds.), <em>Punishment and Aversive Behavior</em>. Appleton-Century-Crofts. — El experimento original del bloqueo con el análisis conceptual completo. Accesible y con la lógica del experimento explicada paso a paso.</p>
+<p><strong>Seligman, M. E. P. (1970).</strong> On the generality of the laws of learning. <em>Psychological Review, 77</em>, 406–418. — El artículo que sistematizó la evidencia de relevancia biológica y acuñó el término <em>preparedness</em>. Vista panorámica más allá de los experimentos individuales.</p>
+<p><strong>Timberlake, W., &amp; Lucas, G. A. (1989).</strong> Behavior systems and learning: From misbehavior to general principles. En S. B. Klein &amp; R. R. Mowrer (Eds.), <em>Contemporary Learning Theories</em>. Erlbaum. — La exposición más accesible del enfoque de sistemas de comportamiento aplicado al aprendizaje.</p>
+<p><strong>Domjan, M. (2005).</strong> Pavlovian conditioning: A functional perspective. <em>Annual Review of Psychology, 56</em>, 179–206. — Revisión de cómo los principios del condicionamiento reflejan soluciones evolutivas a problemas adaptativos. Nivel moderado; muy recomendable como lectura de integración después de este capítulo.</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./retroalimentacion.html" class="pagination-link" aria-label="Sistemas de Retroalimentación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./asignacionR.html" class="pagination-link" aria-label="El Problema de la Asignación de Crédito (II)">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

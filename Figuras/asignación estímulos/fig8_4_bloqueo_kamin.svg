@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 530" width="680" height="530">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2C5282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#718096" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="680" height="530" fill="white"/>
+  <rect x="0" y="0" width="680" height="3" fill="#2C5282"/>
+
+  <text x="340" y="24" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#718096" font-style="italic">experimento de Kamin (1969) · bloqueo por historia previa</text>
+
+  <!-- ── Column headers ── -->
+  <rect x="175" y="33" width="130" height="28" rx="3" fill="#EBF4FF" stroke="#2C5282" stroke-width="1"/>
+  <text x="240" y="52" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#2C5282">Fase 1</text>
+
+  <rect x="325" y="33" width="130" height="28" rx="3" fill="#EBF4FF" stroke="#2C5282" stroke-width="1"/>
+  <text x="390" y="52" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#2C5282">Fase 2</text>
+
+  <rect x="475" y="33" width="130" height="28" rx="3" fill="#EBF4FF" stroke="#2C5282" stroke-width="1"/>
+  <text x="540" y="52" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#2C5282">Prueba</text>
+
+  <!-- ── Row label: Grupo experimental ── -->
+  <text x="85" y="113" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#C05621">Grupo</text>
+  <text x="85" y="128" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#C05621">experi-</text>
+  <text x="85" y="143" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#C05621">mental</text>
+
+  <!-- Phase 1 experimental: Luz → Descarga -->
+  <rect x="175" y="75" width="130" height="82" rx="4" fill="#FFF8F5" stroke="#C05621" stroke-width="1.2"/>
+  <text x="240" y="100" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="12" font-weight="bold" fill="#C05621">Luz</text>
+  <line x1="220" y1="113" x2="258" y2="113" stroke="#C05621" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="240" y="130" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#C05621">Descarga</text>
+  <text x="240" y="148" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="9" fill="#A05010" font-style="italic">(predictor establecido)</text>
+
+  <!-- Arrow between phases -->
+  <line x1="307" y1="110" x2="323" y2="110" stroke="#718096" stroke-width="1" marker-end="url(#arrN)"/>
+
+  <!-- Phase 2 experimental: Luz+Tono → Descarga -->
+  <rect x="325" y="75" width="130" height="70" rx="4" fill="#FFF8F5" stroke="#C05621" stroke-width="1.2"/>
+  <text x="390" y="97" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="12" font-weight="bold" fill="#C05621">Luz + Tono</text>
+  <line x1="368" y1="112" x2="410" y2="112" stroke="#C05621" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="390" y="130" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#C05621">Descarga</text>
+
+  <!-- Arrow between phases -->
+  <line x1="457" y1="110" x2="473" y2="110" stroke="#718096" stroke-width="1" marker-end="url(#arrN)"/>
+
+  <!-- Prueba experimental: Tono → sin respuesta (bloqueado) -->
+  <rect x="475" y="75" width="130" height="70" rx="4" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="1.2"/>
+  <text x="540" y="100" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="12" font-weight="bold" fill="#444">Tono</text>
+  <text x="540" y="118" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#A0AEC0">sin respuesta</text>
+  <text x="540" y="134" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="10" font-weight="bold" fill="#C05621">⟵ bloqueado</text>
+
+  <!-- ── Phase 1 label below experimental row ── -->
+  <text x="240" y="158" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="9" fill="#718096" font-style="italic">historia previa</text>
+
+  <!-- Separator between groups -->
+  <line x1="40" y1="172" x2="640" y2="172" stroke="#CBD5E0" stroke-width="0.8" stroke-dasharray="5 4"/>
+
+  <!-- ── Row label: Grupo control ── -->
+  <text x="85" y="233" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#276749">Grupo</text>
+  <text x="85" y="248" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#276749">control</text>
+
+  <!-- Phase 1 control: vacía -->
+  <rect x="175" y="185" width="130" height="70" rx="4" fill="#F7FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="240" y="220" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#CBD5E0" font-style="italic">— sin fase 1 —</text>
+
+  <line x1="307" y1="220" x2="323" y2="220" stroke="#CBD5E0" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <!-- Phase 2 control: Luz+Tono → Descarga -->
+  <rect x="325" y="185" width="130" height="70" rx="4" fill="#F0FFF4" stroke="#276749" stroke-width="1.2"/>
+  <text x="390" y="207" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="12" font-weight="bold" fill="#276749">Luz + Tono</text>
+  <line x1="368" y1="222" x2="410" y2="222" stroke="#276749" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="390" y="240" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" fill="#276749">Descarga</text>
+
+  <line x1="457" y1="220" x2="473" y2="220" stroke="#718096" stroke-width="1" marker-end="url(#arrN)"/>
+
+  <!-- Prueba control: Tono → respuesta condicionada -->
+  <rect x="475" y="185" width="130" height="70" rx="4" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="540" y="210" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="12" font-weight="bold" fill="#2C5282">Tono</text>
+  <text x="540" y="228" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#2C5282">respuesta ✓</text>
+  <text x="540" y="244" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="9" fill="#2C5282" font-style="italic">condicionada</text>
+
+  <!-- ═══ KEY INSIGHT BOX ═══ -->
+  <rect x="40" y="278" width="600" height="100" rx="5" fill="#FFFBEB" stroke="#C05621" stroke-width="1.2"/>
+  <text x="340" y="299" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="11" font-weight="bold" fill="#C05621">¿Por qué el tono no aprende en el grupo experimental?</text>
+  <text x="60" y="318" font-family="Georgia,Palatino,serif" font-size="11" fill="#444">El tono es igualmente contiguo con la descarga en ambos grupos. La diferencia:</text>
+  <text x="60" y="335" font-family="Georgia,Palatino,serif" font-size="11" fill="#444">la luz ya predice perfectamente la descarga en el grupo experimental. No hay sorpresa.</text>
+  <text x="340" y="360" text-anchor="middle" font-family="Georgia,Palatino,serif" font-size="13" font-weight="bold" fill="#C05621">error de predicción = 0  →  aprendizaje = 0</text>
+
+  <!-- Caption -->
+  <text x="40" y="398" font-family="Georgia,Palatino,serif" font-size="10" fill="#718096">
+    <tspan font-weight="bold">Figura 8.4.</tspan>
+    <tspan> Diseño del experimento de bloqueo de Kamin. La única diferencia entre grupos es la Fase 1: el grupo experimental llega</tspan>
+  </text>
+  <text x="40" y="412" font-family="Georgia,Palatino,serif" font-size="10" fill="#718096">a la Fase 2 con la luz ya establecida como predictor. Pese a que el tono es igualmente contiguo con la descarga en ambos grupos,</text>
+  <text x="40" y="426" font-family="Georgia,Palatino,serif" font-size="10" fill="#718096">solo el grupo control aprende sobre él. La contigüidad no es condición suficiente cuando el error de predicción es cero.</text>
+</svg>

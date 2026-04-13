@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Sistemas de Retroalimentación – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./asignacionE.html" rel="next">
+<link href="./ascenso.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./retroalimentacion.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#comparación-simultánea-y-el-límite-de-la-reactividad" id="toc-comparación-simultánea-y-el-límite-de-la-reactividad" class="nav-link active" data-scroll-target="#comparación-simultánea-y-el-límite-de-la-reactividad"><span class="header-section-number">7.1</span> Comparación Simultánea y el Límite de la Reactividad</a></li>
+  <li><a href="#el-problema-orientarse-en-el-espacio" id="toc-el-problema-orientarse-en-el-espacio" class="nav-link" data-scroll-target="#el-problema-orientarse-en-el-espacio"><span class="header-section-number">7.2</span> El Problema: Orientarse en el Espacio</a></li>
+  <li><a href="#el-mecanismo-comparación-simultánea" id="toc-el-mecanismo-comparación-simultánea" class="nav-link" data-scroll-target="#el-mecanismo-comparación-simultánea"><span class="header-section-number">7.3</span> El Mecanismo: Comparación Simultánea</a></li>
+  <li><a href="#el-sistema-de-retroalimentación" id="toc-el-sistema-de-retroalimentación" class="nav-link" data-scroll-target="#el-sistema-de-retroalimentación"><span class="header-section-number">7.4</span> El Sistema de Retroalimentación</a></li>
+  <li><a href="#las-cuatro-preguntas" id="toc-las-cuatro-preguntas" class="nav-link" data-scroll-target="#las-cuatro-preguntas"><span class="header-section-number">7.5</span> Las Cuatro Preguntas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="comparación-simultánea-y-el-límite-de-la-reactividad" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="comparación-simultánea-y-el-límite-de-la-reactividad"><span class="header-section-number">7.1</span> Comparación Simultánea y el Límite de la Reactividad</h2>
+<p>En el capítulo anterior dejamos a la bacteria navegando con un solo sensor. Su estrategia era comparar <em>ahora</em> con <em>hace un momento</em> en el mismo lugar: si la concentración mejora, sigue; si empeora, busca otra dirección. Eso funciona, pero es lento y sinuoso. La bacteria no sabe hacia dónde está el nutriente —solo sabe si está mejorando o no.</p>
+<p>La aparición de la simetría bilateral en los animales resolvió esa limitación de una forma elegante: en lugar de un sensor que se mueve para comparar el mundo en distintos tiempos, el organismo dispone de dos sensores separados que comparan el mundo en distintos lugares <em>al mismo tiempo</em>. Con este arreglo, la dirección de la fuente queda codificada directamente en la diferencia entre lo que detecta el lado izquierdo y lo que detecta el lado derecho, sin necesidad de moverse primero para saberlo.</p>
+<p>Este capítulo introduce el mecanismo que hace posible esa comparación simultánea y lo generaliza: el <strong>sistema de retroalimentación</strong>. Veremos cómo está organizado, qué preguntas conviene hacerle, y —lo más importante— cuál es la limitación fundamental que comparte con el ascenso de colina y que abre la puerta al aprendizaje.</p>
+</section>
+<section id="el-problema-orientarse-en-el-espacio" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="el-problema-orientarse-en-el-espacio"><span class="header-section-number">7.2</span> El Problema: Orientarse en el Espacio</h2>
+<p>Imagina a una polilla nocturna. Hay una fuente de luz a una distancia desconocida. No tiene mapa, no tiene brújula. Solo tiene lo que sus dos ojos detectan en este momento: dos intensidades luminosas, una para cada lado de su cuerpo. ¿Cómo usa esa información mínima para orientar su cuerpo hacia la fuente?</p>
+<p>Este problema —orientarse hacia o alejarse de una fuente puntual de estimulación— aparece en múltiples modalidades a lo largo del reino animal. La fototaxia de polillas y cucarachas, la quimiotaxia de insectos siguiendo plumas de feromonas, la fonotaxia de grillos hembra localizando machos que cantan, la termotaxia de serpientes detectando presas de sangre caliente: todos son el mismo problema computacional resuelto con el mismo principio básico. La diversidad está en el tipo de estímulo; el mecanismo subyacente es el mismo.</p>
+</section>
+<section id="el-mecanismo-comparación-simultánea" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="el-mecanismo-comparación-simultánea"><span class="header-section-number">7.3</span> El Mecanismo: Comparación Simultánea</h2>
+<p>La solución más simple posible al problema de orientación tiene dos componentes. Primero, comparar simultáneamente la estimulación que llega al receptor izquierdo con la que llega al derecho. Segundo, girar en la dirección del receptor que recibe más estimulación —en el caso de fototaxia positiva, hacia la luz; en el caso de fototaxia negativa, como la cucaracha, en dirección contraria.</p>
+<p>Este mecanismo —conocido en biología como <strong>tropotaxia</strong>— es una instancia del principio más general que introduce este capítulo: el <strong>sistema de retroalimentación</strong>. La información direccional está disponible instantáneamente, sin costo de movimiento. No hay que explorar para saber hacia dónde girar.</p>
+<p>Dos experimentos clásicos establecen que lo que controla el comportamiento es la <em>diferencia</em> entre sensores, no el nivel absoluto de estimulación en ninguno de ellos.</p>
+<p>El primero cubre uno de los ojos compuestos de una polilla con pintura opaca. La predicción es directa: con solo un sensor funcional, la diferencia bilateral siempre favorece ese lado; la señal de corrección nunca se cancela porque no hay información desde el lado opuesto. El resultado es un giro continuo, sin orientación hacia ningún punto. Cuando se cubre el ojo izquierdo, la polilla gira continuamente a la izquierda; cuando se cubre el derecho, gira a la derecha. La cucaracha hace exactamente lo opuesto —porque huye de la luz— lo que confirma que el signo del giro depende del tipo de fototaxia, no de cuál ojo está disponible.</p>
+<div id="fig7_2_ojo_cubierto" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig7_2_ojo_cubierto.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Trayectorias con un ojo cubierto</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>**Descripción:Trayectorias con un ojo cubierto. Filas: oscuridad, luz arriba, haz de luz. Columnas: ojo izquierdo ciego vs.&nbsp;ojo derecho ciego. Con un solo ojo funcional, el organismo gira continuamente en lugar de orientarse. La dirección del giro depende de qué ojo está disponible y del tipo de taxia (positiva/negativa).</p>
+</div>
+</div>
+</div>
+<p>El segundo experimento coloca dos fuentes de luz de igual intensidad a igual distancia del organismo. Si la conducta está controlada por la diferencia bilateral, la predicción es que el animal debería moverse en línea recta entre ambas fuentes —porque mientras estén equidistantes, los dos ojos reciben la misma estimulación, la diferencia es cero, y no hay señal de giro. Eso es exactamente lo que ocurre: el organismo avanza en línea recta hasta que la proximidad a una de las fuentes rompe la simetría, momento en que gira bruscamente. Pocas veces un experimento confirma tan limpiamente una predicción.</p>
+<div id="fig7_3_dos_fuentes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig7_3_dos_fuentes.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Dos fuentes de luz equidistantes</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Trayectorias de cochinilla con dos fuentes equidistantes. Las trayectorias reales muestran movimiento en línea recta entre las dos fuentes y el brusco cambio de dirección al acercarse a una de ellas. La línea recta ocurre porque la diferencia bilateral es cero cuando las fuentes son equidistantes.</p>
+</div>
+</div>
+</div>
+<p>Vale la pena subrayar el contraste con la bacteria del capítulo anterior: descartamos la comparación simultánea en la Salmonela porque el organismo es demasiado pequeño para detectar diferencias de concentración entre sus dos extremos. En la polilla, el tamaño sí permite esa comparación —y la evidencia experimental muestra que exactamente eso es lo que ocurre.</p>
+</section>
+<section id="el-sistema-de-retroalimentación" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="el-sistema-de-retroalimentación"><span class="header-section-number">7.4</span> El Sistema de Retroalimentación</h2>
+<p>La fototaxia es un caso particular de un mecanismo general que aparece a lo largo de la biología y la ingeniería: el <strong>sistema de retroalimentación</strong>. Estamos acostumbrados a pensar en la relación organismo-entorno como unidireccional —el entorno produce un estímulo, el organismo produce una respuesta. Pero esa imagen es incompleta: la respuesta del organismo modifica el entorno, lo que modifica el estímulo que controla la respuesta.</p>
+<p>La temperatura alta produce sudoración; la sudoración reduce la temperatura; la temperatura reducida disminuye la sudoración. El bebé recién nacido succiona; la succión extrae leche; la tasa de succión estimula la producción de leche de la madre. En todos estos casos la causalidad no va de A a B sino que forma un lazo cerrado donde A y B se codeterminan mutuamente.</p>
+<p>Formalmente, el sistema está definido por dos ecuaciones simultáneas acopladas. La <strong>función de control</strong> (del organismo) describe cómo se transforma el estímulo en comportamiento:</p>
+<p><span class="math display">\[C = G(X)\]</span></p>
+<p>La <strong>función de retroalimentación</strong> (del entorno) describe cómo el comportamiento modifica el estímulo:</p>
+<p><span class="math display">\[X = E(C)\]</span></p>
+<p>En fototaxia: C es la tasa de giro, X es la disparidad bilateral entre los dos ojos. El giro cambia el ángulo entre el organismo y la fuente, lo que cambia la disparidad, lo que cambia el giro. El lazo se cierra.</p>
+<p>En la implementación biológica concreta hay cuatro componentes reconocibles. El <strong>sensor</strong> mide el estado actual —los ojos compuestos que detectan intensidad luminosa en cada lado. El <strong>comparador</strong> calcula la discrepancia entre el estado actual y el estado deseado —el circuito neural que resta la activación de un ojo de la del otro, produciendo la <em>señal de error</em>. El <strong>controlador</strong> transforma esa señal de error en una acción —la regla que convierte la disparidad en una tasa de giro. El <strong>efector</strong> ejecuta la acción —los músculos de las alas que producen el giro— y al hacerlo modifica el ángulo, cerrando el lazo.</p>
+<div id="fig7_5_retroalimentacion" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig7_5_retroalimentacion.png" class="img-fluid figure-img" data-with="750"></p>
+<figcaption>Componentes del sistema de retroalimentación</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descrioción</strong>: Diagrama de retroalimentación con componentes nombrados. Desired Output → Comparator → Error signal → Effectors (calefactor/AC) → Output, con Sensor + Feedback signal completando el lazo. El comparador integra la salida deseada con la señal de retroalimentación del sensor para producir la señal de error.</p>
+</div>
+</div>
+</div>
+<p>Esto contrasta con los <strong>sistemas abiertos</strong>, donde el comportamiento responde al entorno pero no modifica la variable que lo controla. Un calefactor encendido permanentemente sin importar la temperatura es un sistema abierto. El golpe de lengua de una rana capturando una mosca también: una vez iniciado, el movimiento se ejecuta hasta completarse sin corrección durante su trayectoria. Y cubrir un ojo en el experimento de tropotaxia transforma al organismo en un sistema abierto: el giro nunca recibe señal de corrección, y el resultado es rotación indefinida.</p>
+<p>Vale la pena detenerse un momento para notar que, en este capítulo igual que en el anterior, hemos aplicado sin nombrarlo el análisis de tres niveles del Capítulo 1. El nivel computacional es orientarse hacia una fuente de forma rápida y robusta. El nivel algorítmico es la comparación simultánea bilateral, el cálculo de una señal de error, y la función de control que transforma ese error en tasa de giro. El nivel de implementación —los circuitos neurales específicos, los fotorreceptores, los músculos— varía entre especies y no necesitamos especificarlo para entender cómo funciona el sistema. Una polilla, un robot de dos ruedas y un sistema de climatización doméstico comparten la misma arquitectura algorítmica aunque sus implementaciones físicas no tengan nada en común.</p>
+<p>La <strong>retroalimentación negativa</strong> ocurre cuando el comportamiento tiende a <em>reducir</em> la señal de error —la acción contrarresta la desviación que la provocó. El nombre puede sonar paradójico, pero refleja que la acción tiene signo opuesto al error. Es el caso de la fototaxia y de toda regulación homeostática.</p>
+<p>La <strong>retroalimentación positiva</strong> ocurre cuando el comportamiento <em>amplifica</em> la señal de error. La apertura de canales de sodio durante un potencial de acción es el ejemplo canónico: la entrada de iones positivos despolariza la membrana, lo que abre más canales, en una cascada que solo se detiene cuando todos los canales están abiertos. Es útil para producir transiciones rápidas y decisivas entre estados, pero no puede servir como mecanismo de orientación.</p>
+</section>
+<section id="las-cuatro-preguntas" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="las-cuatro-preguntas"><span class="header-section-number">7.5</span> Las Cuatro Preguntas</h2>
+<p>Ante cualquier sistema de retroalimentación, conviene hacerse las mismas cuatro preguntas en orden: ¿tiene el sistema un equilibrio? ¿Cuál es ese equilibrio? ¿Cómo llega el sistema al equilibrio —cuál es su dinámica? ¿Cómo responde ante una perturbación abrupta? Apliquémoslas al sistema de fototaxia.</p>
+<p>Para hacerlo concreto, necesitamos la función de control. Sea ω la tasa de giro, S_izq la estimulación del sensor izquierdo, y S_der la del derecho:</p>
+<p><span class="math display">\[\omega = k \cdot (S_{der} - S_{izq})\]</span></p>
+<p>La diferencia entre paréntesis es la señal de error: codifica tanto la magnitud de la desviación como su dirección. Si S_der &gt; S_izq, la fuente está a la derecha, el error es positivo, y ω es positivo (giro a la derecha). Si ambas son iguales, el error es cero y el organismo sigue recto.</p>
+<p>El parámetro <strong>k</strong> es la <em>ganancia</em> del sistema: qué tan importante es para el organismo una diferencia dada entre sus sensores. Un k alto significa que diferencias pequeñas producen giros grandes; un k bajo requiere diferencias grandes para producir giros apreciables. Esta interpretación —la ganancia como peso de una señal de discrepancia— reaparecerá en capítulos posteriores cuando veamos cómo el aprendizaje modifica qué tanto le importa a un organismo la diferencia entre lo que predijo y lo que ocurrió. En fototaxia negativa, k &lt; 0: ante más luz en el lado derecho, el organismo gira hacia la <em>izquierda</em>, alejándose. El signo de k define si el sistema busca o evita la fuente.</p>
+<p><strong>¿Tiene equilibrio?</strong> Sí. El equilibrio ocurre cuando ω = 0, es decir, cuando la señal de error es cero.</p>
+<p><strong>¿Cuál es el equilibrio?</strong> La señal de error es cero cuando S_der = S_izq, lo que ocurre cuando el organismo apunta directamente hacia la fuente (ángulo θ = 0°). Hay un segundo equilibrio matemático en θ = 180°, pero es inestable: cualquier perturbación mínima empuja al sistema lejos de ese punto. El equilibrio adaptativo es el único estable.</p>
+<p><strong>¿Cuál es la dinámica?</strong> La señal de error es mayor cuando el ángulo θ es grande y más pequeña cuando θ es pequeño. Esto significa que el giro correctivo es grande cuando más lo necesitas y se va volviendo cada vez más sutil conforme te acercas al equilibrio. La convergencia que se desacelera al acercarse al equilibrio produce el patrón de trayectoria observado en los experimentos: no una línea recta, sino una <strong>espiral que se cierra progresivamente</strong> hacia la fuente. Cuanto mayor el ángulo inicial, mayor la curvatura; cuanto más cercano al equilibrio, más recta la trayectoria.</p>
+<div id="fig7_6_mariposa" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig7_6_mariposa.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Sistema de retroalimentación de la mariposa</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Diagrama específico para la mariposa. Set point (45°) → Comparador (E_Angle) → Controller (Flying Decision-making circuit) → Actor (Wing) → Flying, con Sensor (Compound eyes) + señal de Angle cerrando el lazo. Los ángulos y nombres de señales corresponden a las variables del sistema real.</p>
+<p>La distinción entre <strong>transitorio</strong> y <strong>estado estacionario</strong> es importante. El transitorio es el período de ajuste desde las condiciones iniciales hasta el equilibrio —la espiral de aproximación. El estado estacionario es el comportamiento una vez alcanzado el equilibrio. Cuando ocurre una perturbación (una ráfaga de viento que desvía a la polilla), el sistema entra en un nuevo transitorio que lo lleva de vuelta al estado estacionario.</p>
+<p><strong>¿Cómo responde ante perturbación?</strong> Una polilla con θ ≈ 0° recibe una ráfaga de viento que la desvía a θ = 30°. Sin retroalimentación, continuaría en esa dirección indefinidamente. Con retroalimentación: el nuevo ángulo genera nueva disparidad, nueva señal de error, nuevo giro correctivo, y la polilla vuelve al equilibrio. La perturbación es compensada sin ninguna “decisión” explícita, simplemente por la estructura del lazo. Una ventaja adicional: la robustez es independiente del valor exacto de k. Tanto un organismo joven con músculos débiles como uno adulto con músculos fuertes alcanzarán θ = 0°, solo que a velocidades distintas.</p>
+<section id="qué-tan-buena-es-la-función-de-control" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="qué-tan-buena-es-la-función-de-control"><span class="header-section-number">7.5.1</span> ¿Qué tan buena es la función de control?</h3>
+<p>La función de control que describimos —girar a una tasa proporcional a la disparidad bilateral— funciona. La polilla llega a la fuente de luz, el organismo con un ojo cubierto gira indefinidamente, el sistema con demora oscila. Pero conviene preguntarse si esa función es la mejor posible.</p>
+<p>Considera dos organismos con la misma arquitectura sensorial pero diferente ganancia <em>k</em>. El primero tiene <em>k</em> bajo: responde débilmente a cada unidad de disparidad, tarda más en corregir una desviación pero nunca sobrecompensa. El segundo tiene <em>k</em> alto: responde con fuerza a cada unidad de disparidad, corrige rápidamente pero puede pasarse de largo. En un ambiente tranquilo, sin viento, con la fuente de luz fija, el segundo organismo llega antes. En un ambiente con perturbaciones frecuentes —ráfagas de viento que desvían continuamente al organismo de su trayectoria— el organismo de <em>k</em> alto puede entrar en un ciclo de sobre-correcciones que lo hace menos eficiente que el de <em>k</em> bajo.</p>
+<p>El valor óptimo de <em>k</em> no existe en abstracto: existe en relación a las características del entorno. En un entorno estable, alta ganancia es mejor. En un entorno turbulento, ganancia moderada produce mejor desempeño a largo plazo. La “solución” que vemos en cualquier especie particular es el resultado de que la selección natural ajustó <em>k</em> al entorno promedio que esa especie ha enfrentado a lo largo de su historia evolutiva. Una polilla que evolucionó en ambientes con poco viento tiene, probablemente, una ganancia más alta que una especie similar que evolucionó en zonas costeras con viento constante. No lo hemos medido, pero la predicción es directa.</p>
+<p>Esto revela algo importante sobre qué significa “entender” un comportamiento. Si solo preguntamos cómo funciona el mecanismo —nivel algorítmico— la respuesta es la función de control y el valor de <em>k</em> que tiene esa especie. Pero si preguntamos por qué ese valor particular de <em>k</em> —por qué no más alto, por qué no más bajo— la respuesta requiere el nivel computacional: cuál es el problema adaptativo que ese organismo resuelve y en qué tipo de entorno lo resuelve. El valor de <em>k</em> es la respuesta al problema; el problema es lo que explica el valor de <em>k</em>.</p>
+<p>La misma lógica aplica a la forma de la función de control. La función lineal ω = k·(S_der − S_izq) que usamos es la más simple posible. Podría imaginarse una función que no solo usa la disparidad actual sino la <em>tasa de cambio</em> de la disparidad —si la diferencia entre sensores está creciendo rápidamente, corrige más agresivamente que si está creciendo despacio, aunque en ambos casos el valor actual de la disparidad sea el mismo. Esa función sería más eficiente ante blancos móviles. Que organismos distintos tengan funciones de control distintas es esperable: la función es la solución y el entorno define el problema.</p>
+<p>Lo que hace óptima a la solución más sofisticada no es solo tener la ganancia correcta, sino poder <em>cambiar adaptativamente qué tan importante es el error</em> dependiendo de la situación. Un organismo que en entornos tranquilos usa <em>k</em> alto para llegar rápido, y en entornos turbulentos reduce automáticamente su ganancia para no oscilar —ese organismo supera a cualquier competidor con ganancia fija, sin importar qué valor fijo tenga ese competidor. Esa capacidad de modificar la importancia del error basándose en la experiencia reciente con el entorno es, nuevamente, exactamente lo que los mecanismos de aprendizaje permiten. La diferencia entre un sistema de retroalimentación con <em>k</em> fijo y un sistema que aprende el valor de <em>k</em> adecuado no es de tipo sino de escala temporal: el primero es la solución filogenética al problema, el segundo es la solución ontogenética.</p>
+<p>Cuando en el Bloque II veamos el parámetro α de los modelos de aprendizaje, reconoceremos en él la misma pregunta que hemos planteado aquí: ¿qué tan importante debería ser el error para este organismo, en este entorno, en este momento?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🕹️ ¡Prueba el Simulador Interactivo!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Para explorar los conceptos de este capítulo en la práctica, abre el siguiente simulador:</p>
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/retroalimentacion.ipynb" target="_blank"><strong>Abrir Simulador sistemas de retroalimentación</strong></a></p>
+</div>
+</div>
+<p><strong>Explora el primer simulador: fototaxias</strong></p>
+<p><strong>Objetivo:</strong> Descubrir cómo la ganancia k afecta la velocidad de convergencia sin cambiar el equilibrio, y por qué cubrir un ojo transforma el sistema de cerrado a abierto.</p>
+<p><em>Básico:</em> Con θ₀ = 75° y k = 1.0, observa la trayectoria. ¿Es una línea recta o una espiral? Antes de cambiar k, predice: si doblas k a 2.0, ¿el organismo llegará más rápido al mismo equilibrio, o llegará a un equilibrio diferente?</p>
+<p><em>Intermedio:</em> Activa la opción “cubrir ojo izquierdo”. ¿Qué ocurre con la trayectoria? ¿Puedes explicarlo en términos de la señal de error?</p>
+<p><em>Avanzado:</em> Cambia el signo de k (fototaxia negativa). ¿Hacia dónde se mueve ahora el organismo? ¿Qué representa biológicamente este cambio de signo?</p>
+</section>
+<section id="regulación-y-servomecanismos" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="regulación-y-servomecanismos"><span class="header-section-number">7.6</span> Regulación y Servomecanismos</h2>
+<p>Hasta aquí el set point —el estado deseado— ha sido fijo: ángulo cero, fuente al frente. Hay una distinción útil entre dos tipos de sistemas que aparecen con frecuencia.</p>
+<p>En los sistemas de <strong>regulación</strong>, el set point es interno y permanece relativamente fijo: la temperatura corporal de un mamífero (~37°C), la concentración de glucosa en sangre, el pH de los fluidos internos. El entorno cambia —hace calor, hace frío, comes mucho o poco— pero el organismo corrige continuamente para mantener su estado interno estable. Esto es lo que Cannon llamó homeostasis.</p>
+<p>Los <strong>servomecanismos</strong> tienen un set point externo y variable: lo que el sistema persigue cambia de posición en el tiempo. La fototaxia se convierte en servomecanismo cuando la fuente de luz se mueve. Un misil teledirigido es el ejemplo tecnológico —no persigue un punto fijo, sino un avión que se desplaza. El seguimiento ocular es el ejemplo biológico cotidiano: cómo tus ojos rastrean un objeto en movimiento sin que tengas que pensarlo.</p>
+<p>La diferencia importa por sus limitaciones. Un sistema de regulación puede fallar si la perturbación excede su capacidad correctiva. Un servomecanismo puede fallar si el objetivo se mueve más rápido de lo que el sistema puede seguir —hay un límite de velocidad de seguimiento, llamado ancho de banda, más allá del cual el sistema pierde el blanco.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🕹️ ¡Sigue probando el Simulador Interactivo!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/retroalimentacion.ipynb" target="_blank"><strong>Abrir Simulador sistemas de retroalimentación</strong></a></p>
+</div>
+</div>
+<p><strong>Explora el segundo simulador: Efecto de la Demora</strong></p>
+<p><em>Básico:</em> Con k = 1.0 y sin demora, confirma la convergencia suave. Añade una demora de 5 pasos. ¿Qué ocurre?</p>
+<p><em>Avanzado:</em> Encuentra el valor de delay a partir del cual el sistema comienza a oscilar para k = 1.0. Luego reduce k a la mitad. ¿El mismo delay ahora produce oscilaciones o no? ¿Por qué la ganancia y la demora interactúan?</p>
+</section>
+<section id="el-límite-fundamental-esclavos-del-presente" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="el-límite-fundamental-esclavos-del-presente"><span class="header-section-number">7.7</span> El Límite Fundamental: Esclavos del Presente</h2>
+<p>Los sistemas de retroalimentación son elegantes y poderosos, pero comparten con el ascenso de colina una limitación que no puede resolverse con más ganancia ni más sensores: son completamente <strong>reactivos</strong>. Para que actúen, primero tiene que haber un error. Siempre van un paso atrás.</p>
+<p>El termostato no enciende antes de que la temperatura baje. Enciende porque ya bajó. La polilla no gira antes de desviarse de la fuente. Gira porque ya se desvió.</p>
+<p>La regadera de agua caliente ilustra las consecuencias de esta reactividad cuando hay demoras. Si hay un desfase significativo entre el momento en que giras la perilla y el momento en que sientes el cambio de temperatura, tiendes a sobrecompensar: “¡demasiado fría!” [giras mucho hacia caliente] “¡ahora demasiado caliente!” [giras mucho hacia fría] y así sucesivamente, oscilando alrededor de la temperatura deseada sin llegar a ella. El problema no es la falta de retroalimentación —hay retroalimentación perfectamente funcional. El problema es que la retroalimentación llega tarde: para cuando la señal de corrección viaja de regreso, ya produjo un exceso en la dirección contraria.</p>
+<p>En entornos reales, las demoras son ubicuas. El sistema nervioso tarda en procesar información sensorial. Los músculos tardan en responder. El entorno tarda en cambiar en respuesta al comportamiento. Cada demora puede desestabilizar un sistema de retroalimentación pura. La evolución ha desarrollado estrategias para minimizar estas demoras, pero ninguna las elimina por completo: la retroalimentación siempre reacciona después del hecho.</p>
+</section>
+<section id="el-conductor-y-las-gasolineras" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="el-conductor-y-las-gasolineras"><span class="header-section-number">7.8</span> El Conductor y las Gasolineras</h2>
+<p>Considera un problema cotidiano que lleva esta limitación a su punto más claro.</p>
+<p>Un conductor viaja por carretera y necesita recargar gasolina en algún punto del trayecto. En principio podría resolver el problema con retroalimentación pura: cuando el tanque llegue a cero, detenerse y buscar gasolinera. El error dispara la respuesta. Problema: para cuando el error se materializa, ya es demasiado tarde. En carretera abierta, el tanque vacío puede dejarte varado entre gasolineras.</p>
+<p>Una estrategia apenas mejor es fijar un umbral más alto: cargar cuando quede un cuarto de tanque. Es retroalimentación mejorada, pero sigue siendo reactiva: espera a que el estado del sistema alcance un nivel de alerta antes de actuar. En una ciudad con gasolineras cada dos kilómetros, esa estrategia funciona. En carretera del norte de México, donde pueden pasar cien kilómetros entre gasolineras, puede no ser suficiente.</p>
+<p>La solución que adoptan los conductores experimentados es cualitativamente diferente: aprenden la <em>distribución espacial</em> de las gasolineras en su ruta habitual. Saben que en tal tramo hay gasolinera en el kilómetro 45, en el kilómetro 130, en el kilómetro 210. Con ese conocimiento, el conductor carga gasolina no cuando el tanque está bajo, sino <em>antes de un tramo largo sin estaciones</em>. El comportamiento ya no responde al estado actual del tanque; responde a una predicción sobre necesidades futuras basada en conocimiento aprendido del entorno.</p>
+<p>La diferencia entre el conductor novato y el experimentado no es una diferencia en el hardware —ambos tienen los mismos instrumentos, el mismo tanque, los mismos pies. La diferencia es que el conductor experimentado aprendió relaciones en el mundo que le permiten predecir: “si no cargo aquí, más adelante habrá problemas.” Ese aprendizaje —la adquisición de conocimiento sobre relaciones predictivas en el entorno— es precisamente lo que los sistemas de retroalimentación pura no pueden hacer.</p>
+<p>A este tipo de control se le llama <strong>control anticipatorio</strong> o <em>feedforward</em>. La distinción respecto a la retroalimentación es precisa: en la retroalimentación, la señal que controla el comportamiento es el error actual; en el feedforward, es una predicción del error futuro derivada de un modelo aprendido del entorno. El conductor experimentado opera en modo feedforward respecto a la gasolina: carga antes de que aparezca el error, porque aprendió que cierta señal presente predice una necesidad futura.</p>
+<p>El feedforward no reemplaza a la retroalimentación —la complementa. Si una gasolinera esperada está cerrada, el conductor reactiva inmediatamente la estrategia reactiva. Los sistemas biológicos más robustos combinan ambos lazos: la retroalimentación garantiza la corrección cuando algo sale mal; el feedforward evita que salga mal en primer lugar.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🕹️ ¡Sigue probando el Simulador Interactivo!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/retroalimentacion.ipynb" target="_blank"><strong>Abrir Simulador sistemas de retroalimentación</strong></a></p>
+</div>
+</div>
+<p><strong>Explora el tercer simulador: Reactivo vs.&nbsp;Anticipatorio</strong></p>
+<p><em>Básico:</em> Con la distribución por defecto de gasolineras [40, 90, 250, 280, 450 km], ¿cuál conductor llega al final de los 500 km? ¿En qué kilómetro se queda varado el reactivo?</p>
+<p><em>Avanzado:</em> Cambia las gasolineras a [20, 40, 60, 460, 480] —muchas al inicio, casi ninguna al final. ¿Cambia el resultado? ¿Puede el conductor reactivo tener éxito con algún umbral diferente al 15%? ¿Cuál es el umbral mínimo que garantiza llegar?</p>
+</section>
+<section id="el-puente-hacia-el-aprendizaje" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="el-puente-hacia-el-aprendizaje"><span class="header-section-number">7.9</span> El Puente Hacia el Aprendizaje</h2>
+<p>Este capítulo y el anterior han explorado mecanismos adaptativos que funcionan sin aprendizaje: el ascenso de colina y la retroalimentación. Ambos son herramientas poderosas para problemas relativamente estables y locales. Ambos comparten la misma limitación: responden al mundo tal como es <em>ahora</em>, no al mundo tal como <em>será</em>.</p>
+<p>Para sobrevivir en un mundo donde eventos pasados predicen eventos futuros, un organismo necesita algo más: poder modificar su comportamiento basándose en experiencia acumulada. Aprender que cierto estímulo predice cierta consecuencia, y ajustar la conducta <em>antes</em> de que la consecuencia llegue. En términos del conductor: aprender que cierta señal en el entorno predice escasez de gasolineras adelante, y actuar en consecuencia.</p>
+<p>Esto es el condicionamiento asociativo, y es el tema central del resto del libro. Los mecanismos que veremos —condicionamiento pavloviano, aprendizaje instrumental, modelos de reducción de error— son todos soluciones al mismo problema: ¿qué predice qué? ¿qué acción produce qué consecuencia? Cuando un organismo resuelve ese problema, ya no vive esclavizado al presente. Puede anticipar, prepararse, y actuar sobre el futuro antes de que llegue.</p>
+</section>
+<section id="comparación-los-dos-mecanismos-sin-historia" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="comparación-los-dos-mecanismos-sin-historia"><span class="header-section-number">7.10</span> Comparación: Los Dos Mecanismos Sin Historia</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Ascenso de Colina (Cap. 4)</th>
+<th style="text-align: left;">Retroalimentación (Cap. 5)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tipo de comparación</td>
+<td style="text-align: left;">Sucesiva (ahora vs.&nbsp;antes)</td>
+<td style="text-align: left;">Simultánea (derecha vs.&nbsp;izquierda)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sensores requeridos</td>
+<td style="text-align: left;">Uno solo</td>
+<td style="text-align: left;">Bilaterales (dos)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Información direccional</td>
+<td style="text-align: left;">No —solo tendencia local</td>
+<td style="text-align: left;">Sí —dirección inmediata</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Velocidad de convergencia</td>
+<td style="text-align: left;">Lenta, sinuosa</td>
+<td style="text-align: left;">Rápida, en espiral</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Requiere memoria</td>
+<td style="text-align: left;">Sí (valor previo)</td>
+<td style="text-align: left;">No (comparación instantánea)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Robustez ante perturbaciones</td>
+<td style="text-align: left;">Moderada</td>
+<td style="text-align: left;">Alta</td>
+</tr>
+</tbody>
+</table>
+<p>Ambos mecanismos son adaptativos y complementarios. Muchos organismos los usan en diferentes contextos o en combinación. Lo que comparten —y lo que justifica estudiarlos juntos— es la limitación que abre la puerta al aprendizaje: son reactivos. No tienen historia, no tienen predicción, no tienen modelo del futuro.</p>
+</section>
+<section id="ejercicios-de-comprensión" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="ejercicios-de-comprensión"><span class="header-section-number">7.11</span> Ejercicios de Comprensión</h2>
+<p><strong>1.</strong> Para cada comportamiento, decide si es (a) ascenso de colina, (b) taxia, (c) retroalimentación con set point interno, o (d) sistema abierto sin retroalimentación: un murciélago ajusta la dirección de vuelo basándose en diferencias de tiempo entre la llegada del eco a cada oído; una planta cierra sus hojas al detectar vibración; un humano mantiene su temperatura corporal en 37°C; un caracol navega hacia mayor humedad comparando su situación actual con la de hace un minuto.</p>
+<p><strong>2.</strong> Dibuja el diagrama de lazo de retroalimentación para la termorregulación en un mamífero. Identifica el sensor, el comparador, el controlador, el efector, y la función de retroalimentación. ¿Cuál es el set point? ¿Cuál es la señal de error cuando la temperatura ambiente baja bruscamente?</p>
+<p><strong>3.</strong> La función de control de una polilla es ω = k·(S_der − S_izq) con k = 2. En un momento dado, S_der = 8 y S_izq = 5. ¿Cuál es la tasa de giro? ¿En qué dirección está la fuente? ¿Qué ocurre en el siguiente instante si el giro fue efectivo y ahora S_der = 6.5 y S_izq = 6.5?</p>
+<p><strong>4.</strong> El experimento de cubrir un ojo transforma al organismo de un sistema cerrado a uno abierto. Explica por qué en términos de las dos ecuaciones del sistema (función de control y función de retroalimentación). ¿Cuál de las dos ecuaciones deja de funcionar correctamente?</p>
+<p><strong>5.</strong> Diseña el sistema de retroalimentación para un robot que debe seguir una línea negra en el piso usando dos sensores de luz en la parte frontal inferior. Especifica: (a) cuál es la señal de error, (b) cómo varía el signo de k según si el robot va hacia la línea o se aleja, (c) qué ocurre cuando el robot cruza la línea completamente y ambos sensores ven blanco.</p>
+<p><strong>6.</strong> El ejemplo del conductor y las gasolineras ilustra la diferencia entre reactivo y anticipatorio. Piensa en un ejemplo de tu propia vida donde aplicas una estrategia anticipatoria. ¿Qué señal usas como predictor? ¿Cuándo y cómo aprendiste que esa señal predice la necesidad futura? ¿Recuerdas haber fallado —usando la estrategia reactiva— antes de aprender la anticipatoria?</p>
+</section>
+<section id="para-profundizar" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="para-profundizar"><span class="header-section-number">7.12</span> Para Profundizar</h2>
+<p><strong>Fraenkel, G. S., &amp; Gunn, D. L. (1961).</strong> <em>The Orientation of Animals: Kineses, Taxes and Compass Reactions.</em> Dover. El tratado clásico. Los capítulos 2–4 cubren la evidencia experimental en taxias con más detalle del que fue posible aquí.</p>
+<p><strong>Braitenberg, V. (1984).</strong> <em>Vehicles: Experiments in Synthetic Psychology.</em> MIT Press. Una joya conceptual: comportamientos sorprendentemente complejos emergen de sistemas de retroalimentación simple. Breve y completamente accesible.</p>
+<p><strong>Powers, W. T. (1973).</strong> <em>Behavior: The Control of Perception.</em> Aldine. Un argumento radical: todo comportamiento animal es, fundamentalmente, control de percepción mediante retroalimentación. Controversial pero influyente.</p>
+<p><strong>Ashby, W. R. (1956).</strong> <em>An Introduction to Cybernetics.</em> Chapman &amp; Hall. Los fundamentos matemáticos de los sistemas de retroalimentación, escritos con claridad excepcional. Los capítulos 1–3 son suficientes para los propósitos de este curso.</p>
+
+
+</section>
+</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ascenso.html" class="pagination-link" aria-label="Ascenso de Colina">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./asignacionE.html" class="pagination-link" aria-label="El Problema de la Asignación de Crédito">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

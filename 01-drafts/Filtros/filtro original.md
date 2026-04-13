@@ -1,27 +1,6 @@
 # #Aprendizaje por Refuerzo y Filtros
 ###Arturo Bouzas
 ####ACA II 2020
-###Sistemas Dinámicos
-El estudio del aprendizaje, la asignación de crédito, es una instancia de un sistema dinámico. Un sistema cuyo valor cambia a lo largo del tiempo, como una función de sus valores anteriores. 
-Cuando el tiempo es discreto, encontramos muchos ejemplos de sistemas dinámicos, crecimiento económico, cambios en las frecuencias de genes en una población, propagación de rumores y actualmente una pandemia. En estos sistemas, nos interesa determinar su trayectoria a lo largo del tiempo, determinar si tiene un equilibrio y encontrar cuál es ese. Por ejemplo, en el caso de una epidemia, como la del covid 9, deseamos describir los cambios en contagios cada día transcurrido y sí tiene un equilibrio. 
-###Ecuaciones en Diferencia
-Las ecuaciones en diferencia representan el comportamiento dinámico y son ecuaciones recursivas, que  operan en cada momento en el tiempo $t$.
-Considere el caso más sencillo, en que el valor cada momento en el tiempo es simplemente el valor inicial mas 1.
-$$Y_t= Y_{t-1} +1$$
-si el primer valor de $Y(0) = 0$,
-
- $$Y_1 = Y_0+1 = 1$$
- $$Y_2 = Y_1+1 = 2$$
- $$Y_3 = Y_2+1 = 3$$
-    $$.$$
-    $$.$$
-    
-El crecimiento geométrico de una epidemia proporciona un ejemplo ya interesante:
-$$Y_t= aY_{t-1}$$
-
-para valores de $a$ mayores a 1, 
-$Y_0 =1$, $Y_1=a$, $Y_2=a^2$, $Y_3=a^3$
-La solución general es $$Y_t= a^t$$
 
 ###Predicción y Filtros
 Vimos que aprendizaje por refuerzo es un proceso de actualización de las predicciones que hace un organismo, que resultan de comparar el resultado obtenido con la predicción.

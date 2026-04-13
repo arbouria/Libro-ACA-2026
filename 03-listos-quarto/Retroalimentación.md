@@ -1,4 +1,4 @@
-# Capítulo 5: Sistemas de Retroalimentación
+# Sistemas de Retroalimentación
 ## Comparación Simultánea y el Límite de la Reactividad
 
 ---

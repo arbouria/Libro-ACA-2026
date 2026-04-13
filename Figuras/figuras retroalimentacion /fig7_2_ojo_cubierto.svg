@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, Palatino, serif">
+  <rect x="0" y="0" width="800" height="4" fill="#2C5282"/>
+  <rect x="0" y="4" width="800" height="416" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" font-size="13" font-style="italic" fill="#2C5282">Experimento de ablacion: haz de luz lateral</text>
+
+  <!-- Column headers — text split to avoid rendering gaps -->
+  <text x="210" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#2C5282">Ojo izquierdo cubierto</text>
+  <text x="590" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#2C5282">Ojo derecho cubierto</text>
+
+  <!-- Column divider -->
+  <line x1="400" y1="50" x2="400" y2="310" stroke="#718096" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===== LEFT PANEL ===== -->
+  <!-- Light source: well inside left panel -->
+  <circle cx="58" cy="190" r="18" fill="white" stroke="#C05621" stroke-width="2.5"/>
+  <circle cx="58" cy="190" r="8" fill="#C05621" opacity="0.3"/>
+  <text x="58" y="218" text-anchor="middle" font-size="9" fill="#C05621" font-style="italic">luz</text>
+
+  <!-- Status line -->
+  <text x="210" y="80" text-anchor="middle" font-size="9" fill="#718096">ojo izq. cubierto  ·  ojo der. activo</text>
+  <text x="210" y="100" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">giro continuo hacia la luz</text>
+  <text x="210" y="116" text-anchor="middle" font-size="9" fill="#718096">(solo ojo derecho recibe señal)</text>
+
+  <!-- Circle — counterclockwise, toward light -->
+  <ellipse cx="220" cy="200" rx="80" ry="68" fill="none" stroke="#2C5282" stroke-width="2.5"/>
+  <!-- CCW arrow at left side of ellipse -->
+  <polygon points="140,205 133,194 146,192" fill="#2C5282"/>
+  <!-- Organism -->
+  <ellipse cx="220" cy="132" rx="10" ry="7" fill="#2C5282" opacity="0.75"/>
+
+  <!-- ===== RIGHT PANEL ===== -->
+  <!-- Light source: well inside right panel, away from divider -->
+  <circle cx="432" cy="190" r="18" fill="white" stroke="#C05621" stroke-width="2.5"/>
+  <circle cx="432" cy="190" r="8" fill="#C05621" opacity="0.3"/>
+  <text x="432" y="218" text-anchor="middle" font-size="9" fill="#C05621" font-style="italic">luz</text>
+
+  <!-- Status line -->
+  <text x="590" y="80" text-anchor="middle" font-size="9" fill="#718096">ojo izq. activo  ·  ojo der. cubierto</text>
+  <text x="590" y="100" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">giro continuo lejos de la luz</text>
+  <text x="590" y="116" text-anchor="middle" font-size="9" fill="#718096">(solo ojo izquierdo recibe señal)</text>
+
+  <!-- Circle — clockwise, away from light -->
+  <ellipse cx="590" cy="200" rx="80" ry="68" fill="none" stroke="#2C5282" stroke-width="2.5"/>
+  <!-- CW arrow at right side -->
+  <polygon points="670,195 678,206 665,208" fill="#2C5282"/>
+  <!-- Organism -->
+  <ellipse cx="590" cy="132" rx="10" ry="7" fill="#2C5282" opacity="0.75"/>
+
+  <!-- Key observation box -->
+  <rect x="70" y="292" width="660" height="30" rx="4" fill="#EBF4FF" stroke="#2C5282" stroke-width="0.8"/>
+  <text x="400" y="311" text-anchor="middle" font-size="9" fill="#2C5282">Con un solo sensor activo la diferencia bilateral nunca se cancela: la senal de error es permanente y el giro no cesa</text>
+
+  <!-- Caption — left-aligned to avoid overlap -->
+  <line x1="40" y1="342" x2="760" y2="342" stroke="#718096" stroke-width="0.5" opacity="0.4"/>
+  <text x="40" y="362" font-size="10" fill="#2C5282" font-weight="bold">Figura 7.2.</text>
+  <text x="128" y="362" font-size="10" fill="#718096">Trayectorias con un ojo cubierto bajo iluminacion lateral.</text>
+  <text x="40" y="378" font-size="10" fill="#718096">El giro continuo confirma que el mecanismo usa la diferencia entre receptores, no el nivel absoluto de estimulacion.</text>
+  <text x="40" y="394" font-size="10" fill="#718096">La direccion del giro depende de cual ojo esta disponible: siempre hacia el lado con mayor estimulacion.</text>
+</svg>

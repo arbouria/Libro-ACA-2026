@@ -1,0 +1,59 @@
+<svg width="800" height="380" viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+
+  <!-- Background and top border -->
+  <rect width="800" height="380" fill="white"/>
+  <rect x="0" y="0" width="800" height="4" fill="#2C5282"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="13" font-style="italic" fill="#2C5282">Dos fuentes equidistantes — vista superior</text>
+
+  <!-- Light sources -->
+  <circle cx="200" cy="80" r="14" fill="#C05621"/>
+  <circle cx="600" cy="80" r="14" fill="#C05621"/>
+  <text x="200" y="60" text-anchor="middle" font-size="11" fill="#C05621">Luz A</text>
+  <text x="600" y="60" text-anchor="middle" font-size="11" fill="#C05621">Luz B</text>
+
+  <!-- Midpoint symmetry axis (dashed, light) -->
+  <line x1="400" y1="310" x2="400" y2="105" stroke="#718096" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+
+  <!-- Equal distance markers -->
+  <line x1="200" y1="298" x2="400" y2="298" stroke="#718096" stroke-width="1" opacity="0.45"/>
+  <line x1="400" y1="298" x2="600" y2="298" stroke="#718096" stroke-width="1" opacity="0.45"/>
+  <line x1="200" y1="294" x2="200" y2="302" stroke="#718096" stroke-width="1" opacity="0.45"/>
+  <line x1="400" y1="294" x2="400" y2="302" stroke="#718096" stroke-width="1" opacity="0.45"/>
+  <line x1="600" y1="294" x2="600" y2="302" stroke="#718096" stroke-width="1" opacity="0.45"/>
+  <text x="300" y="314" text-anchor="middle" font-size="10" fill="#718096" font-style="italic">d</text>
+  <text x="500" y="314" text-anchor="middle" font-size="10" fill="#718096" font-style="italic">d</text>
+
+  <!-- TRAJECTORY 1: straight up midline, then breaks toward Luz A -->
+  <!-- Straight segment: organism moves from bottom toward midpoint -->
+  <line x1="400" y1="278" x2="400" y2="118" stroke="#2C5282" stroke-width="2.5"/>
+  <!-- Curve toward Luz A -->
+  <path d="M 400,118 Q 380,100 220,84" fill="none" stroke="#2C5282" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <!-- Arrow at Luz A -->
+  <polygon points="228,91 216,82 230,80" fill="#2C5282"/>
+
+  <!-- TRAJECTORY 2: same start, breaks toward Luz B (symmetric, lighter) -->
+  <path d="M 400,118 Q 420,100 580,84" fill="none" stroke="#718096" stroke-width="2" stroke-dasharray="4,3" opacity="0.7"/>
+  <polygon points="572,91 584,82 570,80" fill="#718096" opacity="0.7"/>
+
+  <!-- Organism start -->
+  <ellipse cx="400" cy="278" rx="10" ry="7" fill="#2C5282" opacity="0.8"/>
+  <text x="420" y="282" font-size="9" fill="#718096" font-style="italic">inicio</text>
+
+  <!-- Labels -->
+  <text x="418" y="210" font-size="11" fill="#718096" font-style="italic">Error = 0</text>
+  <text x="418" y="224" font-size="10" fill="#718096" font-style="italic">(línea recta)</text>
+
+  <text x="290" y="112" text-anchor="middle" font-size="10" fill="#C05621">ruptura de simetría</text>
+  <text x="290" y="125" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">(resultado depende</text>
+  <text x="290" y="137" text-anchor="middle" font-size="9" fill="#718096" font-style="italic">de condición inicial)</text>
+
+  <!-- Caption -->
+  <line x1="40" y1="330" x2="760" y2="330" stroke="#718096" stroke-width="0.5" opacity="0.4"/>
+  <text x="40" y="350" font-size="10" fill="#2C5282" font-weight="bold">Figura 7.3.</text>
+  <text x="126" y="350" font-size="10" fill="#718096">Trayectorias con dos fuentes equidistantes (vista superior).</text>
+  <text x="40" y="366" font-size="10" fill="#718096">Mientras las fuentes son equidistantes el error bilateral es cero y el organismo avanza en linea recta.</text>
+  <text x="40" y="379" font-size="10" fill="#718096">Al acercarse a una fuente la simetria se rompe y el organismo gira hacia ella.</text>
+
+</svg>

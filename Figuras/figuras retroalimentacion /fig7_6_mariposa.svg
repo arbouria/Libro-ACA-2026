@@ -1,0 +1,90 @@
+<svg viewBox="0 0 820 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, Palatino, serif">
+  <rect x="0" y="0" width="820" height="4" fill="#2C5282"/>
+  <rect x="0" y="4" width="820" height="446" fill="white"/>
+
+  <text x="410" y="36" text-anchor="middle" font-size="13" font-style="italic" fill="#2C5282">Sistema de retroalimentación en fototaxia de polilla</text>
+
+  <!-- SET POINT -->
+  <rect x="12" y="118" width="120" height="70" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="72" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Set point</text>
+  <text x="72" y="156" text-anchor="middle" font-size="10" fill="#2C5282">ángulo = 0°</text>
+  <text x="72" y="172" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">disparidad</text>
+  <text x="72" y="183" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">bilateral = 0</text>
+
+  <!-- Arrow set point → comparator -->
+  <line x1="132" y1="153" x2="170" y2="153" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="170,153 162,148 162,158" fill="#2C5282"/>
+
+  <!-- COMPARATOR circle -->
+  <circle cx="196" cy="153" r="26" fill="white" stroke="#2C5282" stroke-width="2"/>
+  <text x="186" y="143" text-anchor="middle" font-size="11" font-weight="bold" fill="#2C5282">+</text>
+  <text x="186" y="171" text-anchor="middle" font-size="13" font-weight="bold" fill="#C05621">−</text>
+  <text x="202" y="159" text-anchor="middle" font-size="15" fill="#2C5282">Σ</text>
+
+  <!-- Arrow comparator → controller -->
+  <line x1="222" y1="153" x2="276" y2="153" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="276,153 268,148 268,158" fill="#2C5282"/>
+  <text x="249" y="139" text-anchor="middle" font-size="8" fill="#C05621" font-style="italic">E_ángulo</text>
+  <text x="249" y="149" text-anchor="middle" font-size="7" fill="#C05621" font-style="italic">(error angular)</text>
+
+  <!-- CONTROLLER -->
+  <rect x="276" y="112" width="148" height="82" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="350" y="135" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Controlador</text>
+  <text x="350" y="150" text-anchor="middle" font-size="9" fill="#718096">circuito de vuelo</text>
+  <text x="350" y="165" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">tasa de giro</text>
+  <text x="350" y="177" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">= f (E_ángulo)</text>
+  <text x="350" y="188" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">k · disparidad</text>
+
+  <!-- Arrow controller → effector -->
+  <line x1="424" y1="153" x2="480" y2="153" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="480,153 472,148 472,158" fill="#2C5282"/>
+  <text x="452" y="139" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">tasa de giro</text>
+
+  <!-- EFFECTOR -->
+  <rect x="480" y="118" width="130" height="70" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="545" y="140" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Efector</text>
+  <text x="545" y="155" text-anchor="middle" font-size="9" fill="#718096">músculos alares</text>
+  <text x="545" y="170" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">asimetría de batido</text>
+  <text x="545" y="182" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">de alas</text>
+
+  <!-- Arrow effector → environment -->
+  <line x1="610" y1="153" x2="668" y2="153" stroke="#2C5282" stroke-width="1.8"/>
+  <polygon points="668,153 660,148 660,158" fill="#2C5282"/>
+  <text x="639" y="139" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">vuelo</text>
+
+  <!-- ENVIRONMENT -->
+  <rect x="668" y="112" width="108" height="82" rx="5" fill="#E6F4ED" stroke="#276749" stroke-width="1.5"/>
+  <text x="722" y="135" text-anchor="middle" font-size="10" font-weight="bold" fill="#276749">Entorno</text>
+  <text x="722" y="150" text-anchor="middle" font-size="9" fill="#276749">ángulo entre</text>
+  <text x="722" y="164" text-anchor="middle" font-size="9" fill="#276749">polilla y fuente</text>
+  <text x="722" y="180" text-anchor="middle" font-size="10" fill="#276749" font-style="italic">θ (t)</text>
+  <text x="722" y="190" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">variable controlada</text>
+
+  <!-- FEEDBACK PATH -->
+  <line x1="722" y1="194" x2="722" y2="268" stroke="#2C5282" stroke-width="1.5"/>
+  <line x1="722" y1="268" x2="416" y2="268" stroke="#2C5282" stroke-width="1.5"/>
+
+  <!-- SENSOR -->
+  <rect x="276" y="248" width="140" height="42" rx="5" fill="#EBF4FF" stroke="#2C5282" stroke-width="1.5"/>
+  <text x="346" y="266" text-anchor="middle" font-size="10" font-weight="bold" fill="#2C5282">Sensor</text>
+  <text x="346" y="281" text-anchor="middle" font-size="9" fill="#718096">ojos compuestos</text>
+
+  <line x1="276" y1="268" x2="196" y2="268" stroke="#2C5282" stroke-width="1.5"/>
+  <line x1="196" y1="268" x2="196" y2="179" stroke="#2C5282" stroke-width="1.5"/>
+  <polygon points="196,179 191,187 201,187" fill="#2C5282"/>
+  <!-- "disparidad bilateral" label above the horizontal feedback line -->
+  <text x="232" y="258" text-anchor="middle" font-size="8" fill="#718096" font-style="italic">disparidad bilateral</text>
+
+  <!-- Insight box — three short lines -->
+  <rect x="60" y="308" width="700" height="50" rx="4" fill="#EBF4FF" stroke="#2C5282" stroke-width="0.8"/>
+  <text x="410" y="323" text-anchor="middle" font-size="9" fill="#2C5282">El giro modifica el angulo → el angulo modifica la disparidad bilateral → la disparidad modifica el giro</text>
+  <text x="410" y="337" text-anchor="middle" font-size="9" fill="#2C5282">La accion modifica el estimulo que la controla:</text>
+  <text x="410" y="351" text-anchor="middle" font-size="9" fill="#2C5282">el lazo se cierra sobre la variable θ</text>
+
+  <!-- Caption — left-aligned -->
+  <line x1="40" y1="372" x2="780" y2="372" stroke="#718096" stroke-width="0.5" opacity="0.4"/>
+  <text x="40" y="390" font-size="10" fill="#2C5282" font-weight="bold">Figura 7.6.</text>
+  <text x="126" y="390" font-size="10" fill="#718096">Sistema de retroalimentacion para fototaxia positiva en polilla.</text>
+  <text x="40" y="406" font-size="10" fill="#718096">El angulo entre organismo y fuente es la variable controlada. La polilla gira en proporcion a la disparidad bilateral;</text>
+  <text x="40" y="422" font-size="10" fill="#718096">el giro reduce el angulo, que reduce la disparidad, que reduce el giro: el sistema converge a θ = 0.</text>
+</svg>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; El Problema de la Asignación de Crédito (II) – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./refuerzo.html" rel="next">
+<link href="./asignacionE.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./asignacionR.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#acciones-inducción-y-el-problema-del-control" id="toc-acciones-inducción-y-el-problema-del-control" class="nav-link active" data-scroll-target="#acciones-inducción-y-el-problema-del-control"><span class="header-section-number">9.1</span> Acciones, Inducción y el Problema del Control</a></li>
+  <li><a href="#thorndike-y-dos-preguntas-que-se-confundieron-durante-décadas" id="toc-thorndike-y-dos-preguntas-que-se-confundieron-durante-décadas" class="nav-link" data-scroll-target="#thorndike-y-dos-preguntas-que-se-confundieron-durante-décadas"><span class="header-section-number">9.2</span> Thorndike y dos preguntas que se confundieron durante décadas</a></li>
+  <li><a href="#el-primer-sesgo-la-inducción-de-respuestas-por-el-sbi" id="toc-el-primer-sesgo-la-inducción-de-respuestas-por-el-sbi" class="nav-link" data-scroll-target="#el-primer-sesgo-la-inducción-de-respuestas-por-el-sbi"><span class="header-section-number">9.3</span> El primer sesgo: la inducción de respuestas por el SBI</a></li>
+  <li><a href="#el-experimento-de-skinner-y-la-réplica-de-staddon-y-simmelhag" id="toc-el-experimento-de-skinner-y-la-réplica-de-staddon-y-simmelhag" class="nav-link" data-scroll-target="#el-experimento-de-skinner-y-la-réplica-de-staddon-y-simmelhag"><span class="header-section-number">9.4</span> El experimento de Skinner y la réplica de Staddon y Simmelhag</a></li>
+  <li><a href="#es-la-contigüidad-una-condición-necesaria" id="toc-es-la-contigüidad-una-condición-necesaria" class="nav-link" data-scroll-target="#es-la-contigüidad-una-condición-necesaria"><span class="header-section-number">9.5</span> ¿Es la contigüidad una condición necesaria?</a></li>
+  <li><a href="#perspectiva-molecular-y-perspectiva-molar" id="toc-perspectiva-molecular-y-perspectiva-molar" class="nav-link" data-scroll-target="#perspectiva-molecular-y-perspectiva-molar"><span class="header-section-number">9.6</span> Perspectiva molecular y perspectiva molar</a></li>
+  <li><a href="#la-percepción-de-causalidad-el-experimento-de-killeen" id="toc-la-percepción-de-causalidad-el-experimento-de-killeen" class="nav-link" data-scroll-target="#la-percepción-de-causalidad-el-experimento-de-killeen"><span class="header-section-number">9.7</span> La percepción de causalidad: el experimento de Killeen</a></li>
+  <li><a href="#por-qué-la-contigüidad-es-un-buen-sesgo-y-cuándo-falla" id="toc-por-qué-la-contigüidad-es-un-buen-sesgo-y-cuándo-falla" class="nav-link" data-scroll-target="#por-qué-la-contigüidad-es-un-buen-sesgo-y-cuándo-falla"><span class="header-section-number">9.8</span> Por qué la contigüidad es un buen sesgo, y cuándo falla</a></li>
+  <li><a href="#apertura-hacia-los-modelos-formales" id="toc-apertura-hacia-los-modelos-formales" class="nav-link" data-scroll-target="#apertura-hacia-los-modelos-formales"><span class="header-section-number">9.9</span> Apertura hacia los modelos formales</a></li>
+  <li><a href="#simulador-7.1-inducción-temporal-y-respuestas-interinasterminales" id="toc-simulador-7.1-inducción-temporal-y-respuestas-interinasterminales" class="nav-link" data-scroll-target="#simulador-7.1-inducción-temporal-y-respuestas-interinasterminales"><span class="header-section-number">9.10</span> Simulador 7.1: Inducción temporal y respuestas interinas/terminales</a></li>
+  <li><a href="#simulador-7.2-detección-de-contingencia-con-gradiente-de-demora" id="toc-simulador-7.2-detección-de-contingencia-con-gradiente-de-demora" class="nav-link" data-scroll-target="#simulador-7.2-detección-de-contingencia-con-gradiente-de-demora"><span class="header-section-number">9.11</span> Simulador 7.2: Detección de contingencia con gradiente de demora</a></li>
+  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">9.12</span> Conexiones</a>
+  <ul class="collapse">
+  <li><a href="#hacia-atrás-asignación-de-crédito-a-estímulos-capítulo-6" id="toc-hacia-atrás-asignación-de-crédito-a-estímulos-capítulo-6" class="nav-link" data-scroll-target="#hacia-atrás-asignación-de-crédito-a-estímulos-capítulo-6"><span class="header-section-number">9.12.1</span> Hacia atrás: Asignación de crédito a estímulos (Capítulo 6)</a></li>
+  <li><a href="#hacia-adelante-la-ecuación-de-bush-y-mosteller-capítulo-8" id="toc-hacia-adelante-la-ecuación-de-bush-y-mosteller-capítulo-8" class="nav-link" data-scroll-target="#hacia-adelante-la-ecuación-de-bush-y-mosteller-capítulo-8"><span class="header-section-number">9.12.2</span> Hacia adelante: La ecuación de Bush y Mosteller (Capítulo 8)</a></li>
+  <li><a href="#lateral-programas-de-refuerzo-e-igualación-bloque-iv" id="toc-lateral-programas-de-refuerzo-e-igualación-bloque-iv" class="nav-link" data-scroll-target="#lateral-programas-de-refuerzo-e-igualación-bloque-iv"><span class="header-section-number">9.12.3</span> Lateral: Programas de refuerzo e igualación (Bloque IV)</a></li>
+  </ul></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.13</span> Ejercicios</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">9.14</span> Resumen</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">9.15</span> Lecturas Recomendadas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="acciones-inducción-y-el-problema-del-control" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="acciones-inducción-y-el-problema-del-control"><span class="header-section-number">9.1</span> Acciones, Inducción y el Problema del Control</h2>
+<p>Al final del capítulo anterior dejamos al organismo en posesión de una capacidad importante pero parcial: puede predecir cuándo va a llover mirando el cielo, puede anticipar el ataque de un depredador al escuchar su rugido, puede aprender que ciertos sabores preceden al malestar. Esa capacidad predictiva tiene un valor enorme, pero tiene también un límite preciso: el organismo no controla el cielo, no controla la presencia del depredador, no controla los sabores que encuentra. Puede prepararse para lo que viene, pero no puede alterar lo que viene.</p>
+<p>Uno de los saltos más importantes en la historia evolutiva fue la emergencia de mecanismos que, a través de la acción y la interacción con el entorno, permiten a los organismos no solo predecir sino <em>controlar</em> la ocurrencia de sucesos biológicamente importantes. Un organismo que aprende no solo que el cielo nublado anuncia lluvia, sino que <em>llevar paraguas</em> produce la consecuencia de llegar seco, ha adquirido algo cualitativamente distinto. La lluvia sigue siendo independiente de él; pero la consecuencia de llegar empapado ya no lo es. Entre la acción del organismo y el resultado hay ahora una relación de dependencia que puede ser aprendida, explotada y perfeccionada.</p>
+<p>Este es el problema adaptativo que nos ocupa: ¿cómo aprende un organismo que sus propias acciones producen sucesos biológicamente importantes? Y, antes de eso, ¿de dónde vienen las acciones entre las que puede elegir?</p>
+</section>
+<section id="thorndike-y-dos-preguntas-que-se-confundieron-durante-décadas" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="thorndike-y-dos-preguntas-que-se-confundieron-durante-décadas"><span class="header-section-number">9.2</span> Thorndike y dos preguntas que se confundieron durante décadas</h2>
+<p>A principios del siglo XX, Edward Thorndike encerró gatos en cajas de escape desde las que el animal podía salir accionando un cerrojo, tirando de una cuerda o pisando una palanca. El patrón fue consistente: al inicio los gatos tardaban mucho, probando un repertorio amplio de respuestas antes de dar con la correcta por casualidad; con la repetición, ese tiempo disminuía hasta que el animal accionaba el dispositivo casi inmediatamente. Thorndike llamó a esto aprendizaje por <em>ensayo y error</em>.</p>
+<p>Pero los datos contienen dos observaciones distintas. La primera: el gato <em>hace algo</em> al ser encerrado. No se queda inmóvil, no selecciona al azar de toda la gama posible de movimientos de un cuerpo en el espacio. Explora, araña, empuja, vocaliza —respuestas apropiadas a la situación de escape, no al cortejo ni a la alimentación. La segunda: de ese repertorio inicial, el animal selecciona progresivamente la respuesta que abre la caja. Son fenómenos distintos: uno sobre el origen de la variabilidad conductual, otro sobre su selección.</p>
+<p>La <em>Ley del Efecto</em> de Thorndike intentó responderlos con el mismo principio: <em>una respuesta seguida de un estado de cosas satisfactorio queda asociada con la situación y aumenta su probabilidad futura</em>. La contigüidad temporal era, para Thorndike, tanto condición suficiente como necesaria. Esa confusión costó décadas.</p>
+</section>
+<section id="el-primer-sesgo-la-inducción-de-respuestas-por-el-sbi" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="el-primer-sesgo-la-inducción-de-respuestas-por-el-sbi"><span class="header-section-number">9.3</span> El primer sesgo: la inducción de respuestas por el SBI</h2>
+<p>Retomemos el lenguaje del capítulo anterior. Los sesgos inductivos que hacen manejable el problema de la asignación de crédito operan en dos niveles distintos. El primero delimita el espacio de candidatos: ¿qué respuestas son siquiera consideradas? El segundo establece el orden de prioridad dentro de ese espacio reducido: ¿cuál se evalúa primero?</p>
+<p>La Ley del Efecto, como señalamos, se concentra casi exclusivamente en el segundo nivel —la contigüidad como criterio de selección— y deja sin respuesta la pregunta del primer nivel. ¿De dónde viene el repertorio inicial de respuestas sobre el que opera la selección?</p>
+<p>La respuesta emergió de una dirección que Thorndike no anticipó. La mera presentación de un suceso biológicamente importante <em>induce</em> en el organismo un conjunto de respuestas características: las apropiadas para interactuar con ese tipo de consecuencia. No son respuestas arbitrarias del espacio motor completo, sino un subconjunto organizado funcionalmente. La comida induce comportamientos de consumación y búsqueda alimentaria. Una amenaza induce comportamientos de escape y evitación. Un posible compañero reproductivo induce comportamientos de cortejo. Como vimos en el capítulo 6, estas respuestas inducidas se organizan en los sistemas de comportamiento que Hogan y Timberlake describieron: el SBI activa el sistema funcionalmente apropiado, y ese sistema pre-configura el espacio de respuestas candidatas.</p>
+<p>Pero el sistema de comportamiento no actúa en el vacío. ¿Qué respuestas quedan disponibles depende también de qué oportunidades de acción ofrece el entorno físico en ese momento. Una paloma ante un comedero no ejecuta el mismo conjunto de respuestas alimentarias que una paloma en campo abierto, aunque el SBI sea idéntico. El entorno no es un telón de fondo neutro: estructura activamente qué respuestas son posibles y cuáles no. Piensen en cómo cambia su comportamiento al entrar a una biblioteca frente a entrar a un gimnasio, aunque lleguen con el mismo objetivo. El concepto de <em>affordance</em> —que exploraremos con detalle en capítulos posteriores— captura esta idea: las propiedades del entorno que hacen posibles ciertas acciones y no otras. Por ahora basta notar que el repertorio inducido no es solo función del SBI; es función del SBI <em>en ese entorno particular</em>.</p>
+<p>Este principio de inducción fue reconocido tempranamente en la literatura del aprendizaje pero tardó en articularse con precisión formal. Volveremos a él cuando lleguemos a los programas de refuerzo y la igualación. Por ahora, la observación empírica clave provino de un experimento diseñado para examinar la explicación de Skinner sobre un fenómeno curioso: la “superstición” en palomas.</p>
+</section>
+<section id="el-experimento-de-skinner-y-la-réplica-de-staddon-y-simmelhag" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="el-experimento-de-skinner-y-la-réplica-de-staddon-y-simmelhag"><span class="header-section-number">9.4</span> El experimento de Skinner y la réplica de Staddon y Simmelhag</h2>
+<p>En 1948, Skinner publicó un experimento que se volvería célebre. A palomas hambrientas se les presentaba comida cada quince segundos, completamente independiente de su comportamiento. Y sin embargo, muchas aves desarrollaron comportamientos estereotipados: una giraba en círculos, otra movía la cabeza rítmicamente, otra se desplazaba en diagonal. El comportamiento difería entre individuos.</p>
+<p>La interpretación de Skinner fue directa: para cada paloma, alguna respuesta había ocurrido accidentalmente inmediatamente antes de la entrega de comida, y esa contigüidad accidental era suficiente para fortalecerla. El animal no necesitaba detectar ninguna relación real entre su conducta y el resultado; bastaba la proximidad temporal para producir el aprendizaje. Para Skinner, la contigüidad temporal era el mecanismo: un reforzador era “contingente” sobre una respuesta en el único sentido de que la seguía en el tiempo. El experimento de superstición era su demostración más limpia.</p>
+<p>Staddon y Simmelhag no estuvieron de acuerdo, y en 1971 publicaron una réplica que cambiaría la discusión. Usaron el mismo procedimiento básico de Skinner —comida cada quince segundos independiente del comportamiento— pero observaron cuidadosamente qué hacían las palomas <em>a lo largo de todo el intervalo</em>, no solo en el momento inmediatamente anterior a la comida. Los resultados desmontaron la narrativa de Skinner en dos frentes.</p>
+<p>Primero, el comportamiento no difería arbitrariamente entre palomas: era predecible. Al final del intervalo, cerca del momento de entrega de la comida, prácticamente todas las palomas mostraban el mismo tipo de respuestas —orientarse hacia la pared del comedero, picotear en esa dirección. Staddon y Simmelhag llamaron a estas “respuestas terminales”. Inmediatamente después de recibir la comida, y durante la primera mitad del intervalo siguiente, aparecían respuestas muy distintas —explorar el piso, dar giros, desplazarse— que estos autores llamaron “respuestas interinas”. La figura 7.1 muestra esta distribución temporal con claridad.</p>
+<div id="figura_9_1_staddon" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/figura_9_1_staddon.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Organización temporal de respuestas inducidas</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción.</strong>Eje horizontal: tiempo en el intervalo entre entregas de comida (0–12 seg). Eje vertical: probabilidad de ocurrencia. Líneas sólidas negras: respuestas terminales (orientarse al comedero, picotear la pared) — crecen conforme se acerca el SBI y alcanzan su máximo en t = 12. Líneas punteadas grises: respuestas interinas (picotear el piso, dar giros, desplazarse) — alcanzan su máximo en la primera mitad del intervalo y declinan antes del SBI. Línea vertical verde punteada: momento de entrega de comida. Datos de Staddon y Simmelhag (1971).</p>
+</div>
+</div>
+</div>
+<p>Segundo, el patrón no era el que predice la contigüidad accidental. Si la contigüidad fuera el mecanismo, las respuestas que aparecen justo antes de la comida —las terminales— deberían ser las que más varían entre individuos, porque dependen de qué estaba haciendo cada paloma en ese momento preciso por azar. Pero ocurrió exactamente lo contrario: las respuestas terminales eran las más consistentes entre animales. Las interinas, que ocurren lejos temporalmente de la comida, eran las que mostraban más variación.</p>
+<p>La conclusión fue clara: sin ninguna relación de dependencia entre respuesta y comida, la mera contigüidad accidental no explicaba el patrón observado. Lo que sí lo explicaba era el principio de inducción: la presentación periódica de un SBI alimenticio induce el conjunto de respuestas apropiadas para ese SBI, y la periodicidad temporal organiza esas respuestas a lo largo del intervalo. Las terminales reflejan la activación anticipatoria del sistema de alimentación conforme se acerca el momento de la comida; las interinas son comportamientos de actividad general inducidos por la llegada del SBI que van diluyéndose en el tiempo. El comportamiento observado por Skinner no era aprendizaje por contigüidad accidental —era inducción organizada temporalmente. La contigüidad, como condición suficiente para asignar crédito a una respuesta, no se sostiene.</p>
+</section>
+<section id="es-la-contigüidad-una-condición-necesaria" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="es-la-contigüidad-una-condición-necesaria"><span class="header-section-number">9.5</span> ¿Es la contigüidad una condición necesaria?</h2>
+<p>El experimento de Skinner eliminaba la relación de dependencia entre respuesta y SBI. Los experimentos que siguen hacen lo contrario: mantienen esa relación de dependencia pero manipulan la <em>demora</em> entre la respuesta y el SBI. Si la contigüidad fuera necesaria, una demora suficientemente larga debería hacer imposible el aprendizaje. La pregunta es cuánta demora puede tolerarse.</p>
+<p>La estrategia experimental adoptó como punto de referencia la contigüidad estricta —demora de cero segundos— y exploró qué ocurre cuando ese intervalo se extiende progresivamente. Pero antes de describir los resultados, conviene apreciar un problema metodológico que hacía difícil interpretar estos experimentos con demora. Si el animal puede seguir respondiendo durante el periodo de demora, sus respuestas adicionales pueden quedar accidentalmente contiguas con el SBI que fue producido por una respuesta anterior. ¿Cómo distinguir entonces si el aprendizaje se debe a la relación de dependencia original —la respuesta que inició el contador— o a esas contigüidades accidentales posteriores?</p>
+<p>Dickinson y sus colaboradores diseñaron un procedimiento que abordó exactamente esta dificultad. Las ratas tenían una palanca disponible y el tiempo de la sesión se dividía en intervalos de un segundo. En cada segundo, el animal tenía la oportunidad de presionar la palanca. Cuando lo hacía, se iniciaba un periodo de demora de duración programada, al final del cual se entregaba la comida. El problema es que durante ese periodo de demora el animal podía volver a presionar la palanca, y cada nueva presión iniciaba un contador adicional —lo que creaba la posibilidad de que alguna presión quedara accidentalmente contigua con la comida producida por una presión anterior.</p>
+<p>Para resolver esta ambigüedad, Dickinson incluyó un segundo grupo de ratas —el grupo <em>yoked</em> o apareado— que recibía exactamente los mismos refuerzos, en los mismos momentos, que el grupo experimental, pero sin ninguna relación de dependencia entre su comportamiento y esa entrega. Si el aprendizaje observado en el grupo experimental se debiera solo a las contigüidades accidentales dentro del periodo de demora, el grupo yoked debería aprender igual —porque experimentaba las mismas contigüidades accidentales, distribuidas del mismo modo en el tiempo. Si el grupo experimental aprendía más, eso indicaba que la relación de dependencia contribuía al aprendizaje más allá de las contigüidades accidentales.</p>
+<p>Con demoras de hasta dieciséis segundos, el grupo experimental aprendió claramente; el grupo yoked no lo hizo. Con treinta y dos segundos, el experimental seguía respondiendo más, aunque más lento. A sesenta y cuatro segundos, ambos grupos fueron indistinguibles.</p>
+<div id="figura_9_2_dickinson" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/figura_9_2_dickinson.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Resultados de Dickinson et al.&nbsp;(1992)</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>. Panel izquierdo: tasa de respuesta (presiones de palanca por minuto) como función de la demora programada (0, 4, 8, 16, 32, 64 segundos) — curva decreciente. Panel derecho: curvas de adquisición para el grupo experimental (master) y el grupo apareado (yoked) en condiciones de 16 y 32 segundos de demora. Las curvas del grupo experimental crecen a lo largo de las sesiones; las del grupo yoked permanecen en valores bajos. La disociación entre los dos grupos demuestra que el aprendizaje se debe a la relación de dependencia, no a contigüidades accidentales durante la demora. Datos de Dickinson et al.&nbsp;(1992).</p>
+</div>
+</div>
+</div>
+<p>Hay dos conclusiones en estos datos. La primera es que la contigüidad estricta no es necesaria: el organismo puede aprender la relación entre su respuesta y la comida incluso cuando hay treinta y dos segundos entre ellas, y ese aprendizaje no se debe a contigüidades accidentales sino a la relación de dependencia en sí misma. La segunda es que la demora importa: mientras más larga sea, más lento y débil es el aprendizaje. La contigüidad no es la llave del aprendizaje, pero es un facilitador poderoso.</p>
+<p>Lattal fue aún más lejos en el experimento diseñado para eliminar cualquier posibilidad de contigüidad accidental. Sus palomas recibían comida, en promedio, cada treinta segundos —pero solo si habían transcurrido diez segundos desde la última respuesta. Si el animal respondía antes de que pasaran esos diez segundos, el contador se reiniciaba. Este procedimiento, conocido como DRO (<em>differential reinforcement of other behavior</em>), garantiza que la comida nunca puede seguir inmediatamente a una respuesta: siempre habrá una separación mínima de diez segundos. En ningún sentido ordinario del término puede decirse que hay contigüidad entre respuesta y SBI.</p>
+<p>Y sin embargo, las palomas de Lattal aprendieron. La tasa de picoteo de la tecla aumentó claramente por encima de la línea base en cinco de los cinco sujetos del experimento, como muestra la figura 7.3. El animal aprendió a picar la tecla a pesar de que esa tecla nunca fue inmediatamente seguida de comida —a pesar de que, estrictamente hablando, el procedimiento estaba diseñado para que hubiera una separación garantizada. Si Dickinson mostró que la contigüidad no es necesaria con demoras de decenas de segundos, Lattal mostró que no lo es incluso cuando se elimina por diseño.</p>
+<div id="figura_9_3_lattal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/figura_9_3_lattal.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Resultados de Lattal (1987)</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong> . Cinco paneles, uno por sujeto (palomas 3490, 3494, 3538, 3630, 4230). Eje horizontal: sesiones sucesivas. Eje vertical: tasa de respuesta en escala logarítmica. Línea punteada horizontal: tasa de referencia. En todos los sujetos la tasa de picoteo aumenta claramente por encima de la línea de referencia a pesar de que el procedimiento DRO garantizaba una separación mínima de 10 segundos entre cualquier respuesta y la comida. Datos de Lattal (1987).</p>
+</div>
+</div>
+</div>
+<p>La misma conclusión a la que llegamos en el capítulo anterior para los estímulos se aplica aquí para las respuestas. Ni necesaria ni suficiente —pero no irrelevante. Lo que los organismos hacen, más que registrar proximidad temporal entre eventos discretos, es detectar una relación estadística a lo largo del tiempo: que la tasa de SBIs es mayor cuando cierta respuesta ocurre que cuando no ocurre. La contigüidad es un correlato frecuente de esa relación causal real, y por eso sirve como heurístico útil en muchas circunstancias. Pero no es la relación causal misma.</p>
+</section>
+<section id="perspectiva-molecular-y-perspectiva-molar" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="perspectiva-molecular-y-perspectiva-molar"><span class="header-section-number">9.6</span> Perspectiva molecular y perspectiva molar</h2>
+<p>Este cambio de énfasis —de eventos individuales a relaciones estadísticas— tiene un nombre en la literatura: es el contraste entre las perspectivas molecular y molar del aprendizaje instrumental.</p>
+<p>La perspectiva molecular examina pares de eventos individuales: esta respuesta fue seguida de este SBI a tal distancia temporal. Es la perspectiva que subyace a la idea de contigüidad: lo que importa es la proximidad de cada par de eventos. La perspectiva molar, en cambio, examina la covariación entre patrones de actividad y tasas de resultados a lo largo de períodos extendidos: ¿cuál es la tasa de SBIs durante los períodos en que el organismo ejecuta esta respuesta, comparada con la tasa durante los períodos en que no la ejecuta?</p>
+<p>La evidencia de Dickinson y Lattal habla a favor del nivel molar como el nivel apropiado de análisis. El organismo no parece llevar un registro de pares respuesta-SBI; parece integrar información sobre covariaciones a lo largo de ventanas temporales amplias. Esta integración es lo que hace posible el aprendizaje con demoras de decenas de segundos: la demora individual entre respuesta y consecuencia no destruye el aprendizaje porque la covariación estadística persiste a escalas de tiempo más largas.</p>
+<p>Veremos esta distinción reaparecer con más fuerza cuando lleguemos al tema de los programas de refuerzo y la igualación, donde las teorías moleculares predicen patrones de respuesta constantes dentro del intervalo, mientras que las teorías molares predicen que lo que el organismo maximiza es la tasa de SBIs a lo largo de períodos extendidos —predicciones que divergen de manera empíricamente resoluble.</p>
+</section>
+<section id="la-percepción-de-causalidad-el-experimento-de-killeen" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="la-percepción-de-causalidad-el-experimento-de-killeen"><span class="header-section-number">9.7</span> La percepción de causalidad: el experimento de Killeen</h2>
+<p>Hasta aquí hemos argumentado que los organismos son sensibles a la covariación estadística entre sus respuestas y los SBIs. Pero ¿cómo sería posible demostrarlo directamente, en lugar de inferirlo de los experimentos de demora? Killeen diseñó una manera ingeniosa.</p>
+<p>Sus palomas tenían ante sí una tecla central iluminada. Podían picotearla, y con una probabilidad de 0.05, ese picotazo apagaba la tecla central y encendía dos teclas laterales. Hasta aquí, un procedimiento de aprendizaje ordinario. Pero Killeen añadió un elemento crucial: al mismo tiempo que las palomas picoteaban, una computadora generaba “pseudo-picotazos” a la misma tasa, y esos pseudo-picotazos tenían también una probabilidad de 0.05 de apagar la tecla central.</p>
+<p>En cualquier momento en que la tecla central se apagaba, podía haber ocurrido por una de dos razones: porque la paloma acababa de picarla, o porque la computadora generó un pseudo-picotazo. La tarea para las palomas era discriminar entre estas dos posibilidades. Si el apagado lo había causado su propio picotazo, picar la tecla derecha producía acceso a comida. Si el apagado era independiente de su respuesta, picar la tecla izquierda producía comida. Acertar —identificar correctamente que el apagado fue consecuencia del picotazo propio— se llama un <em>acierto</em> o <em>hit</em>. Confundir un apagado independiente con uno causado por la propia respuesta se llama <em>falsa alarma</em>.</p>
+<p>Lo que hace este diseño particularmente poderoso es que permite separar dos cosas que normalmente van juntas: la capacidad real para detectar causalidad, y el criterio de decisión que el organismo adopta dados los pagos asociados a acertar y equivocarse. Killeen varió la cantidad de comida que las palomas recibían tras un acierto, manteniendo constante el costo de las falsas alarmas.</p>
+<p>El primer resultado fue que las palomas son detectoras genuinas de causalidad. Sus curvas de características operativas del receptor —las curvas ROC que grafican la tasa de aciertos contra la tasa de falsas alarmas bajo diferentes criterios de decisión— se ubicaron consistentemente por encima de la diagonal del azar. Las palomas discriminaron entre consecuencias que dependían de sus propias respuestas y consecuencias que no, con una precisión aproximada del 80% en los ensayos. No son detectores perfectos, pero sí funcionan claramente mejor que el azar.</p>
+<div id="figura_9_4_5_killeen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/figura_9_4_5_killeen.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Resultados de Killen (1978)</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong> Panel izzquierdo: Curvas ROC para cuatro palomas en el experimento de Killeen (1978). Eje horizontal: P(falsa alarma). Eje vertical: P(acierto). Línea punteada diagonal: rendimiento al azar. Las curvas de los cuatro sujetos se ubican por encima de la diagonal; la discriminabilidad fue de aproximadamente el 80% en los ensayos. Cada punto corresponde a una condición distinta de pago. Panel derecho: Eje horizontal: tiempo entre la respuesta de la paloma y el evento no contingente (0.2 a 1.0 segundos). Eje vertical: P(falsa alarma). Cuatro curvas, una por condición de pago (1.8, 2.3, 2.8 y 3.8 segundos de acceso a comida). En todas las condiciones, la probabilidad de falsa alarma disminuye conforme aumenta la separación temporal. Datos de Killeen (1978)</p>
+</div>
+</div>
+</div>
+<p>El segundo resultado es que el criterio de decisión es flexible y sensible a los pagos. Cuando los aciertos valían mucha comida, las palomas adoptaban un criterio liberal: respondían con frecuencia que el apagado había sido causado por ellas, lo que incrementaba tanto los aciertos como las falsas alarmas. Cuando los aciertos valían poca comida, el criterio se volvía conservador. Es exactamente lo que haría un observador racional que maximiza la ganancia esperada: si detectar causalidad cuando existe vale mucho y el costo de una falsa alarma es bajo, conviene ser generoso en las atribuciones causales. Si acertar vale poco o equivocarse es costoso, conviene ser conservador.</p>
+<p>El tercer resultado es quizás el más revelador para la discusión sobre contigüidad. Killeen también hizo algo que vale la pena que ustedes ponderen antes de ver el resultado. Varió el tiempo transcurrido entre la respuesta de la paloma y el apagado de luz <em>no contingente</em> —es decir, el tiempo entre la respuesta y el evento accidental posterior. La probabilidad de falsa alarma disminuye sistemáticamente conforme ese intervalo se alarga, desde 0.2 segundos hasta 1.0 segundos. ¿Por qué? Porque la contigüidad temporal opera como señal de posible causalidad —y a mayor distancia temporal, la señal se debilita. No es un mecanismo determinístico; es un heurístico que disminuye con la demora.</p>
+<p>El cuadro que emerge de los tres experimentos —Dickinson, Lattal y Killeen— es consistente. Los organismos son detectores de contingencia estadística dotados de un sistema de decisión ajustable. Integran información a lo largo de ventanas temporales amplias para estimar si sus respuestas covarian con los SBIs. Utilizan la proximidad temporal como heurístico —y por eso son susceptibles a falsas alarmas cuando eventos accidentales quedan cerca de sus respuestas. Y calibran su criterio de decisión según los costos y beneficios de acertar y equivocarse en cada contexto particular.</p>
+</section>
+<section id="por-qué-la-contigüidad-es-un-buen-sesgo-y-cuándo-falla" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="por-qué-la-contigüidad-es-un-buen-sesgo-y-cuándo-falla"><span class="header-section-number">9.8</span> Por qué la contigüidad es un buen sesgo, y cuándo falla</h2>
+<p>Si los organismos son detectores de contingencia estadística más que registradores de contigüidad, ¿por qué la contigüidad temporal funciona tan bien como regla práctica en la mayoría de los entornos naturales?</p>
+<p>La respuesta tiene que ver con la estructura causal del entorno ancestral. La mayoría de los mecanismos causales biológicamente relevantes —un depredador que ataca, una fruta que cae, una trampa que se cierra— operan con rapidez. La demora entre una acción y sus consecuencias en esos contextos es de segundos, no de horas. Cuando las cadenas causales son cortas y los mecanismos rápidos, la contigüidad temporal es un indicador confiable de causalidad real. La selección natural favoreció sistemas que buscan primero en el vecindario temporal inmediato de cada consecuencia inesperada, porque en ese vecindario se encuentran la mayoría de las causas reales.</p>
+<p>Pero el heurístico falla en condiciones específicas. Cuando las cadenas causales son largas —como en muchas relaciones entre comportamiento y sus consecuencias en el entorno humano— la acción y el resultado pueden estar separados por horas o días. Cuando los SBIs son frecuentes e independientes de la conducta del organismo —como en entornos muy enriquecidos con consecuencias no contingentes— la tasa de contigüidades accidentales sube y con ella la tasa de falsas alarmas. Y cuando el organismo ejecuta muchas respuestas concurrentes, el problema de asignar crédito a la respuesta correcta entre varias candidatas se vuelve especialmente difícil.</p>
+<p>En esas condiciones, la contigüidad como heurístico produce errores sistemáticos —los que se conocen coloquialmente como “conductas supersticiosas”. No son fallas del mecanismo; son la consecuencia predecible de aplicar un heurístico adaptado a cierto tipo de entorno en condiciones diferentes.</p>
+</section>
+<section id="apertura-hacia-los-modelos-formales" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="apertura-hacia-los-modelos-formales"><span class="header-section-number">9.9</span> Apertura hacia los modelos formales</h2>
+<p>Todo lo que hemos discutido en este capítulo puede reformularse con una pregunta computacional precisa: ¿cómo actualiza un agente el valor que asigna a un evento —estímulo o respuesta— en función de los resultados que ha obtenido en el pasado? Esa pregunta tiene una respuesta formal, y el siguiente capítulo la desarrolla a partir de la ecuación que Bush y Mosteller propusieron a mediados del siglo XX. El modelo es general: opera sobre cualquier evento predictivo, sea un estímulo que anticipa un SBI o una respuesta que lo produce. Por eso cap 10 cierra al mismo tiempo los dos capítulos precedentes.</p>
+<p>La idea central es sencilla: el valor que el agente asigna a un evento se actualiza en cada ocasión, y la magnitud de esa actualización depende de la discrepancia entre lo que ocurrió y lo que se esperaba. Si el evento fue seguido de más SBI del anticipado, su valor sube; si fue seguido de menos, baja. Lo que hace esta ecuación especialmente interesante es que puede leerse de más de una manera: como un integrador con fuga, como un proceso de reducción de error de predicción, y como un filtro de media exponencial corrida que pondera más los eventos recientes. Cada lectura ilumina un aspecto distinto del mecanismo. El siguiente capítulo examina las tres con detalle.</p>
+<hr>
+</section>
+<section id="simulador-7.1-inducción-temporal-y-respuestas-interinasterminales" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="simulador-7.1-inducción-temporal-y-respuestas-interinasterminales"><span class="header-section-number">9.10</span> Simulador 7.1: Inducción temporal y respuestas interinas/terminales</h2>
+<p>El siguiente código implementa una versión simplificada de la dinámica temporal que Staddon y Simmelhag documentaron. El SBI induce dos clases de respuestas cuya probabilidad cambia a lo largo del intervalo entre entregas: las interinas, que alcanzan su máximo poco después del SBI anterior, y las terminales, que crecen conforme se acerca el siguiente SBI.</p>
+<p><strong>[SIMULADOR 7.1 — Disponible en línea. El simulador implementa la dinámica temporal de Staddon y Simmelhag: el SBI induce respuestas interinas y terminales cuya probabilidad cambia a lo largo del intervalo entre entregas. Parámetros ajustables: duración del intervalo, tasa de decaimiento de las respuestas interinas, tasa de crecimiento de las terminales, número de intervalos a simular.]</strong></p>
+<p><strong>Ejercicios con el Simulador 7.1:</strong></p>
+<p><em>Básico.</em> Con los parámetros predeterminados (intervalo de 15 segundos), observa en qué momento del intervalo las dos curvas se cruzan. ¿Tiene sentido que Staddon y Simmelhag encontraran respuestas interinas en la primera mitad del intervalo y terminales en la segunda mitad?</p>
+<p><em>Intermedio.</em> Cambia el intervalo a 30 segundos y luego a 5 segundos. ¿Cómo cambia la ventana temporal en que dominan las respuestas interinas? ¿Qué predice esto sobre la distribución de respuestas cuando el SBI ocurre muy frecuentemente?</p>
+<p><em>Avanzado.</em> Modifica el parámetro <code>DECAIMIENTO</code> al mismo valor que <code>ANTICIPACION</code>. ¿Qué forma toman las curvas? ¿Desaparecerían prácticamente las respuestas interinas si el decaimiento fuera muy rápido? Relaciona tu respuesta con la idea de que las respuestas interinas son “conductas de espera” que llenan el tiempo entre SBIs.</p>
+<hr>
+</section>
+<section id="simulador-7.2-detección-de-contingencia-con-gradiente-de-demora" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="simulador-7.2-detección-de-contingencia-con-gradiente-de-demora"><span class="header-section-number">9.11</span> Simulador 7.2: Detección de contingencia con gradiente de demora</h2>
+<p>Este simulador implementa un agente que aprende la tasa de SBIs contingentes a su respuesta versus la tasa de SBIs no contingentes, con un gradiente de demora que pondera más los SBIs cercanos en el tiempo.</p>
+<p><strong>[SIMULADOR 7.2 — Disponible en línea. El simulador implementa un agente que aprende la tasa de SBIs contingentes a su respuesta versus la tasa de SBIs no contingentes, con un gradiente de demora exponencial. Parámetros ajustables: P(SBI | respuesta), P(SBI | no respuesta), tasa de aprendizaje α, demoras a comparar, número de sesiones.]</strong></p>
+<p><strong>Ejercicios con el Simulador 7.2:</strong></p>
+<p><em>Básico.</em> Observa cómo cambia la curva de aprendizaje al aumentar la demora de 0 a 32 segundos. ¿A partir de qué demora el agente deja de aprender claramente? Compara tu respuesta con los datos de Dickinson.</p>
+<p><em>Intermedio.</em> Cambia <code>P_SBI_SIN_RESPUESTA</code> al mismo valor que <code>P_SBI_DADO_RESPUESTA</code>. ¿Qué ocurre con el aprendizaje? Explica por qué en términos de contingencia estadística: ¿qué cambia en la relación entre respuesta y SBI?</p>
+<p><em>Avanzado.</em> Modifica la función <code>simular_aprendizaje</code> para que el gradiente de demora sea lineal en lugar de exponencial. ¿Cambia cualitativamente el patrón de resultados? ¿Qué forma del gradiente parece más consistente con los datos de Dickinson?</p>
+<hr>
+</section>
+<section id="conexiones" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">9.12</span> Conexiones</h2>
+<section id="hacia-atrás-asignación-de-crédito-a-estímulos-capítulo-6" class="level3" data-number="9.12.1">
+<h3 data-number="9.12.1" class="anchored" data-anchor-id="hacia-atrás-asignación-de-crédito-a-estímulos-capítulo-6"><span class="header-section-number">9.12.1</span> Hacia atrás: Asignación de crédito a estímulos (Capítulo 6)</h3>
+<p>La estructura argumentativa de este capítulo replica la del anterior. En el capítulo 8, la pregunta era si la contigüidad entre estímulo y SBI era condición necesaria y suficiente para el aprendizaje predictivo; la conclusión fue que no lo era en ninguna de las dos direcciones. Aquí la misma pregunta se formula para las respuestas, y la conclusión es la misma. El paralelismo no es casual: ambos problemas son instancias del problema de la asignación de crédito, y ambos se resuelven con el mismo mecanismo subyacente —la detección de contingencia estadística, modulada por sesgos inductivos que priorizan el espacio de búsqueda.</p>
+</section>
+<section id="hacia-adelante-la-ecuación-de-bush-y-mosteller-capítulo-8" class="level3" data-number="9.12.2">
+<h3 data-number="9.12.2" class="anchored" data-anchor-id="hacia-adelante-la-ecuación-de-bush-y-mosteller-capítulo-8"><span class="header-section-number">9.12.2</span> Hacia adelante: La ecuación de Bush y Mosteller (Capítulo 8)</h3>
+<p>El siguiente capítulo formaliza el mecanismo de actualización del valor que este capítulo ha descrito en términos cualitativos. La ecuación de Bush y Mosteller captura la idea central: el valor de una acción se ajusta en proporción a la discrepancia entre lo que ocurrió y lo que se esperaba. El lector que haya comprendido la lógica del aprendizaje por contingencia en este capítulo estará en buena posición para apreciar por qué esa ecuación tiene la forma que tiene —y para examinar las distintas maneras en que puede interpretarse.</p>
+</section>
+<section id="lateral-programas-de-refuerzo-e-igualación-bloque-iv" class="level3" data-number="9.12.3">
+<h3 data-number="9.12.3" class="anchored" data-anchor-id="lateral-programas-de-refuerzo-e-igualación-bloque-iv"><span class="header-section-number">9.12.3</span> Lateral: Programas de refuerzo e igualación (Bloque IV)</h3>
+<p>La distinción entre perspectiva molecular y perspectiva molar que introdujimos brevemente en este capítulo se volverá central en el Bloque IV. Los programas de refuerzo —reglas que especifican qué respuestas producen SBIs y con qué probabilidades— producen patrones de comportamiento que las teorías moleculares han tenido dificultades para predecir. Las perspectivas molares de Baum y el modelo formal de Killeen —que reservamos intencionalmente para ese bloque— ofrecen descripciones más precisas de esos patrones, y su presentación allí tendrá más fuerza porque los estudiantes conocerán ya los datos que intentan explicar.</p>
+</section>
+</section>
+<section id="ejercicios" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.13</span> Ejercicios</h2>
+<p><strong>1.</strong> El capítulo distingue entre el <em>origen</em> del repertorio conductual y la <em>selección</em> entre ese repertorio. ¿Cuál de las dos preguntas responde la Ley del Efecto? ¿Qué observación de los datos de Thorndike plantea la pregunta que la Ley del Efecto no responde?</p>
+<p><strong>2.</strong> Staddon y Simmelhag encontraron que las respuestas terminales eran más consistentes entre palomas que las respuestas interinas, a pesar de que las terminales eran las que más frecuentemente precedían a la comida. ¿Por qué este resultado contradice la explicación de Skinner? ¿Qué predice el principio de inducción que se aplica aquí?</p>
+<p><strong>3.</strong> Describe con tus propias palabras el procedimiento de Dickinson. ¿Cuál era el problema metodológico que el procedimiento intentaba resolver? ¿Por qué era necesario el grupo yoked para interpretar los resultados?</p>
+<p><strong>4.</strong> En el experimento de Lattal, las palomas aprendieron a picar la tecla a pesar de que el procedimiento DRO garantizaba que la comida nunca podía seguir inmediatamente a una respuesta. ¿Cómo interpretarías este resultado desde la perspectiva molecular? ¿Y desde la perspectiva molar? ¿Cuál de las dos interpretaciones parece más consistente con el resultado?</p>
+<p><strong>5.</strong> En el experimento de Killeen, las palomas adoptaban un criterio más liberal para atribuir causalidad cuando los aciertos valían más comida. Traduce este resultado a un contexto cotidiano: ¿puedes pensar en una situación humana en que el valor de acertar en una atribución causal lleva a las personas a atribuir causalidad con más frecuencia, incluso cuando la evidencia es ambigua? ¿Cuándo sería eso adaptativo y cuándo podría ser problemático?</p>
+<p><strong>6.</strong> El capítulo argumenta que la contigüidad es un buen heurístico en entornos donde los mecanismos causales operan rápido y las cadenas causales son cortas. Describe dos contextos —uno natural, uno del entorno humano contemporáneo— donde ese heurístico produce inferencias causales correctas, y dos contextos donde produce errores sistemáticos. ¿Qué tienen en común los contextos donde falla?</p>
+<p><strong>7.</strong> <em>(Reflexión)</em> La conducta supersticiosa humana —llevar amuletos, seguir rituales antes de un examen, evitar el número trece— puede interpretarse como resultado de los mismos mecanismos que Killeen estudió en palomas. ¿Qué condiciones aumentarían la probabilidad de que un organismo humano desarrolle una conducta supersticiosa? ¿Qué condiciones la reducirían? ¿Qué dice este análisis sobre la racionalidad de las supersticiones?</p>
+</section>
+<section id="resumen" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="resumen"><span class="header-section-number">9.14</span> Resumen</h2>
+<p>El problema adaptativo de este capítulo es el del control: aprender que las propias acciones producen sucesos biológicamente importantes. Como en el capítulo anterior con los estímulos, la pregunta central es si la contigüidad temporal entre respuesta y SBI es condición necesaria y suficiente para ese aprendizaje.</p>
+<p>La respuesta es la misma: ni lo uno ni lo otro. No es suficiente porque el experimento de Staddon y Simmelhag muestra que la contigüidad accidental no puede dar cuenta del patrón organizado de respuestas inducidas por el SBI; la organización temporal de ese patrón es predecible desde el principio de inducción, no desde la contigüidad accidental. No es necesaria porque Dickinson demostró que el aprendizaje ocurre con demoras de hasta treinta y dos segundos —y que ese aprendizaje se debe a la relación de dependencia real, no a contigüidades accidentales durante la demora— y porque Lattal demostró que el aprendizaje ocurre incluso cuando el procedimiento elimina por diseño cualquier posibilidad de contigüidad.</p>
+<p>Lo que los organismos detectan es covariación estadística: la tasa de SBIs es mayor cuando la respuesta ocurre que cuando no ocurre. El experimento de Killeen confirma que esa capacidad de detección es real y funciona con alta precisión, que el criterio de decisión es ajustable según los costos y beneficios de acertar y equivocarse, y que la contigüidad temporal opera como señal de posible causalidad —con el resultado de que la probabilidad de atribuir causalidad a eventos independientes decrece conforme aumenta la separación temporal.</p>
+<p>El capítulo 10 formaliza el mecanismo de actualización que hace posible esta detección de contingencia, a partir de la ecuación que Bush y Mosteller propusieron para describir cómo el valor de una acción se ajusta con la experiencia.</p>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">9.15</span> Lecturas Recomendadas</h2>
+<p><strong>Thorndike, E. L. (1911).</strong> <em>Animal Intelligence: Experimental Studies.</em> Macmillan. — El texto original de Thorndike, con las observaciones sobre cajas puzzle que dieron origen a la Ley del Efecto. Los capítulos centrales son accesibles y muestran el razonamiento experimental de la época.</p>
+<p><strong>Staddon, J. E. R., &amp; Simmelhag, V. L. (1971).</strong> The “superstition” experiment: A reexamination of its implications for the principles of adaptive behavior. <em>Psychological Review, 78</em>, 3–43. — La réplica directa de Skinner, con datos detallados sobre la distribución temporal de las respuestas. Más técnica, pero los resultados hablan por sí mismos.</p>
+<p><strong>Dickinson, A., Watt, A., &amp; Griffiths, W. J. H. (1992).</strong> Free-operant acquisition with delayed reinforcement. <em>Quarterly Journal of Experimental Psychology, 45B</em>, 241–258. — El experimento de demora con el diseño yoked. Nivel moderado; especialmente valiosa la sección metodológica que justifica el uso del grupo de control.</p>
+<p><strong>Lattal, K. A. (1987).</strong> Considerations in the experimental analysis of reinforcement delay. En M. L. Commons, J. E. Mazur, J. A. Nevin &amp; H. Rachlin (Eds.), <em>Quantitative Analyses of Behavior, Vol. 5.</em> Erlbaum. — El experimento DRO y su interpretación. Nivel moderado.</p>
+<p><strong>Killeen, P. R. (1978).</strong> Superstition: A matter of bias, not detectability. <em>Science, 199</em>, 88–90. — El experimento de detección de causalidad en palomas. Tres páginas. Uno de los artículos más elegantes de la literatura del aprendizaje.</p>
+<p><strong>Timberlake, W., &amp; Lucas, G. A. (1989).</strong> Behavior systems and learning: From misbehavior to general principles. En S. B. Klein &amp; R. R. Mowrer (Eds.), <em>Contemporary Learning Theories.</em> Erlbaum. — El marco de sistemas de comportamiento aplicado al aprendizaje instrumental. Conecta directamente con el capítulo 6 y da contexto para el principio de inducción.</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./asignacionE.html" class="pagination-link" aria-label="El Problema de la Asignación de Crédito">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./refuerzo.html" class="pagination-link" aria-label="Aprendizaje por Refuerzo">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

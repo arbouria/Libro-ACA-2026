@@ -41,6 +41,10 @@ book:
     - evolucion.qmd
     - Restricciones.qmd
     - ascenso.qmd
+    - retroalimentacion.qmd
+    - asignacionE.qmd
+    - asignacionR.qmd
+    - refuerzo.qmd
 
     # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
   downloads: [pdf] 

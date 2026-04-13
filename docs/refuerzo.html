@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Aprendizaje por Refuerzo – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./asignacionR.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./refuerzo.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#el-modelo-de-bush-y-mosteller" id="toc-el-modelo-de-bush-y-mosteller" class="nav-link active" data-scroll-target="#el-modelo-de-bush-y-mosteller"><span class="header-section-number">10.1</span> El Modelo de Bush y Mosteller</a></li>
+  <li><a href="#las-curvas-de-aprendizaje" id="toc-las-curvas-de-aprendizaje" class="nav-link" data-scroll-target="#las-curvas-de-aprendizaje"><span class="header-section-number">10.2</span> Las curvas de aprendizaje</a></li>
+  <li><a href="#aprendizaje-por-refuerzo-elementos-comunes" id="toc-aprendizaje-por-refuerzo-elementos-comunes" class="nav-link" data-scroll-target="#aprendizaje-por-refuerzo-elementos-comunes"><span class="header-section-number">10.3</span> Aprendizaje por Refuerzo: elementos comunes</a></li>
+  <li><a href="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido" id="toc-ecuaciones-en-diferencia-un-lenguaje-ya-conocido" class="nav-link" data-scroll-target="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido"><span class="header-section-number">10.4</span> Ecuaciones en diferencia: un lenguaje ya conocido</a></li>
+  <li><a href="#primera-lectura-el-integrador-con-fuga" id="toc-primera-lectura-el-integrador-con-fuga" class="nav-link" data-scroll-target="#primera-lectura-el-integrador-con-fuga"><span class="header-section-number">10.5</span> Primera lectura: el integrador con fuga</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="el-modelo-de-bush-y-mosteller" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="el-modelo-de-bush-y-mosteller"><span class="header-section-number">10.1</span> El Modelo de Bush y Mosteller</h2>
+<p>Los capítulos anteriores dejaron pendiente una promesa. En los capítulos de kinesis y retroalimentación vimos mecanismos que permiten a los organismos orientarse, navegar y regular variables internas con notable eficiencia. Pero tienen una limitación que señalamos entonces: responden a lo que ocurre <em>ahora</em>, sin ninguna capacidad de anticipar lo que está por ocurrir. El conductor que carga gasolina solo cuando el tanque está vacío llegará varado tarde o temprano. Lo que le falta es la capacidad de aprender que ciertas señales <em>predicen</em> la necesidad futura.</p>
+<p>Los capítulos 6 y 7 establecieron las condiciones empíricas bajo las cuales esa capacidad predictiva se desarrolla —y las condiciones bajo las cuales no se desarrolla. Mostraron que los organismos son detectores de covariación estadística: aprenden que ciertos estímulos predicen SBIs, y que ciertas respuestas los producen. Pero no describieron el mecanismo formal que hace posible esa detección.</p>
+<p>Este capítulo presenta ese mecanismo. En 1951, Robert Bush y Frederick Mosteller propusieron una ecuación de actualización que ha demostrado ser, pese a su simplicidad, una de las más productivas de la psicología del siglo XX. La ecuación puede leerse de tres maneras distintas. Las tres son algebraicamente idénticas, pero cada una ilumina un aspecto diferente de lo que el mecanismo hace y por qué tiene la forma que tiene.</p>
+<p>Antes de la ecuación, sin embargo, conviene observar los datos que debe explicar.</p>
+</section>
+<section id="las-curvas-de-aprendizaje" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="las-curvas-de-aprendizaje"><span class="header-section-number">10.2</span> Las curvas de aprendizaje</h2>
+<p>Desde finales del siglo XIX, el estudio del aprendizaje ha producido una regularidad empírica notable: cuando un organismo experimenta repetidamente la relación entre un evento y un SBI, alguna medida de su comportamiento cambia de forma característica. Aumenta rápidamente al principio y se va estabilizando conforme el aprendizaje madura. La curva resultante es negativamente acelerada —ganancias grandes al inicio, decrecientes con la práctica.</p>
+<p>La figura 8.1 muestra un ejemplo con condicionamiento clásico: la frecuencia del reflejo de parpadeo en humanos expuestos a un tono seguido de un soplo al ojo, con diferentes intensidades del soplo (Parssey, 1948). La figura 8.2 muestra un ejemplo instrumental: la velocidad con que ratas tocan una palanca que produce comida, con diferentes niveles de privación (Ramond, 1954). La forma de la curva es la misma en ambos casos —estímulo o respuesta, condicionamiento clásico o instrumental, rata o humano. El modelo que presentamos en este capítulo debe poder explicar ese patrón. Al final del capítulo veremos por qué lo logra.</p>
+<div id="figura_10_1_parpadeo" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_1_parpadeo.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Curva de adquisición condicionamiento clásico</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>. Curvas de adquisición y extinción del reflejo de parpadeo en humanos. Eje horizontal: ensayos. Eje vertical: frecuencia del reflejo condicionado. Tres curvas para distintas intensidades del soplo al ojo. Todas muestran el patrón negativamente acelerado durante la adquisición y el declive durante la extinción. Datos de Parssey (1948).]**</p>
+</div>
+</div>
+</div>
+<div id="figura_10_2_velocidad" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_2_velocidad.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fCurva de adquisición condicionamiento instrumental</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong> Curva de adquisición de la velocidad de respuesta en condicionamiento instrumental con ratas. Eje horizontal: sesiones. Eje vertical: velocidad de respuesta. Dos curvas para dos niveles de privación alimentaria. El patrón es cualitativamente idéntico al de la figura 8.1. Datos de Ramond (1954).</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Nota.</strong> La curva negativamente acelerada es el patrón <em>promedio</em>, pero existe un debate sobre si refleja el aprendizaje de organismos individuales o es un artefacto estadístico. Si distintos organismos aprenden de manera abrupta —un cambio discreto de no responder a responder— pero en ensayos distintos, el promedio grupal producirá una curva continua aunque ningún individuo la siga. Skinner, Estes y más recientemente Gallistel han insistido en analizar datos de sujetos individuales por esta razón. En un capítulo posterior, cuando examinemos los modelos de Gallistel sobre tiempo y correlaciones, veremos que esa discusión tiene consecuencias formales sobre cómo debe concebirse el mecanismo de aprendizaje.</p>
+</blockquote>
+</section>
+<section id="aprendizaje-por-refuerzo-elementos-comunes" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="aprendizaje-por-refuerzo-elementos-comunes"><span class="header-section-number">10.3</span> Aprendizaje por Refuerzo: elementos comunes</h2>
+<p>Todos los modelos de aprendizaje por refuerzo comparten una arquitectura básica. A cada evento que puede predecir un SBI —sea un estímulo condicionado o una respuesta— se le asigna un número que representa su <em>valor predictivo</em> actual. A lo largo del siglo XX ese número recibió distintos nombres: fuerza del reflejo, fuerza del hábito, fuerza asociativa. Nosotros lo llamaremos valor predictivo —<span class="math inline">\(V\)</span> cuando hablemos de estímulos, <span class="math inline">\(Q\)</span> cuando hablemos de respuestas— aunque en lo que sigue usaremos <span class="math inline">\(V\)</span> para los dos salvo donde la distinción importe.</p>
+<p>Una aclaración terminológica que conviene hacer desde el inicio: en la literatura matemática del aprendizaje, al SBI se le llama <em>refuerzo</em> y se representa con <span class="math inline">\(R\)</span> o con <span class="math inline">\(\lambda\)</span>. Usaremos ese término en las ecuaciones y derivaciones que siguen, recordando que es exactamente el mismo concepto que en los capítulos anteriores llamamos suceso biológicamente importante. Refuerzo = SBI.</p>
+<p>El modelo propone que <span class="math inline">\(V\)</span> se actualiza en cada <em>ensayo</em> —cada vez que el evento se presenta— como función de lo que ocurre en ese ensayo. Si el evento va seguido del refuerzo, <span class="math inline">\(V\)</span> sube. Si ocurre sin refuerzo, <span class="math inline">\(V\)</span> baja. El mero paso del tiempo entre ensayos no cambia <span class="math inline">\(V\)</span>; solo la experiencia directa con el evento lo modifica. Por eso se dice que son modelos basados en ensayos.</p>
+<p>El modelo es una instancia de un sistema de retroalimentación, como los que vimos en el capítulo 5. La función del organismo transforma refuerzos en valor predictivo. La función del entorno —los programas de refuerzo que estudiaremos en bloques posteriores— transforma el comportamiento en consecuencias. Las dos funciones están acopladas en un lazo cerrado.</p>
+</section>
+<section id="ecuaciones-en-diferencia-un-lenguaje-ya-conocido" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="ecuaciones-en-diferencia-un-lenguaje-ya-conocido"><span class="header-section-number">10.4</span> Ecuaciones en diferencia: un lenguaje ya conocido</h2>
+<p>Antes de escribir la ecuación, conviene reconocer su forma. En capítulos anteriores encontramos ecuaciones que describen cómo una variable cambia de un momento al siguiente como función de su valor previo y de alguna influencia externa. En el ejemplo de los contagios de covid, el número de casos hoy dependía del número de casos ayer y de la tasa de transmisión. En el modelo de ascenso de colina, el valor de la variable de decisión en el siguiente instante dependía de su valor actual y del cambio detectado en el entorno.</p>
+<p>Esas ecuaciones se llaman <em>ecuaciones en diferencia</em>: expresan el estado del sistema en el tiempo <span class="math inline">\(t+1\)</span> como función del estado en el tiempo <span class="math inline">\(t\)</span>. Son ecuaciones recursivas que se aplican en cada paso al resultado del paso anterior, y siempre requieren especificar un valor inicial.</p>
+<p>El modelo de Bush y Mosteller es exactamente una ecuación de esa naturaleza. <span class="math inline">\(V_{t+1}\)</span> —el valor predictivo en el siguiente ensayo— depende de <span class="math inline">\(V_t\)</span> —el valor acumulado hasta ahora— y de <span class="math inline">\(R_t\)</span> —si hubo o no refuerzo en el ensayo actual. La dinámica que produce es la misma clase de trayectoria que ya conocen: un sistema que evoluciona ensayo a ensayo, que puede tener un equilibrio, y cuya trayectoria depende de los parámetros y del valor inicial.</p>
+</section>
+<section id="primera-lectura-el-integrador-con-fuga" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="primera-lectura-el-integrador-con-fuga"><span class="header-section-number">10.5</span> Primera lectura: el integrador con fuga</h2>
+<p>La forma más directa de pensar en el modelo es como un proceso de carga y descarga. Cada refuerzo <em>carga</em> —fortalece— el valor del evento, y cada presentación sin refuerzo lo <em>descarga</em> —lo debilita. En este marco, <span class="math inline">\(V\)</span> (o <span class="math inline">\(Q\)</span>) es la cantidad de carga del sistema en cada momento. La batería del teléfono es el análogo cotidiano: se carga mientras está conectada, se descarga mientras se usa, y en ningún momento llega a cero de golpe ni alcanza el máximo instantáneamente.</p>
+<p>Asumimos que <span class="math inline">\(V_{t+1}\)</span> depende de solo dos factores: el valor acumulado hasta ahora, <span class="math inline">\(V_t\)</span>, y lo que ocurrió en el ensayo actual, <span class="math inline">\(R_t\)</span> —que vale 1 si hubo refuerzo y 0 si no lo hubo.</p>
+<p>El punto clave es que estos dos factores no siempre deben tener el mismo peso. En un entorno muy estable, donde la historia acumulada es un buen predictor del futuro, tiene sentido darle más peso a la experiencia pasada que al ensayo actual. En un entorno cambiante, donde el pasado distante es poco relevante, tiene sentido darle más peso a la experiencia reciente. El parámetro <span class="math inline">\(\alpha\)</span> —entre 0 y 1— captura exactamente esa importancia relativa: cuánto pesa la experiencia acumulada frente al nuevo refuerzo. Si los dos factores deben sumar 1, la ecuación queda:</p>
+<p><span class="math display">\[V_{t+1} = (1-\alpha)\,V_t + \alpha\,R_t \qquad \text{donde } 0 &lt; \alpha &lt; 1\]</span></p>
+<p>Esta es la ecuación del <em>integrador con fuga</em>. El parámetro <span class="math inline">\((1-\alpha)\)</span> es el peso de la historia acumulada; <span class="math inline">\(\alpha\)</span> es el peso del refuerzo actual.</p>
+<p>Para ver los dos procesos por separado, conviene examinar cada caso. Cuando hay refuerzo (<span class="math inline">\(R_t = 1\)</span>), la ecuación carga el sistema: <span class="math inline">\(V_{t+1} = (1-\alpha)V_t + \alpha\)</span>, y el incremento es proporcional a qué tan lejos está <span class="math inline">\(V\)</span> de su máximo. Cuando no hay refuerzo (<span class="math inline">\(R_t = 0\)</span>), la ecuación se reduce a:</p>
+<p><span class="math display">\[V_{t+1} = (1-\alpha)\,V_t\]</span></p>
+<p>En este caso la descarga es pura: cada presentación del evento sin refuerzo multiplica la carga actual por <span class="math inline">\((1-\alpha)\)</span>, reduciéndola en una fracción <span class="math inline">\(\alpha\)</span>. Un sistema con mucha carga acumulada pierde más en términos absolutos que uno con poca carga —exactamente como una batería que se descarga más rápido cuando está llena que cuando está casi vacía.</p>
+<p>Cuando <span class="math inline">\(\alpha\)</span> es cercano a 0, la historia acumulada domina: cada nuevo ensayo apenas mueve la cantidad de carga, y el sistema es resistente a fluctuaciones pero lento para detectar cambios reales. Cuando <span class="math inline">\(\alpha\)</span> es cercano a 1, el refuerzo actual domina: el sistema responde rápido a cambios pero es volátil ante fluctuaciones accidentales. Pensemos en una amistad de muchos años que siempre ha sido positiva. Una mañana esa persona no te saluda. Con <span class="math inline">\(\alpha\)</span> cercano a 0, ese evento apenas altera tu valoración de la relación —la historia pesa más. Con <span class="math inline">\(\alpha\)</span> cercano a 1, ese único evento tiene un peso desproporcionado sobre años de experiencia acumulada. Ninguno de los dos extremos es adaptativo en general; el valor óptimo de <span class="math inline">\(\alpha\)</span> depende de qué tan estable y predecible sea el entorno. Podemos ver que la velocidad del aprendizaje depende del valor de <span class="math inline">\(\alpha\)</span>, y es así como se le conoce en los libros de texto estandard.</p>
+<p>La ecuación puede expresarse de dos formas equivalentes que la literatura usa indistintamente. La primera enfatiza el <em>nivel</em> del valor predictivo ensayo a ensayo:</p>
+<p><span class="math display">\[V_{t+1} = (1-\alpha)\,V_t + \alpha\,R_t\]</span></p>
+<p>La segunda enfatiza el <em>cambio</em> de ensayo a ensayo. Si definimos <span class="math inline">\(\Delta V = V_{t+1} - V_t\)</span>, restando <span class="math inline">\(V_t\)</span> de ambos lados:</p>
+<p><span class="math display">\[\Delta V = \alpha\,(R_t - V_t)\]</span></p>
+<p>Ambas formas son idénticas. La primera es útil para simular la trayectoria de <span class="math inline">\(V\)</span>; la segunda hace visible de inmediato que el cambio es proporcional a la discrepancia entre lo que ocurrió y lo que se esperaba —anticipando la segunda lectura.</p>
+<p>Para ver cómo funciona la primera forma, sigamos el siguiente ejemplo numérico. Con <span class="math inline">\(\alpha = 0.5\)</span>, <span class="math inline">\(V_0 = 0\)</span>, y cuatro ensayos de adquisición seguidos de tres de extinción:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 53%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ensayo</th>
+<th><span class="math inline">\(R_t\)</span></th>
+<th><span class="math inline">\(V_t\)</span></th>
+<th><span class="math inline">\(V_{t+1} = 0.5\,V_t + 0.5\,R_t\)</span></th>
+<th>Fase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>0.000</td>
+<td>0.500</td>
+<td>Adquisición</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>0.500</td>
+<td>0.750</td>
+<td>Adquisición</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>0.750</td>
+<td>0.875</td>
+<td>Adquisición</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+<td>0.875</td>
+<td>0.938</td>
+<td>Adquisición</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>0</td>
+<td>0.938</td>
+<td>0.469</td>
+<td>Extinción</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>0</td>
+<td>0.469</td>
+<td>0.234</td>
+<td>Extinción</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>0</td>
+<td>0.234</td>
+<td>0.117</td>
+<td>Extinción</td>
+</tr>
+</tbody>
+</table>
+<p>Noten el patrón en ambas fases. Durante la adquisición, el <span class="math inline">\(V\)</span> obtenido en cada ensayo se convierte en el nuevo <span class="math inline">\(V_t\)</span> del ensayo siguiente; el valor crece rápidamente al principio y se desacelera conforme se aproxima a 1. Durante la extinción —cuando <span class="math inline">\(R_t = 0\)</span> y la ecuación se reduce a <span class="math inline">\(V_{t+1} = (1-\alpha)V_t\)</span>— el proceso se invierte: la carga disminuye en cada ensayo en una fracción <span class="math inline">\(\alpha\)</span> de su valor actual. Desde 0.938, la descarga es más rápida que desde 0.234, porque hay más carga que perder. Con <span class="math inline">\(\alpha = 0.2\)</span> el proceso de adquisición es más lento: <span class="math inline">\(V_1 = 0.2\)</span>, <span class="math inline">\(V_2 = 0.36\)</span>, <span class="math inline">\(V_3 = 0.488\)</span>, <span class="math inline">\(V_4 = 0.590\)</span>; y la extinción también es más lenta. La forma de las trayectorias es la misma; cambia la velocidad.</p>
+<div id="figura_10_3_trayectorias" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_3_trayectorias.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Curvas de aprendizaje para diferentes alphas</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Trayectorias de V para α = 0.2 y α = 0.5, con refuerzo constante (R = 1) y V₀ = 0. Eje horizontal: ensayos. Eje vertical: valor V. Ambas curvas son negativamente aceleradas y convergen a 1, pero con velocidades distintas. Con α = 0.5 la convergencia es más rápida; con α = 0.2 es más lenta y suave. Datos de las diapositivas del curso.</p>
+<div id="figura_10_4_adq_ext" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_4_adq_ext.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Trayectorias adquisición y extinción</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Trayectoria de V durante adquisición (R = 1) y extinción (R = 0), α = 0.3. Eje horizontal: ensayos. Eje vertical: valor V. V crece durante la adquisición siguiendo la curva negativamente acelerada; decrece durante la extinción siguiendo una curva especular. La tasa de cambio en ambas fases es proporcional al valor actual de V.</p>
+</div>
+</div>
+</div>
+<p><strong>[SIMULADOR 8.1 — Disponible en línea. El simulador implementa el integrador con fuga. Parámetros ajustables: valor inicial de V, α, secuencia de refuerzos (constante o probabilística), número de ensayos. Muestra la trayectoria de V ensayo a ensayo.]</strong></p>
+<section id="segunda-lectura-la-reducción-del-error-de-predicción" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="segunda-lectura-la-reducción-del-error-de-predicción"><span class="header-section-number">10.6</span> Segunda lectura: la reducción del error de predicción</h2>
+<p>La misma ecuación puede leerse de otra manera. Basta reordenar los términos algebraicamente:</p>
+<p><span class="math display">\[V_{t+1} = (1-\alpha)\,V_t + \alpha\,R_t\]</span></p>
+<p><span class="math display">\[V_{t+1} = V_t - \alpha\,V_t + \alpha\,R_t\]</span></p>
+<p><span class="math display">\[V_{t+1} = V_t + \alpha\,(R_t - V_t)\]</span></p>
+<p>La expresión <span class="math inline">\((R_t - V_t)\)</span> es la clave. Es la diferencia entre lo que ocurrió (<span class="math inline">\(R_t\)</span>) y lo que el organismo esperaba (<span class="math inline">\(V_t\)</span>): el <em>error de predicción</em>. En la literatura contemporánea se representa con <span class="math inline">\(\delta\)</span>:</p>
+<p><span class="math display">\[\delta_t = R_t - V_t\]</span></p>
+<p>Con esa notación, la ecuación del nivel queda:</p>
+<p><span class="math display">\[V_{t+1} = V_t + \alpha\,\delta_t\]</span></p>
+<p>Y la ecuación del cambio queda:</p>
+<p><span class="math display">\[\Delta V = \alpha\,\delta_t\]</span></p>
+<p>Si el refuerzo fue mayor de lo anticipado, <span class="math inline">\(\delta\)</span> es positivo y <span class="math inline">\(V\)</span> sube. Si fue menor, <span class="math inline">\(\delta\)</span> es negativo y <span class="math inline">\(V\)</span> baja. Si el refuerzo ocurrió exactamente como se esperaba —<span class="math inline">\(R_t = V_t\)</span>— entonces <span class="math inline">\(\delta = 0\)</span> y <span class="math inline">\(V\)</span> no cambia. En la literatura contemporánea, esta forma se conoce como la <em>regla delta</em>, y es la versión dominante en la psicología del aprendizaje y las neurociencias.</p>
+<p>Esta lectura sugiere una intuición sobre el bloqueo de Kamin que vimos en el capítulo 6. Si un estímulo ya predice perfectamente el refuerzo —<span class="math inline">\(V_t = R_t\)</span>— entonces <span class="math inline">\(\delta_t = 0\)</span>: no hay sorpresa y no hay nada que aprender. Cuando se presenta el compuesto AB, si A ya predice el refuerzo perfectamente, el error de predicción debería ser cero y B no debería aprender nada. La intuición es correcta, pero la ecuación de Bush y Mosteller no puede derivarla formalmente: opera sobre eventos individuales y no tiene mecanismo para distribuir el error de predicción entre estímulos simultáneos. Esa extensión es precisamente lo que Rescorla y Wagner añadieron en 1972, y es el tema del capítulo siguiente.</p>
+<p>La figura 8.5 muestra la evolución paralela de <span class="math inline">\(V\)</span> y <span class="math inline">\(\delta\)</span> a lo largo del aprendizaje. Al inicio, cuando <span class="math inline">\(V\)</span> es bajo y el refuerzo ocurre, <span class="math inline">\(\delta\)</span> es grande y positivo —mucha sorpresa, mucho aprendizaje. Conforme <span class="math inline">\(V\)</span> crece y se aproxima al valor de equilibrio, <span class="math inline">\(\delta\)</span> se hace cada vez más pequeño. El aprendizaje se desacelera no porque el mecanismo cambie, sino porque hay menos error que corregir. La curva negativamente acelerada es, desde esta perspectiva, la consecuencia directa de un sistema que aprende proporcionalmente a su propia ignorancia.</p>
+<div id="figura_10_5_V_delta" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_5_V_delta.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Trayectoria de V y de error de predicción</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Trayectorias paralelas de V y δ. Panel superior: V crece de 0 hacia 1 siguiendo la curva negativamente acelerada. Panel inferior: δ decrece desde su valor máximo inicial hacia cero. La relación entre las dos curvas ilustra que el aprendizaje se desacelera porque el error de predicción disminuye. α = 0.3, R = 1.</p>
+</div>
+</div>
+</div>
+<p>Esta lectura también conecta con la neurociencia. A finales de los años noventa, Wolfram Schultz encontró que las neuronas dopaminérgicas del mesencéfalo de primates se comportan exactamente como predice la señal <span class="math inline">\(\delta\)</span>. Al inicio del entrenamiento disparan cuando ocurre el refuerzo inesperado. Conforme el animal aprende, la respuesta dopaminérgica se desplaza hacia el estímulo predictor —el momento donde se produce el error de predicción— y desaparece en el momento del refuerzo, porque este ya no es sorprendente. Cuando el refuerzo esperado no ocurre, las neuronas muestran una supresión de actividad: un error de predicción negativo. La dopamina no es simplemente una señal de placer; es una señal de error de predicción.</p>
+</section>
+<section id="tercera-lectura-el-filtro-de-media-exponencial-corrida" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="tercera-lectura-el-filtro-de-media-exponencial-corrida"><span class="header-section-number">10.7</span> Tercera lectura: el filtro de media exponencial corrida</h2>
+<p>Hay una tercera forma de llegar a la misma ecuación. Es la que más claramente revela qué está haciendo el organismo desde el punto de vista estadístico, y es la que favoreceremos en capítulos posteriores cuando examinemos entornos cambiantes.</p>
+<p>El problema que enfrenta el organismo es, en el fondo, un problema de estimación: dado todo lo que he observado hasta ahora, ¿cuál es la tasa de refuerzo asociada a este evento? Para entender cómo el modelo resuelve ese problema, conviene empezar con una estrategia más simple y mostrar por qué no es suficiente.</p>
+<section id="medianas-corridas-y-el-problema-del-alisamiento" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="medianas-corridas-y-el-problema-del-alisamiento"><span class="header-section-number">10.7.1</span> Medianas corridas y el problema del alisamiento</h3>
+<p>El problema que enfrenta el organismo es un problema de estimación: dado todo lo que he observado, ¿cuál es la tasa de refuerzo asociada a este evento? La estrategia más directa es calcular el promedio de todos los refuerzos desde el primer ensayo:</p>
+<p><span class="math display">\[V_t = \frac{1}{t}\sum_{i=1}^{t} R_i\]</span></p>
+<p>Pero este promedio simple tiene dos limitaciones. Asigna el mismo peso a todos los ensayos —una observación de hace cien ensayos pesa igual que la de ayer— y no filtra el ruido de las fluctuaciones accidentales.</p>
+<p>Para entender el problema del ruido y cómo resolverlo, consideremos el ejemplo de los contagios diarios de covid, que ya conocen. Usamos la <em>mediana corrida</em> porque es fácil de calcular a mano y robusta ante valores aberrantes; el argumento sobre alisamiento aplica igualmente a la media. Se selecciona una ventana de cierto número de observaciones, se calcula su mediana —el valor central al ordenarlos— y se desplaza la ventana un paso a la derecha, repitiendo la operación.</p>
+<p>Con los siguientes contagios diarios (en miles): 10, 14, 11, 16, 13, 9, <strong>85</strong>, 12, 18, 15, 20, 17, 13, 19, 16, una mediana corrida de 3 produce: 11, 13, 13, 13, 11, 12, 15, 15, 18, 17, 17, 16, 16. El valor aberrante de 85 desaparece, absorbido por sus vecinos, y la tendencia ascendente queda visible. Una ventana de 5 suaviza más aún: 13, 13, 12, 13, 13, 15, 17, 17, 17, 17, 16.</p>
+<p><img src="Figuras/fig_10_7_mediana_corrida.png" class="img-fluid" alt="Mediana corrida">{#figura_10_7_mediana corrida width=750 fig-align=“center”}</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Ejemplo de mediana corrida. Eje horizontal: días (1–15). Eje vertical: contagios diarios (miles). Línea negra irregular: datos originales, con el valor aberrante de 85 visible en el día 7. Línea azul oscura: mediana corrida de ventana 3. Línea azul clara: mediana corrida de ventana 5. Las dos ventanas eliminan el valor aberrante y hacen visible la tendencia ascendente.</p>
+</div>
+</div>
+</div>
+<p>La mediana corrida resuelve el ruido pero no el problema de los pesos iguales: los datos de la primera semana pesan igual que los de ayer. Y además es costosa: requiere almacenar toda la ventana en cada paso. En la mayoría de los contextos adaptativos, tiene más sentido dar mayor peso a las experiencias recientes.</p>
+</section>
+<section id="de-la-media-simple-a-la-regla-delta" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="de-la-media-simple-a-la-regla-delta"><span class="header-section-number">10.7.2</span> De la media simple a la regla delta</h3>
+<p>Para ver cómo la media simple se convierte en filtro exponencial, conviene partir de un caso concreto. Consideremos una secuencia de resultados de una máquina tragamonedas —cada respuesta produce refuerzo (1) o no (0) con cierta probabilidad constante:</p>
+<p><span class="math display">\[1\;1\;0\;0\;0\;1\;0\;0\;1\;1\;1\;0\;0\;0\;1\;1\;0\;0\;1\;1\;0\;1\;0\;0\;1\;1\;1\;1\]</span></p>
+<p>Para predecir el siguiente resultado, la estrategia más directa es calcular la media de todos los resultados obtenidos hasta el ensayo <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[V_t = \frac{1}{t}\sum_{i=1}^{t} R_i\]</span></p>
+<p>Pero esta fórmula exige recordar cada resultado desde el inicio y sumarlos de nuevo en cada ensayo. Existe una forma equivalente que evita ese costo. Partimos de la media en <span class="math inline">\(t\)</span> y la media en <span class="math inline">\(t-1\)</span>:</p>
+<p><span class="math display">\[V_t = \frac{1}{t}\sum_{i=1}^{t} R_i \qquad \qquad V_{t-1} = \frac{1}{t-1}\sum_{i=1}^{t-1} R_i\]</span></p>
+<p>Expandemos las dos ecuaciones:</p>
+<p><span class="math display">\[V_t = \frac{1}{t}\bigl(R_1 + R_2 + \cdots + R_{t-1} + R_t\bigr)\]</span></p>
+<p><span class="math display">\[V_{t -1}= \frac{1}{t-1|}\bigl(R_1 + R_2 + \cdots + R_{t-1} )\]</span></p>
+<p>Las dos ecuaciones comparten los términos <span class="math inline">\(R_1\)</span> hasta <span class="math inline">\(R_{t-1}\)</span>. Multiplicando la segunda por <span class="math inline">\((t-1)\)</span> obtenemos justo esa suma compartida:</p>
+<p><span class="math display">\[(t-1)\,V_{t-1} = R_1 + R_2 + \cdots + R_{t-1}\]</span></p>
+<p>Sustituyendo en la primera:</p>
+<p><span class="math display">\[V_t = \frac{1}{t}\bigl((t-1)\,V_{t-1} + R_t\bigr)\]</span></p>
+<p>Expandiendo y reordenando:</p>
+<p><span class="math display">\[V_t = V_{t-1} + \frac{1}{t}\,(R_t - V_{t-1})\]</span></p>
+<p>Esta es la media simple escrita como regla de actualización: para calcular el nuevo promedio solo necesito el promedio anterior <span class="math inline">\(V_{t-1}\)</span> y el refuerzo actual <span class="math inline">\(R_t\)</span>. No hace falta almacenar ningún resultado individual.</p>
+<p>La forma de la ecuación debería resultar familiar: es la regla delta, con el peso <span class="math inline">\(\frac{1}{t}\)</span> en lugar de <span class="math inline">\(\alpha\)</span>. Pero ese peso tiene un problema: decrece con cada ensayo nuevo. En el ensayo 10, cada resultado pesa <span class="math inline">\(\frac{1}{10}\)</span>. En el ensayo 100, pesa <span class="math inline">\(\frac{1}{100}\)</span>. Conforme se acumula experiencia, cada nueva observación importa cada vez menos —exactamente lo opuesto de lo que queremos si el entorno puede cambiar.</p>
+</section>
+<section id="del-peso-decreciente-al-peso-constante" class="level3" data-number="10.7.3">
+<h3 data-number="10.7.3" class="anchored" data-anchor-id="del-peso-decreciente-al-peso-constante"><span class="header-section-number">10.7.3</span> Del peso decreciente al peso constante</h3>
+<p>La solución es directa: reemplazar el peso decreciente <span class="math inline">\(\frac{1}{t}\)</span> por un peso <em>constante</em> <span class="math inline">\(\alpha\)</span>:</p>
+<p><span class="math display">\[V_t = V_{t-1} + \alpha\,(R_t - V_{t-1})\]</span></p>
+<p>Que es exactamente la regla delta. Con <span class="math inline">\(\alpha\)</span> constante, cada nuevo refuerzo siempre tiene el mismo peso relativo, sin importar cuántos ensayos hayan transcurrido.</p>
+<p>Pero ¿qué implica esto para los refuerzos del pasado? Para verlo, conviene reescribir la ecuación en la forma del integrador:</p>
+<p><span class="math display">\[V_t = (1-\alpha)\,V_{t-1} + \alpha\,R_t\]</span></p>
+<p>Y ahora expandir <span class="math inline">\(V_{t-1}\)</span> usando su propia ecuación, luego <span class="math inline">\(V_{t-2}\)</span>, y así sucesivamente. La tabla siguiente muestra los primeros tres pasos de la sustitución con <span class="math inline">\(V_0 = 0\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 43%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paso</th>
+<th>Sustitución</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(V_t\)</span></td>
+<td>—</td>
+<td><span class="math inline">\(\alpha R_t + (1-\alpha)V_{t-1}\)</span></td>
+</tr>
+<tr class="even">
+<td>Sustituyo <span class="math inline">\(V_{t-1}\)</span></td>
+<td><span class="math inline">\(V_{t-1} = \alpha R_{t-1} + (1-\alpha)V_{t-2}\)</span></td>
+<td><span class="math inline">\(\alpha R_t + \alpha(1-\alpha)R_{t-1} + (1-\alpha)^2 V_{t-2}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Sustituyo <span class="math inline">\(V_{t-2}\)</span></td>
+<td><span class="math inline">\(V_{t-2} = \alpha R_{t-2} + (1-\alpha)V_{t-3}\)</span></td>
+<td><span class="math inline">\(\alpha R_t + \alpha(1-\alpha)R_{t-1} + \alpha(1-\alpha)^2 R_{t-2} + (1-\alpha)^3 V_{t-3}\)</span></td>
+</tr>
+<tr class="even">
+<td>Continúo hasta <span class="math inline">\(V_0 = 0\)</span></td>
+<td>—</td>
+<td><span class="math inline">\(\alpha R_t + \alpha(1-\alpha)R_{t-1} + \alpha(1-\alpha)^2 R_{t-2} + \cdots + \alpha(1-\alpha)^{t-1}R_1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>El patrón es claro: cada refuerzo pasado recibe un peso de la forma <span class="math inline">\(\alpha(1-\alpha)^k\)</span>, donde <span class="math inline">\(k\)</span> es el número de ensayos que lo separan del presente. La fórmula general es entonces:</p>
+<p><span class="math display">\[V_t = \alpha\,R_t + \alpha(1-\alpha)\,R_{t-1} + \alpha(1-\alpha)^2\,R_{t-2} + \cdots + \alpha(1-\alpha)^{t-1}\,R_1\]</span></p>
+<p>El refuerzo más reciente <span class="math inline">\(R_t\)</span> tiene peso <span class="math inline">\(\alpha\)</span>. El del ensayo anterior tiene peso <span class="math inline">\(\alpha(1-\alpha)\)</span>. El de hace dos ensayos tiene peso <span class="math inline">\(\alpha(1-\alpha)^2\)</span>. Los pesos decrecen exponencialmente hacia el pasado —de ahí el nombre: <em>filtro de media exponencial corrida</em>.</p>
+<div id="figura_10_6_V_pesos_exp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_10_6_pesos_exp.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Pesos de filtros exponenciales</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Descripción</strong>: Pesos asignados a cada ensayo pasado bajo el filtro exponencial, para α = 0.1, 0.3 y 0.7. Eje horizontal: distancia temporal al pasado (ensayos). Eje vertical: peso de ponderación. Con α pequeño, los pesos decrecen lentamente — el organismo tiene memoria larga. Con α grande, los pesos caen rápido — el organismo tiene memoria corta. En todos los casos, la suma de todos los pesos es 1.</p>
+</div>
+</div>
+</div>
+<p>Esta tercera lectura revela lo que las otras dos no hacen tan explícito: el organismo no registra eventos individuales. Estima un <em>promedio ponderado</em> de su historia de refuerzos, donde los más recientes pesan más y el peso de cada observación decrece conforme queda más atrás en el tiempo. El parámetro <span class="math inline">\(\alpha\)</span> determina el tamaño efectivo de esa ventana temporal: un <span class="math inline">\(\alpha\)</span> pequeño equivale a una ventana larga —memoria larga, resistente al ruido, lenta para detectar cambios reales; un <span class="math inline">\(\alpha\)</span> grande equivale a una ventana corta —memoria corta, sensible a cambios, pero también a fluctuaciones accidentales.</p>
+<p><strong>[SIMULADOR 8.2 — Disponible en línea. El simulador permite explorar las tres interpretaciones del modelo de manera integrada. Panel izquierdo: trayectoria de V (integrador con fuga). Panel central: trayectoria de δ (error de predicción). Panel derecho: pesos asignados a cada ensayo pasado (filtro exponencial). Los tres paneles responden al mismo conjunto de parámetros: α, secuencia de refuerzos, número de ensayos.]</strong></p>
+</section>
+</section>
+<section id="las-tres-lecturas-son-la-misma-ecuación" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="las-tres-lecturas-son-la-misma-ecuación"><span class="header-section-number">10.8</span> Las tres lecturas son la misma ecuación</h2>
+<p>Conviene detenerse ante lo que acabamos de hacer. Llegamos a la misma ecuación desde tres puntos de partida distintos:</p>
+<p>¿Cómo carga y descarga el valor de un evento con la experiencia? → El integrador con fuga.</p>
+<p>¿Qué impulsa el aprendizaje ensayo a ensayo? → El error de predicción.</p>
+<p>¿Qué está estimando el organismo cuando aprende? → Un promedio ponderado exponencialmente de su historia de refuerzos.</p>
+<p>Las tres respuestas son la misma ecuación:</p>
+<p><span class="math display">\[V_{t+1} = (1-\alpha)\,V_t + \alpha\,R_t \qquad \Longleftrightarrow \qquad \Delta V = \alpha\,(R_t - V_t)\]</span></p>
+<p>No son teorías distintas sino marcos distintos para pensar en el mismo mecanismo. El primer marco facilita pensar en términos de un proceso de fortalecimiento. El segundo conecta con los experimentos de bloqueo y con la neurociencia dopaminérgica. El tercero permite analizar el aprendizaje por refuerzo como uno problema de predicción. La elección de cuál marco usar depende de qué pregunta se esté respondiendo.</p>
+</section>
+<section id="conexiones" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">10.9</span> Conexiones</h2>
+<section id="hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito" class="level3" data-number="10.9.1">
+<h3 data-number="10.9.1" class="anchored" data-anchor-id="hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito"><span class="header-section-number">10.9.1</span> Hacia atrás: Kinesis, Retroalimentación y Asignación de Crédito</h3>
+<p>El modelo cierra la promesa que los mecanismos del bloque anterior no podía cumplir. La kinesis permite navegar hacia recursos sin receptores de distancia, pero su solución es estadística y lenta. La retroalimentación permite orientación precisa mediante comparación simultánea, pero responde solo al estado presente. Ninguno de los dos tiene memoria de la experiencia pasada de un tipo que les permita <em>predecir</em> lo que vendrá. El modelo de Bush y Mosteller es el primer mecanismo en nuestra caja de herramientas que actualiza representaciones —valores predictivos— en función de la historia de experiencias. Esa capacidad de predicción es cualitativamente distinta de todo lo anterior.</p>
+<p>El modelo da cuenta de los resultados de los capítulos anteriores: la mera contigüidad no es ni necesaria ni suficiente para el aprendizaje, porque el mecanismo no registra pares de eventos sino que compara. Como la kinesis compara el presente con el pasado inmediato, y las taxias comparan dos puntos del espacio simultáneamente, el modelo de Bush y Mosteller compara un pasado acumulado —el valor predictivo V— con lo que ocurre en el presente. De esa comparación depende si el sistema se actualiza o no.</p>
+</section>
+<section id="hacia-adelante-rescorla-wagner-capítulo-11" class="level3" data-number="10.9.2">
+<h3 data-number="10.9.2" class="anchored" data-anchor-id="hacia-adelante-rescorla-wagner-capítulo-11"><span class="header-section-number">10.9.2</span> Hacia adelante: Rescorla-Wagner (Capítulo 11)</h3>
+<p>El modelo de Bush y Mosteller opera sobre eventos individuales. Cuando hay varios estímulos presentes simultáneamente, ¿cómo se distribuye el error de predicción entre ellos? Esa pregunta no tiene respuesta dentro del modelo actual: si dos estímulos están presentes al mismo tiempo, cada uno actualizaría su valor de manera independiente, y el bloqueo no se derivaría formalmente. Rescorla y Wagner resolvieron el problema en 1972 con una extensión elegante: el error de predicción no se calcula sobre el valor de un evento individual, sino sobre la suma de los valores de <em>todos</em> los eventos presentes. Esa modificación convierte la competencia entre estímulos en consecuencia matemática. El capítulo 11 examina esa extensión.</p>
+</section>
+</section>
+<section id="resumen" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="resumen"><span class="header-section-number">10.10</span> Resumen</h2>
+<p>El modelo de Bush y Mosteller formaliza el mecanismo que los capítulos de kinesis y retroalimentación no podían proveer: la capacidad de aprender, a partir de la experiencia, el valor predictivo de los eventos del entorno. La ecuación central actualiza ese valor ensayo a ensayo como función de la experiencia acumulada y del refuerzo obtenido, con el parámetro <span class="math inline">\(\alpha\)</span> controlando la importancia relativa de cada factor.</p>
+<p>La ecuación admite tres lecturas equivalentes. Como integrador con fuga, describe el proceso de carga y descarga del valor predictivo, con <span class="math inline">\((1-\alpha)\)</span> como peso de la historia y <span class="math inline">\(\alpha\)</span> como peso del refuerzo actual. Como reductor de error de predicción, describe un sistema que se actualiza proporcionalmente a la discrepancia entre lo esperado y lo obtenido —<span class="math inline">\(\delta = R_t - V_t\)</span>— y que se detiene cuando esa discrepancia es cero. Como filtro de media exponencial corrida, describe un estimador que promedia la historia de refuerzos con pesos que decrecen exponencialmente hacia el pasado, donde <span class="math inline">\(\alpha\)</span> determina el tamaño efectivo de la ventana temporal.</p>
+<p>Las tres lecturas son algebraicamente idénticas. La del error de predicción conecta directamente con el bloqueo de Kamin y con la neurociencia dopaminérgica. La del filtro exponencial será la más útil cuando examinemos entornos no estacionarios. La curva de aprendizaje negativamente acelerada —el patrón empírico central— emerge directamente de la ecuación: el sistema aprende rápido cuando el error es grande y se desacelera conforme el error disminuye.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">10.11</span> Ejercicios</h2>
+<p><strong>1.</strong> La ecuación del integrador puede escribirse como <span class="math inline">\(V_{t+1} = (1-\alpha)V_t + \alpha R_t\)</span>. Explica en términos del peso relativo de cada factor qué ocurriría si <span class="math inline">\(\alpha = 0\)</span> exactamente, y qué si <span class="math inline">\(\alpha = 1\)</span> exactamente. ¿Por qué ninguno de los dos extremos es un modelo de aprendizaje útil?</p>
+<p><strong>2.</strong> Con <span class="math inline">\(\alpha = 0.5\)</span> y <span class="math inline">\(V_0 = 0\)</span>, calcula los primeros cinco valores de <span class="math inline">\(V\)</span> para la secuencia de refuerzos 1, 0, 1, 1, 0. Luego repite con <span class="math inline">\(\alpha = 0.1\)</span>. ¿Con cuál de los dos valores el resultado después de cinco ensayos refleja mejor la proporción real de refuerzos en la secuencia (0.6)? ¿Qué dice esto sobre la relación entre <span class="math inline">\(\alpha\)</span> y la velocidad de convergencia?</p>
+<p><strong>3.</strong> En la derivación del filtro exponencial mostramos que el peso del refuerzo <span class="math inline">\(k\)</span> ensayos atrás es <span class="math inline">\(\alpha(1-\alpha)^k\)</span>. Calcula los pesos para los primeros cinco ensayos pasados con <span class="math inline">\(\alpha = 0.3\)</span> y con <span class="math inline">\(\alpha = 0.7\)</span>. ¿Con cuál de los dos un refuerzo de hace cinco ensayos tiene más influencia sobre el valor actual? ¿Cómo se relaciona esto con la noción de “ventana temporal larga” versus “ventana temporal corta”?</p>
+<p><strong>4.</strong> La curva de aprendizaje negativamente acelerada emerge de la ecuación sin supuestos adicionales. Explica por qué, usando la trayectoria del error de predicción <span class="math inline">\(\delta\)</span> a lo largo de los ensayos. ¿Qué debería ser cierto sobre <span class="math inline">\(\delta\)</span> para que la curva de aprendizaje fuera lineal en lugar de negativamente acelerada?</p>
+<p><strong>5.</strong> Usa el Simulador 10.1 para explorar qué ocurre con el valor de equilibrio cuando la probabilidad de refuerzo es 0.5 en lugar de 1.0. ¿Hacia qué valor converge <span class="math inline">\(V\)</span>? ¿Cambia ese valor de equilibrio al modificar <span class="math inline">\(\alpha\)</span>? Explica por qué el valor de equilibrio depende de la probabilidad de refuerzo pero no de <span class="math inline">\(\alpha\)</span>.</p>
+<p><strong>6.</strong> <em>(Reflexión)</em> El parámetro <span class="math inline">\(\alpha\)</span> determina el tamaño efectivo de la ventana temporal sobre la que el organismo promedia su experiencia. Describe dos situaciones —una en que un <span class="math inline">\(\alpha\)</span> grande sería adaptativo y una en que sería desadaptativo. ¿Qué propiedades del entorno determinan el valor óptimo de <span class="math inline">\(\alpha\)</span>? ¿Debería ese valor ser fijo a lo largo de la vida de un organismo, o debería poder ajustarse?</p>
+<hr>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">10.12</span> Lecturas Recomendadas</h2>
+<p><strong>Bush, R. R., &amp; Mosteller, F. (1951).</strong> A mathematical model for simple learning. <em>Psychological Review, 58</em>, 313–323. — El artículo original. Las primeras secciones son accesibles y presentan la lógica con claridad; las derivaciones matemáticas son el antecedente directo de todo lo que vino después.</p>
+<p><strong>Sutton, R. S., &amp; Barto, A. G. (2018).</strong> <em>Reinforcement Learning: An Introduction</em> (2ª ed.). MIT Press. Disponible gratuitamente en línea. Los capítulos 2 y 6 desarrollan el modelo de Bush-Mosteller en el contexto del aprendizaje de máquinas con claridad excepcional. El capítulo 2, en particular, presenta la derivación del filtro exponencial que seguimos aquí.</p>
+<p><strong>Schultz, W., Dayan, P., &amp; Montague, P. R. (1997).</strong> A neural substrate of prediction and reward. <em>Science, 275</em>, 1593–1599. — El artículo que estableció la correspondencia entre la señal dopaminérgica y el error de predicción del modelo. Tres páginas que transformaron la neurociencia del aprendizaje.</p>
+<p><strong>Rescorla, R. A., &amp; Wagner, A. R. (1972).</strong> A theory of Pavlovian conditioning. En A. H. Black &amp; W. F. Prokasy (Eds.), <em>Classical Conditioning II</em>. Appleton-Century-Crofts. — La extensión de Bush-Mosteller a compuestos de estímulos. Imprescindible para el capítulo siguiente.</p>
+<p><strong>Glimcher, P. W. (2011).</strong> Understanding dopamine and reinforcement learning: The dopamine reward prediction error hypothesis. <em>PNAS, 108</em>, 15647–15654. — Revisión accesible de la evidencia neurobiológica sobre el error de predicción dopaminérgico. Buen punto de entrada antes de leer Schultz et al.</p>
+
+
+</section>
+</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./asignacionR.html" class="pagination-link" aria-label="El Problema de la Asignación de Crédito (II)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
