@@ -377,15 +377,6 @@ window.Quarto = {
   <li><a href="#aprendizaje-por-refuerzo-elementos-comunes" id="toc-aprendizaje-por-refuerzo-elementos-comunes" class="nav-link" data-scroll-target="#aprendizaje-por-refuerzo-elementos-comunes"><span class="header-section-number">10.3</span> Aprendizaje por Refuerzo: elementos comunes</a></li>
   <li><a href="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido" id="toc-ecuaciones-en-diferencia-un-lenguaje-ya-conocido" class="nav-link" data-scroll-target="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido"><span class="header-section-number">10.4</span> Ecuaciones en diferencia: un lenguaje ya conocido</a></li>
   <li><a href="#primera-lectura-el-integrador-con-fuga" id="toc-primera-lectura-el-integrador-con-fuga" class="nav-link" data-scroll-target="#primera-lectura-el-integrador-con-fuga"><span class="header-section-number">10.5</span> Primera lectura: el integrador con fuga</a></li>
-  <li><a href="#las-tres-lecturas-son-la-misma-ecuación" id="toc-las-tres-lecturas-son-la-misma-ecuación" class="nav-link" data-scroll-target="#las-tres-lecturas-son-la-misma-ecuación"><span class="header-section-number">10.8</span> Las tres lecturas son la misma ecuación</a></li>
-  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">10.9</span> Conexiones</a>
-  <ul class="collapse">
-  <li><a href="#hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito" id="toc-hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito" class="nav-link" data-scroll-target="#hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito"><span class="header-section-number">10.9.1</span> Hacia atrás: Kinesis, Retroalimentación y Asignación de Crédito</a></li>
-  <li><a href="#hacia-adelante-rescorla-wagner-capítulo-11" id="toc-hacia-adelante-rescorla-wagner-capítulo-11" class="nav-link" data-scroll-target="#hacia-adelante-rescorla-wagner-capítulo-11"><span class="header-section-number">10.9.2</span> Hacia adelante: Rescorla-Wagner (Capítulo 11)</a></li>
-  </ul></li>
-  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">10.10</span> Resumen</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">10.11</span> Ejercicios</a></li>
-  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">10.12</span> Lecturas Recomendadas</a></li>
   </ul>
 </nav>
     </div>
@@ -726,15 +717,20 @@ window.Quarto = {
 </div>
 </div>
 <p>Esta tercera lectura revela lo que las otras dos no hacen tan explícito: el organismo no registra eventos individuales. Estima un <em>promedio ponderado</em> de su historia de refuerzos, donde los más recientes pesan más y el peso de cada observación decrece conforme queda más atrás en el tiempo. El parámetro <span class="math inline">\(\alpha\)</span> determina el tamaño efectivo de esa ventana temporal: un <span class="math inline">\(\alpha\)</span> pequeño equivale a una ventana larga —memoria larga, resistente al ruido, lenta para detectar cambios reales; un <span class="math inline">\(\alpha\)</span> grande equivale a una ventana corta —memoria corta, sensible a cambios, pero también a fluctuaciones accidentales.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🕹️ ¡Prueba el Simulador Interactivo!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb" target="_blank"><strong>Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.</strong></a></p>
+</div>
+</div>
 </section>
-</section>
-</div>
-</div>
-</div>
-<p>[<strong>Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.</strong>] (https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb){target=“_blank”}</p>
-</div>
-</div>
-</div>
 </section>
 <section id="las-tres-lecturas-son-la-misma-ecuación" class="level2" data-number="10.8">
 <h2 data-number="10.8" class="anchored" data-anchor-id="las-tres-lecturas-son-la-misma-ecuación"><span class="header-section-number">10.8</span> Las tres lecturas son la misma ecuación</h2>
@@ -782,6 +778,13 @@ window.Quarto = {
 <p><strong>Rescorla, R. A., &amp; Wagner, A. R. (1972).</strong> A theory of Pavlovian conditioning. En A. H. Black &amp; W. F. Prokasy (Eds.), <em>Classical Conditioning II</em>. Appleton-Century-Crofts. — La extensión de Bush-Mosteller a compuestos de estímulos. Imprescindible para el capítulo siguiente.</p>
 
 
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
