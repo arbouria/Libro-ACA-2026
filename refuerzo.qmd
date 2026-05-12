@@ -251,8 +251,8 @@ Esta tercera lectura revela lo que las otras dos no hacen tan explícito: el org
 
 :::
 
-[**Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.]**
-https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb){target="_blank"}
+[**Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.**]
+(https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb){target="_blank"}
 
 :::
 
