@@ -377,6 +377,15 @@ window.Quarto = {
   <li><a href="#aprendizaje-por-refuerzo-elementos-comunes" id="toc-aprendizaje-por-refuerzo-elementos-comunes" class="nav-link" data-scroll-target="#aprendizaje-por-refuerzo-elementos-comunes"><span class="header-section-number">10.3</span> Aprendizaje por Refuerzo: elementos comunes</a></li>
   <li><a href="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido" id="toc-ecuaciones-en-diferencia-un-lenguaje-ya-conocido" class="nav-link" data-scroll-target="#ecuaciones-en-diferencia-un-lenguaje-ya-conocido"><span class="header-section-number">10.4</span> Ecuaciones en diferencia: un lenguaje ya conocido</a></li>
   <li><a href="#primera-lectura-el-integrador-con-fuga" id="toc-primera-lectura-el-integrador-con-fuga" class="nav-link" data-scroll-target="#primera-lectura-el-integrador-con-fuga"><span class="header-section-number">10.5</span> Primera lectura: el integrador con fuga</a></li>
+  <li><a href="#las-tres-lecturas-son-la-misma-ecuación" id="toc-las-tres-lecturas-son-la-misma-ecuación" class="nav-link" data-scroll-target="#las-tres-lecturas-son-la-misma-ecuación"><span class="header-section-number">10.8</span> Las tres lecturas son la misma ecuación</a></li>
+  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">10.9</span> Conexiones</a>
+  <ul class="collapse">
+  <li><a href="#hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito" id="toc-hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito" class="nav-link" data-scroll-target="#hacia-atrás-kinesis-retroalimentación-y-asignación-de-crédito"><span class="header-section-number">10.9.1</span> Hacia atrás: Kinesis, Retroalimentación y Asignación de Crédito</a></li>
+  <li><a href="#hacia-adelante-rescorla-wagner-capítulo-11" id="toc-hacia-adelante-rescorla-wagner-capítulo-11" class="nav-link" data-scroll-target="#hacia-adelante-rescorla-wagner-capítulo-11"><span class="header-section-number">10.9.2</span> Hacia adelante: Rescorla-Wagner (Capítulo 11)</a></li>
+  </ul></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">10.10</span> Resumen</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">10.11</span> Ejercicios</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">10.12</span> Lecturas Recomendadas</a></li>
   </ul>
 </nav>
     </div>
@@ -576,10 +585,6 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <p><strong>Descripción</strong>: Trayectoria de V durante adquisición (R = 1) y extinción (R = 0), α = 0.3. Eje horizontal: ensayos. Eje vertical: valor V. V crece durante la adquisición siguiendo la curva negativamente acelerada; decrece durante la extinción siguiendo una curva especular. La tasa de cambio en ambas fases es proporcional al valor actual de V.</p>
-</div>
-</div>
-</div>
-<p><strong>[SIMULADOR 8.1 — Disponible en línea. El simulador implementa el integrador con fuga. Parámetros ajustables: valor inicial de V, α, secuencia de refuerzos (constante o probabilística), número de ensayos. Muestra la trayectoria de V ensayo a ensayo.]</strong></p>
 <section id="segunda-lectura-la-reducción-del-error-de-predicción" class="level2" data-number="10.6">
 <h2 data-number="10.6" class="anchored" data-anchor-id="segunda-lectura-la-reducción-del-error-de-predicción"><span class="header-section-number">10.6</span> Segunda lectura: la reducción del error de predicción</h2>
 <p>La misma ecuación puede leerse de otra manera. Basta reordenar los términos algebraicamente:</p>
@@ -721,8 +726,15 @@ window.Quarto = {
 </div>
 </div>
 <p>Esta tercera lectura revela lo que las otras dos no hacen tan explícito: el organismo no registra eventos individuales. Estima un <em>promedio ponderado</em> de su historia de refuerzos, donde los más recientes pesan más y el peso de cada observación decrece conforme queda más atrás en el tiempo. El parámetro <span class="math inline">\(\alpha\)</span> determina el tamaño efectivo de esa ventana temporal: un <span class="math inline">\(\alpha\)</span> pequeño equivale a una ventana larga —memoria larga, resistente al ruido, lenta para detectar cambios reales; un <span class="math inline">\(\alpha\)</span> grande equivale a una ventana corta —memoria corta, sensible a cambios, pero también a fluctuaciones accidentales.</p>
-<p><strong>[SIMULADOR 8.2 — Disponible en línea. El simulador permite explorar las tres interpretaciones del modelo de manera integrada. Panel izquierdo: trayectoria de V (integrador con fuga). Panel central: trayectoria de δ (error de predicción). Panel derecho: pesos asignados a cada ensayo pasado (filtro exponencial). Los tres paneles responden al mismo conjunto de parámetros: α, secuencia de refuerzos, número de ensayos.]</strong></p>
 </section>
+</section>
+</div>
+</div>
+</div>
+<p>[**Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.]** https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb){target=“_blank”}</p>
+</div>
+</div>
+</div>
 </section>
 <section id="las-tres-lecturas-son-la-misma-ecuación" class="level2" data-number="10.8">
 <h2 data-number="10.8" class="anchored" data-anchor-id="las-tres-lecturas-son-la-misma-ecuación"><span class="header-section-number">10.8</span> Las tres lecturas son la misma ecuación</h2>
@@ -768,13 +780,8 @@ window.Quarto = {
 <p><strong>Sutton, R. S., &amp; Barto, A. G. (2018).</strong> <em>Reinforcement Learning: An Introduction</em> (2ª ed.). MIT Press. Disponible gratuitamente en línea. Los capítulos 2 y 6 desarrollan el modelo de Bush-Mosteller en el contexto del aprendizaje de máquinas con claridad excepcional. El capítulo 2, en particular, presenta la derivación del filtro exponencial que seguimos aquí.</p>
 <p><strong>Schultz, W., Dayan, P., &amp; Montague, P. R. (1997).</strong> A neural substrate of prediction and reward. <em>Science, 275</em>, 1593–1599. — El artículo que estableció la correspondencia entre la señal dopaminérgica y el error de predicción del modelo. Tres páginas que transformaron la neurociencia del aprendizaje.</p>
 <p><strong>Rescorla, R. A., &amp; Wagner, A. R. (1972).</strong> A theory of Pavlovian conditioning. En A. H. Black &amp; W. F. Prokasy (Eds.), <em>Classical Conditioning II</em>. Appleton-Century-Crofts. — La extensión de Bush-Mosteller a compuestos de estímulos. Imprescindible para el capítulo siguiente.</p>
-<p><strong>Glimcher, P. W. (2011).</strong> Understanding dopamine and reinforcement learning: The dopamine reward prediction error hypothesis. <em>PNAS, 108</em>, 15647–15654. — Revisión accesible de la evidencia neurobiológica sobre el error de predicción dopaminérgico. Buen punto de entrada antes de leer Schultz et al.</p>
 
 
-</section>
-</div>
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

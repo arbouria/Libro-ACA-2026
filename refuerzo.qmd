@@ -114,11 +114,6 @@ Noten el patrón en ambas fases. Durante la adquisición, el $V$ obtenido en cad
 
 **Descripción**: Trayectoria de V durante adquisición (R = 1) y extinción (R = 0), α = 0.3. Eje horizontal: ensayos. Eje vertical: valor V. V crece durante la adquisición siguiendo la curva negativamente acelerada; decrece durante la extinción siguiendo una curva especular. La tasa de cambio en ambas fases es proporcional al valor actual de V.
 
-:::
-
-**[SIMULADOR 8.1 — Disponible en línea. El simulador implementa el integrador con fuga. Parámetros ajustables: valor inicial de V, α, secuencia de refuerzos (constante o probabilística), número de ensayos. Muestra la trayectoria de V ensayo a ensayo.]**
-
-
 ## Segunda lectura: la reducción del error de predicción
 
 La misma ecuación puede leerse de otra manera. Basta reordenar los términos algebraicamente:
@@ -254,7 +249,12 @@ El refuerzo más reciente $R_t$ tiene peso $\alpha$. El del ensayo anterior tien
 
 Esta tercera lectura revela lo que las otras dos no hacen tan explícito: el organismo no registra eventos individuales. Estima un *promedio ponderado* de su historia de refuerzos, donde los más recientes pesan más y el peso de cada observación decrece conforme queda más atrás en el tiempo. El parámetro $\alpha$ determina el tamaño efectivo de esa ventana temporal: un $\alpha$ pequeño equivale a una ventana larga —memoria larga, resistente al ruido, lenta para detectar cambios reales; un $\alpha$ grande equivale a una ventana corta —memoria corta, sensible a cambios, pero también a fluctuaciones accidentales.
 
-**[SIMULADOR 8.2 — Disponible en línea. El simulador permite explorar las tres interpretaciones del modelo de manera integrada. Panel izquierdo: trayectoria de V (integrador con fuga). Panel central: trayectoria de δ (error de predicción). Panel derecho: pesos asignados a cada ensayo pasado (filtro exponencial). Los tres paneles responden al mismo conjunto de parámetros: α, secuencia de refuerzos, número de ensayos.]**
+:::
+
+[**Abrir el simulador de la ecuación de Bush y Mosteller. Ilustra el integrador con fuga y dos interpretaciones adicionales, reducción de error de predicción y un promedio movil exponencial. Muestra la trayectoria de V ensayo a ensayo.]**
+https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Bush_Mosteller.ipynb){target="_blank"}
+
+:::
 
 ## Las tres lecturas son la misma ecuación
 
@@ -320,4 +320,3 @@ Las tres lecturas son algebraicamente idénticas. La del error de predicción co
 
 **Rescorla, R. A., & Wagner, A. R. (1972).** A theory of Pavlovian conditioning. En A. H. Black & W. F. Prokasy (Eds.), *Classical Conditioning II*. Appleton-Century-Crofts. — La extensión de Bush-Mosteller a compuestos de estímulos. Imprescindible para el capítulo siguiente.
 
-**Glimcher, P. W. (2011).** Understanding dopamine and reinforcement learning: The dopamine reward prediction error hypothesis. *PNAS, 108*, 15647–15654. — Revisión accesible de la evidencia neurobiológica sobre el error de predicción dopaminérgico. Buen punto de entrada antes de leer Schultz et al.

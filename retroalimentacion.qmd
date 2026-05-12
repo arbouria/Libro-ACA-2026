@@ -35,7 +35,7 @@ El primero cubre uno de los ojos compuestos de una polilla con pintura opaca. La
 
 El segundo experimento coloca dos fuentes de luz de igual intensidad a igual distancia del organismo. Si la conducta está controlada por la diferencia bilateral, la predicción es que el animal debería moverse en línea recta entre ambas fuentes —porque mientras estén equidistantes, los dos ojos reciben la misma estimulación, la diferencia es cero, y no hay señal de giro. Eso es exactamente lo que ocurre: el organismo avanza en línea recta hasta que la proximidad a una de las fuentes rompe la simetría, momento en que gira bruscamente. Pocas veces un experimento confirma tan limpiamente una predicción.
 
-![Dos fuentes de luz equidistantes](Figuras/fig7_3_dos_fuentes.png){#fig7_3_dos_fuentes width=750 fig-align="center"}
+![Dos fuentes de luz equidistantes](Figuras/fig7_3_dos_fuentes.png  ){#fig7_3_dos_fuentes width=750 fig-align="center"}
 
 ::: {.callout-note collapse="true" appearance="minimal"}
 
