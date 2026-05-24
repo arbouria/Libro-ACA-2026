@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; El Modelo de Rescorla y Wagner – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Traduccion_accion.html" rel="next">
+<link href="./refuerzo.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Rescorla_Wagner.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Rescorla_Wagner.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Traduccion_accion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Traducción del Conocimiento en Acción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Preogramas_refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de Refuerzo</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#el-problema-de-bush-y-mosteller-con-estímulos-compuestos" id="toc-el-problema-de-bush-y-mosteller-con-estímulos-compuestos" class="nav-link active" data-scroll-target="#el-problema-de-bush-y-mosteller-con-estímulos-compuestos"><span class="header-section-number">11.1</span> El problema de Bush y Mosteller con estímulos compuestos</a></li>
+  <li><a href="#dos-componentes-del-modelo-de-rescorla-y-wagner" id="toc-dos-componentes-del-modelo-de-rescorla-y-wagner" class="nav-link" data-scroll-target="#dos-componentes-del-modelo-de-rescorla-y-wagner"><span class="header-section-number">11.2</span> Dos componentes del modelo de Rescorla y Wagner</a>
+  <ul class="collapse">
+  <li><a href="#separabilidad" id="toc-separabilidad" class="nav-link" data-scroll-target="#separabilidad"><span class="header-section-number">11.2.1</span> Separabilidad</a></li>
+  <li><a href="#valor-predictivo-de-los-elementos" id="toc-valor-predictivo-de-los-elementos" class="nav-link" data-scroll-target="#valor-predictivo-de-los-elementos"><span class="header-section-number">11.2.2</span> Valor predictivo de los elementos</a></li>
+  <li><a href="#la-regla-de-integración-la-suma" id="toc-la-regla-de-integración-la-suma" class="nav-link" data-scroll-target="#la-regla-de-integración-la-suma"><span class="header-section-number">11.2.3</span> La regla de integración: la suma</a></li>
+  <li><a href="#la-regla-de-actualización-el-error-compartido" id="toc-la-regla-de-actualización-el-error-compartido" class="nav-link" data-scroll-target="#la-regla-de-actualización-el-error-compartido"><span class="header-section-number">11.2.4</span> La regla de actualización: el error compartido</a></li>
+  <li><a href="#competencia" id="toc-competencia" class="nav-link" data-scroll-target="#competencia"><span class="header-section-number">11.2.5</span> Competencia</a></li>
+  </ul></li>
+  <li><a href="#los-parámetros-alpha-y-beta" id="toc-los-parámetros-alpha-y-beta" class="nav-link" data-scroll-target="#los-parámetros-alpha-y-beta"><span class="header-section-number">11.3</span> Los parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#un-ejemplo-cotidiano" id="toc-un-ejemplo-cotidiano" class="nav-link" data-scroll-target="#un-ejemplo-cotidiano"><span class="header-section-number">11.4</span> Un ejemplo cotidiano</a></li>
+  <li><a href="#aplicación-al-ensombrecimiento" id="toc-aplicación-al-ensombrecimiento" class="nav-link" data-scroll-target="#aplicación-al-ensombrecimiento"><span class="header-section-number">11.5</span> Aplicación al ensombrecimiento</a></li>
+  <li><a href="#aplicación-al-bloqueo" id="toc-aplicación-al-bloqueo" class="nav-link" data-scroll-target="#aplicación-al-bloqueo"><span class="header-section-number">11.6</span> Aplicación al bloqueo</a></li>
+  <li><a href="#predicción-contraintuitiva-la-sobreexpectación" id="toc-predicción-contraintuitiva-la-sobreexpectación" class="nav-link" data-scroll-target="#predicción-contraintuitiva-la-sobreexpectación"><span class="header-section-number">11.7</span> Predicción contraintuitiva: la sobreexpectación</a></li>
+  <li><a href="#inhibición-condicionada" id="toc-inhibición-condicionada" class="nav-link" data-scroll-target="#inhibición-condicionada"><span class="header-section-number">11.8</span> Inhibición condicionada</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-un-estímulo-neutral-no-se-convierte-en-inhibidor" id="toc-por-qué-un-estímulo-neutral-no-se-convierte-en-inhibidor" class="nav-link" data-scroll-target="#por-qué-un-estímulo-neutral-no-se-convierte-en-inhibidor"><span class="header-section-number">11.8.1</span> Por qué un estímulo neutral no se convierte en inhibidor</a></li>
+  <li><a href="#cómo-se-crea-un-inhibidor" id="toc-cómo-se-crea-un-inhibidor" class="nav-link" data-scroll-target="#cómo-se-crea-un-inhibidor"><span class="header-section-number">11.8.2</span> Cómo se crea un inhibidor</a></li>
+  <li><a href="#el-problema-empírico-inhibidor-o-neutral" id="toc-el-problema-empírico-inhibidor-o-neutral" class="nav-link" data-scroll-target="#el-problema-empírico-inhibidor-o-neutral"><span class="header-section-number">11.8.3</span> El problema empírico: ¿inhibidor o neutral?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>En el capítulo anterior vimos que el modelo de Bush y Mosteller captura razonablemente bien la adquisición de valor predictivo cuando un estímulo o respuesta es seguido de un suceso biológicamente importante. La ecuación de actualización —con su error de predicción como motor, su parámetro <span class="math inline">\(\alpha\)</span> como importancia relativa, y sus tres lecturas equivalentes— produce las curvas negativamente aceleradas que la evidencia muestra y formaliza la idea de que el aprendizaje es proporcional al error de predicción —a la discrepancia entre lo que el organismo esperaba y lo que obtuvo. Pero dejamos señalada una limitación seria: el modelo opera sobre eventos individuales. Cuando un solo estímulo precede al SBI, todo funciona. La pregunta es qué ocurre cuando el entorno presenta lo que realmente presenta: múltiples estímulos simultáneos.</p>
+<p>Y es que los entornos reales no consisten de elementos que aparecen aisladamente. Los organismos encaran situaciones en las que múltiples estímulos se presentan al mismo tiempo y de manera contigua con sucesos biológicamente importantes. Una comida que nos enferma o que nos produce un gran placer es en sí misma un compuesto de múltiples estímulos: el plato en que se sirve, el mantel bajo el plato, cómo se ve, su aroma, la música que se escucha, la persona que la sirve. Más aún, cada uno de nosotros tiene experiencias diferenciadas con cada uno de estos elementos por separado, correlacionados con otros o con el mismo SBI. Hemos comido en ese mantel otras comidas, con platos y aromas diferentes.</p>
+<p>La pregunta que plantea esta realidad es directa: cuando un organismo enfrenta dos o más estímulos presentes simultáneamente y contiguos con un SBI, ¿qué principios describen cuánto aprenderá sobre cada uno de ellos? ¿A cuál le va a atribuir el SBI? ¿Y qué efecto tiene sobre esa decisión la experiencia previa con cada elemento por separado?</p>
+<p>Los resultados experimentales que revisamos en el capítulo sobre asignación de crédito a estímulos mostraron que la contigüidad no basta para explicar lo que se observa. Los experimentos de Kamin sobre bloqueo, los de Reynolds sobre ensombrecimiento, y los de García sobre relevancia biológica ilustraron que la asignación de crédito a un estímulo depende de factores que van más allá de la mera co-ocurrencia temporal con el SBI. Las interpretaciones originales de esos resultados enfatizaban que el estímulo debía ser seguido de un SBI que fuera sorpresivo, inesperado, informativo, o que atrajera la atención. En 1972, Rescorla y Wagner presentaron un modelo que captura formalmente esas intuiciones como un modelo matemático basado en el error de predicción, sin hacer referencia a procesos atencionales que se consideraban difíciles de evaluar con sujetos no humanos. Este modelo sigue siendo hasta la fecha el motor de la investigación en aprendizaje.</p>
+<section id="el-problema-de-bush-y-mosteller-con-estímulos-compuestos" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="el-problema-de-bush-y-mosteller-con-estímulos-compuestos"><span class="header-section-number">11.1</span> El problema de Bush y Mosteller con estímulos compuestos</h2>
+<p>Para entender qué aporta el modelo de Rescorla y Wagner, conviene ver primero por qué el modelo de Bush y Mosteller no puede resolver el problema por sí solo.</p>
+<p>Supongamos que un tono y una luz se presentan simultáneamente, seguidos de comida. El modelo de Bush y Mosteller actualizaría el valor de cada estímulo de manera independiente:</p>
+<p><span class="math display">\[\Delta V_{\text{tono}} = \alpha\,(R - V_{\text{tono}})\]</span> <span class="math display">\[\Delta V_{\text{luz}} = \alpha\,(R - V_{\text{luz}})\]</span></p>
+<p>Cada estímulo compara su propio valor con el SBI, sin saber nada del otro. El resultado es que ambos convergen hacia <span class="math inline">\(R\)</span> de manera independiente, como si el otro no existiera. Esto tiene una consecuencia empíricamente falsa: el modelo predice que la presencia de un segundo estímulo no debería afectar lo que se aprende sobre el primero. El ensombrecimiento —que un estímulo más saliente reduce el aprendizaje sobre uno menos saliente— queda sin explicación. Y el bloqueo —que el entrenamiento previo de un estímulo impide el aprendizaje sobre un estímulo nuevo añadido al compuesto— es directamente imposible de derivar.</p>
+<p>El modelo necesita algo que el esquema individual no tiene: un mecanismo por el cual los estímulos presentes simultáneamente <em>compitan</em> entre sí por el crédito disponible.</p>
+</section>
+<section id="dos-componentes-del-modelo-de-rescorla-y-wagner" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="dos-componentes-del-modelo-de-rescorla-y-wagner"><span class="header-section-number">11.2</span> Dos componentes del modelo de Rescorla y Wagner</h2>
+<p>El modelo de Rescorla y Wagner incluye dos grandes componentes. El primero es el modelo de Bush y Mosteller que ya conocemos, con su reducción de error de predicción como motor del aprendizaje. El segundo es un modelo de la forma en que un organismo percibe estímulos compuestos. Este segundo componente es la innovación central, y descansa sobre un conjunto de supuestos que conviene examinar.</p>
+<section id="separabilidad" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="separabilidad"><span class="header-section-number">11.2.1</span> Separabilidad</h3>
+<p>El modelo supone que los organismos perciben a los estímulos compuestos como conjuntos de elementos separables. Un rostro no es un estímulo integrado único, sino un conjunto de elementos —ojos, nariz, boca, orejas— cada uno con su propio valor predictivo. Esto no es trivial. Existen modelos alternativos (como el de Pearce, que veremos en otro capítulo) que suponen que el compuesto es procesado como una configuración única, no descomponible en sus partes. La evidencia empírica favorece, en muchos protocolos, el supuesto elemental de Rescorla y Wagner, aunque hay situaciones donde la configuración importa. Por ahora, aceptamos la separabilidad como punto de partida.</p>
+</section>
+<section id="valor-predictivo-de-los-elementos" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="valor-predictivo-de-los-elementos"><span class="header-section-number">11.2.2</span> Valor predictivo de los elementos</h3>
+<p>Cada elemento tiene un valor <span class="math inline">\(V\)</span> asociado que representa su capacidad predictiva del SBI. <span class="math inline">\(V\)</span> puede ser positivo —prediciendo la presencia del SBI—, negativo —prediciendo su ausencia—, o cero —sin predicción alguna. La relación entre el valor y alguna medida de comportamiento es únicamente ordinal: un elemento con <span class="math inline">\(V = 1\)</span> no produce necesariamente el doble de respuestas que uno con <span class="math inline">\(V = 0.5\)</span>; solo indica mayor predicción y probablemente más respuesta, sin especificar la proporción exacta.</p>
+</section>
+<section id="la-regla-de-integración-la-suma" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="la-regla-de-integración-la-suma"><span class="header-section-number">11.2.3</span> La regla de integración: la suma</h3>
+<p>El valor predictivo del compuesto es la suma aritmética de los valores de sus elementos. Si el compuesto incluye dos estímulos A y B:</p>
+<p><span class="math display">\[V_{\text{total}} = V_A + V_B\]</span></p>
+<p>Esta suma representa la predicción total del organismo sobre si el SBI aparecerá. Es el equivalente a preguntarle al organismo: “dada toda la evidencia que tienes presente en este momento, ¿qué esperas que ocurra?”</p>
+</section>
+<section id="la-regla-de-actualización-el-error-compartido" class="level3" data-number="11.2.4">
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="la-regla-de-actualización-el-error-compartido"><span class="header-section-number">11.2.4</span> La regla de actualización: el error compartido</h3>
+<p>Aquí está la contribución formal de Rescorla y Wagner. El cambio en el valor de cada elemento depende de la discrepancia entre el SBI obtenido y la suma de todos los valores presentes:</p>
+<p><span class="math display">\[\Delta V_x = \alpha\,\beta_x\,(R - V_{\text{total}})\]</span></p>
+<p>Noten lo que cambió respecto a Bush y Mosteller. No es <span class="math inline">\((R - V_x)\)</span> sino <span class="math inline">\((R - V_{\text{total}})\)</span>. El error de predicción no se calcula a partir del valor individual de cada estímulo, sino a partir de la suma de los valores de <em>todos</em> los estímulos presentes simultáneamente. Esta modificación aparentemente pequeña tiene consecuencias profundas: todos los elementos presentes se actualizan con base en el mismo error, y si ese error es cero para el compuesto, <em>ningún</em> elemento cambia su valor.</p>
+</section>
+<section id="competencia" class="level3" data-number="11.2.5">
+<h3 data-number="11.2.5" class="anchored" data-anchor-id="competencia"><span class="header-section-number">11.2.5</span> Competencia</h3>
+<p>La consecuencia directa de usar <span class="math inline">\(V_{\text{total}}\)</span> es que los elementos compiten por un valor predictivo limitado. El valor predictivo total está acotado por <span class="math inline">\(R\)</span>: cuando <span class="math inline">\(V_{\text{total}}\)</span> alcanza <span class="math inline">\(R\)</span>, el error de predicción es cero y el aprendizaje se detiene. Si un elemento ya capturó la mayor parte del valor disponible, queda poco o nada para los demás. La competencia emerge como consecuencia matemática del error compartido.</p>
+</section>
+</section>
+<section id="los-parámetros-alpha-y-beta" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="los-parámetros-alpha-y-beta"><span class="header-section-number">11.3</span> Los parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span></h2>
+<p>En el capítulo sobre Bush y Mosteller derivamos el parámetro <span class="math inline">\(\alpha\)</span> de supuestos teóricos sobre la importancia relativa del pasado y el presente. Pero empíricamente, hay una segunda variable que afecta la velocidad del aprendizaje: las propiedades del estímulo predictor. Un estímulo más intenso o más sobresaliente produce curvas de aprendizaje más aceleradas. Rescorla y Wagner representan esta segunda fuente de variación con un parámetro adicional, <span class="math inline">\(\beta_x\)</span>, que también toma valores entre 0 y 1 y captura la saliencia o asociabilidad del estímulo condicionado <span class="math inline">\(x\)</span>.</p>
+<p>El producto <span class="math inline">\(\alpha\,\beta_x\)</span> determina la velocidad efectiva de aprendizaje para cada elemento. <span class="math inline">\(\alpha\)</span> captura propiedades del SBI —su intensidad, calidad, relevancia motivacional— y <span class="math inline">\(\beta_x\)</span> captura propiedades del estímulo predictor —su intensidad sensorial, su novedad, su saliencia.</p>
+<p>Una nota sobre notación. En el capítulo anterior usamos <span class="math inline">\(\alpha\)</span> como parámetro único de aprendizaje. En la formulación de Rescorla y Wagner, ese papel se distribuye entre <span class="math inline">\(\alpha\)</span> (asociado al SBI) y <span class="math inline">\(\beta\)</span> (asociado al EC). En algunos textos se usa <span class="math inline">\(\alpha\)</span> para el EC y <span class="math inline">\(\beta\)</span> para el SBI; aquí seguimos la convención del artículo original de 1972. Lo importante no es la etiqueta sino la función: el aprendizaje es más rápido cuando tanto el SBI como el EC son intensos o salientes.</p>
+</section>
+<section id="un-ejemplo-cotidiano" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="un-ejemplo-cotidiano"><span class="header-section-number">11.4</span> Un ejemplo cotidiano</h2>
+<p>Para anclar la intuición antes de pasar a las aplicaciones formales, consideremos un escenario. Un amigo al que visitas con frecuencia consiguió un nuevo perro. Te gustaría saber si este perro es amigable o agresivo. El perro es un compuesto de múltiples elementos: tamaño, hocico, ojos, orejas, tipo de pelo, entre otros. Tu primera reacción ante ese nuevo perro va a ser el resultado de la suma de los valores predictivos de los distintos elementos que lo componen, adquiridos de tus múltiples experiencias con otros perros.</p>
+<p>Imaginemos que en algún momento del pasado te encontraste con un perro pequeño y chato que nunca trató de morderte. Posteriormente, cuando te encuentras con el perro de tu amigo —que comparte el mismo tamaño chico pero tiene un hocico largo—, tu predicción sobre si te morderá será la suma de lo que para ti predicen, por separado, su tamaño y su tipo de hocico. El tamaño (y no el tipo de hocico) del perro tendrá un valor predictivo en el sentido de que el animal no te morderá.</p>
+<p>Ahora, si el perro de tu amigo intenta morderte, habrá un error de predicción: la suma de los valores de los elementos predijo que no te mordería, y sí lo hizo. Ese error actualizará el valor de cada uno de los elementos. El tamaño chico perderá valor como predictor de “no mordida”, mientras que el hocico largo adquirirá valor como predictor de mordida. Y noten lo esencial: ambos elementos se actualizan en función del mismo error, no de su error individual. Eso es la ecuación de Rescorla y Wagner en acción.</p>
+</section>
+<section id="aplicación-al-ensombrecimiento" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="aplicación-al-ensombrecimiento"><span class="header-section-number">11.5</span> Aplicación al ensombrecimiento</h2>
+<p>Consideremos un protocolo con tres grupos de 60 ensayos. En el grupo 1, cada ensayo presenta un compuesto de dos estímulos —un tono y una luz— seguido de comida. Los grupos 2 y 3 son controles: al grupo 2 se le presenta solo el tono seguido de comida, al grupo 3 solo la luz seguida de comida. Supongamos que el tono es ligeramente más saliente que la luz (<span class="math inline">\(\beta_{\text{tono}} = 0.4\)</span>, <span class="math inline">\(\beta_{\text{luz}} = 0.2\)</span>).</p>
+<p>Para los grupos de control, el resultado es el que ya conocemos del modelo de Bush y Mosteller: cada estímulo, presentado individualmente, converge hacia <span class="math inline">\(R \approx 1\)</span> sin interferencia de ningún otro elemento.</p>
+<p>Para el grupo del compuesto, la historia es diferente. En cada ensayo, el error de predicción es <span class="math inline">\(R - V_{\text{total}}\)</span>, donde <span class="math inline">\(V_{\text{total}} = V_{\text{tono}} + V_{\text{luz}}\)</span>. Ambos estímulos se actualizan con ese mismo error, pero el tono —con <span class="math inline">\(\beta\)</span> más alta— se actualiza más rápido. A medida que la suma de los dos valores se acerca a <span class="math inline">\(R\)</span>, el error disponible disminuye. El tono, por su mayor saliencia, captura una fracción mayor del valor antes de que el error se agote. El resultado es que ni el tono ni la luz alcanzan el valor que alcanzarían si se presentaran solos: el tono termina con un valor cercano a <span class="math inline">\(0.67\)</span> y la luz con uno cercano a <span class="math inline">\(0.33\)</span>. El estímulo más saliente <em>ensombrece</em> al menos saliente.</p>
+<div id="fig-ensombrecimiento" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ensombrecimiento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figuras/fig_11_1_ensombrecimiento.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensombrecimiento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Ensombrecimiento
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Ensombrecimiento. Panel izquierdo: Grupo compuesto — evolución de <span class="math inline">\(V_{\text{tono}}\)</span> (azul, #2C5282, asíntota ≈ 0.67), <span class="math inline">\(V_{\text{luz}}\)</span> (naranja, #C05621, asíntota ≈ 0.33) y <span class="math inline">\(V_{\text{total}}\)</span> (gris punteado, #718096, asíntota ≈ 1.0) a lo largo de 60 ensayos. Panel derecho: Grupos control — <span class="math inline">\(V_{\text{tono}}\)</span> solo (azul) y <span class="math inline">\(V_{\text{luz}}\)</span> sola (naranja), ambos convergiendo a ≈ 1.0. Ejes: horizontal = ensayos, vertical = valor predictivo V (0 a 1.0). Referencia visual: diapositiva 22 de rescorla_y_Wagner_2023.pptx.]</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="aplicación-al-bloqueo" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="aplicación-al-bloqueo"><span class="header-section-number">11.6</span> Aplicación al bloqueo</h2>
+<p>El bloqueo es quizás el resultado más importante que el modelo de Rescorla y Wagner explica, y el que mejor ilustra la distancia entre este modelo y cualquier versión que descanse en la mera contigüidad.</p>
+<p>El protocolo tiene dos grupos, cuyo diseño conviene tener a la vista antes de seguir el análisis:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th>Fase 1</th>
+<th>Fase 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bloqueo</td>
+<td>Tono → Comida (60 ensayos)</td>
+<td>Tono + Luz → Comida (60 ensayos)</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>—</td>
+<td>Tono + Luz → Comida (60 ensayos)</td>
+</tr>
+</tbody>
+</table>
+<p>Para el grupo de bloqueo, al final de la Fase 1 el tono ya predice perfectamente la comida: <span class="math inline">\(V_{\text{tono}} \approx R\)</span>. En el primer ensayo de la Fase 2, cuando aparecen el tono y la luz juntos seguidos de comida, la predicción total es <span class="math inline">\(V_{\text{total}} = V_{\text{tono}} + V_{\text{luz}} = R + 0 = R\)</span>. El error de predicción es <span class="math inline">\(R - R = 0\)</span>. Sin error, no hay actualización. La luz, a pesar de ser perfectamente contigua con el SBI, no adquiere valor alguno.</p>
+<p>La lógica es transparente una vez que se entiende la ecuación: cuando un elemento ya predice el SBI, no queda error de predicción que pueda asignarse a elementos nuevos. Computando explícitamente:</p>
+<p><span class="math display">\[\Delta V_{\text{luz}} = \alpha\,\beta_{\text{luz}}\,(R - V_{\text{total}}) = \alpha\,\beta_{\text{luz}}\,(1 - 1) = 0\]</span></p>
+<p>Para el grupo control, ambos estímulos parten de cero y compiten por el valor disponible, produciendo un patrón similar al ensombrecimiento.</p>
+<p>Noten que en la simulación del bloqueo, <span class="math inline">\(V_{\text{luz}}\)</span> para el grupo control no llega a 1 —se detiene cerca de 0.4. La razón es la misma que en el ensombrecimiento: el tono, al estar presente también, captura parte del valor disponible.</p>
+<div id="fig_11_2_bloqueo.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_2_bloqueo.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_2_bloqueo</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Bloqueo. Panel superior: adquisición de <span class="math inline">\(V_{\text{tono}}\)</span> (azul, #2C5282) durante la Fase 1, convergiendo a ≈ 1.0. Panel inferior: Fase 2 — <span class="math inline">\(V_{\text{luz}}\)</span> del grupo bloqueo (naranja, #C05621, plana en ≈ 0) versus <span class="math inline">\(V_{\text{luz}}\)</span> del grupo control (verde, #276749, creciente a ≈ 0.4). Línea divisoria vertical entre fases. Ejes: horizontal = ensayos, vertical = valor predictivo V. Referencia visual: diapositiva 24 de rescorla_y_Wagner_2023.pptx.]</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="predicción-contraintuitiva-la-sobreexpectación" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="predicción-contraintuitiva-la-sobreexpectación"><span class="header-section-number">11.7</span> Predicción contraintuitiva: la sobreexpectación</h2>
+<p>Cualquier versión del modelo de Bush y Mosteller predice que un SBI adicional debe incrementar —aunque sea por un monto pequeño— el valor predictivo de un estímulo. El modelo de Rescorla y Wagner predice que en ciertas circunstancias ocurre exactamente lo contrario.</p>
+<p>Consideremos el siguiente protocolo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fase</th>
+<th>Protocolo</th>
+<th>Ensayos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Tono → Comida</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Luz → Comida</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Tono + Luz → Comida</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>Al final de las dos primeras fases, ambos estímulos han alcanzado la asíntota: <span class="math inline">\(V_{\text{tono}} \approx 1\)</span> y <span class="math inline">\(V_{\text{luz}} \approx 1\)</span>. En la tercera fase, se presenta el compuesto tono + luz seguido de comida.</p>
+<p>Al inicio de la tercera fase, <span class="math inline">\(V_{\text{total}} = V_{\text{tono}} + V_{\text{luz}} = 1 + 1 = 2\)</span>. Pero el SBI vale <span class="math inline">\(R = 1\)</span>, porque solo aparece una porción de comida. El error de predicción es <span class="math inline">\(R - V_{\text{total}} = 1 - 2 = -1\)</span>. El error es <em>negativo</em>: el organismo espera más de lo que obtiene. La consecuencia es que ambos valores <em>disminuyen</em> a pesar de que el SBI está presente:</p>
+<p><span class="math display">\[\Delta V_{\text{tono}} = \alpha\,\beta_{\text{tono}}\,(-1) &lt; 0\]</span> <span class="math display">\[\Delta V_{\text{luz}} = \alpha\,\beta_{\text{luz}}\,(-1) &lt; 0\]</span></p>
+<p>Los valores siguen disminuyendo hasta que su suma iguala al SBI: <span class="math inline">\(V_{\text{tono}} + V_{\text{luz}} = 1\)</span>, en cuyo punto el error se hace cero y el aprendizaje se detiene. Cada uno termina con un valor aproximado de 0.5.</p>
+<p>Esta predicción —que reforzar un compuesto puede <em>reducir</em> el valor de sus elementos— es imposible de generar sin el <span class="math inline">\(V_{\text{total}}\)</span>. Un modelo con error individual siempre incrementaría <span class="math inline">\(V\)</span> cuando el SBI está presente. Interesantemente, la predicción ha sido confirmada experimentalmente (Kremer, 1978; Rescorla, 2006), proporcionando fuerte evidencia a favor del modelo.</p>
+<div id="fig_11_3_sobreexpectacion.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_3_sobreexpectacion.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_3_sobreexpectacion</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Sobreexpectación. Panel izquierdo: curvas separadas de <span class="math inline">\(V_{\text{tono}}\)</span> y <span class="math inline">\(V_{\text{luz}}\)</span> durante Fases 1 y 2 (adquisición individual, ambas convergen a 1.0). Panel derecho: Fase 3 — ambos valores descienden desde 1.0 hasta ≈ 0.5 cuando se presentan en compuesto. Colores: tono en azul (#2C5282), luz en naranja (#C05621). Líneas verticales separando fases. Referencia visual: diapositiva 26 de rescorla_y_Wagner_2023.pptx.]</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Antes de continuar con la lectura, abre el <a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Rescorla_Wagner.ipynb" target="_blank">notebook de simuladores de este capítulo (enlace a Google Colab)</a>. Contiene dos simuladores interactivos que te permitirán explorar la ecuación de Rescorla y Wagner con diferentes parámetros y protocolos.</p>
+<p>El Simulador 11.1 se concentra en el ensombrecimiento. El Simulador 11.2 te permite seleccionar entre los protocolos que acabamos de analizar — adquisición simple, ensombrecimiento, bloqueo y sobreexpectación— y verificar que todos son consecuencias de la misma ecuación con diferentes historias de entrenamiento. Usa los botones de ejemplo para cargar configuraciones que producen resultados claros. El simulador también incluye un protocolo de inhibición condicionada que te será útil cuando llegues a la siguiente sección del capítulo. Después de leer sobre cómo se crean los inhibidores y las pruebas de Rescorla, regresa al simulador y explora ese protocolo: observa en la tabla numérica cómo los ensayos A+ producen errores positivos y los ensayos AB− producen errores negativos, y cómo esa alternancia es lo que permite que <span class="math inline">\(V_B\)</span>​ descienda por debajo de cero.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="inhibición-condicionada" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="inhibición-condicionada"><span class="header-section-number">11.8</span> Inhibición condicionada</h2>
+<p>Hasta este punto, hemos discutido estímulos que adquieren valor positivo y predicen la presencia de un SBI. Pero ¿pueden los estímulos predecir la <em>ausencia</em> de un SBI? Poder hacer esa predicción tiene importantes ventajas adaptativas. La señal de que un depredador no aparecerá le permite a una presa buscar alimento sin interrupciones. La señal de que no habrá comida le permite al organismo reorientar su búsqueda hacia otros recursos. Al estudio de este fenómeno se le conoce como <em>inhibición condicionada</em>.</p>
+<section id="por-qué-un-estímulo-neutral-no-se-convierte-en-inhibidor" class="level3" data-number="11.8.1">
+<h3 data-number="11.8.1" class="anchored" data-anchor-id="por-qué-un-estímulo-neutral-no-se-convierte-en-inhibidor"><span class="header-section-number">11.8.1</span> Por qué un estímulo neutral no se convierte en inhibidor</h3>
+<p>El estudio de la inhibición tardó décadas en despegar, y la estructura del modelo original ayuda a entender por qué. Imaginen que se encuentran con una persona paseando a un perro que los ignora completamente. El perro no fue un SBI: ni les gruñó ni les movió la cola. Consecuentemente, <span class="math inline">\(R = 0\)</span>. La persona era un desconocido que no predice nada: su <span class="math inline">\(V\)</span> es cero. El error de predicción es <span class="math inline">\(R - V = 0 - 0 = 0\)</span>. No hay cambio. Si nada se espera y nada se obtiene, nada se aprende. La persona sigue siendo un estímulo neutral, no un inhibidor.</p>
+<p>Esto establece una condición necesaria para la inhibición. Para que un estímulo adquiera valor <em>negativo</em>, el error de predicción debe ser negativo. Para que eso ocurra cuando <span class="math inline">\(R = 0\)</span>, el estímulo debe aparecer en compuesto con un estímulo que ya tiene valor positivo, de tal forma que <span class="math inline">\(V_{\text{total}} &gt; 0\)</span> y el error <span class="math inline">\((R - V_{\text{total}}) &lt; 0\)</span>.</p>
+</section>
+<section id="cómo-se-crea-un-inhibidor" class="level3" data-number="11.8.2">
+<h3 data-number="11.8.2" class="anchored" data-anchor-id="cómo-se-crea-un-inhibidor"><span class="header-section-number">11.8.2</span> Cómo se crea un inhibidor</h3>
+<p>Regresemos al ejemplo del perro, pero esta vez imaginemos que el perro les gruñe de forma amenazante cada vez que ven a su paseador. Después de muchos encuentros, la persona paseando al perro se convierte en un predictor del gruñido: <span class="math inline">\(V_{\text{persona}} \approx 1\)</span>. En un siguiente encuentro, la persona va acompañada de su pareja y el perro esta vez <em>no</em> gruñe. El error de predicción es <span class="math inline">\(R - V_{\text{total}} = 0 - (V_{\text{persona}} + V_{\text{pareja}}) = 0 - (1 + 0) = -1\)</span>. El error es negativo, y la pareja adquiere valor negativo:</p>
+<p><span class="math display">\[\Delta V_{\text{pareja}} = \alpha\,\beta\,(-1) &lt; 0\]</span></p>
+<p>Después de muchos encuentros de este tipo —la persona sola con perro agresivo, la persona con pareja y perro tranquilo—, la pareja se convierte en un inhibidor condicionado que predice la no ocurrencia del gruñido. El proceso continúa hasta que la suma de valores en el compuesto se aproxima a cero: <span class="math inline">\(V_{\text{persona}} + V_{\text{pareja}} \approx 1 + (-1) = 0\)</span>, momento en que el error desaparece.</p>
+<div id="fig_11_4_inhibidor.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_4_inhibidor.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>fig_11_4_inhibidor</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Creación de un inhibidor condicionado. Protocolo: Fase 1 — Tono+ (60 ensayos reforzados). Fase 2 — Tono+ intercalados con TL− (tono + luz sin SBI, 60 ensayos). Curvas: <span class="math inline">\(V_{\text{tono}}\)</span> (azul, #2C5282, manteniéndose cerca de 1.0), <span class="math inline">\(V_{\text{luz}}\)</span> (naranja, #C05621, descendiendo de 0 a ≈ −0.5). Eje vertical: valor predictivo (−1.0 a 1.0). Referencia visual: figura superior de diapositiva 11 de Inhibición_Rescorla.pptx.]</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="el-problema-empírico-inhibidor-o-neutral" class="level3" data-number="11.8.3">
+<h3 data-number="11.8.3" class="anchored"><span class="header-section-number">11.8.3</span> El problema empírico: ¿inhibidor o neutral?</h3>
+<p>La segunda razón por la que la inhibición condicionada tardó en estudiarse es la dificultad para distinguir empíricamente entre un estímulo neutral —que no predice nada— y un estímulo que predice <em>la ausencia</em> de algo. Rescorla, en un artículo de 1969, propuso que para concluir que un estímulo es un inhibidor condicionado, este debe pasar dos pruebas complementarias.</p>
+<p>En la primera, la <strong>prueba de sumación</strong>, se compara la respuesta ante un estímulo excitador <span class="math inline">\(A\)</span> presentado solo con la respuesta ante el compuesto de <span class="math inline">\(A\)</span> junto con el supuesto inhibidor <span class="math inline">\(X\)</span>. El protocolo típico tiene tres fases:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th>Fase 1</th>
+<th>Fase 2</th>
+<th>Fase 3 (prueba)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inhibición</td>
+<td>T+ / X+</td>
+<td>LT−</td>
+<td>LX−</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>T− / X+</td>
+<td>LT−</td>
+<td>LX−</td>
+</tr>
+</tbody>
+</table>
+<p>Si <span class="math inline">\(X\)</span> es verdaderamente inhibitorio (<span class="math inline">\(V_X &lt; 0\)</span>), entonces <span class="math inline">\(V_{\text{total}} = V_A + V_X &lt; V_A\)</span>, y la respuesta al compuesto debe ser menor que la respuesta a <span class="math inline">\(A\)</span> solo. Regresando a nuestro ejemplo: si la pareja del paseador es un inhibidor, el perro debería gruñir menos cuando la pareja está presente que cuando el paseador va solo. Sin embargo, Rescorla señala que estos resultados tienen una interpretación alternativa: quizás la atención dirigida a <span class="math inline">\(X\)</span> simplemente reduce la atención dirigida a <span class="math inline">\(A\)</span>, produciendo una menor respuesta sin que <span class="math inline">\(X\)</span> sea genuinamente inhibitorio.</p>
+<p>En la segunda, la <strong>prueba de retardo</strong>, se compara la velocidad de adquisición de valor excitatorio entre el supuesto inhibidor <span class="math inline">\(X\)</span> y un estímulo neutral:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th>Fase 1</th>
+<th>Fase 2</th>
+<th>Fase 3 (prueba)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Retardo</td>
+<td>T+</td>
+<td>LT−</td>
+<td>L+</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>T−</td>
+<td>LT−</td>
+<td>L+</td>
+</tr>
+</tbody>
+</table>
+<p>Si <span class="math inline">\(X\)</span> tiene valor negativo, debe tardar más en alcanzar valores positivos que un estímulo que parte de cero —porque tiene que recorrer mayor distancia. Pero también aquí hay una explicación alternativa: quizás la familiaridad con <span class="math inline">\(X\)</span> reduce la atención que recibe (habituación), retardando el aprendizaje sin que el estímulo sea inhibitorio.</p>
+<p>La importancia del argumento de Rescorla es que las dos explicaciones alternativas se contradicen entre sí. La alternativa para la sumación requiere que <span class="math inline">\(X\)</span> reciba <em>más</em> atención (distrayendo de <span class="math inline">\(A\)</span>); la alternativa para el retardo requiere que <span class="math inline">\(X\)</span> reciba <em>menos</em> atención (por habituación). No resulta plausible que un mismo estímulo reciba más atención en una circunstancia y menos en otra. Si el estímulo pasa ambas pruebas, las explicaciones atencionales se eliminan mutuamente, y la conclusión de que <span class="math inline">\(X\)</span> es genuinamente inhibitorio queda como la más parsimoniosa.</p>
+<div id="fig_11_5_sumacion.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_5_sumacion.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_5_sumacion</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Prueba de sumación. Panel superior: protocolo experimental en tabla (Grupo Inhibición: Fase 1 = T+/X+, Fase 2 = LT−, Fase 3 = LX−; Grupo Control: Fase 1 = T−/X+, Fase 2 = LT−, Fase 3 = LX−). Panel inferior izquierdo: adquisición de <span class="math inline">\(V_{\text{luz}}\)</span> (valor negativo, convergiendo a ≈ −0.5 durante Fase 2). Panel inferior derecho: respuesta al compuesto LX en Fase 3 — grupo inhibición (naranja, menor respuesta) vs.&nbsp;grupo control (verde, mayor respuesta). Referencia visual: diapositiva 11 de Inhibición_Rescorla.pptx.]</em></p>
+<p>::;</p>
+<div id="fig_11_6_retardo.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_6_retardo.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_6_retardo</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Prueba de retardo. Panel superior: protocolo (Grupo Retardo: Fase 1 = T+, Fase 2 = LT−, Fase 3 = L+; Grupo Control: Fase 1 = T−, Fase 2 = LT−, Fase 3 = L+). Panel inferior: curvas de adquisición en Fase 3 — <span class="math inline">\(V_{\text{luz}}\)</span> del grupo retardo (naranja, #C05621, partiendo de ≈ −0.5, adquisición lenta) vs.&nbsp;<span class="math inline">\(V_{\text{luz}}\)</span> del grupo control (azul, #2C5282, partiendo de 0, adquisición rápida). Referencia visual: diapositiva 13 de Inhibición_Rescorla.pptx.]</em></p>
+</div>
+</div>
+</div>
+<section id="limitaciones-del-modelo" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="limitaciones-del-modelo"><span class="header-section-number">11.9</span> Limitaciones del modelo</h2>
+<p>Dentro de la psicología, pocos modelos han sido tan exitosos como el de Rescorla y Wagner en dar cuenta de una amplia gama de resultados, abrir nuevas rutas de investigación y capturar formalmente el papel del error de predicción en el aprendizaje. Sin embargo, como ocurre con cualquier modelo, hay predicciones que no se sostienen empíricamente. Estas fallas no son fracasos sino pistas: cada una ha señalado hacia direcciones que enriquecieron la comprensión del aprendizaje. Presentamos tres que, por su claridad conceptual y por las alternativas que motivaron, merecen atención.</p>
+<section id="la-extinción-no-reduce-el-valor-a-cero" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="la-extinción-no-reduce-el-valor-a-cero"><span class="header-section-number">11.9.1</span> La extinción no reduce el valor a cero</h3>
+<p>En extinción, el SBI que previamente seguía al estímulo deja de presentarse. En este caso <span class="math inline">\(R = 0\)</span>, y el modelo predice que <span class="math inline">\(V\)</span> disminuirá hasta igualarse a <span class="math inline">\(R\)</span>, es decir, hasta llegar a cero. Cuando eso ocurre, el error de predicción desaparece (<span class="math inline">\(0 - 0 = 0\)</span>) y no hay más cambios. Para el modelo, un estímulo extinguido y un estímulo que nunca fue condicionado son funcionalmente idénticos: ambos tienen <span class="math inline">\(V = 0\)</span>.</p>
+<p>La evidencia dice otra cosa. Hay una multitud de reportes que muestran que el mero paso del tiempo produce una <em>recuperación espontánea</em> de la respuesta condicionada extinguida. Adicionalmente, estímulos previamente extinguidos adquieren valor excitatorio más rápido que estímulos genuinamente neutrales, a pesar de que se supone que ambos parten de <span class="math inline">\(V = 0\)</span>. Estos hallazgos sugieren que la extinción no borra la asociación original sino que es sensible al contexto. Esta literatura y los modelos para dar cuenta de ella los presentaremos en un capítulo posterior sobre extinción y contexto.</p>
+</section>
+<section id="la-inhibición-condicionada-no-se-extingue" class="level3" data-number="11.9.2">
+<h3 data-number="11.9.2" class="anchored" data-anchor-id="la-inhibición-condicionada-no-se-extingue"><span class="header-section-number">11.9.2</span> La inhibición condicionada no se extingue</h3>
+<p>Si la excitación y la inhibición son simétricas —si <span class="math inline">\(V\)</span> puede subir y bajar por la misma escala continua—, entonces un inhibidor condicionado (<span class="math inline">\(V &lt; 0\)</span>) debería poder extinguirse de la misma manera que un excitador: presentándolo sin SBI hasta que <span class="math inline">\(V\)</span> regrese a cero. El modelo predice exactamente eso: cuando un inhibidor con <span class="math inline">\(V = -0.5\)</span> se presenta solo sin SBI, el error de predicción es <span class="math inline">\(0 - (-0.5) = 0.5 &gt; 0\)</span>, y el valor debería subir hacia cero.</p>
+<p>Sin embargo, la evidencia empírica muestra que presentar un inhibidor condicionado sin consecuencias <em>no reduce</em> su valor inhibitorio. El inhibidor mantiene su efecto en pruebas de sumación y retardo posteriores, como si la fase de extinción no hubiera ocurrido. Este resultado sugiere que la inhibición puede ser cualitativamente diferente de la excitación, no simplemente el extremo negativo de una misma dimensión.</p>
+<div id="fig_11_7_no_extincion_inhibicion.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_7_no_extincion_inhibicion.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_7_no_extincion_inhibicion</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>No extinción de inhibición. Protocolo: Fase 1 = creación del inhibidor (T+/LT−); Fase 2 = presentación de L solo (intento de extinción); Fase 3 = prueba de sumación. Dos curvas superpuestas: extinción de un excitador (azul, #2C5282, <span class="math inline">\(V\)</span> desciende de ≈ 1.0 a ≈ 0) y “extinción” de un inhibidor (naranja, #C05621, <span class="math inline">\(V\)</span> se mantiene cerca de −0.5). El modelo predice que ambas converjan a cero; empíricamente, solo la primera lo hace. Referencia visual: diapositiva 4 de Problemas_con_el_modelo.pptx.]</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="inhibición-latente" class="level3" data-number="11.9.3">
+<h3 data-number="11.9.3" class="anchored" data-anchor-id="inhibición-latente"><span class="header-section-number">11.9.3</span> Inhibición latente</h3>
+<p>Consideremos un protocolo simple. A un grupo se le presenta, durante 60 ensayos, un estímulo neutral sin SBI; en una segunda fase, ese mismo estímulo es seguido de un SBI. A un grupo control solo se le presenta la segunda fase. Para el modelo de Rescorla y Wagner, la primera fase no debería tener efecto: si <span class="math inline">\(V = 0\)</span> y <span class="math inline">\(R = 0\)</span>, entonces el error es cero y <span class="math inline">\(V\)</span> permanece en cero. Ambos grupos deberían aprender a la misma velocidad en la segunda fase.</p>
+<p>Sin embargo, una enorme literatura reporta que la pre-exposición a un estímulo sin consecuencias <em>retarda</em> la adquisición posterior de valor predictivo. A este fenómeno se le conoce como <em>inhibición latente</em>, y el modelo de Rescorla y Wagner no puede explicarlo porque asume que <span class="math inline">\(\beta\)</span> —la asociabilidad del estímulo— es fija. El hallazgo sugiere que la pre-exposición reduce <span class="math inline">\(\beta\)</span>: el estímulo “pierde la atención” del organismo porque ha aprendido que no predice nada importante. Cuando en la segunda fase el estímulo sí va seguido de un SBI, el sistema tarda en “prestarle atención” de nuevo.</p>
+<p>Este fenómeno fue la motivación principal para modelos alternativos que enfatizan cambios dinámicos en la atención, y no solo en el valor asociativo. El más influyente de estos modelos es el de Pearce y Hall (1980), cuya idea central es que la atención a un estímulo (<span class="math inline">\(\beta\)</span>) no es fija sino que depende de si ese estímulo ha sido seguido de eventos sorpresivos. Cuando un estímulo predice bien lo que ocurre (error bajo), la atención que recibe disminuye; cuando lo que ocurre es inesperado (error alto), la atención aumenta. En un capítulo posterior, cuando examinemos modelos bayesianos del aprendizaje, veremos cómo esta idea se formaliza de manera más general: el organismo no solo actualiza lo que cree (<span class="math inline">\(V\)</span>), sino también cuánta confianza tiene en lo que cree, y cuánta atención dedica a recoger nueva evidencia.</p>
+<div id="fig_11_8_inhibicion_latente.png" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Figuras/fig_11_8_inhibicion_latente.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>fig_11_8_inhibicion_latente</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[Inhibición latente. Dos curvas de adquisición en Fase 2: grupo pre-expuesto (naranja, #C05621, adquisición lenta) vs.&nbsp;grupo control sin pre-exposición (azul, #2C5282, adquisición rápida). Ambos empiezan con <span class="math inline">\(V = 0\)</span>; la diferencia no se explica por el modelo de R&amp;W. Línea vertical separando fases. Eje horizontal = ensayos, vertical = valor predictivo V (0 a 1.0).]</em></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conexiones" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">11.10</span> Conexiones</h2>
+<section id="el-comparador-universal-de-la-selección-natural-a-rescorla-wagner" class="level3" data-number="11.10.1">
+<h3 data-number="11.10.1" class="anchored" data-anchor-id="el-comparador-universal-de-la-selección-natural-a-rescorla-wagner"><span class="header-section-number">11.10.1</span> El comparador universal: de la selección natural a Rescorla-Wagner</h3>
+<p>A lo largo de los bloques anteriores hemos encontrado, una y otra vez, la misma arquitectura formal: un sistema que compara dos cantidades, detecta una diferencia, y usa esa diferencia para ajustar su estado. En la selección natural, la ecuación de Price formaliza la covarianza entre un rasgo y el éxito reproductivo — la diferencia entre el individuo y el promedio poblacional, ponderada por el fitness, impulsa el cambio evolutivo. En la kinesis, el organismo compara su estado presente con su estado inmediatamente anterior y cambia de explorar a explotar. En las taxias, la comparación es simultánea — entre dos puntos del espacio — y el ajuste es una orientación. En los sistemas de retroalimentación, un comparador contrasta el valor actual de una variable con un punto de referencia y genera una señal de error que corrige la desviación.</p>
+<p>El modelo de Bush y Mosteller llevó esta misma operación al aprendizaje: el organismo compara lo que obtuvo (<span class="math inline">\(R\)</span>) con lo que esperaba obtener (<span class="math inline">\(V\)</span>), y esa diferencia — el error de predicción — impulsa la actualización. Lo que cambia respecto a los mecanismos anteriores es la fuente de la referencia: ya no es el estado inmediato ni un punto fijo genético, sino una memoria de largo plazo que integra la experiencia acumulada.</p>
+<p>El modelo de Rescorla y Wagner extiende esa misma operación a un escenario más complejo: la referencia ya no es el valor de un solo evento sino la suma de los valores de todos los eventos presentes simultáneamente. El error sigue siendo una diferencia entre lo obtenido y lo esperado, pero ahora lo esperado refleja la contribución conjunta de múltiples predictores. La competencia entre estímulos no es un mecanismo nuevo — es la consecuencia de aplicar el mismo principio de reducción de diferencia a un mundo con múltiples fuentes de información. En todos los casos — selección natural, kinesis, retroalimentación, Bush y Mosteller, Rescorla y Wagner — el motor del cambio es la discrepancia, y el equilibrio se alcanza cuando esa discrepancia desaparece.</p>
+</section>
+<section id="hacia-atrás-bush-y-mosteller-y-la-asignación-de-crédito" class="level3" data-number="11.10.2">
+<h3 data-number="11.10.2" class="anchored" data-anchor-id="hacia-atrás-bush-y-mosteller-y-la-asignación-de-crédito"><span class="header-section-number">11.10.2</span> Hacia atrás: Bush y Mosteller y la asignación de crédito</h3>
+<p>El modelo de Rescorla y Wagner resuelve el problema que el capítulo anterior dejó explícitamente abierto. Bush y Mosteller formalizaron el error de predicción como motor del aprendizaje, pero su ecuación opera sobre eventos individuales. Cuando hay varios estímulos presentes, cada uno actualizaría su valor de manera independiente y fenómenos como el bloqueo no se derivan. Rescorla y Wagner resolvieron esto con una extensión que, en retrospectiva, es la más natural posible: computar el error sobre la suma de todos los valores presentes. Esa suma (<span class="math inline">\(V_{\text{total}}\)</span>) convierte la competencia entre estímulos en consecuencia matemática de la misma ecuación de error de predicción.</p>
+<p>El bloqueo de Kamin, que en el capítulo sobre asignación de crédito a estímulos establecimos como la evidencia central, encuentra aquí su explicación formal: si un elemento ya predice perfectamente el SBI, la suma de valores iguala a <span class="math inline">\(R\)</span>, el error es cero, y ningún estímulo nuevo puede adquirir valor. El ensombrecimiento y la sobreexpectación emergen por la misma lógica. No son fenómenos independientes que requieran explicaciones separadas sino manifestaciones distintas de un mismo principio.</p>
+</section>
+<section id="hacia-adelante-correlaciones-tiempo-y-modelos-bayesianos" class="level3" data-number="11.10.3">
+<h3 data-number="11.10.3" class="anchored" data-anchor-id="hacia-adelante-correlaciones-tiempo-y-modelos-bayesianos"><span class="header-section-number">11.10.3</span> Hacia adelante: Correlaciones, tiempo y modelos bayesianos</h3>
+<p>El modelo de Rescorla y Wagner asume que el aprendizaje ocurre ensayo a ensayo, en tiempo discreto. Pero los organismos experimentan el tiempo como un flujo continuo, no como una secuencia de ensayos empaquetados. En un capítulo posterior examinaremos los experimentos de Rescorla sobre correlaciones y contingencias — P(SBI|EC) versus P(SBI|¬EC) — y veremos cómo el modelo de Gallistel reformula el problema del aprendizaje en términos de tasas de eventos en el tiempo, no de asociaciones ensayo a ensayo. Esa reformulación cambiará profundamente la pregunta: de “¿cuánta fuerza tiene la asociación?” a “¿ha cambiado la tasa de refuerzo?”.</p>
+<p>Las limitaciones que identificamos — la incapacidad de explicar la extinción como proceso reversible, la asimetría entre excitación e inhibición, y la insensibilidad a la pre-exposición — apuntan todas hacia una misma dirección: el organismo no solo actualiza lo que cree, sino que también ajusta la confianza de sus creencias y la atención que dedica a recoger evidencia. Esa idea, esbozada por Pearce y Hall y formalizada con mayor rigor en modelos bayesianos, será tema de capítulos posteriores.</p>
+<p>Hay una segunda línea de extensión que también examinaremos más adelante. La ecuación de Rescorla y Wagner opera ensayo a ensayo, comparando lo obtenido con lo esperado en el momento presente. Pero en muchas situaciones el SBI aparece al final de una secuencia de acciones, no inmediatamente después del estímulo. Las extensiones de la ecuación al caso temporal — en particular, el aprendizaje por diferencias temporales (TD-learning) de Sutton y Barto — resuelven ese problema permitiendo que la señal de error se propague hacia atrás en el tiempo, y resultan ser formalmente equivalentes a la señal de las neuronas dopaminérgicas descubierta por Schultz y colaboradores. Esa conexión entre la psicología del aprendizaje, la neurociencia y el aprendizaje automático la desarrollaremos cuando abordemos el aprendizaje secuencial.</p>
+</section>
+</section>
+<section id="resumen" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="resumen"><span class="header-section-number">11.11</span> Resumen</h2>
+<p>El modelo de Rescorla y Wagner extiende el modelo de Bush y Mosteller a estímulos compuestos mediante un supuesto que es a la vez simple y poderoso: los estímulos son separables en elementos, y el error de predicción se computa sobre la suma de los valores de todos los elementos presentes. Esa modificación genera competencia entre estímulos como consecuencia matemática y da cuenta del ensombrecimiento, el bloqueo, la sobreexpectación y la inhibición condicionada sin invocar mecanismos adicionales.</p>
+<p>El modelo tiene limitaciones. No explica la recuperación espontánea tras la extinción, la resistencia de la inhibición condicionada a la extinción, ni el efecto de retardo por pre-exposición (inhibición latente). Cada una de estas fallas señala hacia mecanismos que el modelo no contempla: la sensibilidad al contexto, la posible asimetría entre excitación e inhibición, y los cambios dinámicos en la atención al estímulo. El modelo de Pearce y Hall propone que la atención (<span class="math inline">\(\beta\)</span>) no es fija sino que varía con la historia de sorpresas; modelos bayesianos posteriores formalizan esa idea de manera más general.</p>
+<p>A pesar de estas limitaciones, la ecuación de Rescorla y Wagner sigue siendo, después de más de cincuenta años, el punto de partida obligado para cualquier discusión formal sobre el aprendizaje asociativo. Su legado no está solo en lo que explica sino en lo que sus fallas revelaron: que el aprendizaje es más rico de lo que cualquier ecuación de una sola línea puede capturar.</p>
+<hr>
+</section>
+<section id="ejercicios" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">11.12</span> Ejercicios</h2>
+<p><strong>1.</strong> Para cada uno de los siguientes escenarios, indica si los modelos de Bush y Mosteller y Rescorla y Wagner hacen predicciones idénticas o diferentes, y explica por qué: (a) un tono se presenta 60 veces seguido de comida; (b) un tono se presenta 60 veces junto con una luz, ambos seguidos de comida; (c) primero un tono solo se presenta 60 veces con comida, luego el tono junto con una luz se presentan 60 veces con comida.</p>
+<p><strong>2.</strong> Con <span class="math inline">\(\alpha = 0.2\)</span>, <span class="math inline">\(\beta_{\text{tono}} = 0.4\)</span>, <span class="math inline">\(\beta_{\text{luz}} = 0.3\)</span>, y <span class="math inline">\(R = 1\)</span>, calcula los primeros tres ensayos de un protocolo de ensombrecimiento (tono + luz → comida). Para cada ensayo reporta: <span class="math inline">\(V_{\text{total}}\)</span>, error de predicción, <span class="math inline">\(\Delta V_{\text{tono}}\)</span>, <span class="math inline">\(\Delta V_{\text{luz}}\)</span>, y los nuevos valores. ¿Qué patrón se empieza a observar?</p>
+<p><strong>3.</strong> Usa el Simulador 11.2 para comparar el resultado del bloqueo cuando la intensidad del SBI cambia entre fases. Configura el protocolo de bloqueo estándar (Fase 1: tono → comida con <span class="math inline">\(R = 1\)</span>; Fase 2: tono + luz → comida con <span class="math inline">\(R = 1\)</span>). Ahora repite con <span class="math inline">\(R = 1.5\)</span> en la Fase 2, manteniendo <span class="math inline">\(R = 1\)</span> en la Fase 1. ¿Qué ocurre con <span class="math inline">\(V_{\text{luz}}\)</span>? Este fenómeno, llamado <em>desbloqueo</em>, fue una de las primeras confirmaciones experimentales del modelo. Explica en términos del error de predicción por qué el cambio en la intensidad del SBI “desbloquea” el aprendizaje.</p>
+<p><strong>4.</strong> Explica en tus propias palabras por qué un inhibidor condicionado solo puede formarse en presencia de un excitador. Luego, usando la lógica de Rescorla sobre las pruebas de sumación y retardo, explica por qué se necesitan <em>ambas</em> pruebas para concluir que un estímulo es genuinamente inhibitorio.</p>
+<p><strong>5.</strong> El modelo de Rescorla y Wagner predice que un estímulo extinguido y un estímulo genuinamente neutral son funcionalmente idénticos. Sin embargo, la evidencia muestra recuperación espontánea y readquisición rápida del estímulo extinguido. ¿Qué implica esto sobre lo que “sabe” el organismo al final de la extinción? ¿La extinción es “desaprendizaje” o algo diferente?</p>
+<p><strong>6.</strong> <em>(Reflexión)</em> El modelo de Rescorla y Wagner supone que <span class="math inline">\(\beta\)</span> —la saliencia del estímulo— es fija dentro de un experimento. La inhibición latente demuestra que eso no se sostiene. Describe un escenario de la vida cotidiana donde la pre-exposición a una señal sin consecuencias retarde tu aprendizaje posterior sobre esa señal. Luego describe un escenario donde un cambio repentino en las consecuencias <em>aumente</em> tu atención a una señal que habías ignorado. ¿Qué tendría que ser cierto sobre el mecanismo de aprendizaje para que ambos escenarios sean posibles?</p>
+<hr>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="11.13">
+<h2 data-number="11.13" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">11.13</span> Lecturas Recomendadas</h2>
+<p><strong>Rescorla, R. A. (1988).</strong> Pavlovian conditioning: It’s not what you think it is. <em>American Psychologist, 43</em>(3), 151–160. — Rescorla argumenta que la visión tradicional del condicionamiento como formación ciega de asociaciones por contigüidad es inadecuada. El organismo es mejor descrito como un buscador de información que usa relaciones lógicas y perceptuales entre eventos para construir una representación sofisticada de su entorno. Accesible, breve, y la mejor puerta de entrada conceptual al tema de este capítulo.</p>
+<p><strong>Rescorla, R. A., &amp; Wagner, A. R. (1972).</strong> A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement. En A. H. Black &amp; W. F. Prokasy (Eds.), <em>Classical Conditioning II</em>. Appleton-Century-Crofts. — El artículo fundacional. La escritura es densa pero la lógica es transparente; las primeras secciones donde presentan los supuestos y derivan el bloqueo son un ejemplo de claridad formal.</p>
+<p><strong>Miller, R. R., Barnet, R. C., &amp; Grahame, N. J. (1995).</strong> Assessment of the Rescorla-Wagner model. <em>Psychological Bulletin, 117</em>, 363–386. — Evaluación comprehensiva de los éxitos y limitaciones del modelo después de dos décadas. Útil para entender qué explicó, qué no explicó, y qué motivó los modelos alternativos.</p>
+<p><strong>Pearce, J. M., &amp; Hall, G. (1980).</strong> A model for Pavlovian learning: Variations in the effectiveness of conditioned but not of unconditioned stimuli. <em>Psychological Review, 87</em>, 532–552. — La alternativa centrada en atención. Presenta el argumento formal de que el error de predicción modula no solo el valor asociativo sino también la asociabilidad del estímulo. Lectura obligada para entender la inhibición latente y el camino hacia los modelos bayesianos.</p>
+<p><strong>Schultz, W., Dayan, P., &amp; Montague, P. R. (1997).</strong> A neural substrate of prediction and reward. <em>Science, 275</em>, 1593–1599. — Las neuronas dopaminérgicas codifican errores de predicción al estilo de Rescorla-Wagner. Tres páginas que conectaron un modelo de los años 70 con la neurociencia de los años 90.</p>
+<p><strong>Sutton, R. S., &amp; Barto, A. G. (2018).</strong> <em>Reinforcement Learning: An Introduction</em> (2ª ed.). MIT Press. Disponible gratuitamente en línea. — Los capítulos 6 y 7 desarrollan extensiones temporales del modelo. El puente entre la psicología del aprendizaje y el aprendizaje automático más directo que existe.</p>
+
+
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./refuerzo.html" class="pagination-link" aria-label="Aprendizaje por Refuerzo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Traduccion_accion.html" class="pagination-link" aria-label="Traducción del Conocimiento en Acción">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Traducción del Conocimiento en Acción</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

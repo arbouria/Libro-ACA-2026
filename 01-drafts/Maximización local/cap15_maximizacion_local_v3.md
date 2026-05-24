@@ -1,6 +1,8 @@
 # Capítulo 15: El Control Local del Comportamiento de Elección
-
+## A. Bouzas
 ---
+
+##  Borrador
 
 El capítulo anterior documentó uno de los fenómenos más replicados de la psicología experimental: en equilibrio, los organismos distribuyen sus respuestas entre dos opciones de modo que la proporción de respuestas a cada alternativa iguala a la proporción de reforzadores que obtienen de ella. Mostramos que este resultado es compatible con dos tipos de explicación: que los organismos igualan la rentabilidad de cada opción, o que maximizan la tasa global de refuerzo a lo largo de la sesión. Ambas explicaciones operan sobre medidas agregadas — promedios calculados sobre sesiones completas — y ambas describen correctamente el estado de equilibrio. Lo que ninguna de las dos describe es el proceso que produce ese equilibrio.
 

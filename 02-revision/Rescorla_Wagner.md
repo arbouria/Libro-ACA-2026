@@ -1,8 +1,7 @@
-# Capítulo 11: El Modelo de Rescorla y Wagner
-## Competencia Entre Estímulos y el Presupuesto del Error
-
 ---
-# Borrador
+title: "El Modelo de Rescorla y Wagner"
+format: html
+---
 
 En el capítulo anterior vimos que el modelo de Bush y Mosteller captura razonablemente bien la adquisición de valor predictivo cuando un estímulo o respuesta es seguido de un suceso biológicamente importante. La ecuación de actualización —con su error de predicción como motor, su parámetro $\alpha$ como importancia relativa, y sus tres lecturas equivalentes— produce las curvas negativamente aceleradas que la evidencia muestra y formaliza la idea de que el aprendizaje es proporcional al error de predicción —a la discrepancia entre lo que el organismo esperaba y lo que obtuvo. Pero dejamos señalada una limitación seria: el modelo opera sobre eventos individuales. Cuando un solo estímulo precede al SBI, todo funciona. La pregunta es qué ocurre cuando el entorno presenta lo que realmente presenta: múltiples estímulos simultáneos.
 
@@ -11,8 +10,6 @@ Y es que los entornos reales no consisten de elementos que aparecen aisladamente
 La pregunta que plantea esta realidad es directa: cuando un organismo enfrenta dos o más estímulos presentes simultáneamente y contiguos con un SBI, ¿qué principios describen cuánto aprenderá sobre cada uno de ellos? ¿A cuál le va a atribuir el SBI? ¿Y qué efecto tiene sobre esa decisión la experiencia previa con cada elemento por separado?
 
 Los resultados experimentales que revisamos en el capítulo sobre asignación de crédito a estímulos mostraron que la contigüidad no basta para explicar lo que se observa. Los experimentos de Kamin sobre bloqueo, los de Reynolds sobre ensombrecimiento, y los de García sobre relevancia biológica ilustraron que la asignación de crédito a un estímulo depende de factores que van más allá de la mera co-ocurrencia temporal con el SBI. Las interpretaciones originales de esos resultados enfatizaban que el estímulo debía ser seguido de un SBI que fuera sorpresivo, inesperado, informativo, o que atrajera la atención. En 1972, Rescorla y Wagner presentaron un modelo que captura formalmente esas intuiciones como un modelo matemático basado en el error de predicción, sin hacer referencia a procesos atencionales que se consideraban difíciles de evaluar con sujetos no humanos. Este modelo sigue siendo hasta la fecha el motor de la investigación en aprendizaje.
-
----
 
 ## El problema de Bush y Mosteller con estímulos compuestos
 
@@ -26,8 +23,6 @@ $$\Delta V_{\text{luz}} = \alpha\,(R - V_{\text{luz}})$$
 Cada estímulo compara su propio valor con el SBI, sin saber nada del otro. El resultado es que ambos convergen hacia $R$ de manera independiente, como si el otro no existiera. Esto tiene una consecuencia empíricamente falsa: el modelo predice que la presencia de un segundo estímulo no debería afectar lo que se aprende sobre el primero. El ensombrecimiento —que un estímulo más saliente reduce el aprendizaje sobre uno menos saliente— queda sin explicación. Y el bloqueo —que el entrenamiento previo de un estímulo impide el aprendizaje sobre un estímulo nuevo añadido al compuesto— es directamente imposible de derivar.
 
 El modelo necesita algo que el esquema individual no tiene: un mecanismo por el cual los estímulos presentes simultáneamente *compitan* entre sí por el crédito disponible.
-
----
 
 ## Dos componentes del modelo de Rescorla y Wagner
 
@@ -59,9 +54,7 @@ Noten lo que cambió respecto a Bush y Mosteller. No es $(R - V_x)$ sino $(R - V
 
 ### Competencia
 
-La consecuencia directa de usar $V_{\text{total}}$ es que los elementos compiten por un valor predictivo limitado. El valor predictivo total está acotado por $R$: cuando $V_{\text{total}}$ alcanza $R$, el error de predicción es cero y el aprendizaje se detiene. Si un elemento ya capturó la mayor parte del valor disponible, queda poco o nada para los demás. Los elementos no lo "saben" —no hay un mecanismo explícito de repartición—, pero la competencia emerge como consecuencia matemática del error compartido.
-
----
+La consecuencia directa de usar $V_{\text{total}}$ es que los elementos compiten por un valor predictivo limitado. El valor predictivo total está acotado por $R$: cuando $V_{\text{total}}$ alcanza $R$, el error de predicción es cero y el aprendizaje se detiene. Si un elemento ya capturó la mayor parte del valor disponible, queda poco o nada para los demás. La competencia emerge como consecuencia matemática del error compartido.
 
 ## Los parámetros $\alpha$ y $\beta$
 
@@ -71,7 +64,6 @@ El producto $\alpha\,\beta_x$ determina la velocidad efectiva de aprendizaje par
 
 Una nota sobre notación. En el capítulo anterior usamos $\alpha$ como parámetro único de aprendizaje. En la formulación de Rescorla y Wagner, ese papel se distribuye entre $\alpha$ (asociado al SBI) y $\beta$ (asociado al EC). En algunos textos se usa $\alpha$ para el EC y $\beta$ para el SBI; aquí seguimos la convención del artículo original de 1972. Lo importante no es la etiqueta sino la función: el aprendizaje es más rápido cuando tanto el SBI como el EC son intensos o salientes.
 
----
 
 ## Un ejemplo cotidiano
 
@@ -80,8 +72,6 @@ Para anclar la intuición antes de pasar a las aplicaciones formales, considerem
 Imaginemos que en algún momento del pasado te encontraste con un perro pequeño y chato que nunca trató de morderte. Posteriormente, cuando te encuentras con el perro de tu amigo —que comparte el mismo tamaño chico pero tiene un hocico largo—, tu predicción sobre si te morderá será la suma de lo que para ti predicen, por separado, su tamaño y su tipo de hocico. El tamaño (y no el tipo de hocico) del perro tendrá un valor predictivo en el sentido de que el animal no te morderá.
 
 Ahora, si el perro de tu amigo intenta morderte, habrá un error de predicción: la suma de los valores de los elementos predijo que no te mordería, y sí lo hizo. Ese error actualizará el valor de cada uno de los elementos. El tamaño chico perderá valor como predictor de "no mordida", mientras que el hocico largo adquirirá valor como predictor de mordida. Y noten lo esencial: ambos elementos se actualizan en función del mismo error, no de su error individual. Eso es la ecuación de Rescorla y Wagner en acción.
-
----
 
 ## Aplicación al ensombrecimiento
 
@@ -97,8 +87,6 @@ Para el grupo del compuesto, la historia es diferente. En cada ensayo, el error 
 *[FIGURA 11.1: Ensombrecimiento. Panel izquierdo: Grupo compuesto — evolución de $V_{\text{tono}}$ (azul, #2C5282, asíntota ≈ 0.67), $V_{\text{luz}}$ (naranja, #C05621, asíntota ≈ 0.33) y $V_{\text{total}}$ (gris punteado, #718096, asíntota ≈ 1.0) a lo largo de 60 ensayos. Panel derecho: Grupos control — $V_{\text{tono}}$ solo (azul) y $V_{\text{luz}}$ sola (naranja), ambos convergiendo a ≈ 1.0. Ejes: horizontal = ensayos, vertical = valor predictivo V (0 a 1.0). Referencia visual: diapositiva 22 de rescorla_y_Wagner_2023.pptx.]*
 
 *[SIMULADOR 11.1: Explorador de ensombrecimiento. Parámetros manipulables: $\alpha$ (0.05–0.5), $\beta_A$ (0.1–0.9), $\beta_B$ (0.1–0.9), número de ensayos (10–100). Visualización: curvas de $V_A$, $V_B$ y $V_{\text{total}}$ en función de ensayos. Objetivo pedagógico: que el estudiante descubra cómo la proporción de saliencias determina la distribución asintótica del valor.]*
-
----
 
 ## Aplicación al bloqueo
 
@@ -125,8 +113,6 @@ Noten que en la simulación del bloqueo, $V_{\text{luz}}$ para el grupo control 
 
 
 *[FIGURA 11.2: Bloqueo. Panel superior: adquisición de $V_{\text{tono}}$ (azul, #2C5282) durante la Fase 1, convergiendo a ≈ 1.0. Panel inferior: Fase 2 — $V_{\text{luz}}$ del grupo bloqueo (naranja, #C05621, plana en ≈ 0) versus $V_{\text{luz}}$ del grupo control (verde, #276749, creciente a ≈ 0.4). Línea divisoria vertical entre fases. Ejes: horizontal = ensayos, vertical = valor predictivo V. Referencia visual: diapositiva 24 de rescorla_y_Wagner_2023.pptx.]*
-
----
 
 ## Predicción contraintuitiva: la sobreexpectación
 
@@ -156,8 +142,6 @@ Esta predicción —que reforzar un compuesto puede *reducir* el valor de sus el
 *[FIGURA 11.3: Sobreexpectación. Panel izquierdo: curvas separadas de $V_{\text{tono}}$ y $V_{\text{luz}}$ durante Fases 1 y 2 (adquisición individual, ambas convergen a 1.0). Panel derecho: Fase 3 — ambos valores descienden desde 1.0 hasta ≈ 0.5 cuando se presentan en compuesto. Colores: tono en azul (#2C5282), luz en naranja (#C05621). Líneas verticales separando fases. Referencia visual: diapositiva 26 de rescorla_y_Wagner_2023.pptx.]*
 
 *[SIMULADOR 11.2: Explorador de protocolos R-W. Permite seleccionar protocolo: adquisición simple, ensombrecimiento, bloqueo, sobreexpectación. Parámetros manipulables: $\alpha$, $\beta_A$, $\beta_B$, número de ensayos por fase. Visualización: curvas de $V_A$, $V_B$ y $V_{\text{total}}$ con separadores de fase. Objetivo pedagógico: que el estudiante explore los fenómenos como consecuencias de una misma ecuación, no como fenómenos separados.]*
-
----
 
 ## Inhibición condicionada
 
@@ -203,7 +187,7 @@ En la segunda, la **prueba de retardo**, se compara la velocidad de adquisición
 
 Si $X$ tiene valor negativo, debe tardar más en alcanzar valores positivos que un estímulo que parte de cero —porque tiene que recorrer mayor distancia. Pero también aquí hay una explicación alternativa: quizás la familiaridad con $X$ reduce la atención que recibe (habituación), retardando el aprendizaje sin que el estímulo sea inhibitorio.
 
-La genialidad del argumento de Rescorla es que las dos explicaciones alternativas se contradicen entre sí. La alternativa para la sumación requiere que $X$ reciba *más* atención (distrayendo de $A$); la alternativa para el retardo requiere que $X$ reciba *menos* atención (por habituación). No resulta plausible que un mismo estímulo reciba más atención en una circunstancia y menos en otra. Si el estímulo pasa ambas pruebas, las explicaciones atencionales se eliminan mutuamente, y la conclusión de que $X$ es genuinamente inhibitorio queda como la más parsimoniosa.
+La importancia del argumento de Rescorla es que las dos explicaciones alternativas se contradicen entre sí. La alternativa para la sumación requiere que $X$ reciba *más* atención (distrayendo de $A$); la alternativa para el retardo requiere que $X$ reciba *menos* atención (por habituación). No resulta plausible que un mismo estímulo reciba más atención en una circunstancia y menos en otra. Si el estímulo pasa ambas pruebas, las explicaciones atencionales se eliminan mutuamente, y la conclusión de que $X$ es genuinamente inhibitorio queda como la más parsimoniosa.
 
 ![fig_11_5_sumacion](media/fig_11_5_sumacion.png)
 
@@ -224,7 +208,7 @@ Dentro de la psicología, pocos modelos han sido tan exitosos como el de Rescorl
 
 En extinción, el SBI que previamente seguía al estímulo deja de presentarse. En este caso $R = 0$, y el modelo predice que $V$ disminuirá hasta igualarse a $R$, es decir, hasta llegar a cero. Cuando eso ocurre, el error de predicción desaparece ($0 - 0 = 0$) y no hay más cambios. Para el modelo, un estímulo extinguido y un estímulo que nunca fue condicionado son funcionalmente idénticos: ambos tienen $V = 0$.
 
-La evidencia dice otra cosa. Hay una multitud de reportes que muestran que el mero paso del tiempo produce una *recuperación espontánea* de la respuesta condicionada extinguida. Adicionalmente, estímulos previamente extinguidos adquieren valor excitatorio más rápido que estímulos genuinamente neutrales, a pesar de que se supone que ambos parten de $V = 0$. Estos hallazgos sugieren que la extinción no borra la asociación original sino que la suprime, posiblemente mediante un mecanismo inhibitorio separado que es sensible al contexto. Esta literatura y los modelos para dar cuenta de ella los presentaremos en un capítulo posterior sobre extinción y contexto.
+La evidencia dice otra cosa. Hay una multitud de reportes que muestran que el mero paso del tiempo produce una *recuperación espontánea* de la respuesta condicionada extinguida. Adicionalmente, estímulos previamente extinguidos adquieren valor excitatorio más rápido que estímulos genuinamente neutrales, a pesar de que se supone que ambos parten de $V = 0$. Estos hallazgos sugieren que la extinción no borra la asociación original sino que es sensible al contexto. Esta literatura y los modelos para dar cuenta de ella los presentaremos en un capítulo posterior sobre extinción y contexto.
 
 ### La inhibición condicionada no se extingue
 
@@ -254,7 +238,7 @@ Este fenómeno fue la motivación principal para modelos alternativos que enfati
 
 ### El comparador universal: de la selección natural a Rescorla-Wagner
 
-A lo largo de los bloques anteriores hemos encontrado, una y otra vez, la misma arquitectura formal: un sistema que compara dos cantidades, detecta una diferencia, y usa esa diferencia para ajustar su estado. En la selección natural, la ecuación de Price formaliza la covarianza entre un rasgo y el éxito reproductivo — la diferencia entre el individuo y el promedio poblacional, ponderada por el fitness, impulsa el cambio evolutivo. En la kinesis, el organismo compara su estado presente con su estado inmediatamente anterior y ajusta la velocidad o la frecuencia de giro. En las taxias, la comparación es simultánea — entre dos puntos del espacio — y el ajuste es una orientación. En los sistemas de retroalimentación, un comparador contrasta el valor actual de una variable con un punto de referencia y genera una señal de error que corrige la desviación.
+A lo largo de los bloques anteriores hemos encontrado, una y otra vez, la misma arquitectura formal: un sistema que compara dos cantidades, detecta una diferencia, y usa esa diferencia para ajustar su estado. En la selección natural, la ecuación de Price formaliza la covarianza entre un rasgo y el éxito reproductivo — la diferencia entre el individuo y el promedio poblacional, ponderada por el fitness, impulsa el cambio evolutivo. En la kinesis, el organismo compara su estado presente con su estado inmediatamente anterior y cambia de explorar a explotar. En las taxias, la comparación es simultánea — entre dos puntos del espacio — y el ajuste es una orientación. En los sistemas de retroalimentación, un comparador contrasta el valor actual de una variable con un punto de referencia y genera una señal de error que corrige la desviación.
 
 El modelo de Bush y Mosteller llevó esta misma operación al aprendizaje: el organismo compara lo que obtuvo ($R$) con lo que esperaba obtener ($V$), y esa diferencia — el error de predicción — impulsa la actualización. Lo que cambia respecto a los mecanismos anteriores es la fuente de la referencia: ya no es el estado inmediato ni un punto fijo genético, sino una memoria de largo plazo que integra la experiencia acumulada.
 
@@ -273,8 +257,6 @@ El modelo de Rescorla y Wagner asume que el aprendizaje ocurre ensayo a ensayo, 
 Las limitaciones que identificamos — la incapacidad de explicar la extinción como proceso reversible, la asimetría entre excitación e inhibición, y la insensibilidad a la pre-exposición — apuntan todas hacia una misma dirección: el organismo no solo actualiza lo que cree, sino que también ajusta la confianza de sus creencias y la atención que dedica a recoger evidencia. Esa idea, esbozada por Pearce y Hall y formalizada con mayor rigor en modelos bayesianos, será tema de capítulos posteriores.
 
 Hay una segunda línea de extensión que también examinaremos más adelante. La ecuación de Rescorla y Wagner opera ensayo a ensayo, comparando lo obtenido con lo esperado en el momento presente. Pero en muchas situaciones el SBI aparece al final de una secuencia de acciones, no inmediatamente después del estímulo. Las extensiones de la ecuación al caso temporal — en particular, el aprendizaje por diferencias temporales (TD-learning) de Sutton y Barto — resuelven ese problema permitiendo que la señal de error se propague hacia atrás en el tiempo, y resultan ser formalmente equivalentes a la señal de las neuronas dopaminérgicas descubierta por Schultz y colaboradores. Esa conexión entre la psicología del aprendizaje, la neurociencia y el aprendizaje automático la desarrollaremos cuando abordemos el aprendizaje secuencial.
-
----
 
 ## Resumen
 

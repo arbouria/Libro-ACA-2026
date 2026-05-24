@@ -6,7 +6,7 @@ author: "Arturo Bouzas"
 
 ## Borrador
 
-En el capítulo anterior sobre programas de refuerzo, vimos que considerar al comportamiento como emitido, le permitió a Skinner considerar a la tasa de respuesta como el objeto de estudio del comportamiento adaptable. Consideramos al comportamiento como un flujo de acción en constante interacción con su entorno, interacción que define un sistema de retroalimentación. vimos que los programas de refuerzo pueden conceptualizarse como funciones del entorno que transforman acciones a refuerzos.  Estudiamos las regularidades empíricas que se obtienen en equilibrio bajo diferentes programas de refuerzo.  Sin embargo, el refuerzo a una respuesta no ocurre en un vacío conductual, como hemos enfatizado a lo largo de los previos capítulos, los organismos están siempre haciendo algo.  Aunque en un momento dado solo podemos observar una respuesta, siempre hay un sinnúmero de posibles respuestas alternativas. Un organismo en constante acción, en cada momento enfrenta un sinnúmero de decisiones, cual de las *n* posibles respuestas disponibles emitir. Podemos decir, que el estudio de la acción es el estudio de los principios de la  elección y decisión. El resto del libro es una presentación de tales principios
+En el capítulo anterior sobre programas de refuerzo, vimos que considerar al comportamiento como emitido, le permitió a Skinner considerar a la tasa de respuesta como el objeto de estudio del comportamiento adaptable. Consideramos al comportamiento como un flujo de acción en constante interacción con su entorno, interacción que define un sistema de retroalimentación. Vimos que los programas de refuerzo pueden conceptualizarse como funciones del entorno que transforman acciones a refuerzos.  Estudiamos las regularidades empíricas que se obtienen en equilibrio bajo diferentes programas de refuerzo.  Sin embargo, el refuerzo a una respuesta no ocurre en un vacío conductual, como hemos enfatizado a lo largo de los previos capítulos, los organismos están siempre haciendo algo.  Aunque en un momento dado solo podemos observar una respuesta, siempre hay un sinnúmero de posibles respuestas alternativas. Un organismo en constante acción, en cada momento enfrenta un sinnúmero de decisiones, cual de las *n* posibles respuestas disponibles emitir. Podemos decir, que el estudio de la acción es el estudio de los principios de la  elección y decisión. El resto del libro es una presentación de tales principios
 
 Consideraremos primero un primer grupo de decisiones  que se da entre acciones asociadas con diferentes sucesos biológicamente importantes. Un estudiante al escuchar el reloj despertador, puede levantarse o apagarlo y regresar a dormir, puede bañarse o no, elige entre diferentes tipos de ropa para vestirse, entre diferentes tipos de desayuno, ir a la universidad en diferentes tipos de transporte, puede entrar a una clase o irse a la biblioteca o tomar un cafe con una amistad, estudiar en la tarde, ir al gimnasio o ver una película, dormirse temprano o salir a una fiesta. . a estas decisiones se  les conoce como decisiones *basadas en el valor*, 
 
@@ -28,7 +28,7 @@ La forma más sencilla de estudiar experimentalmente protocolos de elección rec
 
 Con un par de programas dado, el animal se expone a sesiones diarias hasta que la distribución de respuestas sea constante de una sesión a la siguiente —típicamente entre 30 y 45 días por condición. Los datos que se analizan son los de los últimos cinco días de cada condición, cuando el comportamiento ha alcanzado el equilibrio y los organismos han aprendido acerca de las consecuencias de cada opción de respuesta.  El procedimiento se repite para todos los pares de programas que se estudian. Lo que se obtiene es una descripción del comportamiento en estado estable, no de su dinámica de adquisición. 
 
-Skinner hizo posible estudiar una variable agregada.  la tasa de una respuesta -número de respuestas dividida entre el tiempo disponible,  Herrnstein  estudió  una nueva variable agregada,  la tasa relativa de respuestas en un periodo de tiempo. 
+Skinner hizo posible estudiar una variable agregada: la tasa de una respuesta —número de respuestas dividida entre el tiempo disponible. Herrnstein estudió una nueva variable agregada: la tasa relativa de respuestas en un periodo de tiempo.
 
 $$
 \frac{R_1} {(R_1 +R_2)}
@@ -50,7 +50,7 @@ donde $R_1$ y $R_2$ son las tasas de respuesta y $r_1$ y $r_2$ son las tasas de 
 
 **[FIGURA 14.2: Resultados de Herrnstein (1961) con tres palomas en programas concurrentes IV-IV. Eje horizontal: tasa relativa de refuerzo (r₁/(r₁+r₂)). Eje vertical: tasa relativa de respuesta (R₁/(R₁+R₂)). Cada punto representa los datos promediados de los últimos cinco días bajo una condición. Los puntos se alinean cerca de la diagonal de pendiente unitaria que representa la igualación perfecta.]**
 
-La ley de igualación no es un resultado trivial. En los programas de intervalo variable, un reforzador programado no desaparece si el animal no responde inmediatamente: queda disponible hasta que emita una respuesta a esa alternativa. Por eso, una amplia variedad de patrones de visita —desde alternaciones frecuentes hasta largas estancias en una opción con visitas ocasionales a la otra— puede producir tasas totales de reforzamiento muy similares.  Lo sorprendente del resultado de Herrnstein es que, dentro de ese amplísimo rango de distribuciones que producirían el mismo número total de refuerzos, los organismos tiendan a distribuir su comportamiento de acuerdo con la tasa relativa de reforzamiento.l
+La ley de igualación no es un resultado trivial. En los programas de intervalo variable, un reforzador programado no desaparece si el animal no responde inmediatamente: queda disponible hasta que emita una respuesta a esa alternativa. Por eso, una amplia variedad de patrones de visita —desde alternaciones frecuentes hasta largas estancias en una opción con visitas ocasionales a la otra— puede producir tasas totales de reforzamiento muy similares.  Lo sorprendente del resultado de Herrnstein es que, dentro de ese amplísimo rango de distribuciones que producirían el mismo número total de refuerzos, los organismos tiendan a distribuir su comportamiento de acuerdo con la tasa relativa de reforzamiento.
 
 La robustez del resultado es notable. En las décadas siguientes, la igualación se replicó en docenas de experimentos con ratas, peces, monos, humanos y diversas especies de aves, bajo múltiples pares de programas y con distintos tipos de refuerzos. En la última década del siglo pasado, fue la ley psicológica cuantitativa más citada en la literatura.
 
@@ -78,6 +78,8 @@ En los programas concurrentes ocurre algo análogo. Cuando los refuerzos de las 
 
 **[FIGURA 14.3: Efecto del sesgo en la relación entre tasa relativa de respuesta y tasa relativa de refuerzo. Cuando hay sesgo por la opción 1, la función se desplaza hacia arriba: para cada tasa relativa de refuerzo, la proporción de respuestas a la opción 1 es mayor que la predicha por igualación perfecta. El sesgo en favor de la opción 2 produce el efecto opuesto.]**
 
+> **Simulador 14.1.** El parámetro log α del Simulador 14.1 produce exactamente este desplazamiento vertical. Ajusta log α a 0.3 (α ≈ 2) con β = 1 y observa en la forma proporcional cómo la curva se desplaza hacia arriba: cuando las tasas de refuerzo son iguales (r₁/(r₁+r₂) = 0.5), la proporción de respuestas ya no es 0.5.
+
 ### Sensibilidad
 
 Una segunda desviación ocurre cuando los organismos no son linealmente sensibles a la diferencia entre las tasas de refuerzo.  Esto puede deberse a como se transforma psicológicamente las diferencias en en el valor de las opciones  o a la dificultad para discriminar entre ellas. Supón que un programa concurrente tiene tasas de refuerzo en razón 2 a 1. La igualación perfecta predice que el organismo responderá dos veces más frecuentemente a la opción más rica. Pero si la diferencia psicológica percibida entre ambas tasas es menor que la diferencia objetiva organismo responderá en una proporción más cercana a la indiferencia que a la igualación. A este patrón se le llama *sub-igualación*: la distribución de respuestas es menos extrema de lo que predice la tasa relativa de refuerzo.
@@ -86,7 +88,9 @@ Lo contrario también es posible. Cuando el organismo amplifica las diferencias 
 
 ![](media/17779449074388.jpg)
 
-**[FIGURA 14.4: Sub-igualación y sobre-igualación. En la sub-igualación (izquierda), la función de tasa relativa de respuesta está por debajo de la diagonal cuando la opción 1 es la más rica, y por encima cuando es la más pobre; el organismo subestimalas diferencias de refuerzo. En la sobre-igualación (derecha), el patrón se invierte: el organismo exagera las diferencias.]**
+**[FIGURA 14.4: Sub-igualación y sobre-igualación. En la sub-igualación, la función de tasa relativa de respuesta está por debajo de la diagonal cuando la opción 1 es la más rica; el organismo subestima las diferencias de refuerzo. En la sobre-igualación el patrón se invierte: el organismo exagera las diferencias.]**
+
+> **Simulador 14.1.** El parámetro β controla la pendiente. Ajusta β = 0.5 para ver sub-igualación y β = 1.8 para sobre-igualación. Activa "Mostrar ejemplos adicionales" para comparar las tres curvas simultáneamente y verificar si el efecto es más fácil de distinguir en la forma proporcional o en la logarítmica.
 
 ## La Ley Generalizada de Igualación
 
@@ -110,7 +114,9 @@ En esa forma, $\beta$ es la pendiente de la función y $\log \alpha$ es el inter
 ![](media/17779453461827.jpg)
 
 
-**[FIGURA 14.5: La ley generalizada de igualación en coordenadas logarítmicas. Las líneas de la familia superior muestran diferentes valores de sesgo (intercepto, $\log\alpha$) con sensibilidad fija ($\beta = 1$). Las líneas de la familia inferior muestran diferentes valores de sensibilidad (pendiente, $\beta$) sin sesgo ($\alpha = 1$). La igualación perfecta es la línea de pendiente 1 que pasa por el origen.]**
+**[FIGURA 14.5: La ley generalizada de igualación en coordenadas logarítmicas. Las líneas de la familia izquierda muestran diferentes valores de sesgo (intercepto, log α) con sensibilidad fija (β = 1). Las líneas de la familia derecha muestran diferentes valores de sensibilidad (pendiente, β) sin sesgo (α = 1). La igualación perfecta es la línea de pendiente 1 que pasa por el origen.]**
+
+> **Simulador 14.1.** Explora la familia completa de funciones ajustando ambos parámetros simultáneamente. Pregunta clave: ¿existe una combinación de sesgo y sensibilidad que produzca una curva idéntica a otra con diferentes valores de α y β? ¿Qué implicación tiene eso para la estimación de los parámetros a partir de datos experimentales?
 
 La transformación logarítmica no es solo un truco algebraico para hacer lineal la función —también revela su parentesco con un principio psicofísico clásico. S.S. Stevens propuso que muchas dimensiones sensoriales siguen una función de potencia: la magnitud percibida de un estímulo es proporcional a una potencia de su magnitud física. La ley generalizada de igualación dice algo análogo para la elección: la razón de respuestas es proporcional a una potencia de la razón de refuerzos, con el exponente $\beta$ midiendo cuánto amplifica o atenúa el sistema las diferencias en tasas de refuerzo.
 
@@ -130,71 +136,56 @@ Dado que en programas de IV los refuerzos no se cancelan hasta que se obtienen, 
 
 ## ¿Qué computa el organismo? Dos interpretaciones de igualación
 
-#### ¿Es Maximización el Mecanismo que Subyace a Igualación?
+Una pregunta muy diferente a la de si igualación es un comportamiento adaptable es la de qué *calcula* el organismo para producirlo. La distinción importa porque diferentes mecanismos de cómputo hacen predicciones distintas bajo ciertos programas, aunque coincidan bajo los programas IV-IV que Herrnstein estudió originalmente.
 
-Una pregunta muy diferente a la de si la igualación es un comportamiento adaptable es la de si, bajo condiciones de equilibrio, la maximización de la tasa de reforzamiento global es el “mecanismo” que guía el comportamiento del organismo y el cual subyace al patrón de respuestas observado en igualación. La pregunta es a nivel de explicación algorítmica. En otras notas veremos modelos en los que se maximizan diferentes variables, pero en estas nos concentramos en la maximización del número de refuerzos totales. Para comprender la pregunta, es necesario considerar que los fenómenos de maximización e igualación implican que los algoritmos que los organismos computan son diferentes para cada modelo. 
+El siguiente escenario hace visible la diferencia antes de las ecuaciones.
 
-Imaginemos un robot de servicio encargado de recoger basura en dos puestos de comida separados por una calle. Un ingeniero puede programarlo con una meta global: recoger la mayor cantidad posible de basura por hora. En la versión más simple, el robot no necesita representar por separado el valor de cada puesto. Puede registrar cuánta basura recoge en total y cómo distribuye su tiempo entre los dos puestos. Si al aumentar el tiempo dedicado a un puesto aumenta la basura total recogida, sigue moviéndose en esa dirección; si disminuye, corrige. El sistema opera como un ascenso de colina sobre una variable global.
+Imaginemos un robot de servicio encargado de recoger basura en dos puestos de comida separados por una calle. Un ingeniero lo programa con una meta global: recoger la mayor cantidad posible de basura por hora. En la versión más simple, el robot no necesita registrar por separado cuánta basura recoge en cada puesto. Le bastan dos contadores: uno que acumula el total de basura recogida y otro que registra cómo distribuye su tiempo entre los dos puestos. Si al dedicar más tiempo a un puesto aumenta el total recogido, sigue en esa dirección; si disminuye, corrige. El sistema opera como un ascenso de colina —como el que vimos en el capítulo 4— sobre una variable global; no distingue de cuál puesto proviene la basura.
 
-Otro ingeniero puede tener una meta distinta: igualar la rentabilidad del tiempo dedicado a cada puesto. En ese caso, el robot sí necesita separar la información por alternativa. Debe registrar cuánta basura recoge en el puesto A y cuánto tiempo pasa ahí, cuánta recoge en el puesto B y cuánto tiempo pasa ahí. Solo con esos cuatro registros puede calcular dos rentabilidades locales: basura por minuto en A y basura por minuto en B. La regla ya no compara únicamente el total global, sino las tasas locales de retorno de cada alternativa.
+Otro ingeniero tiene una meta diferente: igualar la rentabilidad del tiempo dedicado a cada puesto. Este robot necesita cuatro registros, no dos. Debe saber cuánta basura recoge en el puesto A y cuánto tiempo pasa ahí; cuánta recoge en el puesto B y cuánto tiempo pasa ahí. Con esos cuatro valores calcula dos rentabilidades locales —basura por minuto en A, basura por minuto en B— y mueve tiempo hacia el puesto con mayor rentabilidad hasta que ambas se igualen.
 
-De acuerdo a esta versión de la maximización como mecanismo subyacente a la igualación, el algoritmo no distingue entre las dos respuestas disponibles y el refuerzo asociado con cada una de ellas: en lugar de ello, este solo computa y actualiza dos variables, la suma de refuerzos y la tasa relativa de respuestas. Noten que, debido a esto último, este modelo de acción no es una instancia de un modelo de elección basado en el valor de las respuestas individuales. En cambio, este modelo asume que los organismos cuentan con solo dos contadores, uno para la tasa relativa de respuestas y otro para la suma de los reforzadores obtenidos por las dos respuestas, sin distinguir entre su origen. Un reloj acumula el tiempo total *T*,  durante el cual las dos respuestas se encuentran disponibles. El resultado del contador del total de refuerzos se divide entre el tiempo T. En estos casos, el organismo busca acceder al mayor número de refuerzos por unidad de tiempo. Este número de {r/T} representa la *ganancia* asociada con cada *distribución* posible de respuestas. Además, dentro de un proceso de ascenso de colina, como el visto en el capítulo 4, la tasa relativa de respuesta se mueve en la dirección de una mayor tasa global de refuerzo hasta alcanzar un máximo, el cual puede ser local. 
+Los dos robots producen el mismo resultado cuando la relación entre tiempo dedicado y basura disponible es idéntica en ambos puestos: el equilibrio de rentabilidades coincide con el máximo global. Pero cuando esa relación difiere —cuando un puesto genera residuos a tasa constante sin importar cuánto tiempo se le dedique, y el otro se regenera conforme el robot se ausenta— sus predicciones divergen. El primer robot concentraría sus visitas en el puesto de tasa constante; el segundo distribuiría más tiempo del que el primero prescribiría.
 
-#### Igualación y Rentabilidad de las Respuestas
+Traducidos al laboratorio, los dos robots corresponden a dos hipótesis sobre el mecanismo que subyace a igualación.
 
-Una explicación alternativa esta implícita en  la regularidad de igualación. Propone que el organismo distribuye su comportamiento de modo que *iguala la rentabilidad* de las distintas opciones disponibles. La rentabilidad de una opción es la tasa de refuerzo que produce por unidad de respuesta o por unidad de tiempo: cuántos refuerzos obtiene el organismo por cada respuesta emitida a esa opción, o por cada segundo que le dedica. La tasa de interés bancaria es la rentabilidad  de cada peso invertido.  La hipótesis de rentabilidad propone que los organismos distribuyen el comportamiento de modo que en equilibrio obtengan la misma tasa de refuerzo local de todas las opciones disponibles. 
+**La hipótesis de maximización global** propone que el organismo opera como el primer robot: registra la tasa total de refuerzo y ajusta la distribución relativa de respuestas en la dirección que la incrementa. No distingue de cuál alternativa proviene cada refuerzo.
 
-Otra explicación que puede dar cuenta del patrón de respuesta de igualación es que los organismos buscan igualar la rentabilidad de sus respuestas o tiempos. La rentabilidad es el número de refuerzos que se obtienen por tiempo o respuestas invertidos en una opción. Cuando ustedes deciden entre planes de ahorro bancario, la primera pregunta que hacen es cuál es la tasa de interés anual, lo que les permite saber cuánto ganarán anualmente por cada $1,000 pesos depositados en su cuenta. Igualación sugiere que esto es exactamente lo que hacen los agentes con la asignación de sus respuestas y tiempos: específicamente, igualación plantea que la regla que siguen los agentes es distribuir sus respuestas y tiempos de tal forma que, en equilibrio, las dos opciones tengan la misma rentabilidad. 
+**La hipótesis de rentabilidad local** propone que el organismo opera como el segundo robot: mantiene por separado la cuenta de respuestas y refuerzos para cada alternativa, calcula la rentabilidad de cada una —refuerzos por respuesta, o refuerzos por unidad de tiempo— y distribuye el comportamiento hasta que ambas se igualan. La tasa de interés bancaria es la rentabilidad de cada peso invertido; la hipótesis propone que los organismos hacen el mismo cálculo con sus respuestas y su tiempo.
 
-Derivemos rentabilidad del principio de igualación. Igualación para respuestas y tiempos también puede expresarse en forma de razones, esto es, en lugar de hablar de una frecuencia relativa de 6 de 8 (0.75) refuerzos para una respuesta, hablamos de una razón de 6 a 2 (3) refuerzos para esa respuesta:
-
-$$
-\frac {R_1} {R_2} = \frac {r_1} {r_2}
-$$
+Que igualar las rentabilidades sea equivalente a la ley de igualación no es una suposición adicional: es una consecuencia algebraica. La igualación expresada en razones:
 
 $$
-\frac {T_1} {T_2} = \frac {r_1} {r_2}
+\frac{R_1}{R_2} = \frac{r_1}{r_2} \qquad \text{o bien} \qquad \frac{T_1}{T_2} = \frac{r_1}{r_2}
 $$
 
-Razones y tasas relativas son dos formas equivalentes:
-
-$$
-\frac{R_1}{R_2} = \frac{r_1}{r_2} \qquad \Longrightarrow \qquad \frac{R_1}{R_1 + R_2} = \frac{r_1}{r_1 + r_2}
-$$
-
-Trabajando con razones y reacomodando términos, en equilibrio igualación implica  
+reacomodando términos produce directamente:
 
 $$
 \frac{r_1}{R_1} = \frac{r_2}{R_2} \qquad \text{o bien} \qquad \frac{r_1}{T_1} = \frac{r_2}{T_2}
 $$
 
-Esta nueva forma de expresar la ley de igualación refleja que lo que se iguala es la rentabilidad de las distintas opciones de respuesta y/o tiempo. De este modo, lo que los organismos igualan son lo que podemos llamar  *tasas locales de refuerzo*. Que los organismos igualen las razones de respuesta  a las razones de refuerzo es la misma proposición que decir que igualan las rentabilidades de las distintas opciones.
-
-Un ejemplo numérico hace visible lo que esto significa en la práctica. Supón un programa concurrente con dos opciones: la opción A reforzada con un programa IV de 30 segundos (tasa de refuerzo r₁ = 2 refuerzos por minuto) y la opción B reforzada con un programa IV de 60 segundos (r₂ = 1 refuerzo por minuto). La ley de igualación predice que el organismo dedica a A el doble de  sus respuestas:
+Lo que los organismos igualan son las *tasas locales de refuerzo* de cada opción. Un ejemplo numérico lo confirma. Con un programa concurrente IV 30 s (r₁ = 2 rf/min) e IV 60 s (r₂ = 1 rf/min), la igualación predice R₁/R₂ = 2. En una sesión de 60 minutos con 300 respuestas totales —200 a la opción A y 100 a la B— el organismo obtiene aproximadamente 120 refuerzos de A y 60 de B:
 
 $$
-\frac{R_1}{ R_2} = \frac{2}{ 1} = 2
+\frac{r_1}{R_1} = \frac{120}{200} = 0.60 \text{ rf/resp} \qquad \frac{r_2}{R_2} = \frac{60}{100} = 0.60 \text{ rf/resp}
 $$
 
-Supón ahora que en una sesión de 60 minutos el organismo emite 300 respuestas en total: 200 a la opción A y 100 a la opción B. Si la tasa de respuesta es suficiente para recoger todos los refuerzos disponibles —lo que ocurre típicamente bajo programas IV— el organismo obtiene aproximadamente 120 refuerzos de A y 60 de B. Calculemos la rentabilidad de cada opción:
-
-$$
-\frac{r_1}{R_1} = \frac{120}{200} = 0.60 \text{ refuerzos por respuesta} \qquad \frac{r_2}{R_2} = \frac{60}{100} = 0.60 \text{ refuerzos por respuesta}
-$$
-
-Las rentabilidades son iguales. Cualquier otra distribución de las 300 respuestas entre las dos opciones produciría rentabilidades distintas. La igualación es la condición de equilibrio que iguala las tasas de refuerzo local.
-
-Computacionalmente, este algoritmo requiere que el organismo mantenga cuatro contadores —respuestas y refuerzos para cada opción— y calcule sus tasas locales. La regla de elección es entonces: asigna más tiempo o respuestas a la opción cuya rentabilidad actual sea mayor. El proceso se detiene —o se vuelve estacionario— cuando ambas rentabilidades son iguales. Computacionalmente, la diferencia entra maximización y rentabilidad es si se actualiza el valor de la razón de respuestas o si se actualiza, por separado el valor de cada una de las respuestas reforzadas. 
+Las rentabilidades son iguales. Cualquier otra distribución de las 300 respuestas produce rentabilidades desiguales. La igualación es la única distribución de equilibrio que las iguala —y ese resultado, recordemos, requiere los cuatro registros del robot 2, no los dos del robot 1.
 
 #### Maximización vs Rentabilidad
 
+En programas IV-IV, los dos robots hacen la misma predicción. La razón es que en esos programas el organismo puede obtener todos los refuerzos disponibles con cualquier distribución que visite ambas teclas con suficiente frecuencia, de modo que el máximo de la ganancia total y el equilibrio de rentabilidades locales coinciden. Para separar las predicciones se necesita un diseño donde la estructura de rentabilidad de cada opción sea diferente.
+
+
 ¿Es posible distinguir entre estas dos interpretaciones de la elección en programas concurrentes? Consideren el siguiente escenario. Una estudiante es la única heredera de dos tías de edad avanzada. El monto de la herencia que le deja una de ellas depende del número de visitas que la sobrina le haga; por otra parte, la cantidad que le deja la otra tía tiene un tope máximo y solo depende de que ella la visite ocasionalmente. El escenario de las tías ilustra un programa concurrente, con una de las opciones reforzada con un programa de intervalo variable y la otra con un programa de razón variable. En este escenario, la estrategia óptima de la sobrina es asignar la mayor parte de sus visitas a la tía más demandante, la que ejemplifica un programa de razón, y visitar ocasionalmente a la tía que ejemplifica el programa de intervalo. 
 
-En los programas de razón variable, a diferencia de los de intervalo, la rentabilidad de la respuesta no cambia con el tiempo que el organismo pasa en otra opción: cada respuesta tiene la misma probabilidad de producir un refuerzo, independientemente de cuándo fue la última vez que el organismo respondió a esa tecla. En contraste, en los programas de intervalo, la probabilidad de refuerzo aumenta con el tiempo transcurrido desde la última visita.
+Como vimos en el capítulo anterior, los dos programas difieren en la estructura probabilística del refuerzo. En un programa RV, la probabilidad de refuerzo es la misma en cada respuesta —p = 1/n— independientemente de cuánto tiempo haya transcurrido o de cuántas respuestas se hayan emitido en la otra alternativa: la historia no importa. En un programa IV, en cambio, la probabilidad de refuerzo en un momento dado crece con el tiempo transcurrido sin visitar esa alternativa: la historia sí importa, y cuanto más tiempo ha pasado sin visita, mayor es la probabilidad de encontrar un refuerzo disponible al llegar.
 
 Esa diferencia tiene una consecuencia crucial cuando se combinan ambos programas en un programa concurrente RV-IV. De acuerdo a la maximización global, la estrategia óptima es responder casi exclusivamente a la tecla con el programa de razón —que produce refuerzos en proporción directa al número de respuestas emitidas— y visitar ocasionalmente la tecla con el programa de intervalo, solo para recoger el refuerzo que esté esperando. Esta estrategia maximiza el número total de refuerzos por unidad de tiempo. De acuerdo a la hipótesis de rentabilidad, en cambio, el organismo distribuye sus respuestas de modo que las tasas de refuerzo locales de ambas opciones sean iguales. Eso requiere dedicar sustancialmente más respuestas a la opción IV de lo que la maximización global prescribiría.  
 
-Herrnstein y Heyman, llevaron al laboratorio el escenario recién descrito. Expusieron a las palomas a programas concurrentes razón variable - intervalo variable.  La siguiente figura muestra los resultados obtenidos por Heyman y Herrnstein. Puede verse que la distribución de respuestas de las palomas iguala la distribución de refuerzos, con un sesgo en favor del programa de razón. El patrón de igualación obtenido en este programa favorece al algoritmo de rentabilidad por encima del de maximización. Experimentos más recientes confirman este resultado y resaltan la utilidad de separar el sesgo por una opción (en este caso la opción RV) de la sensibilidad de los organismos hacia las diferencias en refuerzo de los dos programas.   
+Herrnstein y Heyman llevaron al laboratorio el escenario recién descrito. Expusieron a las palomas a programas concurrentes razón variable-intervalo variable. Los resultados mostraron que las palomas distribuyeron sus respuestas de manera inconsistente con la maximización global: en lugar de concentrar su actividad en el programa de razón como esa hipótesis prescribía, distribuyeron sus respuestas en proporciones consistentes con la igualación de rentabilidades locales. Experimentos más recientes confirman este resultado y resaltan la utilidad de separar el sesgo por una opción —en este caso la opción RV— de la sensibilidad de los organismos hacia las diferencias en las tasas de refuerzo de los dos programas.
+
+> **Simulador 14.2.** Selecciona el modo **RV–IV** con n = 30 y T₂ = 60 s y activa los datos ilustrativos. El Panel A muestra que el pico de la curva de refuerzo total (maximización) se encuentra cerca de p = 0.93, mientras que el equilibrio de rentabilidades locales (Panel B) predice p ≈ 0.52. Los datos observados caen cerca de esta segunda predicción. Cambia luego a **IV–IV**: verifica que las dos líneas verticales coinciden y que ningún experimento con ese diseño podría distinguir las dos hipótesis.
 
 ![](media/17779455772567.jpg)
 

@@ -45,6 +45,11 @@ book:
     - asignacionE.qmd
     - asignacionR.qmd
     - refuerzo.qmd
+    - Rescorla_Wagner.qmd
+    - Traduccion_accion.qmd
+    - Preogramas_refuerzo.qmd
+    
+
 
     # (Asegúrate que este nombre coincida EXACTAMENTE con tu archivo, cuidado con los acentos)
   downloads: [pdf] 
