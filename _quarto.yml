@@ -80,6 +80,7 @@ jupyter: python3
 # ========================================
 format:
   html:
+    toc-title: "En esta página"
     # --- MODO CLARO / OSCURO ---
     theme:
       light: cosmo
@@ -96,7 +97,7 @@ format:
     fig-align: center
     
     toc: true
-    toc-title: "En esta página"
+    toc-title: "Índice de contenido"
     number-sections: true
     
     crossref:
