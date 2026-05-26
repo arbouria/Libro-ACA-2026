@@ -108,7 +108,7 @@ Este capítulo tiene dos simuladores interactivos que permiten explorar los meca
 
 Antes de usar cada simulador, registra tu predicción. Los ejercicios están diseñados para que formules hipótesis específicas y las verifiques con la simulación.
 
-📎 [Abrir simuladores en Google Colab](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/simuladores/programas_refuerzo.ipynb)
+📎 [Abrir simuladores en Google Colab](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/programas_refuerzo.ipynb)
 :::
 
 ## Segunda explicación: sensibilidad a las correlaciones
