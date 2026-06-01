@@ -259,3 +259,4 @@ Dos hipótesis computacionales dan cuenta del patrón de igualación: la igualac
 **Mazur, J. E. (2016).** *Learning and Behavior* (8ª ed.). Routledge. Capítulo 8: *Choice and Preference*. — Presentación clara y bien documentada de la ley de igualación, sus desviaciones y las hipótesis sobre los mecanismos subyacentes. Complementa bien la perspectiva de este capítulo.
 
 Baum WM, Rachlin HC. (1969)  Choice as time allocation.  *Journal of the Experimental Analysis of Behavior, 12*, 861-74 — El experimento de la cámara rectangular que extiende la igualación al tiempo asignado.
+~

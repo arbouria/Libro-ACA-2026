@@ -1,6 +1,7 @@
-# Capítulo 17: Optimización en Equilibrio
+# Capítulo 16: Optimización en Equilibrio
 
----
+## Arturo Bouzas
+## Borrador muy preliminar
 
 Todas las variantes de la ley del efecto coinciden en un punto: las respuestas que producen consecuencias biológicamente importantes aumentan en frecuencia. Si esa fuera la única información que el concepto nos proporcionara, difícilmente le asignaríamos el estatus de una ley, y su utilidad práctica sería muy limitada. Consideremos el caso de una madre que quiere modificar la conducta de su hijo. La sola recomendación de reforzar la conducta deseada no le resulta totalmente útil. Querría saber si es necesario reforzar cada instancia de la respuesta o solo algunas de ellas. Querría saber si el décimo refuerzo tiene el mismo impacto que el segundo. Y, sobre todo, querría saber qué diferencia hace seguir distintas reglas para la entrega del refuerzo. En el capítulo sobre programas de refuerzo respondimos a la última pregunta con una descripción cualitativa: los patrones de respuesta difieren según el programa. Pero la madre todavía no sabe, de manera cuantitativa, qué tasa de respuesta producirá un programa de intervalo variable de treinta segundos frente a uno de dos minutos, ni por qué los programas de razón producen tasas de respuesta tan distintas a los de intervalo aun cuando la tasa promedio de refuerzo sea la misma.
 
