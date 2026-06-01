@@ -257,25 +257,13 @@ Las rentabilidades se igualan en $f = 1/3$: cuando el organismo dedica el 33% de
 
 Noten que en ningún punto de este análisis se calculó un máximo ni una derivada. La predicción surge directamente de igualar dos expresiones algebraicas: $1/(f \times 30) = 1/10$, de donde $f = 1/3$. La diferencia entre las dos predicciones no es de grado sino de naturaleza: la maximización compara totales y concluye 95/5; la igualación de rentabilidades compara tasas locales y concluye 67/33. Los datos discriminan entre ellas.
 
----
+::: {.callout-tip}
+## 🕹️ SIMULADOR 14.2 — Programas Concurrentes RV-IV: ¿Rentabilidad o Maximización?
+[* El simulador muestra dos organismos que aprenden en el mismo programa concurrente RV-IV. El **organismo de rentabilidad** (azul) aplica el algoritmo de mejoramiento: después de cada bloque de respuestas, compara las tasas locales de refuerzo de las dos opciones y ajusta su distribución hacia la más rentable. El **organismo de maximización** (naranja) aplica ascenso de colina sobre el total de refuerzos y descubre, ensayo a ensayo, que incrementar la fracción dedicada al RV siempre aumenta la ganancia global.
 
-> **[SIMULADOR 14.3 — Programas Concurrentes RV-IV: ¿Rentabilidad o Maximización?]**
->
-> El simulador muestra dos organismos que aprenden en el mismo programa concurrente RV-IV. El **organismo de rentabilidad** (azul) aplica el algoritmo de mejoramiento: después de cada bloque de respuestas, compara las tasas locales de refuerzo de las dos opciones y ajusta su distribución hacia la más rentable. El **organismo de maximización** (naranja) aplica ascenso de colina sobre el total de refuerzos y descubre, ensayo a ensayo, que incrementar la fracción dedicada al RV siempre aumenta la ganancia global.
->
-> Tres paneles muestran la sesión completa: la distribución de respuestas a lo largo del tiempo, cómo evolucionan las rentabilidades locales del organismo de igualación, y los refuerzos acumulados por cada algoritmo —la diferencia entre las dos curvas es el costo de igualar.
->
-> **Ejercicio 1 (básico):** Con los parámetros por defecto (RV 10, IV 30 respuestas), ¿a qué equilibrio converge cada organismo? Compara el del organismo de igualación con el equilibrio teórico que calcula el simulador ($f_{IV} = n_{RV}/t_{IV}$). Lee el "costo de igualar" en el panel de refuerzos acumulados y anótalo.
->
-> **Ejercicio 2 (intermedio):** Antes de correr: si cambias el IV de 30 a 60 respuestas, ¿qué le debería pasar al equilibrio de igualación según la fórmula? Corre la simulación con IV = 60. ¿Cambia el costo de igualar? ¿En qué dirección y por qué?
->
-> **Ejercicio 3 (intermedio):** Establece n_RV = 30 (RV más pobre). ¿Para qué valor de n_RV la predicción de igualación y la de maximización coincidirían? ¿Qué dice eso sobre cuándo el diseño RV-IV puede discriminar entre las dos hipótesis?
->
-> **Ejercicio 4 (avanzado):** Observa el panel de rentabilidades durante las primeras 500 respuestas, cuando el organismo de igualación todavía está cerca de 50/50. ¿Cuál de las dos opciones es más rentable en ese momento? ¿Es coherente con la dirección en que el melioration ajusta p_RV?
->
-> **Ejercicio 5 (avanzado):** Aumenta α a 0.28. ¿Converge el organismo de igualación de forma limpia o hay oscilaciones en el panel de rentabilidades? ¿Qué dice esto sobre la relación entre velocidad de ajuste y precisión del equilibrio?
+Tres paneles muestran la sesión completa: la distribución de respuestas a lo largo del tiempo, cómo evolucionan las rentabilidades locales del organismo de igualación, y los refuerzos acumulados por cada algoritmo —la diferencia entre las dos curvas es el costo de igualar..*](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/sim14_2_rentabilidad.ipynb){target="_blank"}
+:::
 
----
 
 Herrnstein y Heyman llevaron al laboratorio este diseño. Expusieron a las palomas a programas concurrentes razón variable-intervalo variable. Los resultados muestran que las palomas distribuyeron sus respuestas de acuerdo al patrón de igualación, con un sesgo en favor del programa de razón —y al hacerlo, obtuvieron consistentemente menos refuerzos totales que los que habrían obtenido con la estrategia de maximización global. El resultado es al mismo tiempo una confirmación de la igualación y una refutación de la maximización: los organismos igualaron aunque eso les costara refuerzos. Experimentos más recientes confirman este resultado y resaltan la utilidad de separar el sesgo por una opción de la sensibilidad a las diferencias de refuerzo.
 
