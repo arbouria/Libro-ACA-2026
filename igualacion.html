@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Elección Recurrente: Igualación – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Programas_refuerzo.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./igualacion.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Rescorla_Wagner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Traduccion_accion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Traducción del Conocimiento en Acción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Programas_refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./igualacion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#decisiones-basadas-en-el-valor" id="toc-decisiones-basadas-en-el-valor" class="nav-link active" data-scroll-target="#decisiones-basadas-en-el-valor"><span class="header-section-number">14.1</span> Decisiones Basadas en el Valor</a></li>
+  <li><a href="#elección-recurrente" id="toc-elección-recurrente" class="nav-link" data-scroll-target="#elección-recurrente"><span class="header-section-number">14.2</span> Elección Recurrente</a></li>
+  <li><a href="#la-ley-de-igualación" id="toc-la-ley-de-igualación" class="nav-link" data-scroll-target="#la-ley-de-igualación"><span class="header-section-number">14.3</span> La Ley de Igualación</a>
+  <ul class="collapse">
+  <li><a href="#igualación-de-tiempos-asignados" id="toc-igualación-de-tiempos-asignados" class="nav-link" data-scroll-target="#igualación-de-tiempos-asignados"><span class="header-section-number">14.3.1</span> Igualación de Tiempos Asignados</a></li>
+  </ul></li>
+  <li><a href="#desviaciones-de-la-igualación-perfecta" id="toc-desviaciones-de-la-igualación-perfecta" class="nav-link" data-scroll-target="#desviaciones-de-la-igualación-perfecta"><span class="header-section-number">14.4</span> Desviaciones de la Igualación Perfecta</a>
+  <ul class="collapse">
+  <li><a href="#sesgo" id="toc-sesgo" class="nav-link" data-scroll-target="#sesgo"><span class="header-section-number">14.4.1</span> Sesgo</a></li>
+  <li><a href="#sensibilidad" id="toc-sensibilidad" class="nav-link" data-scroll-target="#sensibilidad"><span class="header-section-number">14.4.2</span> Sensibilidad</a></li>
+  </ul></li>
+  <li><a href="#la-ley-generalizada-de-igualación" id="toc-la-ley-generalizada-de-igualación" class="nav-link" data-scroll-target="#la-ley-generalizada-de-igualación"><span class="header-section-number">14.5</span> La Ley Generalizada de Igualación</a></li>
+  <li><a href="#qué-computa-el-organismo-dos-preguntas-sobre-igualación" id="toc-qué-computa-el-organismo-dos-preguntas-sobre-igualación" class="nav-link" data-scroll-target="#qué-computa-el-organismo-dos-preguntas-sobre-igualación"><span class="header-section-number">14.6</span> ¿Qué Computa el Organismo? Dos Preguntas Sobre Igualación</a>
+  <ul class="collapse">
+  <li><a href="#es-la-igualación-funcionalmente-equivalente-a-maximizar" id="toc-es-la-igualación-funcionalmente-equivalente-a-maximizar" class="nav-link" data-scroll-target="#es-la-igualación-funcionalmente-equivalente-a-maximizar"><span class="header-section-number">14.6.1</span> ¿Es la Igualación Funcionalmente Equivalente a Maximizar?</a></li>
+  <li><a href="#cuál-es-el-algoritmo-maximización-vs.-rentabilidad" id="toc-cuál-es-el-algoritmo-maximización-vs.-rentabilidad" class="nav-link" data-scroll-target="#cuál-es-el-algoritmo-maximización-vs.-rentabilidad"><span class="header-section-number">14.6.2</span> ¿Cuál es el Algoritmo? Maximización vs.&nbsp;Rentabilidad</a></li>
+  <li><a href="#maximización-vs.-rentabilidad-un-experimento-decisivo" id="toc-maximización-vs.-rentabilidad-un-experimento-decisivo" class="nav-link" data-scroll-target="#maximización-vs.-rentabilidad-un-experimento-decisivo"><span class="header-section-number">14.6.3</span> Maximización vs.&nbsp;Rentabilidad: Un Experimento Decisivo</a></li>
+  </ul></li>
+  <li><a href="#simulador-14.2-programas-concurrentes-rv-iv-rentabilidad-o-maximización" id="toc-simulador-14.2-programas-concurrentes-rv-iv-rentabilidad-o-maximización" class="nav-link" data-scroll-target="#simulador-14.2-programas-concurrentes-rv-iv-rentabilidad-o-maximización"><span class="header-section-number">14.7</span> 🕹️ SIMULADOR 14.2 — Programas Concurrentes RV-IV: ¿Rentabilidad o Maximización?</a></li>
+  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">14.8</span> Conexiones</a>
+  <ul class="collapse">
+  <li><a href="#hacia-atrás" id="toc-hacia-atrás" class="nav-link" data-scroll-target="#hacia-atrás"><span class="header-section-number">14.8.1</span> Hacia Atrás</a></li>
+  <li><a href="#hacia-adelante" id="toc-hacia-adelante" class="nav-link" data-scroll-target="#hacia-adelante"><span class="header-section-number">14.8.2</span> Hacia Adelante</a></li>
+  </ul></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">14.9</span> Resumen</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">14.10</span> Ejercicios</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">14.11</span> Lecturas Recomendadas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Los capítulos anteriores de este libro estudiaron cómo los organismos adquieren conocimiento sobre su entorno: qué señales predicen sucesos biológicamente importantes, qué acciones los producen, cómo se actualiza ese conocimiento con la experiencia. Esa pregunta asume que hay acciones que evaluar. Pero la pregunta inversa —dado que el organismo ya sabe algo sobre las consecuencias de sus acciones, ¿cómo decide qué hacer?— es igualmente fundamental y merece sus propios modelos. Los capítulos que siguen forman una sección sobre modelos de la acción: los principios que gobiernan cómo los organismos distribuyen su comportamiento entre las alternativas disponibles.</p>
+<p>Lo que hizo posible formular esa pregunta de forma precisa fue una decisión conceptual de Skinner que ya encontramos en los capítulos sobre programas de refuerzo y sobre la traducción del condicionamiento clásico en acción: tratar al comportamiento como <em>emitido</em>. Al concebir la conducta no como una respuesta discreta elicitada por un estímulo específico sino como un flujo continuo de acción cuya tasa es la variable de interés, Skinner creó las condiciones para una pregunta nueva. Si el comportamiento es un flujo, ese flujo puede distribuirse entre alternativas, y la distribución resultante puede medirse y modelarse. Herrnstein, trabajando en el mismo laboratorio, tomó esa variable y preguntó algo que Skinner no había preguntado: ¿cómo se reparte ese flujo de acción cuando hay dos opciones disponibles simultáneamente, cada una con sus propias consecuencias? La respuesta a esa pregunta es el tema de este capítulo.</p>
+<p>Antes de entrar en ella conviene ubicar este tipo de decisiones dentro de un mapa más amplio. Un organismo en constante acción enfrenta en cada momento decisiones de naturaleza muy diferente. Un estudiante, al escuchar el despertador, puede levantarse o apagarlo y regresar a dormir; puede bañarse o no; elige entre opciones de desayuno, entre distintas formas de llegar a la universidad, entre entrar a clase o tomar un café con una amistad, entre estudiar por la tarde, ir al gimnasio o ver una película. A estas se les conoce como decisiones <em>basadas en el valor</em>: el agente elige entre alternativas cuyas consecuencias tienen diferente peso o importancia para él.</p>
+<p>Sin embargo, no son las únicas. El conductor que maneja de noche tiene que decidir si lo que ve enfrente es el reflejo de la luna o una piedra —una <em>decisión perceptual</em> sobre si un objeto está presente en su entorno. Ante la vasta exposición a propiedades simultáneas de su entorno, el agente tiene que decidir a cuál de ellas atender: escuchar la radio, a su acompañante, a las señales de tránsito o a los autos en el espejo retrovisor. Al encontrarse con un perro callejero tiene que decidir si es agresivo o amigable; al encontrarse con una persona, si ha tenido experiencia previa con ella. Buena parte de la psicología, desde sus inicios en la psicofísica, ha estudiado modelos de este tipo de <em>decisión perceptual</em>, a los que dedicaremos capítulos posteriores. Y más adelante en el libro estudiaremos también los modelos de <em>estructuras de preferencia</em>, que describen la arquitectura interna de los valores que alimentan las decisiones basadas en valor.</p>
+<p>Este capítulo y los siguientes se concentran en las decisiones basadas en el valor, y dentro de ellas, en un subtipo particularmente importante: las que se repiten.</p>
+<section id="decisiones-basadas-en-el-valor" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="decisiones-basadas-en-el-valor"><span class="header-section-number">14.1</span> Decisiones Basadas en el Valor</h2>
+<p>Considera los siguientes dos escenarios. Una persona está en el último día de vacaciones en una ciudad a la que no va a volver. Tiene que elegir en cuál de dos restaurantes comer. La elección se dará a partir, entre otras cosas, del precio, el menú y el ambiente —esto es, del valor en ese momento de cada uno de los dos restaurantes. En un segundo escenario, esos mismos dos restaurantes están en el barrio donde esa persona vive permanentemente. Come en uno de los dos todos los días.</p>
+<p>La presentación recurrente de las oportunidades de elección crea nuevos problemas de adaptación para el agente. Debe determinar si las consecuencias de las opciones cambian en función de las elecciones y el paso del tiempo —el trato de los meseros puede mejorar conforme se visita más frecuentemente un restaurante, o la calidad de la comida puede variar según el día de la semana. Para estimar el valor de cada restaurante, la persona debe visitarlo con cierta frecuencia; una vez establecido ese valor, debe determinar cómo distribuir sus visitas entre los dos a lo largo del tiempo. Y debe mantener cierta flexibilidad para modificar sus elecciones, de modo que pueda detectar si la calidad varía aleatoriamente con el tiempo —quizás por cambios en el cocinero.</p>
+<p>Cada uno de estos dos escenarios representa un problema de adaptación diferente. Al primero, siguiendo a Gallistel, le llamamos <em>optar</em>: es una decisión única, sin historia ni consecuencias futuras que gestionar. Al segundo le llamamos <em>asignación</em>: la elección se repite, las consecuencias de cada visita alimentan la siguiente, y el problema no es solo elegir bien hoy sino distribuir el comportamiento inteligentemente a lo largo del tiempo.</p>
+<p>Los problemas de asignación son ubicuos en la vida de la mayoría de los organismos. Una abeja que enfrenta dos parcelas con flores ilustra bien su estructura. Mientras más tiempo pasa la abeja visitando una parcela, el polen disponible en ella disminuye; al mismo tiempo, las flores de la otra parcela siguen llenas. La abeja enfrenta entonces dos problemas entrelazados: cuánto tiempo dedicarle a cada parcela en total, y cuándo salir de una para visitar la otra. El primero es un problema de distribución del comportamiento a lo largo del tiempo —cuánto tiempo asignar a cada alternativa como función del rendimiento de cada una. El segundo es un problema de decisión local sobre el momento del cambio. En este capítulo y los siguientes nos concentramos en el primero: la distribución de respuestas y tiempos en equilibrio, una vez que el organismo ha tenido suficiente experiencia con las alternativas disponibles.</p>
+</section>
+<section id="elección-recurrente" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="elección-recurrente"><span class="header-section-number">14.2</span> Elección Recurrente</h2>
+<p>La forma más sencilla de estudiar experimentalmente la elección recurrente la desarrolló Richard Herrnstein en el laboratorio de Skinner y se conoce como <em>programas de refuerzo concurrentes</em>. El protocolo consiste en presentarle al organismo dos o más opciones de respuesta simultáneamente disponibles —en el caso de las palomas, dos teclas iluminadas en lados opuestos de la cámara—, cada una reforzada de acuerdo a un programa independiente. El animal puede responder libremente a cualquiera de las dos teclas en cualquier momento, y en cada sesión diaria se registra cuántas respuestas emite a cada tecla y cuántos refuerzos obtiene de cada una.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig14_1_camara_concurrente.png" id="fig14_1_camara_concurrente.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 14.1: Diagrama esquemático de un programa concurrente de dos teclas para palomas. Ambas teclas están disponibles simultáneamente durante toda la sesión]</em></p>
+</div>
+</div>
+</div>
+<p>Para que la distribución de respuestas registrada refleje cómo el organismo valora cada opción y no simplemente su capacidad de explotar la disponibilidad simultánea de ambas teclas, los experimentos incluyen un requisito de demora al cambio (<em>changeover delay</em>, COD): el organismo debe permanecer en una tecla durante un intervalo mínimo —típicamente entre 1.5 y 2 segundos— antes de que el primer refuerzo disponible en la otra tecla sea entregado. Sin ese requisito, un organismo podría picotear brevemente la tecla izquierda y cambiar de inmediato a la derecha para recoger el refuerzo que estuviera esperando allí, obteniendo crédito de ambos programas a un costo prácticamente nulo. El COD garantiza que las respuestas registradas sean distribuciones reales de tiempo y esfuerzo entre las alternativas, no artefactos de alternación rápida.</p>
+<p>Con un par de programas dado, el animal se expone a sesiones diarias hasta que la distribución de respuestas sea constante de una sesión a la siguiente —típicamente entre 30 y 45 días por condición. Los datos que se analizan son los de los últimos cinco días de cada condición, cuando el comportamiento ha alcanzado el equilibrio y los agentes han aprendido acerca de las consecuencias de cada opción de respuesta. El procedimiento se repite para todos los pares de programas que se estudian. Lo que se obtiene es una descripción del comportamiento en estado estable, no de su dinámica de adquisición.</p>
+<p>Skinner hizo posible estudiar una variable agregada del comportamiento: la tasa de una respuesta —número de respuestas dividida entre el tiempo disponible. Herrnstein estudió una nueva variable agregada: la tasa relativa de respuestas en un periodo de tiempo.</p>
+<p><span class="math display">\[
+\frac{R_1} {(R_1 +R_2)}
+\]</span></p>
+<p>Con esa nueva unidad de análisis disponible, Herrnstein se preguntó si la proporción de respuestas guardaba alguna relación sistemática con la proporción de refuerzos obtenidos de cada opción.</p>
+</section>
+<section id="la-ley-de-igualación" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="la-ley-de-igualación"><span class="header-section-number">14.3</span> La Ley de Igualación</h2>
+<p>En 1961, Richard Herrnstein reportó los resultados del primer estudio sistemático con programas concurrentes de intervalo variable. Entrenó a palomas bajo varios pares de programas IV y midió la proporción de respuestas a cada tecla en equilibrio. El resultado fue sorprendente por su precisión: la tasa relativa de respuestas —la proporción de respuestas dedicada a cada tecla— igualaba la tasa relativa de refuerzos obtenidos de esa tecla:</p>
+<p><span class="math display">\[
+\frac {R_1} {(R_1 + R_2)} = \frac {r_1} {(r_1 + r_2)}
+\]</span></p>
+<p>donde <span class="math inline">\(R_1\)</span> y <span class="math inline">\(R_2\)</span> son las tasas de respuesta y <span class="math inline">\(r_1\)</span> y <span class="math inline">\(r_2\)</span> son las tasas de refuerzo obtenidas de cada tecla. A esta relación se le conoce como la <em>ley de igualación</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig14_2_herrnstein1961.png" id="fig14_2_fig14_2_herrnstein1961.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 14.2: FIGURA 14.2: Resultados de Herrnstein (1961) con tres palomas en programas concurrentes IV-IV. Eje horizontal: tasa relativa de refuerzo (r₁/(r₁+r₂)). Eje vertical: tasa relativa de respuesta (R₁/(R₁+R₂)). Cada punto representa los datos promediados de los últimos cinco días bajo una condición. Los puntos se alinean cerca de la diagonal de pendiente unitaria que representa la igualación perfecta]</em></p>
+</div>
+</div>
+</div>
+<p>La ley de igualación no es un resultado trivial. En los programas de intervalo variable, el refuerzo no se cancela cuando el animal no responde: permanece disponible hasta que el animal emita una respuesta a esa tecla. Esto significa que el animal puede obtener todos los refuerzos disponibles con una amplísima variedad de distribuciones de respuesta —respondiendo exclusivamente a una tecla, alternando regularmente, o cualquier patrón intermedio. Lo llamativo del resultado de Herrnstein es que, dentro de ese amplísimo rango de distribuciones que producirían el mismo número total de refuerzos, los organismos exhiben consistentemente la distribución que iguala las tasas relativas. La igualación no es la única distribución posible; es la que se observa.</p>
+<p>La robustez del resultado es notable. En las décadas siguientes, la igualación se replicó en docenas de experimentos con ratas, peces, monos, humanos y diversas especies de aves, bajo múltiples pares de programas y con distintos tipos de refuerzos. Figura entre las relaciones cuantitativas más discutidas y replicadas en la psicología experimental de la segunda mitad del siglo XX.</p>
+<section id="igualación-de-tiempos-asignados" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="igualación-de-tiempos-asignados"><span class="header-section-number">14.3.1</span> Igualación de Tiempos Asignados</h3>
+<p>Herrnstein midió respuestas discretas —picoteos a una tecla. Pero muchos comportamientos naturales no son discretos: el tiempo que una abeja pasa en una parcela, el tiempo que un animal dedica a un área de forrajeo, la duración de una conversación. Baum y Rachlin estudiaron si la igualación se extendía a la distribución del tiempo asignado. Colocaron palomas en una cámara rectangular dividida en dos mitades, con un comedero en cada extremo reforzando de acuerdo a programas IV independientes, y midieron el tiempo que el animal pasaba en cada mitad. El resultado fue igualación de tiempos:</p>
+<p><span class="math display">\[
+\frac{T_1}{T_1 + T_2} = \frac{r_1}{r_1 + r_2}
+\]</span></p>
+<p>La proporción de tiempo asignada a cada alternativa iguala la proporción de refuerzos obtenidos de esa alternativa. Que el resultado se obtuviera tanto con respuestas discretas como con tiempo asignado sugiere que la igualación es un principio general sobre la distribución del comportamiento, no un artefacto de la forma de medir.</p>
+</section>
+</section>
+<section id="desviaciones-de-la-igualación-perfecta" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="desviaciones-de-la-igualación-perfecta"><span class="header-section-number">14.4</span> Desviaciones de la Igualación Perfecta</h2>
+<p>La igualación estricta —que la proporción de respuestas iguale exactamente la proporción de refuerzos— es el resultado típico, pero no el único. Baum identificó dos clases de desviaciones sistemáticas que emergen bajo ciertas condiciones.</p>
+<section id="sesgo" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="sesgo"><span class="header-section-number">14.4.1</span> Sesgo</h3>
+<p>Si en una visita al supermercado les ofrecen probar, sin ningún costo, frijoles negros o bayos, algunos de ustedes preferirán los frijoles negros. Dada esa preferencia, si ambos tienen el mismo precio, comprarán los negros. Pero si los negros cuestan el doble, en algún punto la diferencia de precio superará esa preferencia y comprarán los bayos. Aquí hay dos variables separadas: tu preferencia por un tipo de frijol —el sesgo— y tu sensibilidad a la diferencia de precio. Ambas influyen en la decisión, pero son independientes entre sí.</p>
+<p>En los programas concurrentes ocurre algo análogo. Cuando los refuerzos de las dos opciones son de distinto tipo —diferentes alimentos, refuerzos de diferente magnitud— el organismo puede mostrar una preferencia intrínseca por uno de ellos que se suma al efecto de las tasas de refuerzo. Esta preferencia se llama <em>sesgo</em>: en la gráfica de tasa relativa de respuesta contra tasa relativa de refuerzo, el sesgo desplaza la función hacia arriba o hacia abajo respecto a la diagonal de igualación perfecta. Cuando la tasa de refuerzo de las dos opciones es idéntica (<span class="math inline">\(r_1/r_2 = 1\)</span>) pero la tasa de respuesta no es 0.5, la diferencia refleja un sesgo por una de las alternativas, independiente de las tasas de refuerzo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig14_3_sesgo.png" id="fig14_3_sesgo.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 14.3: Efecto del sesgo en la relación entre tasa relativa de respuesta y tasa relativa de refuerzo. Cuando hay sesgo por la opción 1, la función se desplaza hacia arriba: para cada tasa relativa de refuerzo, la proporción de respuestas a la opción 1 es mayor que la predicha por igualación perfecta. El sesgo en favor de la opción 2 produce el efecto opuesto]</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sensibilidad" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="sensibilidad"><span class="header-section-number">14.4.2</span> Sensibilidad</h3>
+<p>Una segunda desviación ocurre cuando los organismos no son linealmente sensibles a la diferencia entre las tasas de refuerzo. Considera un caso cotidiano: en el supermercado, el mismo producto está disponible en dos marcas a precios distintos, $11.00 y $5.50. La diferencia objetiva es de 2 a 1, pero los valores numéricos son difíciles de comparar de un vistazo, y según la persona esa diferencia se percibirá como mayor o menor que 2 a 1. Algo análogo ocurre con las tasas de refuerzo: la diferencia objetiva entre dos programas puede transformarse psicológicamente en una diferencia mayor o menor, ya sea por cómo el sistema de valor procesa las magnitudes o por la dificultad de discriminar entre ellas.</p>
+<p>Supón que un programa concurrente tiene tasas de refuerzo en razón 2 a 1. La igualación perfecta predice que el organismo responderá dos veces más frecuentemente a la opción más rica. Pero si la diferencia psicológica percibida entre ambas tasas es menor que la diferencia objetiva, el organismo responderá en una proporción más cercana a la indiferencia que a la igualación. A este patrón se le llama <em>sub-igualación</em>: la distribución de respuestas es menos extrema de lo que predice la tasa relativa de refuerzo.</p>
+<p>Lo contrario también es posible. Cuando el organismo amplifica las diferencias en tasas de refuerzo —respondiendo de forma más extrema en la opción más rica de lo que la proporción de refuerzos justifica— se observa <em>sobre-igualación</em>. Asumiremos que el sesgo y la sensibilidad varían independientemente el uno del otro.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig14_4_sensibilidad.png" id="fig14_4_sensibilidad.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 14.4: Sub-igualación y sobre-igualación. En la sub-igualación, la función de tasa relativa de respuesta está por debajo de la diagonal cuando la opción 1 es la más rica, y por encima cuando es la más pobre: el organismo sub-estima las diferencias de refuerzo. En la sobre-igualación el patrón se invierte: el organismo exagera las diferencias.]</em></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-ley-generalizada-de-igualación" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="la-ley-generalizada-de-igualación"><span class="header-section-number">14.5</span> La Ley Generalizada de Igualación</h2>
+<p>Para capturar el sesgo y la sensibilidad en un solo modelo, Baum propuso expresar la ley de igualación en términos de razones de respuesta y refuerzo —en lugar de proporciones— y transformar esa relación como una función de potencia:</p>
+<p><span class="math display">\[
+\frac{B_1}{B_2} = \alpha \left(\frac{r_1}{r_2}\right)^\beta
+\]</span></p>
+<p>donde <span class="math inline">\(\alpha\)</span> es el parámetro de sesgo y <span class="math inline">\(\beta\)</span> es el parámetro de sensibilidad. La igualación perfecta corresponde al caso <span class="math inline">\(\alpha = 1\)</span> y <span class="math inline">\(\beta = 1\)</span>.</p>
+<p>Aplicando logaritmos a ambos lados, la ecuación se convierte en una familia de líneas rectas:</p>
+<p><span class="math display">\[
+\log \frac{B_1}{B_2} = \beta \log\frac{r_1}{r_2} + \log \alpha
+\]</span></p>
+<p>En esa forma, <span class="math inline">\(\beta\)</span> es la pendiente de la función y <span class="math inline">\(\log \alpha\)</span> es el intercepto. La sub-igualación corresponde a pendientes menores que uno; la sobre-igualación, a pendientes mayores que uno. El sesgo desplaza la línea verticalmente sin cambiar su pendiente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig14_5_ley_generalizada.png" id="fig14_5_ley_generalizada.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[[FIGURA 14.5: La ley generalizada de igualación en coordenadas logarítmicas. Las líneas de la familia superior muestran diferentes valores de sesgo (intercepto, <span class="math inline">\(\log\alpha\)</span>) con sensibilidad fija (<span class="math inline">\(\beta = 1\)</span>). Las líneas de la familia inferior muestran diferentes valores de sensibilidad (pendiente, <span class="math inline">\(\beta\)</span>) sin sesgo (<span class="math inline">\(\alpha = 1\)</span>). La igualación perfecta es la línea de pendiente 1 que pasa por el origen.]</em></p>
+</div>
+</div>
+</div>
+<p>La transformación logarítmica no es solo un truco algebraico para linearizar la función: también revela su parentesco con un principio psicofísico clásico. S.S. Stevens propuso que muchas dimensiones sensoriales siguen una función de potencia —la magnitud percibida de un estímulo es proporcional a una potencia de su magnitud física. La ley generalizada de igualación dice algo análogo para la elección: la razón de respuestas es proporcional a una potencia de la razón de refuerzos, con el exponente <span class="math inline">\(\beta\)</span> midiendo cuánto amplifica o atenúa el sistema las diferencias en tasas de refuerzo.</p>
+<p>Esta analogía con Stevens sugiere además dos interpretaciones posibles del parámetro <span class="math inline">\(\beta\)</span>. La primera lo trata como una propiedad intrínseca del sistema de valor: así como el exponente de la función de potencia varía según la dimensión sensorial —la percepción de brillo sigue un exponente distinto que la percepción de peso—, la sensibilidad <span class="math inline">\(\beta\)</span> podría variar según el tipo de refuerzo, independientemente del sujeto o del contexto experimental. La segunda interpretación lo trata como el resultado de restricciones de discriminabilidad: <span class="math inline">\(\beta\)</span> refleja la dificultad del organismo para distinguir entre las tasas de refuerzo de las dos opciones, dificultad que depende tanto del sistema sensorial del organismo como de las condiciones del experimento. Considera un ejemplo: la diferencia entre dos sabores placenteros suele ser más fácil de discriminar que la diferencia entre dos sonidos melódicos de distinta intensidad. Esa diferencia en discriminabilidad podría deberse a una propiedad intrínseca del valor gustativo frente al auditivo —interpretación 1—, o podría deberse a que el sistema sensorial humano distingue mejor estímulos por la vía gustativa que por la auditiva —interpretación 2—. La segunda interpretación predice que la diferencia desaparecería en especies con sistemas auditivos más agudos, como los murciélagos. Ambas interpretaciones son empíricamente distinguibles y abren preguntas que la descripción en términos de <span class="math inline">\(\beta\)</span> por sí sola no responde.</p>
+<p>Esa analogía con Stevens plantea además una pregunta más profunda que este capítulo deja abierta. En psicofísica, la función de potencia de Stevens no es solo una descripción: se deriva de supuestos sobre cómo el sistema sensorial transforma magnitudes físicas en magnitudes percibidas. ¿Existe una derivación análoga para la elección? ¿De qué principios sobre la relación entre valor y acción se sigue que la razón de respuestas sea una función de potencia de la razón de refuerzos, con <span class="math inline">\(\beta\)</span> como parámetro de sensibilidad y <span class="math inline">\(\alpha\)</span> como sesgo? La respuesta requiere un modelo de la elección como función del valor —no solo una descripción del patrón en equilibrio. Ese modelo es el tema del capítulo sobre la ley relativa del efecto, donde veremos que la ley generalizada de igualación emerge como consecuencia algebraica de dos axiomas elementales sobre cómo las diferencias de valor se traducen en diferencias de probabilidad de acción.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🕹️ SIMULADOR 14.1 — Ley generalizada de igualación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/Cap14_ley_generalizada.ipynb" target="_blank"><em>El simulador muestra la función de la ley generalizada en coordenadas linealea y logarítmicas. Puedes ajustar los parámetros <span class="math inline">\(\beta\)</span> (sensibilidad) y <span class="math inline">\(\alpha\)</span> (sesgo) y observar cómo cambia la línea.</em></a></p>
+</div>
+</div>
+</section>
+<section id="qué-computa-el-organismo-dos-preguntas-sobre-igualación" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="qué-computa-el-organismo-dos-preguntas-sobre-igualación"><span class="header-section-number">14.6</span> ¿Qué Computa el Organismo? Dos Preguntas Sobre Igualación</h2>
+<p>La ley de igualación describe con precisión el estado de equilibrio. Pero esa descripción admite dos tipos de pregunta que conviene no confundir, porque pertenecen a niveles de explicación distintos —distintos en el sentido en que los distinguimos en el capítulo 1.</p>
+<p>La primera pregunta es <em>funcional</em>: ¿es la igualación un comportamiento adaptativamente ventajoso? ¿Podría haber sido seleccionada evolutivamente porque resuelve bien el problema de asignación? Esta es una pregunta sobre la función del mecanismo, no sobre su estructura interna.</p>
+<p>La segunda pregunta es <em>algorítmica</em>: ¿qué proceso computa el organismo momento a momento para producir el patrón de igualación? ¿Qué variables actualiza, qué regla de elección sigue, qué información necesita? Esta pregunta puede tener una respuesta completamente diferente a la primera. Un mecanismo puede ser funcionalmente equivalente a maximizar sin que “maximizar” sea el algoritmo que ejecuta —igual que un termostato mantiene la temperatura óptima de una habitación sin calcular ningún óptimo.</p>
+<p>Consideramos cada pregunta por separado.</p>
+<section id="es-la-igualación-funcionalmente-equivalente-a-maximizar" class="level3" data-number="14.6.1">
+<h3 data-number="14.6.1" class="anchored" data-anchor-id="es-la-igualación-funcionalmente-equivalente-a-maximizar"><span class="header-section-number">14.6.1</span> ¿Es la Igualación Funcionalmente Equivalente a Maximizar?</h3>
+<p>Una primera observación es que igualación podría ser, a nivel funcional, una instancia de maximización del total de refuerzos disponibles. Para evaluar esta posibilidad hay que considerar la función que relaciona la tasa total de refuerzos (<span class="math inline">\(r_1 + r_2\)</span>) con la distribución relativa de respuestas:</p>
+<p><span class="math display">\[
+r_{total}= f\left(\frac{R_1}{R_1 + R_2}\right)
+\]</span></p>
+<p>Dado que en programas de IV los refuerzos no se cancelan hasta que se obtienen, al animal le conviene seguir visitando ambas opciones para recoger todos los reforzadores disponibles. Sin embargo, el número de distribuciones de respuesta que garantizarían obtener todos los refuerzos es enorme: el organismo podría alternar regularmente (0.5) o pasar casi todo el tiempo en una de las opciones con visitas ocasionales a la otra. Lo sorprendente es que, dentro de ese amplio rango de distribuciones que maximizan el refuerzo total, lo que se observa empíricamente es la proporción de respuestas que iguala la tasa de refuerzo relativa. En programas IV-IV, la igualación es una forma de maximizar —aunque no la única. Que un organismo iguale en esas condiciones es, por tanto, funcionalmente compatible con haber sido seleccionado para maximizar refuerzos a lo largo de su historia evolutiva.</p>
+<p>Sin embargo, que igualación sea funcionalmente equivalente a maximizar no nos dice nada sobre el algoritmo que la produce. Pasemos ahora a esa segunda pregunta.</p>
+</section>
+<section id="cuál-es-el-algoritmo-maximización-vs.-rentabilidad" class="level3" data-number="14.6.2">
+<h3 data-number="14.6.2" class="anchored" data-anchor-id="cuál-es-el-algoritmo-maximización-vs.-rentabilidad"><span class="header-section-number">14.6.2</span> ¿Cuál es el Algoritmo? Maximización vs.&nbsp;Rentabilidad</h3>
+<p>Dos algoritmos distintos podrían dar cuenta del patrón de igualación. El primero propone que el organismo maximiza directamente la tasa global de refuerzo. El segundo propone algo más local: que el organismo iguala la rentabilidad de cada opción. La diferencia entre ambos no es solo de vocabulario —implica representaciones distintas y, como veremos, predicciones distintas.</p>
+<p>Para ver la diferencia con claridad, consideremos dos ingenieros que deben programar un robot de servicio encargado de recoger basura en dos puestos de comida separados por una calle.</p>
+<p>El primer ingeniero programa al robot con una meta global: recoger la mayor cantidad posible de basura por hora. En la versión más simple, el robot no necesita representar por separado el valor de cada puesto. Puede registrar cuánta basura recoge en total y cómo distribuye su tiempo entre los dos. Si al aumentar el tiempo dedicado a un puesto aumenta la basura total recogida, sigue moviéndose en esa dirección; si disminuye, corrige. El sistema opera como un ascenso de colina —el mismo mecanismo que estudiamos en el capítulo 4— sobre una variable global. El robot necesita solo dos contadores: el total de basura recogida y la distribución relativa de tiempo.</p>
+<p>El segundo ingeniero tiene una meta distinta: igualar la rentabilidad del tiempo dedicado a cada puesto. En ese caso, el robot sí necesita separar la información por alternativa. Debe registrar cuánta basura recoge en el puesto A y cuánto tiempo pasa ahí, cuánta recoge en el puesto B y cuánto tiempo pasa ahí. Solo con esos cuatro registros puede calcular dos rentabilidades locales: basura por minuto en A y basura por minuto en B. La regla ya no compara el total global, sino las tasas locales de retorno de cada alternativa. El robot necesita cuatro contadores.</p>
+<p>Esta diferencia en arquitectura computacional —dos contadores versus cuatro— es lo que distingue los dos algoritmos cuando se los aplica al comportamiento del organismo. De acuerdo al algoritmo de maximización global, el organismo no distingue entre las dos respuestas disponibles ni entre el refuerzo asociado con cada una: computa y actualiza únicamente la suma de refuerzos y la tasa relativa de respuestas. Este modelo no es una instancia de elección basada en el valor de respuestas individuales; el origen de cada refuerzo es irrelevante. En la hipótesis de rentabilidad, en cambio, el organismo mantiene registros separados por alternativa y compara las tasas locales de cada una.</p>
+<p>La hipótesis de rentabilidad propone, en concreto, que el organismo distribuye su comportamiento de modo que <em>iguala la rentabilidad</em> de las distintas opciones disponibles. La rentabilidad de una opción es la tasa de refuerzo que produce por unidad de respuesta o por unidad de tiempo. La tasa de interés bancaria es la rentabilidad de cada peso invertido: te dice cuánto ganarás por cada $1,000 pesos depositados en tu cuenta. La hipótesis de rentabilidad propone que los organismos distribuyen el comportamiento de modo que, en equilibrio, obtengan la misma tasa de refuerzo local de todas las opciones disponibles.</p>
+<p>Derivemos este principio del patrón de igualación. La igualación para respuestas y tiempos puede expresarse en forma de razones —en lugar de frecuencias relativas:</p>
+<p><span class="math display">\[
+\frac {R_1} {R_2} = \frac {r_1} {r_2} \qquad \frac {T_1} {T_2} = \frac {r_1} {r_2}
+\]</span></p>
+<p>Razones y tasas relativas son dos formas equivalentes:</p>
+<p><span class="math display">\[
+\frac{R_1}{R_2} = \frac{r_1}{r_2} \qquad \Longrightarrow \qquad \frac{R_1}{R_1 + R_2} = \frac{r_1}{r_1 + r_2}
+\]</span></p>
+<p>Trabajando con razones y reordenando términos, en equilibrio la igualación implica:</p>
+<p><span class="math display">\[
+\frac{r_1}{R_1} = \frac{r_2}{R_2} \qquad \text{o bien} \qquad \frac{r_1}{T_1} = \frac{r_2}{T_2}
+\]</span></p>
+<p>Esta nueva forma de expresar la ley de igualación refleja que lo que se iguala es la rentabilidad de las distintas opciones de respuesta: los refuerzos obtenidos por respuesta o por segundo son iguales en ambas alternativas. Igualar las razones de respuesta a las razones de refuerzo es la misma proposición que decir que se igualan las rentabilidades.</p>
+<p>Un ejemplo numérico hace visible lo que esto significa en la práctica. Supón un programa concurrente con dos opciones: la opción A reforzada con un programa IV de 30 segundos (tasa de refuerzo <span class="math inline">\(r_1 = 2\)</span> refuerzos por minuto) y la opción B reforzada con un programa IV de 60 segundos (<span class="math inline">\(r_2 = 1\)</span> refuerzo por minuto). La ley de igualación predice que el organismo dedica a A el doble de sus respuestas:</p>
+<p><span class="math display">\[
+\frac{R_1}{ R_2} = \frac{2}{ 1} = 2
+\]</span></p>
+<p>Supón ahora que en una sesión de 60 minutos el organismo emite 300 respuestas en total: 200 a la opción A y 100 a la opción B. Si la tasa de respuesta es suficiente para recoger todos los refuerzos disponibles —lo que ocurre típicamente bajo programas IV— el organismo obtiene aproximadamente 120 refuerzos de A y 60 de B. Las rentabilidades resultan:</p>
+<p><span class="math display">\[
+\frac{r_1}{R_1} = \frac{120}{200} = 0.60 \text{ refuerzos por respuesta} \qquad \frac{r_2}{R_2} = \frac{60}{100} = 0.60 \text{ refuerzos por respuesta}
+\]</span></p>
+<p>Las rentabilidades son iguales. Cualquier otra distribución de las 300 respuestas entre las dos opciones produciría rentabilidades distintas. La igualación es la condición de equilibrio que iguala las tasas de refuerzo locales.</p>
+<p>Computacionalmente, este algoritmo requiere que el organismo mantenga cuatro contadores —respuestas y refuerzos para cada opción— y calcule sus tasas locales. La regla de elección es: asigna más tiempo o respuestas a la opción cuya rentabilidad actual sea mayor. El proceso se detiene —o se vuelve estacionario— cuando ambas rentabilidades son iguales.</p>
+<p>El contraste es exactamente el de los dos robots: el organismo del modelo de maximización global opera con dos contadores y no necesita saber de qué alternativa provino cada refuerzo; el organismo del modelo de rentabilidad opera con cuatro y no puede funcionar sin esa distinción. Ambos producirían el mismo patrón en equilibrio bajo programas IV-IV —lo que hace imposible distinguirlos con ese diseño. Necesitamos condiciones donde sus predicciones difieran.</p>
+</section>
+<section id="maximización-vs.-rentabilidad-un-experimento-decisivo" class="level3" data-number="14.6.3">
+<h3 data-number="14.6.3" class="anchored" data-anchor-id="maximización-vs.-rentabilidad-un-experimento-decisivo"><span class="header-section-number">14.6.3</span> Maximización vs.&nbsp;Rentabilidad: Un Experimento Decisivo</h3>
+<p>Considera el siguiente escenario. Una estudiante es la única heredera de dos tías de edad avanzada. El monto de la herencia que le dejará una de ellas depende directamente del número de visitas que la sobrina le haga; la cantidad que dejará la otra tiene un tope máximo y solo depende de que la sobrina la visite ocasionalmente. La estrategia óptima para la sobrina es asignar la mayor parte de sus visitas a la tía cuya herencia crece con cada visita, y visitar ocasionalmente a la otra —la suficiente para no perder lo que ya acumuló. El escenario ilustra un programa concurrente donde una opción sigue un programa de razón variable y la otra un programa de intervalo variable.</p>
+<p>En los programas de razón variable, a diferencia de los de intervalo, la rentabilidad de la respuesta no cambia con el tiempo que el organismo pasa en otra opción: cada respuesta tiene la misma probabilidad de producir un refuerzo, independientemente de cuándo fue la última vez que el organismo respondió a esa tecla. En contraste, en los programas de intervalo, la probabilidad de refuerzo aumenta con el tiempo transcurrido desde la última visita.</p>
+<p>Esa diferencia tiene una consecuencia crucial cuando se combinan ambos programas en un programa concurrente RV-IV. De acuerdo a la maximización global, la estrategia óptima es responder casi exclusivamente a la tecla con el programa de razón —que produce refuerzos en proporción directa al número de respuestas emitidas— y visitar ocasionalmente la tecla con el programa de intervalo, solo para recoger el refuerzo que esté esperando. Esta estrategia maximiza el número total de refuerzos por unidad de tiempo.</p>
+<p>De acuerdo a la hipótesis de rentabilidad, en cambio, el organismo distribuye sus respuestas de modo que las tasas de refuerzo locales de ambas opciones sean iguales. Para ver por qué eso produce una predicción distinta a la de la maximización, hay que examinar cómo varía la rentabilidad de cada opción con la distribución del comportamiento.</p>
+<p>La rentabilidad del programa de razón es una constante: cada respuesta produce en promedio <span class="math inline">\(1/n\)</span> refuerzos, donde <span class="math inline">\(n\)</span> es la razón media, independientemente de cuánto tiempo lleve el organismo sin visitar esa tecla. Con RV 10, cada respuesta rinde 0.10 refuerzos en promedio —siempre.</p>
+<p>La rentabilidad del programa de intervalo, en cambio, depende de con qué frecuencia lo visita el organismo. El IV no cancela refuerzos: los retiene hasta que el organismo responde. Mientras más tiempo pasa el organismo sin visitar la tecla del IV, más probable es que haya un refuerzo esperando. Esto tiene una consecuencia importante: los refuerzos del IV pueden cosecharse con visitas breves y espaciadas. En una sesión de 60 minutos, un IV de 1 minuto genera 60 refuerzos en total —uno por minuto— y el organismo puede recogerlos prácticamente todos dedicando solo una fracción pequeña de sus respuestas a esa tecla.</p>
+<p>El siguiente ejemplo hace visible la diferencia. Supón una sesión de 60 minutos con tasa de respuesta constante de 30 respuestas por minuto —1,800 respuestas en total— y un programa concurrente RV 10 — IV 1 min.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Distribución</th>
+<th style="text-align: right;">Respuestas RV</th>
+<th style="text-align: right;">Respuestas IV</th>
+<th style="text-align: right;">Refuerzos RV</th>
+<th style="text-align: right;">Refuerzos IV</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Maximización (95% en RV)</td>
+<td style="text-align: right;">1,710</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">171</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;"><strong>231</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Igualación (67% en RV)</td>
+<td style="text-align: right;">1,200</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;"><strong>180</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Exclusivo IV (0% en RV)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1,800</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;"><strong>60</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Dos cosas saltan a la vista. Primero, los refuerzos del IV son 60 en las tres distribuciones: en la segunda fila el organismo visita el IV durante 20 minutos y recoge todos los refuerzos disponibles; en la primera fila, con solo 90 respuestas de visitas breves, también los recoge casi todos —porque cada visita encuentra un refuerzo acumulado esperando. Segundo, los refuerzos del RV sí dependen del tiempo dedicado a él: 171 con 95% del tiempo, 120 con 67%, cero si el organismo abandona el RV por completo. La maximización captura esta asimetría y concluye: dedica casi todo el tiempo al RV —que paga por respuesta— y visita el IV solo de paso para cosechar lo que se acumula.</p>
+<p>La hipótesis de rentabilidad llega a una conclusión distinta porque su algoritmo no compara totales sino tasas locales. La rentabilidad del RV es fija: 120/1200 = 171/1710 = 0.10 refuerzos por respuesta, siempre. La rentabilidad del IV cambia con la fracción <span class="math inline">\(f\)</span> de tiempo dedicada a él:</p>
+<p><span class="math display">\[\text{Rentabilidad IV} = \frac{60 \text{ refuerzos}}{f \times 1800 \text{ respuestas}} = \frac{1}{f \times 30}\]</span></p>
+<p>Conforme el organismo dedica menos tiempo al IV —menor <span class="math inline">\(f\)</span>— los mismos 60 refuerzos disponibles se distribuyen entre menos respuestas, y la rentabilidad por respuesta sube:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Fracción en IV (<span class="math inline">\(f\)</span>)</th>
+<th style="text-align: right;">Respuestas a IV</th>
+<th style="text-align: right;">Rentabilidad IV</th>
+<th style="text-align: right;">Rentabilidad RV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.05 (5%)</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.10 (10%)</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.20 (20%)</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.33 (33%)</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;"><strong>0.10</strong></td>
+<td style="text-align: right;"><strong>0.10</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.50 (50%)</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Las rentabilidades se igualan en <span class="math inline">\(f = 1/3\)</span>: cuando el organismo dedica el 33% de sus respuestas al IV. A cualquier distribución más extrema —menos tiempo en IV— la rentabilidad del IV supera a la del RV y el algoritmo de rentabilidad desplaza el comportamiento hacia IV. Por encima de <span class="math inline">\(f = 1/3\)</span> ocurre lo contrario. Solo en 67/33 hay equilibrio.</p>
+<p>Noten que en ningún punto de este análisis se calculó un máximo ni una derivada. La predicción surge directamente de igualar dos expresiones algebraicas: <span class="math inline">\(1/(f \times 30) = 1/10\)</span>, de donde <span class="math inline">\(f = 1/3\)</span>. La diferencia entre las dos predicciones no es de grado sino de naturaleza: la maximización compara totales y concluye 95/5; la igualación de rentabilidades compara tasas locales y concluye 67/33. Los datos discriminan entre ellas.</p>
+</section>
+</section>
+<section id="simulador-14.2-programas-concurrentes-rv-iv-rentabilidad-o-maximización" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="simulador-14.2-programas-concurrentes-rv-iv-rentabilidad-o-maximización"><span class="header-section-number">14.7</span> 🕹️ SIMULADOR 14.2 — Programas Concurrentes RV-IV: ¿Rentabilidad o Maximización?</h2>
+<p>El simulador muestra dos organismos que aprenden en el mismo programa concurrente RV-IV. El <strong>organismo de rentabilidad</strong> aplica el algoritmo de mejoramiento: después de cada bloque de respuestas, compara las tasas locales de refuerzo de las dos opciones y ajusta su distribución hacia la más rentable. El <strong>organismo de maximización</strong> aplica ascenso de colina sobre el total de refuerzos y descubre, ensayo a ensayo, que incrementar la fracción dedicada al RV siempre aumenta la ganancia global.</p>
+<p>Tres paneles muestran la sesión completa: la distribución de respuestas a lo largo del tiempo, cómo evolucionan las rentabilidades locales del organismo de igualación, y los refuerzos acumulados por cada algoritmo —la diferencia entre las dos curvas es el costo de igualar.</p>
+<p><a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/sim14_2_rent_max.ipynb" class="btn btn-warning" target="_blank">Abrir simulador en Colab</a> :::</p>
+<p>Herrnstein y Heyman llevaron al laboratorio este diseño. Expusieron a las palomas a programas concurrentes razón variable-intervalo variable. Los resultados muestran que las palomas distribuyeron sus respuestas de acuerdo al patrón de igualación, con un sesgo en favor del programa de razón —y al hacerlo, obtuvieron consistentemente menos refuerzos totales que los que habrían obtenido con la estrategia de maximización global. El resultado es al mismo tiempo una confirmación de la igualación y una refutación de la maximización: los organismos igualaron aunque eso les costara refuerzos. Experimentos más recientes confirman este resultado y resaltan la utilidad de separar el sesgo por una opción de la sensibilidad a las diferencias de refuerzo.</p>
+<p>Pero saber que el organismo no computa el máximo global no nos dice qué sí computa. La hipótesis de rentabilidad describe el estado al que converge el comportamiento, no el proceso que lo produce respuesta a respuesta. ¿Qué regla de elección momento a momento lleva al organismo a distribuir sus respuestas de modo que las rentabilidades se igualen? ¿Cómo se actualizan los valores de cada opción con la experiencia? ¿Qué ocurre cuando las condiciones cambian y el equilibrio se desplaza? Esas son las preguntas de los tres capítulos siguientes.</p>
+</section>
+<section id="conexiones" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">14.8</span> Conexiones</h2>
+<section id="hacia-atrás" class="level3" data-number="14.8.1">
+<h3 data-number="14.8.1" class="anchored" data-anchor-id="hacia-atrás"><span class="header-section-number">14.8.1</span> Hacia Atrás</h3>
+<p><strong>Sistemas de retroalimentación (capítulo 5).</strong> Los programas concurrentes son sistemas de retroalimentación de lazo cerrado: lo que el organismo hace determina qué refuerzos recibe, y los refuerzos moldean lo que hace. La novedad del capítulo 14 respecto al 5 es que ahora el sistema tiene dos lazos paralelos —uno por cada alternativa disponible— y la distribución del comportamiento entre ellos es lo que se estudia en equilibrio.</p>
+<p><strong>Programas de refuerzo (capítulo 13).</strong> El capítulo anterior describió la función de retroalimentación del entorno para cada tipo de programa en solitario. Este capítulo combina dos de esas funciones en un programa concurrente y pregunta cómo se distribuye el comportamiento entre ellas. La igualación es la respuesta en equilibrio para programas de intervalo variable.</p>
+<p><strong>Bush y Mosteller, Rescorla-Wagner (capítulos 8-11).</strong> Los valores Q que esos modelos asignan a cada respuesta son los inputs sobre los que opera la distribución del comportamiento en equilibrio. En programas concurrentes de intervalo variable, el valor Q de cada respuesta en equilibrio es proporcional a la tasa de refuerzo que produce. La ley de igualación describe qué sucede con esos valores Q cuando hay dos respuestas compitiendo.</p>
+</section>
+<section id="hacia-adelante" class="level3" data-number="14.8.2">
+<h3 data-number="14.8.2" class="anchored" data-anchor-id="hacia-adelante"><span class="header-section-number">14.8.2</span> Hacia Adelante</h3>
+<p><strong>Maximización local (capítulo 15).</strong> La ley de igualación describe el estado de equilibrio. El capítulo siguiente pregunta qué proceso dinámico —respuesta a respuesta— lleva al organismo a ese equilibrio. El modelo de mejoramiento (<em>melioration</em>) de Herrnstein y Vaughan propone que los organismos eligen en cada momento la opción con mayor tasa local de refuerzo, y muestra que ese proceso converge al patrón de igualación bajo programas IV-IV.</p>
+<p><strong>Modelos de optimización global (capítulos sobre Staddon y Rachlin).</strong> La evidencia de Herrnstein y Heyman muestra que los organismos no maximizan el refuerzo global bajo programas RV-IV. Pero eso no descarta que la optimización sea un principio explicativo útil en otros contextos. Los modelos de Staddon y Rachlin proponen que los organismos maximizan funciones de utilidad de carácter diferente, y que igualación emerge como consecuencia bajo ciertas condiciones. El contraste entre la maximización local (capítulo 15) y la maximización global organiza el debate teórico sobre los mecanismos de la elección.</p>
+<p><strong>La ley relativa del efecto (un capítulo posterior).</strong> Este capítulo describió la distribución del comportamiento como proporción —tasas relativas. La ley del efecto relativa de Herrnstein da un paso adicional: deriva la relación entre las tasas absolutas de respuesta y las tasas absolutas de refuerzo, y muestra que la igualación emerge como consecuencia de ese marco teórico más general. Ese capítulo también explicará por qué la razón de respuestas sigue una función de potencia de la razón de refuerzos —la pregunta que la analogía con Stevens dejó abierta aquí.</p>
+<hr>
+</section>
+</section>
+<section id="resumen" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="resumen"><span class="header-section-number">14.9</span> Resumen</h2>
+<p>Los problemas de asignación —situaciones de elección recurrente donde el comportamiento retroalimenta sobre las condiciones futuras de refuerzo— son la norma en la vida de la mayoría de los organismos. Los programas de refuerzo concurrentes reproducen esa estructura en el laboratorio y permiten estudiar cómo se distribuye el comportamiento en equilibrio.</p>
+<p>Lo que este capítulo establece es un patrón descriptivo preciso y robusto. Herrnstein (1961) descubrió que en programas concurrentes de intervalo variable, la tasa relativa de respuestas iguala la tasa relativa de refuerzos: <span class="math inline">\(R_1/(R_1+R_2) = r_1/(r_1+r_2)\)</span>. El resultado se replica con tiempo asignado, con distintas especies y con distintos tipos de refuerzo. Las desviaciones sistemáticas del patrón de igualación perfecta se clasifican en sesgo —preferencia intrínseca por una alternativa independiente de las tasas de refuerzo— y sensibilidad —grado en que el organismo amplifica o atenúa las diferencias entre tasas. La ley generalizada de igualación de Baum captura ambas desviaciones en una función de potencia que se linealiza en coordenadas logarítmicas, con <span class="math inline">\(\beta\)</span> como parámetro de sensibilidad y <span class="math inline">\(\alpha\)</span> como sesgo.</p>
+<p>Lo que este capítulo deja abierto es igualmente importante. A nivel funcional, la igualación es compatible con la maximización del refuerzo total en programas IV-IV, lo que sugiere que puede ser adaptativamente ventajosa. A nivel algorítmico, la evidencia de programas concurrentes RV-IV descarta la maximización global como mecanismo y es consistente con la igualación de rentabilidades locales —pero eso describe el estado al que converge el comportamiento, no el proceso que lo produce. Cómo el organismo llega a ese equilibrio respuesta a respuesta, cómo actualiza el valor de cada opción, y cómo se comporta cuando las condiciones cambian son las preguntas que organizan los capítulos siguientes.</p>
+<hr>
+</section>
+<section id="ejercicios" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">14.10</span> Ejercicios</h2>
+<p><strong>1.</strong> Un programa concurrente IV 20 s — IV 60 s está en equilibrio. Antes de calcular, predice: ¿a qué tecla irá la mayoría de las respuestas, y en qué proporción aproximada? Ahora calcula la distribución de respuestas que predice la ley de igualación. Si el organismo emite un total de 240 respuestas en una sesión de 60 minutos, ¿cuántas van a cada tecla? Calcula la rentabilidad (refuerzos por respuesta) de cada opción con esa distribución y verifica que sean iguales.</p>
+<p><strong>2.</strong> En un estudio con humanos en una tarea computarizada se observa la siguiente distribución: cuando la tasa de refuerzo de la opción A es el doble que la de la opción B, los participantes asignan a A el 62% de sus respuestas (en lugar del 67% predicho por igualación perfecta). ¿Qué tipo de desviación de igualación es esta? ¿Qué valor de <span class="math inline">\(\beta\)</span> describe mejor este resultado? ¿Qué información adicional necesitarías para estimar también el sesgo?</p>
+<p><strong>3.</strong> La ley generalizada de igualación en escala logarítmica es: <span class="math inline">\(\log(B_1/B_2) = \beta \log(r_1/r_2) + \log\alpha\)</span>. Si en un experimento se obtiene una función con pendiente <span class="math inline">\(\beta = 0.8\)</span> e intercepto <span class="math inline">\(\log\alpha = 0.15\)</span> (es decir, <span class="math inline">\(\alpha \approx 1.41\)</span>), describe en palabras qué tipo de desviación de igualación muestra el organismo y qué significa la preferencia capturada por <span class="math inline">\(\alpha\)</span>.</p>
+<p><strong>4.</strong> Explica en términos de la función de retroalimentación del entorno por qué los programas concurrentes IV-IV no pueden discriminar entre la hipótesis de maximización global y la de rentabilidad local. ¿Qué característica del programa de intervalo variable hace que ambas predicciones coincidan?</p>
+<p><strong>5.</strong> En el experimento de Herrnstein y Heyman con programas concurrentes RV-IV, ¿qué distribución de respuestas predice la maximización global? ¿Qué distribución predice la igualación de rentabilidades locales? ¿Por qué los datos observados permiten distinguir entre las dos hipótesis en este diseño pero no en los programas IV-IV?</p>
+<p><strong>6.</strong> <em>(Reflexión)</em> Este capítulo presenta la igualación como una descripción del comportamiento en equilibrio, después de docenas de sesiones de entrenamiento. ¿Qué supone ese énfasis en el equilibrio sobre el tipo de preguntas que el modelo puede y no puede responder? ¿Qué quedaría fuera de su alcance?</p>
+<hr>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="14.11">
+<h2 data-number="14.11" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">14.11</span> Lecturas Recomendadas</h2>
+<p><strong>Herrnstein, R. J. (1961).</strong> Relative and absolute strength of response as a function of frequency of reinforcement. <em>Journal of the Experimental Analysis of Behavior, 4</em>, 267–272. — El artículo original. Breve, claro y directamente accesible.</p>
+<p><strong>Baum, W. M. (1974).</strong> On two types of deviation from the matching law: Bias and undermatching. <em>Journal of the Experimental Analysis of Behavior, 22</em>, 231–242. — La propuesta de la ley generalizada, con la motivación empírica para los dos parámetros.</p>
+<p><strong>Herrnstein, R. J., &amp; Heyman, G. M. (1979).</strong> Is matching compatible with reinforcement maximization on concurrent variable interval, variable ratio? <em>Journal of the Experimental Analysis of Behavior, 31</em>, 209–223. — El experimento decisivo que distingue la hipótesis de rentabilidad de la maximización global.</p>
+<p><strong>Mazur, J. E. (2016).</strong> <em>Learning and Behavior</em> (8ª ed.). Routledge. Capítulo 8: <em>Choice and Preference</em>. — Presentación clara y bien documentada de la ley de igualación, sus desviaciones y las hipótesis sobre los mecanismos subyacentes. Complementa bien la perspectiva de este capítulo.</p>
+<p><strong>Baum, W. M., &amp; Rachlin, H. C. (1969).</strong> Choice as time allocation. <em>Journal of the Experimental Analysis of Behavior, 12</em>, 861–874. — El experimento de la cámara rectangular que extiende la igualación al tiempo asignado.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Programas_refuerzo.html" class="pagination-link" aria-label="La Ley del Efecto y los Programas de refuerzo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de refuerzo</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

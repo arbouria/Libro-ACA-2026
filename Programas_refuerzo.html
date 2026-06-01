@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; La Ley del Efecto y los Programas de refuerzo – Aprendizaje y Comportamiento Adaptable: Principios y Modelos</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./igualacion.html" rel="next">
+<link href="./Traduccion_accion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-aa873432a3c62897e6c2091c0d30a948.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Programas_refuerzo.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de refuerzo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Aprendizaje y Comportamiento Adaptable: Principios y Modelos</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/bouzaslab25/libro-aca" title="Ver en GitHub" class="quarto-navigation-tool px-1" aria-label="Ver en GitHub"><i class="bi bi-github"></i></a>
+    <a href="./Aprendizaje-y-Comportamiento-Adaptable--Principios-y-Modelos.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notas de Aprendizaje y Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./explicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelos y Explicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolucion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Teoría de la Selección Natural</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Restricciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">El Papel de las Restricciones en la Evolución del Comportamiento Adaptable</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ascenso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ascenso de Colina</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sistemas de Retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./asignacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El Problema de la Asignación de Crédito (II)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./refuerzo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aprendizaje por Refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Rescorla_Wagner.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El Modelo de Rescorla y Wagner</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Traduccion_accion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Traducción del Conocimiento en Acción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Programas_refuerzo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de refuerzo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./igualacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#del-conocimiento-a-la-acción" id="toc-del-conocimiento-a-la-acción" class="nav-link active" data-scroll-target="#del-conocimiento-a-la-acción"><span class="header-section-number">13.1</span> Del Conocimiento a la Acción</a></li>
+  <li><a href="#de-thorndike-a-skinner-una-nueva-unidad-de-análisis" id="toc-de-thorndike-a-skinner-una-nueva-unidad-de-análisis" class="nav-link" data-scroll-target="#de-thorndike-a-skinner-una-nueva-unidad-de-análisis"><span class="header-section-number">13.2</span> De Thorndike a Skinner: una nueva unidad de análisis</a></li>
+  <li><a href="#entornos-intermitentes-los-programas-de-refuerzo" id="toc-entornos-intermitentes-los-programas-de-refuerzo" class="nav-link" data-scroll-target="#entornos-intermitentes-los-programas-de-refuerzo"><span class="header-section-number">13.3</span> Entornos intermitentes: los programas de refuerzo</a></li>
+  <li><a href="#los-patrones-regularidades-sorprendentes" id="toc-los-patrones-regularidades-sorprendentes" class="nav-link" data-scroll-target="#los-patrones-regularidades-sorprendentes"><span class="header-section-number">13.4</span> Los patrones: regularidades sorprendentes</a></li>
+  <li><a href="#el-experimento-de-cajas-acopladas" id="toc-el-experimento-de-cajas-acopladas" class="nav-link" data-scroll-target="#el-experimento-de-cajas-acopladas"><span class="header-section-number">13.5</span> El experimento de cajas acopladas</a></li>
+  <li><a href="#primera-explicación-el-reforzamiento-diferencial-de-tiempos-entre-respuestas" id="toc-primera-explicación-el-reforzamiento-diferencial-de-tiempos-entre-respuestas" class="nav-link" data-scroll-target="#primera-explicación-el-reforzamiento-diferencial-de-tiempos-entre-respuestas"><span class="header-section-number">13.6</span> Primera explicación: el reforzamiento diferencial de tiempos entre respuestas</a></li>
+  <li><a href="#segunda-explicación-sensibilidad-a-las-correlaciones" id="toc-segunda-explicación-sensibilidad-a-las-correlaciones" class="nav-link" data-scroll-target="#segunda-explicación-sensibilidad-a-las-correlaciones"><span class="header-section-number">13.7</span> Segunda explicación: sensibilidad a las correlaciones</a></li>
+  <li><a href="#el-reforzador-como-estímulo-discriminativo" id="toc-el-reforzador-como-estímulo-discriminativo" class="nav-link" data-scroll-target="#el-reforzador-como-estímulo-discriminativo"><span class="header-section-number">13.8</span> El reforzador como estímulo discriminativo</a></li>
+  <li><a href="#la-función-de-retroalimentación-formalización" id="toc-la-función-de-retroalimentación-formalización" class="nav-link" data-scroll-target="#la-función-de-retroalimentación-formalización"><span class="header-section-number">13.9</span> La función de retroalimentación: formalización</a></li>
+  <li><a href="#lo-que-la-ley-del-efecto-simple-no-explica-y-lo-que-sí" id="toc-lo-que-la-ley-del-efecto-simple-no-explica-y-lo-que-sí" class="nav-link" data-scroll-target="#lo-que-la-ley-del-efecto-simple-no-explica-y-lo-que-sí"><span class="header-section-number">13.10</span> Lo que la ley del efecto simple no explica (y lo que sí)</a></li>
+  <li><a href="#conexiones" id="toc-conexiones" class="nav-link" data-scroll-target="#conexiones"><span class="header-section-number">13.11</span> Conexiones</a>
+  <ul class="collapse">
+  <li><a href="#hacia-atrás" id="toc-hacia-atrás" class="nav-link" data-scroll-target="#hacia-atrás"><span class="header-section-number">13.11.1</span> Hacia atrás</a></li>
+  <li><a href="#hacia-adelante" id="toc-hacia-adelante" class="nav-link" data-scroll-target="#hacia-adelante"><span class="header-section-number">13.11.2</span> Hacia adelante</a></li>
+  </ul></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">13.12</span> Resumen</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">13.13</span> Ejercicios</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">13.14</span> Lecturas Recomendadas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La Ley del Efecto y los Programas de refuerzo</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="del-conocimiento-a-la-acción" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="del-conocimiento-a-la-acción"><span class="header-section-number">13.1</span> Del Conocimiento a la Acción</h2>
+<p>Los capítulos anteriores construyeron una maquinaria sofisticada para resolver el problema de la predicción. A lo largo de los bloques de asignación de crédito y modelos formales, nuestro agente adaptativo adquirió la capacidad de detectar qué estímulos predicen sucesos biológicamente importantes, qué respuestas los producen, y cuánto vale cada predictor. El capítulo anterior mostró cómo ese conocimiento predictivo se traduce en acción a través de los sistemas de comportamiento: las predicciones activan patrones organizados de respuesta cuya forma refleja la historia evolutiva de la especie. Cada organismo llega a esta situación con una historia de aprendizaje que ha moldeado el valor de sus respuestas y la fuerza de sus predicciones.</p>
+<p>Pero hay un problema que esa maquinaria no resuelve. Un depredador sabe que cierta estrategia de acecho produce presas, pero ¿con qué frecuencia debe intentarlo? Un empleado sabe que escribir informes produce un salario, pero ¿cuántos informes al mes? Un estudiante sabe que estudiar mejora sus calificaciones, pero ¿cómo distribuir ese esfuerzo a lo largo del semestre? En todos estos casos, el organismo ya posee el conocimiento relevante — lo que necesita es una regla para traducir ese conocimiento en una <em>distribución temporal de acciones</em>. ¿Cuánto de cada respuesta, cuándo, y a qué ritmo?</p>
+<p>Este es el problema de la acción, y con él abrimos un nuevo bloque del libro. Los capítulos anteriores preguntaban <em>qué predice qué</em>. A partir de ahora, la pregunta central es <em>qué hacer dado lo que se sabe</em>. La diferencia no es menor: mientras la predicción puede evaluarse como correcta o incorrecta, la acción debe evaluarse en función de sus consecuencias a lo largo del tiempo — y esas consecuencias dependen de reglas del entorno que el organismo debe descubrir y a las que debe adaptarse.</p>
+<p>Una observación empírica servirá como punto de partida. Piensen en las diversas formas en que las consecuencias de nuestras acciones llegan a nosotros. Un vendedor de coches gana una comisión por cada venta — la consecuencia depende del número de ventas cerradas. Un pescador arroja su línea y espera; el pez llega cuando llega, independientemente de cuántas veces el pescador sacuda la caña. Una persona que espera el autobús en la Ciudad de México puede esperar dos minutos o veinte — la frecuencia del transporte es variable e impredecible. Un trabajador asalariado recibe su pago cada quincena, haya trabajado mucho o poco. En cada caso, la relación entre lo que el organismo hace y la consecuencia que obtiene tiene una estructura diferente. Y esa estructura, como veremos, moldea profundamente la forma en que el organismo distribuye su comportamiento.</p>
+<p>La contribución central de este capítulo es mostrar que una de las regularidades más robustas en toda la psicología — quizá <em>la</em> más robusta — es que el mismo organismo, trabajando por el mismo reforzador y con la misma motivación, exhibe patrones de respuesta radicalmente distintos dependiendo de las reglas que gobiernan la relación entre su comportamiento y sus consecuencias.</p>
+</section>
+<section id="de-thorndike-a-skinner-una-nueva-unidad-de-análisis" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="de-thorndike-a-skinner-una-nueva-unidad-de-análisis"><span class="header-section-number">13.2</span> De Thorndike a Skinner: una nueva unidad de análisis</h2>
+<p>La ley del efecto de Thorndike, que introdujimos en el capítulo 7, propone que las respuestas seguidas de consecuencias satisfactorias se fortalecen. El modelo de Bush y Mosteller del capítulo 8 formalizó esa idea como una ecuación de actualización: <span class="math inline">\(Q_{t+1} = Q_t + \alpha(R_t - Q_t)\)</span>, donde el valor de la respuesta se ajusta en cada ensayo según el error de predicción. Esa formulación captura bien la <em>adquisición</em> del comportamiento — cómo un organismo que no sabe nada aprende gradualmente qué respuestas producen consecuencias.</p>
+<p>Pero hay una limitación fundamental en el marco experimental de Thorndike y sus sucesores. La caja de escape de Thorndike, el laberinto en T, y el callejón de carrera comparten una propiedad: en cada ensayo, el organismo solo puede emitir la respuesta exitosa una vez. El gato escapa una vez por ensayo. La rata elige un brazo del laberinto una vez por ensayo. Lo que se mide es la latencia o la velocidad — cuánto tarda el organismo en ejecutar una respuesta cuya ocurrencia está determinada por el experimentador. La pregunta sobre <em>cuántas veces</em> y <em>con qué distribución temporal</em> responde el organismo no puede siquiera formularse en estos protocolos.</p>
+<p>B. F. Skinner (1938) transformó esta situación con dos innovaciones que cambiaron la unidad de análisis del campo entero. La primera fue conceptual: distinguir entre respuestas <em>provocadas</em> — aquellas para las cuales puede identificarse un estímulo antecedente, como el parpadeo ante un soplo — y respuestas <em>emitidas</em> — aquellas que el organismo produce libremente sin un estímulo discreto que las desencadene. Piensen en las respuestas de revisar el teléfono, caminar hacia la cocina, iniciar una conversación, encender un cigarrillo: ninguna es provocada por un estímulo puntual. Todas ocurren en un flujo continuo, compitiendo entre sí por el tiempo del organismo. La segunda innovación fue metodológica: proponer la <em>tasa de respuesta</em> — el número de respuestas por unidad de tiempo — como la medida fundamental de la disposición del organismo a actuar. Si en una hora fumo cinco cigarros, mi tasa de fumar es de cinco respuestas por hora. Si mañana fumo ocho, la tasa aumentó. La tasa captura en una sola dimensión lo que los protocolos de ensayos discretos no podían medir: la probabilidad de que un organismo produzca espontáneamente una acción en cualquier momento del tiempo.</p>
+<p>Para observar esa tasa, Skinner diseñó un espacio experimental con un dispositivo — una palanca para ratas, una tecla iluminada para palomas — que el organismo podía operar libremente, tantas veces como quisiera, a cualquier ritmo. Y para visualizar los patrones temporales del comportamiento, inventó el <em>registro acumulativo</em>: un registro continuo donde el eje horizontal marca el tiempo y el eje vertical acumula cada respuesta como un escalón. La pendiente de la línea resultante <em>es</em> la tasa de respuesta: pendiente pronunciada indica tasa alta; pendiente plana indica pausa.</p>
+<p>Con estas herramientas, la ley del efecto adquiere una formulación nueva. En la versión de Thorndike, el efecto del refuerzo es seleccionar qué respuesta se fortalece. En la versión de Skinner, el efecto del refuerzo opera en dos niveles: primero, selecciona cuál de las respuestas que preceden al reforzador es la que queda vinculada a él (el problema del aprendizaje, que ya abordamos); segundo, determina la <em>tasa de ocurrencia</em> de esa respuesta seleccionada (el problema de la acción, que es el tema de este capítulo y los siguientes). La ley se expresa ahora como una función: <span class="math inline">\(R = f(r)\)</span>, donde <span class="math inline">\(R\)</span> es la tasa de respuesta y <span class="math inline">\(r\)</span> es alguna medida del reforzamiento recibido. La forma de esa función — qué tan sensible es la tasa de respuesta a los cambios en el reforzamiento — será precisamente lo que necesitamos entender.</p>
+<p>Una nota terminológica. Hasta ahora hemos llamado “sucesos biológicamente importantes” a las consecuencias que importan a los organismos. A partir de este capítulo, cuando esas consecuencias operen modificando la tasa de respuesta de una acción, las llamaremos <em>reforzadores</em> — el término estándar de la tradición operante. Un reforzador es un SBI que sigue a una respuesta y modifica su probabilidad futura de ocurrencia. El concepto es el mismo.</p>
+</section>
+<section id="entornos-intermitentes-los-programas-de-refuerzo" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="entornos-intermitentes-los-programas-de-refuerzo"><span class="header-section-number">13.3</span> Entornos intermitentes: los programas de refuerzo</h2>
+<p>El mundo fuera del laboratorio rara vez entrega consecuencias de manera continua. No todos los intentos de un depredador son exitosos: las presas frecuentemente escapan. No todas las visitas de una abeja a una flor terminan en acceso a néctar. No en todas las visitas a un mercado se encuentran mandarinas. La compra de un billete de lotería rara vez produce un premio. Un estudiante que levanta la mano en clase a veces recibe atención del profesor y a veces no. Las consecuencias biológicamente importantes son, en su inmensa mayoría, intermitentes.</p>
+<p>Un protocolo experimental donde cada respuesta va seguida de refuerzo puede ser útil para estudiar la adquisición de una respuesta, pero no captura la riqueza de las posibles relaciones entre comportamiento y consecuencias en los entornos naturales. Skinner reconoció esto tempranamente — en parte por razones económicas, y en parte por accidente, dejó de reforzar cada respuesta — y se percató de que las reglas que determinan cuándo y cómo se entrega un reforzador producen efectos profundos y reproducibles sobre el comportamiento. A esas reglas las llamó <em>programas de refuerzo</em>.</p>
+<p>Los programas de refuerzo son formalizaciones de una propiedad estadística del entorno: la regla que mapea acciones a consecuencias. En la terminología de los sistemas de retroalimentación que introdujimos en el capítulo 5, los programas describen la <em>función del entorno</em> — la transformación que convierte el comportamiento del organismo en una tasa de reforzamiento. La otra mitad del sistema es la <em>función del organismo</em>, <span class="math inline">\(R = f(r)\)</span>: la transformación que convierte la tasa de reforzamiento en una tasa de respuesta. Las dos funciones operan acopladas en un lazo cerrado, exactamente como en los sistemas de retroalimentación que ya conocen.</p>
+<p>Skinner identificó dos dimensiones fundamentales que definen las reglas del entorno. La primera es si la disponibilidad del reforzador depende del <em>número de respuestas</em> emitidas o del <em>tiempo transcurrido</em> desde el último reforzador. Piensen en la diferencia entre un vendedor que gana por comisión (cada venta cuenta) y un pescador que espera a que el pez muerda (el tiempo es lo relevante). La segunda dimensión es si el criterio — sea el número de respuestas o el tiempo — es <em>fijo</em> o <em>variable</em> de una ocasión a otra. El salario quincenal llega siempre cada quince días; la espera del autobús varía impredeciblemente.</p>
+<p>Al combinar las dos dimensiones se generan cuatro programas básicos. En los <em>programas de razón</em>, el reforzador depende del número de respuestas: razón fija (RF) cuando ese número es constante, razón variable (RV) cuando varía aleatoriamente alrededor de una media. En los <em>programas de intervalo</em>, la disponibilidad del reforzador depende del tiempo transcurrido: intervalo fijo (IF) cuando el tiempo es constante, intervalo variable (IV) cuando varía aleatoriamente. Un punto crucial que conviene aclarar desde el inicio: en los programas de intervalo, transcurrido el tiempo requerido, el reforzador no se entrega automáticamente — el organismo debe emitir una respuesta para obtenerlo. El tiempo “abre” la oportunidad; la respuesta la ejecuta. Esta distinción separa los programas de intervalo de los programas de <em>tiempo fijo</em>, donde el reforzador se entrega independientemente de la respuesta — un arreglo que es, en esencia, condicionamiento clásico temporal.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_1_registro_acumulativo.png" id="ffig_13_1_registro_acumulativo.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>[Ilustración del registro acumulativo creado por Skinner ]</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="los-patrones-regularidades-sorprendentes" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="los-patrones-regularidades-sorprendentes"><span class="header-section-number">13.4</span> Los patrones: regularidades sorprendentes</h2>
+<p>La figura 13.2 muestra los registros acumulativos estilizados que se observan con cada programa, obtenidos después de un entrenamiento extenso. Estos patrones representan una de las regularidades más robustas en toda la ciencia del comportamiento. Se han replicado en ratas, palomas, monos, peces, humanos adultos y niños, bajo contextos experimentales enormemente diversos. Cuando se entiende la regla del entorno, el patrón del comportamiento se vuelve predecible con notable precisión.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_2_cuatro_programas.png" id="fig_13_2_cuatro_programas.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Figura 13.2: Registros acumulativos idealizados para los cuatro programas básicos. VR: pendiente alta y sostenida, sin pausas. FR: pendiente alta con pausas planas después de cada reforzador. VI: pendiente moderada y estable. FI: festoneo (scalloping) — pausa después del reforzador seguida de aceleración progresiva. Las marcas diagonales sobre la línea indican la entrega del reforzador</em></p>
+</div>
+</div>
+</div>
+<p>Lo primero que llama la atención es que los programas fijos — tanto de razón como de intervalo — producen una <em>pausa</em> inmediatamente después de la obtención del reforzador. El organismo deja de responder durante un período variable, y luego retoma la actividad. En los programas de razón fija, después de la pausa el organismo responde a una tasa alta y constante hasta completar el requisito. En los programas de intervalo fijo, después de la pausa la tasa se va acelerando gradualmente conforme se acerca el momento en que el reforzador estará nuevamente disponible, produciendo el patrón curvilíneo llamado <em>festoneo</em> (<em>scallop</em>).</p>
+<p>Esa pausa post-reforzamiento es notable porque, a primera vista, contradice la ley del efecto. Si el refuerzo fortalece la respuesta que lo precede, la tasa más alta debería ocurrir <em>justo después</em> del reforzador, cuando el efecto del fortalecimiento es más reciente. Lo que se observa es exactamente lo opuesto. La contradicción es instructiva: obliga a preguntar qué está ocurriendo que la versión más simple de la ley del efecto no captura.</p>
+<p>La historia de ese patrón a lo largo del entrenamiento revela algo más. La figura 13.3 muestra cómo evoluciona el patrón de respuesta bajo un programa de intervalo fijo a lo largo de sesiones sucesivas.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_3_adquisicion_FI.png" id="fig_13_3_adquisicion_FI.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 13.3: Adquisición del patrón de intervalo fijo. Registro acumulativo esquemático mostrando cuatro fases de entrenamiento. Fase I: tasa alta y relativamente constante (lo que predeciría la ley del efecto simple). Fase II: tasa alta inmediatamente después del refuerzo, con pausas incipientes. Fase III: pausas más pronunciadas, inicio de festoneo. Fase IV: festoneo maduro — pausa limpia después del reforzador, aceleración progresiva. Adaptado de Ferster y Skinner, 1957]</em></p>
+</div>
+</div>
+</div>
+<p>En las primeras sesiones, el patrón es exactamente lo que el modelo de Bush y Mosteller del capítulo 8 predeciría: la tasa de respuesta es más alta inmediatamente después del refuerzo, porque el valor <span class="math inline">\(Q\)</span> de la respuesta acaba de ser actualizado positivamente. Es solo después de varias sesiones de entrenamiento — cuando el organismo ha tenido oportunidad de aprender la <em>estructura temporal</em> del programa — que el patrón se invierte y aparece el festoneo maduro. Este dato tiene dos implicaciones. La primera es que la ley del efecto simple no está equivocada — predice correctamente el comportamiento temprano. La segunda es que algo adicional opera con el entrenamiento: el organismo aprende a usar el reforzador como información temporal, no solo como fortalecedor.</p>
+<p>La otra regularidad central es la diferencia en tasas de respuesta entre programas de razón y de intervalo. Los programas de razón variable producen consistentemente tasas más altas que los de intervalo variable. Esta diferencia podría parecer trivial — quizá los animales en razón variable simplemente reciben más reforzadores por unidad de tiempo, y la tasa de respuesta más alta es consecuencia de esa diferencia en tasa de reforzamiento. Para evaluar esta posibilidad, necesitamos un control riguroso.</p>
+</section>
+<section id="el-experimento-de-cajas-acopladas" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="el-experimento-de-cajas-acopladas"><span class="header-section-number">13.5</span> El experimento de cajas acopladas</h2>
+<p>Catania (1971) diseñó un experimento ingenioso para descartar la explicación por diferencia en tasas de reforzamiento. El arreglo, conocido como <em>protocolo de cajas acopladas</em> (<em>yoked</em>), funciona así: en una cámara, una paloma trabaja bajo un programa de razón variable — la velocidad a la que responde determina su tasa de reforzamiento y los intervalos entre reforzadores. En una segunda cámara, para otra paloma la disponibilidad de un reforzador ocurre cada vez que la paloma líder lo recibe. La segunda paloma solo necesita emitir una respuesta para recogerlo, pero la <em>disponibilidad</em> del reforzador depende enteramente de lo que hace la primera. El resultado es que ambas palomas experimentan exactamente la misma distribución temporal de reforzadores — la misma tasa de reforzamiento, los mismos intervalos entre reforzadores. Lo único que difiere es la <em>regla</em>: para la primera, la tasa de reforzamiento depende proporcionalmente de su tasa de respuesta; para la segunda, la tasa de reforzamiento es independiente de su tasa de respuesta.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_4_cajas_acopladas.png" id="fig_13_4_cajas_acopladas.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 13.4: Registros acumulativos del experimento de cajas acopladas (Catania, 1971). Panel superior: paloma bajo programa de razón variable, tasa alta (~5 respuestas/segundo). Panel inferior: paloma acoplada bajo programa de intervalo variable resultante, tasa mucho menor (~1 respuesta/segundo). Ambas reciben la misma tasa de reforzamiento. Las marcas de reforzador están alineadas verticalmente para hacer visible la igualdad en la entrega de refuerzos. Colores del libro.]</em></p>
+</div>
+</div>
+</div>
+<p>El resultado es inequívoco: la paloma bajo razón variable responde a una tasa aproximadamente cinco veces mayor que la paloma acoplada bajo intervalo variable, a pesar de recibir exactamente la misma tasa de reforzamiento. La tasa de reforzamiento no puede ser la explicación. Algo en la <em>estructura de la regla</em> — en la forma de la función de retroalimentación — produce la diferencia.</p>
+<p>¿Qué puede explicar este resultado? Se han propuesto dos mecanismos complementarios, no mutuamente excluyentes. La distinción entre ellos retoma una que ya encontramos en el capítulo 7: la perspectiva <em>molecular</em> analiza el comportamiento evento por evento — qué propiedades de cada respuesta individual son seleccionadas por el refuerzo — mientras que la perspectiva <em>molar</em> analiza relaciones agregadas entre tasas de respuesta y tasas de reforzamiento a lo largo de períodos extendidos. La primera explicación opera en el nivel molecular; la segunda en el molar.</p>
+</section>
+<section id="primera-explicación-el-reforzamiento-diferencial-de-tiempos-entre-respuestas" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="primera-explicación-el-reforzamiento-diferencial-de-tiempos-entre-respuestas"><span class="header-section-number">13.6</span> Primera explicación: el reforzamiento diferencial de tiempos entre respuestas</h2>
+<p>Hasta ahora hemos hablado de la respuesta como un evento puntual — presionar la palanca, picar la tecla. Pero cada respuesta tiene propiedades adicionales que pueden ser objeto de selección por las consecuencias. Un tirador de penaltis no solo patea: lo hace con cierta fuerza, dirección y ángulo, y el resultado del tiro retroalimenta selectivamente esas propiedades. Los porteros que bloquean más tiros del lado derecho generan un sesgo en el tirador hacia el izquierdo. Las propiedades de la respuesta — no solo su ocurrencia — son moldeadas por el refuerzo.</p>
+<p>Una propiedad especialmente relevante para los programas de refuerzo es el <em>tiempo entre respuestas</em> (TER): el intervalo temporal que separa una respuesta de la siguiente. El recíproco de la tasa de respuesta es precisamente el TER promedio: si respondo diez veces por minuto, el TER promedio es de seis segundos. Pero los tiempos entre respuestas no son uniformes. Los organismos responden en ráfagas — series rápidas de respuestas con TER cortos — separadas por pausas con TER largos. La distribución resultante está cargada hacia tiempos cortos, porque las ráfagas contienen más respuestas que los intervalos entre ellas.</p>
+<p>Ahora viene el punto clave. En un programa de razón variable, cada respuesta tiene la misma probabilidad de producir el reforzador — una en <span class="math inline">\(n\)</span>, donde <span class="math inline">\(n\)</span> es el requisito promedio. Esa probabilidad no depende de la duración del TER que precede a la respuesta: un TER corto y uno largo tienen la misma probabilidad de terminar en refuerzo. El programa es <em>neutro</em> respecto a la distribución de TER; la deja intacta. En un programa de intervalo variable, la situación es diferente. El reforzador se vuelve disponible después de que transcurre un tiempo, y se entrega a la primera respuesta que ocurre después de ese momento. Conforme pasa más tiempo desde la última respuesta, la probabilidad de que un reforzador se haya acumulado y esté esperando <em>crece</em>. Por lo tanto, las respuestas precedidas por TER largos tienen una probabilidad mayor de encontrar un reforzador disponible que las respuestas precedidas por TER cortos. El programa termina reforzando selectivamente los TER largos, lo cual desplaza la distribución de TER hacia duraciones más altas, lo cual produce tasas de respuesta más bajas. La asimetría entre los dos tipos de programa no es que uno refuerce TER cortos y el otro TER largos: es que uno es neutro y el otro sesga hacia TER largos.</p>
+<p>La evidencia para esta explicación viene de dos fuentes. La primera es descriptiva: en programas de intervalo variable, la distribución de TER observados se asemeja efectivamente a la distribución de TER que fueron seguidos por refuerzo. La segunda es experimental: es posible modificar directamente la distribución de TER mediante programas diseñados para reforzar selectivamente ciertos intervalos. Los <em>programas de reforzamiento diferencial de tasas bajas</em> (DRL, por sus siglas en inglés) exigen que el organismo espere al menos cierto tiempo entre respuestas — digamos, 20 segundos — para obtener el reforzador. Bajo DRL, las palomas aprenden a responder con TER extraordinariamente largos, produciendo tasas bajísimas. Simétricamente, los programas que requieren TER menores a un cuarto de segundo producen tasas extremadamente altas. El TER es una propiedad genuinamente reforzable del comportamiento.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>🖥 Simuladores del Capítulo 13
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este capítulo tiene dos simuladores interactivos que permiten explorar los mecanismos que acabamos de describir.</p>
+<p><em>Simulador 13.1 — Programas de Refuerzo.</em> Genera registros acumulativos para los cuatro programas básicos (RV, RF, IV, IF) con parámetros ajustables. El panel inferior muestra las funciones de retroalimentación del entorno — la relación entre la tasa de respuesta y la tasa de reforzamiento bajo cada tipo de programa. Con este simulador puedes verificar directamente las diferencias en pendiente, pausas y festoneo que describimos en las secciones anteriores.</p>
+<p><em>Simulador 13.2 — Reforzamiento diferencial de tiempos entre respuestas.</em> Este simulador hace visible algo que de otro modo es difícil de intuir: <em>por qué</em> los programas de razón e intervalo terminan reforzando diferentes TER, a pesar de que el experimentador no diseñó esa selección. El simulador genera un organismo virtual que responde en ráfagas — con TER cortos dentro de cada ráfaga y TER largos entre ellas — y muestra qué TER terminan siendo seguidos por refuerzo bajo cada programa. Cuatro paneles cuentan la historia completa: la distribución de todos los TER comparada con la de los TER reforzados, la probabilidad condicional de reforzamiento como función de la duración del TER, y la evolución de la distribución a lo largo del entrenamiento. La predicción central es clara: bajo RV, la curva de probabilidad condicional es plana (el programa es neutro); bajo IV, sube para TER largos (el programa sesga). Con el entrenamiento, esa asimetría desplaza la distribución de TER en direcciones opuestas — y con ella, la tasa de respuesta observable.</p>
+<p>Antes de usar cada simulador, registra tu predicción. Los ejercicios están diseñados para que formules hipótesis específicas y las verifiques con la simulación.</p>
+<p>📎 <a href="https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/programas_refuerzo.ipynb">Abrir simuladores en Google Colab</a></p>
+</div>
+</div>
+</section>
+<section id="segunda-explicación-sensibilidad-a-las-correlaciones" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="segunda-explicación-sensibilidad-a-las-correlaciones"><span class="header-section-number">13.7</span> Segunda explicación: sensibilidad a las correlaciones</h2>
+<p>La explicación por tiempos entre respuestas opera a nivel molecular — en la microestructura temporal de las respuestas individuales. La segunda explicación opera a nivel molar — en la relación agregada entre tasas de respuesta y tasas de reforzamiento.</p>
+<p>Recordemos la ley del efecto de Skinner: <span class="math inline">\(R = f(r)\)</span>. La tasa de respuesta es una función de la tasa de reforzamiento. Pero la tasa de reforzamiento no es un dato fijo del entorno — es ella misma resultado de la interacción entre el comportamiento del organismo y la regla del programa. En un programa de razón variable RV-30, si el organismo responde 30 veces por minuto obtiene un reforzador por minuto; si responde 60 veces por minuto obtiene dos; si responde 120, obtiene cuatro. La relación entre tasa de respuesta y tasa de reforzamiento es <em>proporcional</em> — responder más rápido siempre produce más reforzadores. En un programa de intervalo variable IV-60s, una vez que el organismo responde con frecuencia suficiente para no “perderse” los reforzadores disponibles, responder más rápido no produce ningún reforzador adicional. La tasa máxima de reforzamiento está limitada por el valor del intervalo y es insensible a incrementos en la tasa de respuesta.</p>
+<p>Para pensar en un ejemplo cotidiano: un traductor que cobra por cuartilla traducida tiene una relación proporcional entre esfuerzo y ganancia — cada cuartilla adicional produce más dinero. Una persona que espera el autobús tiene una relación diferente: una vez que está en la parada, el número de veces que asoma la cabeza para ver si viene no afecta cuándo llega.</p>
+<p>La propuesta de Baum (1973) es que los organismos son sensibles a esta correlación entre su tasa de respuesta y su tasa de reforzamiento. No solo responden más cuando hay más refuerzo (eso es la ley del efecto simple); responden más cuando responder más produce más refuerzo — cuando la correlación es positiva. Un organismo cuyo comportamiento está controlado por esa correlación es una instancia del sistema de retroalimentación que introdujimos en el capítulo 5. La tasa de respuesta determina la tasa de reforzamiento, y esta a su vez determina la tasa de respuesta, hasta que el sistema alcanza un equilibrio.</p>
+<p>La figura 13.5 muestra las funciones de retroalimentación — la transformación que el programa hace de la tasa de respuesta del organismo en una tasa de reforzamiento — para programas de razón variable y de intervalo variable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_5_funciones_retroalimentacion.png" id="fig_13_5_funciones_retroalimentacion.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 13.5: Funciones de retroalimentación (función del entorno). Eje horizontal: tasa de respuesta (R). Eje vertical: tasa de reforzamiento (r). La función de RV es una recta desde el origen (relación proporcional, pendiente = 1/n donde n es el requisito promedio). Las funciones de IV son curvas cóncavas que se aceleran rápidamente con tasas bajas y se estabilizan en una asíntota (1/intervalo programado). Se muestran dos curvas de IV: una “rica” (intervalo corto, asíntota alta) y una “pobre” (intervalo largo, asíntota baja). Una línea vertical punteada marca una tasa máxima de respuesta. Azul para RV, verde para IV rico, gris para IV pobre, naranja para la línea de tasa máxima.]</em></p>
+</div>
+</div>
+</div>
+<p>La forma de las funciones revela inmediatamente por qué los organismos responden más bajo razón que bajo intervalo. En razón, cada respuesta adicional acerca al organismo al siguiente reforzador — invertir más esfuerzo siempre rinde más. En intervalo, una vez alcanzada una tasa moderada, el esfuerzo adicional es desperdiciado. Un organismo sensible a estas correlaciones debería responder rápido bajo razón y moderadamente bajo intervalo. Y eso es exactamente lo que se observa.</p>
+</section>
+<section id="el-reforzador-como-estímulo-discriminativo" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="el-reforzador-como-estímulo-discriminativo"><span class="header-section-number">13.8</span> El reforzador como estímulo discriminativo</h2>
+<p>Las dos explicaciones anteriores tratan al reforzador como una consecuencia que modifica la probabilidad de la respuesta que lo precede — ya sea fortaleciendo ciertos TER o modulando la tasa de respuesta a través de correlaciones. Pero el reforzador puede desempeñar un papel adicional que no cabe en ninguna de esas dos funciones: actuar como una <em>señal</em> que predice las condiciones que vendrán a continuación.</p>
+<p>Recuerden que en los capítulos de asignación de crédito vimos cómo los organismos aprenden a usar estímulos del entorno como predictores de sucesos biológicamente importantes. Skinner extendió esa lógica con un movimiento que tiene la misma estructura que su innovación sobre las respuestas. Así como liberó a la respuesta de necesitar un estímulo provocador — transformándola de evento discreto provocado en flujo continuo de acción emitida, medida como tasa — de la misma forma liberó al estímulo de tener que provocar una respuesta discreta. En lugar de un estímulo que elicita, Skinner propuso un estímulo que <em>dispone la ocasión</em>: un contexto en cuya presencia ciertas respuestas producen reforzadores y otras no. Los llamó <em>estímulos discriminativos</em>. Su sala de estudio dispone la ocasión para concentrarse; el bar dispone la ocasión para una cerveza. No son estímulos que provocan respuestas como un reflejo — son contextos que informan al organismo sobre la regla respuesta-reforzador actualmente vigente.</p>
+<p>La idea potente de Skinner es que los propios reforzadores pueden convertirse en estímulos discriminativos. Consideren un programa de intervalo fijo de 60 segundos. Cada vez que el organismo obtiene un reforzador, sabe algo: en los próximos 60 segundos, ninguna respuesta producirá otro reforzador. El reforzador señala un período de “sequía” inminente. Un organismo que ha aprendido esta relación dejará de responder inmediatamente después del reforzador — no porque el reforzamiento haya debilitado la respuesta, sino porque la ha informado. La pausa post-reforzamiento en los programas fijos no es un fracaso de la ley del efecto; es un éxito del aprendizaje discriminativo.</p>
+<p>Piensen en un ejemplo de su vida cotidiana. Un examen parcial es, en primera instancia, un reforzador (o un resultado aversivo, dependiendo de la calificación). Pero también funciona como estímulo discriminativo: les predice que la probabilidad de otro examen en los próximos días es muy baja. El patrón de estudio que resulta — alta intensidad antes del examen, caída abrupta después — tiene la misma forma que el festoneo de las palomas bajo intervalo fijo. No es coincidencia: la estructura temporal del programa es la misma.</p>
+<p>Este análisis extiende de manera natural los principios del bloque anterior. La asignación de crédito a estímulos, que estudiamos en el capítulo 6, opera aquí sobre los propios reforzadores: el organismo aprende qué señales — incluyendo la ocurrencia misma del reforzador — predicen la disponibilidad de futuras oportunidades de reforzamiento. La diferencia con el condicionamiento clásico es que lo que se predice no es un suceso biológicamente importante sino una <em>relación respuesta-reforzador</em>: si esta respuesta, en este momento, producirá o no una consecuencia.</p>
+</section>
+<section id="la-función-de-retroalimentación-formalización" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="la-función-de-retroalimentación-formalización"><span class="header-section-number">13.9</span> La función de retroalimentación: formalización</h2>
+<p>Hasta ahora hemos descrito las funciones de retroalimentación cualitativamente. Formalizar su forma precisa permite hacer predicciones cuantitativas y revela algo sobre la estructura del problema.</p>
+<p>Para los programas de razón, la formalización es inmediata. Si el requisito promedio es <span class="math inline">\(n\)</span> respuestas por reforzador, entonces la tasa de reforzamiento <span class="math inline">\(r\)</span> es directamente proporcional a la tasa de respuesta <span class="math inline">\(R\)</span>:</p>
+<p><span class="math display">\[r = \frac{R}{n}\]</span></p>
+<p>Cada respuesta es una fracción <span class="math inline">\(1/n\)</span> de un reforzador. La función es una línea recta desde el origen con pendiente <span class="math inline">\(1/n\)</span>. Duplicar la tasa de respuesta duplica la tasa de reforzamiento — sin límite teórico.</p>
+<p>Para los programas de intervalo, la formalización es más interesante. El reforzador se programa cada <span class="math inline">\(t\)</span> segundos en promedio, pero solo se entrega cuando el organismo responde. Si el organismo responde a una tasa lo suficientemente alta, no se “pierde” ningún reforzador disponible y la tasa de reforzamiento se aproxima a <span class="math inline">\(1/t\)</span>. Si la tasa de respuesta es muy baja, puede que el reforzador esté disponible pero el organismo no responda a tiempo, y se pierdan oportunidades. La función resultante es una curva cóncava que crece rápidamente con tasas de respuesta bajas y se aplana conforme la tasa aumenta, acercándose asintóticamente a <span class="math inline">\(1/t\)</span>.</p>
+<p>Rachlin (1978) propuso una parametrización elegante que unifica ambos tipos de programa en una sola expresión. (Staddon, 1979, y Prelec, 1982, ofrecen derivaciones más rigurosas de la función de retroalimentación para programas de intervalo, partiendo de supuestos diferentes sobre la distribución de respuestas en el tiempo. Las tres formulaciones coinciden en lo esencial: la función es cóncava y asintótica. Presentamos la de Rachlin por ser la más accesible algebraicamente.)</p>
+<p><span class="math display">\[r = d \cdot R^m\]</span></p>
+<p>donde <span class="math inline">\(d\)</span> es una constante de escala y <span class="math inline">\(m\)</span> es un exponente entre 0 y 1 que captura el <em>tipo</em> de función de retroalimentación. Cuando <span class="math inline">\(m = 1\)</span>, la función es lineal — un programa de razón. Conforme <span class="math inline">\(m\)</span> se acerca a 0, la función se aplana cada vez más, representando programas donde la tasa de reforzamiento es cada vez más insensible a la tasa de respuesta. En el límite, <span class="math inline">\(m = 0\)</span> corresponde a un programa de tiempo fijo, donde el reforzador llega independientemente del comportamiento.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figuras/fig_13_6_rachlin.png" id="fig_13_6_rachlin.png" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="750"></p>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>[FIGURA 13.6: Familia de funciones de retroalimentación de Rachlin. Eje horizontal: tasa de respuesta (R). Eje vertical: tasa de reforzamiento (r). Cinco curvas para m = 1.0, 0.5, 0.2, 0.1, 0.05. La curva con m = 1 es lineal (razón). Conforme m decrece, las curvas se vuelven progresivamente más cóncavas. Todas parten del origen y convergen en el mismo punto cuando R alcanza la tasa máxima. Etiqueta para m = 1: “RV”; etiqueta para m = 0.05: “≈ Tiempo fijo”. Colores del libro: azul para m = 1, gradiente hacia gris para m decrecientes.]</em></p>
+</div>
+</div>
+</div>
+<p>La expresión de Rachlin tiene una virtud adicional. Noten que el recíproco de <span class="math inline">\(r\)</span> es el tiempo entre reforzadores y el recíproco de <span class="math inline">\(R\)</span> es el tiempo entre respuestas. La ecuación puede leerse en cualquiera de los dos marcos — tasas o tiempos — según convenga. En capítulos posteriores, cuando formalicemos la <em>función del organismo</em> (<span class="math inline">\(R\)</span> como función de <span class="math inline">\(r\)</span>), el punto de equilibrio del sistema será la intersección de las dos funciones: el punto donde lo que el organismo produce (tasa de respuesta) es consistente con lo que el entorno devuelve (tasa de reforzamiento).</p>
+</section>
+<section id="lo-que-la-ley-del-efecto-simple-no-explica-y-lo-que-sí" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="lo-que-la-ley-del-efecto-simple-no-explica-y-lo-que-sí"><span class="header-section-number">13.10</span> Lo que la ley del efecto simple no explica (y lo que sí)</h2>
+<p>Conviene hacer un balance. La ley del efecto en su versión más directa — las respuestas que preceden al refuerzo se fortalecen — predice correctamente varios aspectos de los datos: las tasas más altas bajo razón que bajo intervalo (dado que en intervalo las respuestas lentas son selectivamente reforzadas, mientras que en razón el programa es neutro respecto a la velocidad), la relación positiva entre tasa de refuerzo y tasa de respuesta, y el comportamiento temprano bajo programas de intervalo fijo (tasa alta después del reforzador, antes de que se desarrolle la discriminación temporal). Estos son logros del modelo de Bush y Mosteller que ya conocen, aplicado ahora a la distribución temporal de respuestas.</p>
+<p>Pero la ley del efecto simple, sin principios adicionales, no explica la pausa post-reforzamiento en los programas fijos (que requiere aprendizaje discriminativo temporal), la forma específica del festoneo en intervalo fijo (que requiere sensibilidad a la posición temporal dentro del intervalo), ni la magnitud exacta de la diferencia entre razón e intervalo cuando las tasas de reforzamiento están igualadas (que requiere sensibilidad a las correlaciones o al reforzamiento diferencial de TER).</p>
+<p>Para inicios de los años 60, el panorama era el siguiente: la ley del efecto de Thorndike, transformada y refinada por Skinner, había ampliado su dominio desde la adquisición de respuestas individuales hasta el mantenimiento del comportamiento en estado estable. Se había reconocido que las reglas del entorno — los programas de refuerzo — determinan no solo la tasa de respuesta sino su distribución temporal. Se había descubierto que los propios reforzadores pueden actuar como señales discriminativas. Y se había iniciado el análisis formal de los programas como funciones de retroalimentación.</p>
+<p>Pero dos resultados experimentales obtenidos al inicio de esa década transformarían el campo. Herrnstein (1961) descubrió que cuando los organismos pueden elegir entre dos respuestas que operan bajo programas distintos, la <em>proporción</em> de respuestas dedicadas a cada alternativa iguala la proporción de reforzadores obtenidos — una regularidad cuantitativa conocida como la <em>ley de igualación</em>. Este resultado desplazó la pregunta central del campo: ya no se trataba de explicar la tasa de respuesta bajo un solo programa, sino de explicar la <em>distribución</em> del comportamiento entre múltiples fuentes de reforzamiento que compiten por el tiempo del organismo. La ley de igualación y sus extensiones son el tema del siguiente capítulo.</p>
+</section>
+<section id="conexiones" class="level2" data-number="13.11">
+<h2 data-number="13.11" class="anchored" data-anchor-id="conexiones"><span class="header-section-number">13.11</span> Conexiones</h2>
+<section id="hacia-atrás" class="level3" data-number="13.11.1">
+<h3 data-number="13.11.1" class="anchored" data-anchor-id="hacia-atrás"><span class="header-section-number">13.11.1</span> Hacia atrás</h3>
+<p><strong>Sistemas de retroalimentación (capítulo 5).</strong> La interacción entre el organismo y los programas de refuerzo es un sistema de retroalimentación de lazo cerrado: la tasa de respuesta determina, a través de la función del entorno, la tasa de reforzamiento, y esta a su vez determina, a través de la función del organismo, la tasa de respuesta. La novedad respecto al capítulo 5 es que ahora tenemos una taxonomía formal de las funciones del entorno — los programas — y podemos parametrizar su forma (la expresión de Rachlin). Encontrar el equilibrio del sistema requiere especificar ambas funciones y hallar su intersección, que es lo que haremos en capítulos posteriores.</p>
+<p><strong>Bush y Mosteller (capítulo 8).</strong> La ley del efecto simple es el modelo de Bush y Mosteller aplicado al valor <span class="math inline">\(Q\)</span> de una respuesta: <span class="math inline">\(Q\)</span> sube cuando el refuerzo ocurre, baja cuando no, y se estabiliza cuando la tasa de refuerzo es constante. Esa formulación genera dos predicciones específicas para programas de refuerzo. La primera — que la tasa de respuesta debería ser proporcional a la tasa de refuerzo — es aproximadamente correcta para comparaciones dentro de un mismo tipo de programa. La segunda — que la tasa de respuesta debería ser máxima inmediatamente después del reforzador — es correcta durante las primeras sesiones de entrenamiento bajo intervalo fijo, pero se invierte con la experiencia. La inversión señala que un principio adicional (aprendizaje discriminativo temporal) opera sobre la línea base que B&amp;M establece.</p>
+<p><strong>Rescorla-Wagner (capítulo 11).</strong> La función discriminativa del reforzador que explica las pausas en programas fijos es, en esencia, un nuevo problema de asignación de crédito: el organismo aprende qué señales predicen la disponibilidad del reforzador. El reforzador se convierte en un estímulo condicionado que predice la ausencia temporal de oportunidades de reforzamiento. Los mismos principios de competencia entre predictores — que Rescorla-Wagner formaliza — operan aquí sobre la dimensión temporal.</p>
+<p><strong>Traducción del conocimiento en acción (capítulo 12).</strong> El capítulo anterior mostró cómo los sistemas de comportamiento canalizan las predicciones en acciones organizadas. Este capítulo complementa esa perspectiva: las reglas del entorno moldean la <em>distribución temporal</em> de esas acciones. Los sistemas de comportamiento determinan la <em>forma</em> de la respuesta; los programas de refuerzo determinan su <em>frecuencia</em>.</p>
+</section>
+<section id="hacia-adelante" class="level3" data-number="13.11.2">
+<h3 data-number="13.11.2" class="anchored" data-anchor-id="hacia-adelante"><span class="header-section-number">13.11.2</span> Hacia adelante</h3>
+<p><strong>La ley de igualación y la elección (capítulo siguiente).</strong> La diferencia entre razón e intervalo, aun con tasas de refuerzo igualadas, deja abierta la pregunta de qué controla exactamente la distribución del comportamiento cuando hay varias opciones disponibles simultáneamente. Herrnstein (1961) descubrió que esa distribución obedece una regla cuantitativa precisa — la ley de igualación — que reemplaza la tasa absoluta de refuerzo por la tasa <em>relativa</em> como variable independiente. El paso de un programa a dos programas concurrentes transforma el problema de la acción en un problema de elección.</p>
+<p><strong>Maximización local.</strong> Una vez establecida la regularidad de la igualación, surge la pregunta de qué mecanismo la produce. Los modelos de maximización local proponen que los organismos no necesitan calcular proporciones globales: basta con que en cada momento elijan la alternativa que ofrece la mayor probabilidad instantánea de refuerzo. El mejoramiento (<em>melioration</em>) y la maximización momentánea de Shimp son dos versiones de esta idea, y ambas generan igualación como resultado de equilibrio sin que el organismo “sepa” que está igualando.</p>
+<p><strong>Optimización en equilibrio.</strong> Si tanto la función del organismo como la función del entorno están especificadas, el estado estable del sistema es su intersección — el punto donde el organismo no tiene incentivo para cambiar su tasa de respuesta. Staddon y Rachlin formalizan esa perspectiva: la conducta en estado estable puede entenderse como la solución de un problema de optimización sujeto a restricciones. Esta perspectiva conecta los programas de refuerzo con los modelos económicos de la elección y con la pregunta de si los organismos maximizan alguna cantidad — y si la igualación es o no una consecuencia de esa maximización.</p>
+<p><strong>La ley del efecto relativa.</strong> El bloque cierra con una formulación que juega un doble papel. Como regla de <em>aprendizaje</em>, la ley del efecto relativa describe cómo se actualiza el <em>valor</em> de una respuesta en función de las consecuencias obtenidas — es una regla de adquisición del conocimiento, análoga a Bush y Mosteller pero operando sobre respuestas en contextos de elección. Como regla de <em>acción</em>, describe cómo el organismo traduce esos valores en una distribución de comportamiento — una regla de respuesta que genera las proporciones observadas en la igualación. Esa dualidad — la misma ecuación leída como algoritmo de aprendizaje y como función de elección — es la resolución formal del problema que abrió este bloque: la relación entre lo que el organismo sabe y lo que hace.</p>
+<p><strong>Incertidumbre y teoría de la información (módulo siguiente).</strong> A lo largo de este capítulo hemos descrito los programas de reforzamiento desde la perspectiva del investigador: una regla que especifica cuántas respuestas o cuánto tiempo se requiere para obtener un reforzador. Pero si cambiamos el punto de vista y nos colocamos en el lugar del organismo, el panorama se transforma. Para el organismo, cada programa es una fuente de incertidumbre acerca de cuándo llegará el próximo reforzador. En los programas fijos, esa incertidumbre puede reducirse: el festoneo que observamos en intervalo fijo es precisamente el organismo usando información temporal para predecir la disponibilidad del reforzador. En los programas variables, en cambio, el entorno es “sin memoria” — el tiempo transcurrido desde el último reforzador no ofrece ninguna pista sobre cuándo llegará el siguiente. Son entornos de máxima incertidumbre. Desde esta perspectiva, la tarea del organismo no es solo responder para obtener reforzadores, sino recolectar información y reducir la ambigüedad de un entorno inherentemente incierto. En el siguiente módulo del libro abandonaremos la descripción puramente externa de los programas para adentrarnos en la teoría de la información y los modelos bayesianos — herramientas que formalizan exactamente esa tarea.</p>
+<hr>
+</section>
+</section>
+<section id="resumen" class="level2" data-number="13.12">
+<h2 data-number="13.12" class="anchored" data-anchor-id="resumen"><span class="header-section-number">13.12</span> Resumen</h2>
+<p>Los organismos que han aprendido a predecir la estructura de su entorno enfrentan un segundo problema: decidir qué hacer, cuánto y cuándo. El estudio de este problema requirió un cambio en la unidad de análisis: de respuestas discretas en ensayos controlados a la tasa de ocurrencia de respuestas emitidas libremente a lo largo del tiempo. Skinner introdujo tanto el concepto (la distinción entre respuestas provocadas y emitidas) como la metodología (la cámara operante y el registro acumulativo) que hicieron posible ese cambio.</p>
+<p>Los entornos naturales no entregan consecuencias de manera continua. Skinner formalizó las posibles reglas que relacionan acciones con consecuencias como <em>programas de refuerzo</em>, que varían en dos dimensiones: si el criterio para obtener el reforzador es un número de respuestas o un tiempo transcurrido, y si ese criterio es fijo o variable. Los cuatro programas resultantes producen patrones de respuesta distintos y extraordinariamente reproducibles, que constituyen una de las regularidades empíricas más sólidas de la psicología.</p>
+<p>Dos mecanismos complementarios contribuyen a explicar estos patrones. El primero es el reforzamiento diferencial de tiempos entre respuestas: la estructura del programa determina qué TER tienden a ser seguidos por refuerzo, y esa propiedad de la respuesta es susceptible de selección por sus consecuencias. El segundo es la sensibilidad a las correlaciones entre tasas de respuesta y tasas de reforzamiento: los organismos responden más cuando responder más produce más refuerzo. Los programas de refuerzo pueden formalizarse como funciones de retroalimentación — la función del entorno en un sistema de lazo cerrado — cuya forma determina la estructura de la correlación entre comportamiento y consecuencias.</p>
+<p>La conclusión central del capítulo es que para entender el comportamiento no basta con observar al organismo: es necesario especificar con detalle las reglas que describen la relación entre acciones y consecuencias, y formalizar esas reglas como propiedades del entorno a las que el organismo debe adaptarse.</p>
+<hr>
+</section>
+<section id="ejercicios" class="level2" data-number="13.13">
+<h2 data-number="13.13" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">13.13</span> Ejercicios</h2>
+<p><strong>1.</strong> Un programa de razón fija RF-20 exige 20 respuestas por reforzador. Un programa de intervalo fijo IF-60s entrega un reforzador cada 60 segundos (más la primera respuesta después del intervalo). Supón que un organismo responde a una tasa constante de 20 respuestas por minuto bajo ambos programas. Calcula la tasa de reforzamiento que obtendría en cada caso. ¿Cuál programa genera más reforzadores por minuto a esa tasa de respuesta? ¿Qué pasaría si el organismo duplicara su tasa de respuesta en cada programa?</p>
+<p><strong>2.</strong> Usa la función de retroalimentación de Rachlin, <span class="math inline">\(r = d \cdot R^m\)</span>, con <span class="math inline">\(d = 0.1\)</span>. Calcula <span class="math inline">\(r\)</span> para tasas de respuesta de 10, 50 y 100 respuestas por minuto, con <span class="math inline">\(m = 1.0\)</span> (razón), <span class="math inline">\(m = 0.5\)</span> y <span class="math inline">\(m = 0.1\)</span> (intervalo). ¿A qué tasa de respuesta la diferencia entre razón e intervalo se vuelve más pronunciada? ¿Qué relación tiene esto con la forma de las funciones de retroalimentación?</p>
+<p><strong>3.</strong> En el capítulo 8 vimos que el modelo de Bush y Mosteller predice que la tasa de respuesta más alta debería ocurrir inmediatamente después del reforzador (porque <span class="math inline">\(Q\)</span> acaba de ser actualizado positivamente). Explica por qué esta predicción es correcta para las primeras sesiones bajo intervalo fijo pero se invierte con el entrenamiento extenso. ¿Qué principio adicional necesitas para explicar la inversión?</p>
+<p><strong>4.</strong> Diseña un experimento (no necesita ser realizable, solo conceptualmente claro) que permita distinguir entre la explicación por TER y la explicación por correlaciones. Especifica qué programa usarías, qué variable manipularías y qué resultado favorecería cada explicación. (Pista: piensa en un programa que mantenga constante la correlación entre tasa de respuesta y tasa de refuerzo pero altere la distribución de TER reforzados.)</p>
+<p><strong>5.</strong> Imagina que un estudiante estudia bajo un programa de “intervalo fijo” natural: sus exámenes son cada tres semanas. Describe el patrón de estudio que predecirías basándote en los datos de este capítulo. Ahora imagina que el profesor cambia a exámenes sorpresa (intervalo variable). ¿Cómo cambiaría el patrón? Explica tu predicción en términos de la función discriminativa del examen como señal temporal.</p>
+<p><strong>6.</strong> <em>(Reflexión)</em> Este capítulo presentó una regularidad notable: el mismo organismo, con la misma motivación, produce patrones de comportamiento radicalmente distintos bajo diferentes programas de refuerzo. ¿Qué implica esto sobre dónde debemos buscar las causas del comportamiento — en las propiedades del organismo o en las propiedades del entorno? Relaciona tu respuesta con la distinción entre la función del organismo y la función del entorno en los sistemas de retroalimentación.</p>
+<hr>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="13.14">
+<h2 data-number="13.14" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">13.14</span> Lecturas Recomendadas</h2>
+<p><strong>Ferster, C. B., &amp; Skinner, B. F. (1957).</strong> <em>Schedules of Reinforcement.</em> Appleton-Century-Crofts. — El atlas original. Más de 900 páginas de registros acumulativos bajo prácticamente toda combinación imaginable de programas. No es un libro para leer de corrido, pero hojear los registros comunica, mejor que cualquier resumen verbal, la regularidad y reproducibilidad de los patrones.</p>
+<p><strong>Catania, A. C. (1971).</strong> Reinforcement schedules: The role of responses preceding the one that produces the reinforcer. <em>Journal of the Experimental Analysis of Behavior, 15</em>, 271–287. — El experimento de cajas acopladas descrito en el capítulo. Breve, elegante, y central para entender por qué la tasa de reforzamiento no basta para explicar la tasa de respuesta.</p>
+<p><strong>Baum, W. M. (1973).</strong> The correlation-based law of effect. <em>Journal of the Experimental Analysis of Behavior, 20</em>, 137–153. — La propuesta de que la ley del efecto opera sobre correlaciones entre tasas, no sobre eventos individuales. Un artículo corto que desafía la interpretación molecular del refuerzo.</p>
+<p><strong>Rachlin, H. (1978).</strong> A molar theory of reinforcement schedules. <em>Journal of the Experimental Analysis of Behavior, 30</em>, 345–360. — La formalización de las funciones de retroalimentación con la función de potencia. Esencial para entender los programas como propiedades del sistema de retroalimentación.</p>
+<p><strong>Staddon, J. E. R. (2001).</strong> <em>Adaptive Dynamics: The Theoretical Analysis of Behavior.</em> MIT Press. — Los capítulos sobre programas de refuerzo presentan la perspectiva de sistemas dinámicos que adoptamos aquí, con un tratamiento formal de las funciones de retroalimentación y sus equilibrios.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Traduccion_accion.html" class="pagination-link" aria-label="Traducción del Conocimiento en Acción">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Traducción del Conocimiento en Acción</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./igualacion.html" class="pagination-link" aria-label="Elección Recurrente: Igualación">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elección Recurrente: Igualación</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Arturo Bouzas. Licencia CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Construido con Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
