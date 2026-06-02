@@ -1,6 +1,5 @@
 ---
 title: "El Control Local del Comportamiento de Elección"
-format: html
 ---
 
 El capítulo anterior documentó uno de los fenómenos más replicados de la psicología experimental: en equilibrio, los organismos distribuyen sus respuestas entre dos opciones de modo que la proporción de respuestas a cada alternativa iguala a la proporción de reforzadores que obtienen de ella. Mostró que la igualación puede describirse como un equilibrio entre rentabilidades locales o como el resultado compatible con ciertos criterios de maximización global. Pero esas descripciones, por sí solas, no especifican el proceso que lleva al organismo hasta ese equilibrio.
@@ -9,7 +8,7 @@ Consideremos una situación cotidiana. Una persona trabaja frente a su computado
 
 ¿Qué regla sigue esta persona para decidir cuándo cambiar de una fuente a otra? Una posibilidad es que cambie cuando la probabilidad de encontrar un mensaje nuevo en la opción alternativa supera a la probabilidad de que haya uno en la opción actual — es decir, que en cada instante vaya a donde la probabilidad de encontrar algo es mayor. Otra posibilidad es que estime, sobre los últimos minutos de experiencia, la tasa a la que llegan mensajes de cada fuente, y redistribuya su atención para igualar esas tasas locales. Las dos reglas producen el mismo resultado agregado — en equilibrio, el tiempo dedicado a cada fuente refleja la frecuencia relativa de mensajes de cada una — pero lo hacen mediante mecanismos diferentes y generan predicciones distintas sobre el patrón momento a momento de cambios de atención.
 
-Esta es exactamente la pregunta de este capítulo. Sabemos qué distribuye el organismo en equilibrio; la pregunta es qué proceso momento a momento genera esa distribución.  En este capítulo usaremos una distinción que ya estuvo implícita en los capítulos sobre ascenso de colina y sistemas de retroalimentación, y que el capítulo sobre la ley del efecto relativo desarrollará con más detalle: la diferencia entre la *variable de decisión* y la *regla de respuesta* de un modelo. En la kinesis bacteriana, por ejemplo, la variable de decisión es la diferencia entre el nivel de glucosa actual y el del instante anterior; la regla de respuesta es el paso de dar maromas a nado recto cuando esa diferencia es positiva. Los dos términos nombran cosas que cualquier modelo de elección debe especificar: qué compara el organismo y qué hace con el resultado de esa comparación. Los dos modelos que examinaremos pueden producir patrones agregados semejantes, pero proponen variables de decisión distintas — y esa diferencia es lo que el experimento puede detectar. La maximización momentánea supone que el organismo compara probabilidades instantáneas de refuerzo; el mejoramiento supone que compara tasas locales de refuerzo. En ambos caso, la regla de elección es simple y local: escoger la opción con la mayor probabilidad instantánea de refuerzo, o  moverse en la dirección que reduzca la diferencia en las tasas locales de refuerzo, ambas, una forma de optimización. La diferencia en la variable de decisión,  será crucial para evaluar qué tipo de proceso puede generar la igualación global observada.
+Esta es exactamente la pregunta de este capítulo. Sabemos qué distribuye el organismo en equilibrio; la pregunta es qué proceso momento a momento genera esa distribución.  En este capítulo usaremos una distinción que ya estuvo implícita en los capítulos sobre ascenso de colina y sistemas de retroalimentación, y que el capítulo sobre la ley del efecto relativo desarrollará con más detalle: la diferencia entre la *variable de decisión* y la *regla de respuesta* de un modelo. En la kinesis bacteriana, por ejemplo, la variable de decisión es la diferencia entre el nivel de glucosa actual y el del instante anterior; la regla de respuesta es el paso de dar maromas a nado recto cuando esa diferencia es positiva. Los dos términos nombran cosas que cualquier modelo de elección debe especificar: qué compara el organismo y qué hace con el resultado de esa comparación. Los dos modelos que examinaremos pueden producir patrones agregados semejantes, pero proponen variables de decisión distintas — y esa diferencia es lo que el experimento puede detectar. La maximización momentánea supone que el organismo compara probabilidades instantáneas de refuerzo; el mejoramiento supone que compara tasas locales de refuerzo. En ambos caso, la regla de elección es simple y local: escoger la opción con la mayor probabilidad instantánea de refuerzo, o  moverse en la dirección que reduzca la diferencia en las tasas locales de refuerzo, ambas, una forma de optimización. La diferencia en la variable de decisión, será crucial para evaluar qué tipo de proceso puede generar la igualación global observada.
 
 ## Maximización Momentánea
 
@@ -29,29 +28,41 @@ En el experimento más influyente con este protocolo, Nevin (1969) empleó un pr
 
 El primer hallazgo concierne directamente a la predicción del modelo. En las secuencias posteriores al reforzamiento, la probabilidad de cambiar hacia la alternativa opuesta no aumentó como requería la maximización momentánea; por el contrario, tendió a disminuir. Así, aunque la estructura del programa hacía más probable que el reforzador alternativo estuviera disponible conforme pasaban más ensayos sin visitarlo, la conducta no siguió esa función creciente. Este resultado es contrario a la predicción central del modelo.
 
-**[FIGURA 15.1: Dos paneles. Panel superior: probabilidad de que el reforzador esté disponible en la opción alterna (eje vertical) en función del número de elecciones consecutivas de la opción actual (eje horizontal). La curva es creciente, reflejando la estructura de los programas IV. Panel inferior: probabilidad observada de cambiar de opción (eje vertical) en función del mismo número de elecciones consecutivas. La curva es plana o decreciente — contraria a la predicción del modelo. El panel inferior es el resultado crítico y debe destacarse visualmente.]**
+![](Figuras/fig15_1_nevin_iv_iv.png){#fig15_1_nevin_iv_iv.png width=750 fig-align="center"}
+
+::: {.callout-note collapse="true" appearance="minimal"}
+*[FIGURA 15.1: Dos paneles. Panel superior: probabilidad de que el reforzador esté disponible en la opción alterna (eje vertical) en función del número de elecciones consecutivas de la opción actual (eje horizontal). La curva es creciente, reflejando la estructura de los programas IV. Panel inferior: probabilidad observada de cambiar de opción (eje vertical) en función del mismo número de elecciones consecutivas. La curva es plana o decreciente — contraria a la predicción del modelo. El panel inferior es el resultado crítico y debe destacarse visualmente.]*
+:::
+
+
 
 El segundo hallazgo emerge de un reanálisis que Nevin (1979) realizó sobre sus datos originales junto con los de un experimento de Silberberg et al. (1978). Al examinar la probabilidad de cambiar de opción en términos de la historia de respuestas del propio organismo, ambos experimentos mostraron el mismo patrón: la probabilidad de repetir una elección era alta e independiente de si esa respuesta había sido reforzada en el ensayo anterior. Los organismos tendían a *permanecer* en la opción que habían elegido, no a cambiar según el cálculo de probabilidades instantáneas. Este efecto de perseverancia no estaba previsto por el modelo y sugiere que el control local del comportamiento incorpora una inercia que la maximización momentánea ignora.
 
-**[FIGURA 15.2: Probabilidad de cambiar de tecla en función del número de respuestas consecutivas previas, para los datos de Nevin (1969) y Silberberg et al. (1978). Ambas curvas son planas o decrecientes. La convergencia de dos conjuntos de datos con diseños ligeramente distintos refuerza la robustez del resultado.]**
+![](Figuras/fig15_2_perseverancia.png){#fig15_2_perseverancia.png width=750 fig-align="center"}
+
+::: {.callout-note collapse="true" appearance="minimal"}
+*[FIGURA 15.2: Probabilidad de cambiar de tecla en función del número de respuestas consecutivas previas, para los datos de Nevin (1969) y Silberberg et al. (1978). Ambas curvas son planas o decrecientes. La convergencia de dos conjuntos de datos con diseños ligeramente distintos refuerza la robustez del resultado]*
+:::
 
 ### Evaluación experimental: programas de ensayos discretos RV-IV
 
-En términos probabilísticos, un programa concurrente RV-IV de ensayos discretos ofrece una prueba especialmente limpia del modelo porque la asimetría entre los dos programas hace la predicción todavía más específica. En el programa de razón variable, la probabilidad de refuerzo por respuesta es constante — digamos $p_r = 1/n$ — independientemente del tiempo transcurrido o de la historia reciente. En el programa de intervalo variable, la probabilidad de encontrar el reforzador disponible al llegar crece con el tiempo de ausencia: es baja justo después de una visita y se aproxima a 1 conforme transcurren más intervalos sin que el organismo regrese.
+En términos probabilísticos, un programa concurrente RV-IV de ensayos discretos ofrece una prueba especialmente contundente del modelo porque la asimetría entre los dos programas hace la predicción todavía más específica. En el programa de razón variable, la probabilidad de refuerzo por respuesta es constante — digamos $p_r = 1/n$ — independientemente del tiempo transcurrido o de la historia reciente. En el programa de intervalo variable, la probabilidad de encontrar el reforzador disponible al llegar crece con el tiempo de ausencia: es baja justo después de una visita y se aproxima a 1 conforme transcurren más intervalos sin que el organismo regrese.
 
 La predicción del modelo es entonces directa: el organismo debería responder al RV cuando la probabilidad de refuerzo del IV es baja — es decir, inmediatamente después de una visita al IV — y debería cambiar al IV cuando la probabilidad de que su reforzador esté disponible supera a $p_r$. Esto implica una función monótonamente creciente: la probabilidad de responder al IV debe aumentar con el número de ensayos transcurridos desde la última respuesta al IV, siguiendo el ritmo al que crece la probabilidad de que ese reforzador esté esperando.
 
 Williams (1985) puso a prueba esta predicción con palomas en programas concurrentes RV-IV con distintas combinaciones de valores. Los resultados fueron inequívocos en dos sentidos. Primero, la distribución molar de la conducta fue descrita razonablemente bien por la ley generalizada de igualación, aunque con subigualación moderada. Es decir, el resultado agregado preserva la regularidad de igualación en sentido amplio, pero no como igualdad exacta.  Segundo, y esto es lo crítico, la probabilidad de responder al IV no creció como función del número de ensayos desde la última respuesta IV, a pesar de que la probabilidad de encontrar ese reforzador disponible sí crecía de manera ordenada. La función observada era plana o ligeramente decreciente — opuesta en su forma a la predicción del modelo.
 
-**[FIGURA 15.3: Dos paneles. Panel izquierdo: probabilidad de que el reforzador esté disponible en la opción IV como función del número de ensayos desde la última respuesta IV. La curva es creciente. Panel derecho: probabilidad observada de responder al IV como función del mismo número de ensayos. La curva es plana o decreciente para sujetos individuales, contraria a la predicción. Reproduce el estilo de la figura original de Williams.]**
+![](Figuras/fig15_3_williams_rv_iv.png){#fig15_3_williams_rv_iv.png width=750 fig-align="center"}
+
+::: {.callout-note collapse="true" appearance="minimal"}
+*[FIGURA 15.3: Dos paneles. Panel izquierdo: probabilidad de que el reforzador esté disponible en la opción IV como función del número de ensayos desde la última respuesta IV. La curva es creciente. Panel derecho: probabilidad observada de responder al IV como función del mismo número de ensayos. La curva es plana o decreciente para sujetos individuales, contraria a la predicción]*
+:::
 
 ### Conclusiones sobre el modelo de maximización momentánea
 
 Los experimentos con programas de ensayos discretos — tanto IV-IV como RV-IV — convergen en un diagnóstico claro: la maximización momentánea no describe el proceso que genera igualación. Los organismos no computan la probabilidad de refuerzo en el instante presente y responden en consecuencia. Tres regularidades destacan en su lugar. La primera es que la ocurrencia de un reforzador sí aumenta la probabilidad de repetir la misma respuesta — efecto consistente con la ley del efecto y con los modelos de aprendizaje que ya conocemos. La segunda es la perseverancia: los organismos repiten una elección con mayor probabilidad por el simple hecho de haberla emitido recientemente, independientemente de si fue reforzada. La tercera es que la sensibilidad a la secuencia de ensayos puede verse afectada por el intervalo entre elecciones y por otros factores que influyen en la memoria sobre las respuestas recientes.
 
 La implicación más importante, sin embargo, es conceptual: igualación puede ocurrir sin que el organismo esté maximizando la probabilidad de refuerzo en cada elección individual. El patrón global emerge sin que el mecanismo local lo apunte directamente. Esto deja abierta la pregunta de qué sí hace el organismo en cada momento — y esa es exactamente la pregunta que el modelo siguiente intenta responder.
-
----
 
 ## Modelo de Mejoramiento
 
@@ -89,11 +100,11 @@ Reorganizando:
 
 $$\frac{T_1}{T_2} = \frac{r_1}{r_2}$$
 
-Esta es exactamente la ley de igualación. La conclusión es notable: el organismo no necesita conocer la ley de igualación ni computar proporciones relativas. Basta con que siga la regla local de moverse hacia la opción más rentable en cada momento; la igualación global es el estado de equilibrio de ese proceso de retroalimentación.
+Esta es exactamente la ley de igualación: el organismo no necesita conocer la ley de igualación ni computar proporciones relativas. Basta con que siga la regla local de moverse hacia la opción más rentable en cada momento; la igualación global es el estado de equilibrio de ese proceso de retroalimentación.
 
 Para el ejemplo numérico, el equilibrio se alcanza cuando $T_1/T_2 = 60/30 = 2$, es decir, cuando el organismo dedica dos tercios de su tiempo al IV 1' y un tercio al IV 2':
 
-$$\frac{60}{2/3} = 90 \text{ ref/hr} = \frac{30}{1/3} \quad \checkmark$$
+$$\frac{60}{2/3} = 90 \text{ ref/hr} = \frac{30}{1/3} \quad$$
 
 En ese punto, ambas opciones ofrecen exactamente la misma tasa local de 90 ref/hr, y la distribución de tiempo cumple:
 
@@ -133,7 +144,7 @@ Ambos efectos empujan $\Delta = \rho_1 - \rho_2$ hacia cero: el primer término 
 
 Este argumento es simétrico: en el caso en que $\Delta < 0$, el organismo aumenta $T_2$, lo que reduce $\rho_2$ y eleva $\rho_1$, volviendo a empujar $\Delta$ hacia cero. En cualquier dirección que se encuentre el desequilibrio, el movimiento lo corrige.
 
-Esto es retroalimentación negativa en su forma más pura: la variable de control (decisión) $\Delta$ cambia de signo cada vez que el organismo se aproxima demasiado a un extremo, corrigiendo el exceso. El equilibrio no es un atractor especial al que el sistema tiene que «apuntar»; es el único punto donde la señal de error desaparece.
+Esto es retroalimentación negativa en su forma más pura: la variable de control (decisión) $\Delta$ cambia de signo cada vez que el organismo se aproxima demasiado a un extremo, corrigiendo el exceso. El equilibrio es el único punto donde la señal de error desaparece.
 
 #### Un único punto de equilibrio
 
@@ -168,9 +179,17 @@ Pueden observarse en la tabla los mismos dos fenómenos que describimos cualitat
 
 Esta secuencia es idéntica, en su lógica, al ascenso de colina que describimos en el capítulo 4. Allí, la bacteria comparaba la concentración actual con la anterior y se movía en la dirección del gradiente; aquí, el organismo compara las tasas locales de dos opciones y se mueve hacia la más rentable. En ambos casos, el movimiento sigue la dirección de una señal de discrepancia, y esa señal disminuye con cada paso. La cima de la colina que el mejoramiento escala es el punto donde la discrepancia desaparece, y ese punto resulta ser algebraicamente idéntico al punto de igualación.
 
+::: {.callout-tip}
+## 🕹️ SIMULADOR 15.1 — Mejoramiento y maximización de probabilidad
 En el simulador de este capítulo pueden explorar estas dinámicas en tres módulos. El **Simulador A** muestra cómo evoluciona la proporción de respuestas a cada opción, ensayo a ensayo, bajo los dos modelos: el mejoramiento parte del punto de partida que configuren y converge gradualmente porque las tasas locales se van igualando a medida que se acumula experiencia; la maximización momentánea, al ser sensible a las probabilidades instantáneas, fluctúa alrededor del punto de igualación casi desde el inicio. Pueden comparar trayectorias desde puntos de partida simétricos ($T_1 = 0.10$ versus $T_1 = 0.90$) y verificar que el sistema converge al mismo equilibrio desde cualquier origen. El **Simulador B** reproduce la prueba empírica central del capítulo: calcula, en las secuencias generadas por cada modelo, la probabilidad de cambiar de opción en función del número de respuestas consecutivas a la misma alternativa. La barra de predicción teórica de la maximización momentánea es creciente — exactamente lo que los datos de Nevin (1969) no muestran. El **Simulador C** recrea el protocolo de Williams (1985) con un programa concurrente RV-IV de ensayos discretos: el Panel A muestra cuándo la probabilidad de refuerzo en el IV supera a la del RV, y el Panel B muestra que el organismo no responde a esa transición aunque sea visible en los datos.
 
-**[FIGURA 15.4: Dinámica del modelo de mejoramiento. Eje horizontal: proporción de tiempo asignada a la opción 1 (de 0 a 1). Eje vertical: tasa local de refuerzo (ref/hr). Dos curvas: tasa local de opción 1 (decreciente conforme aumenta $T_1$) y tasa local de opción 2 (creciente conforme aumenta $T_1$, porque $T_2 = 1 - T_1$ disminuye). La intersección marca el punto de equilibrio. Debajo del eje horizontal, flechas indican la dirección de movimiento del sistema: hacia la derecha cuando la tasa de opción 1 supera a la de opción 2, hacia la izquierda en el caso contrario. La zona donde el sistema converge está marcada con una banda sombreada alrededor del equilibrio.]**
+[Abrir simulador en Colab](https://colab.research.google.com/github/arbouria/Libro-ACA-2026/blob/main/Simuladores/cap15_simulador_v2.ipynb){target="_blank" .btn .btn-warning}
+
+![](Figuras/fig15_4_mejoramiento_dinamica.png){#fig15_4_mejoramiento_dinamica.png width=750 fig-align="center"}
+
+::: {.callout-note collapse="true" appearance="minimal"}
+*FIGURA 15.4: Dinámica del modelo de mejoramiento. Eje horizontal: proporción de tiempo asignada a la opción 1 (de 0 a 1). Eje vertical: tasa local de refuerzo (ref/hr). Dos curvas: tasa local de opción 1 (decreciente conforme aumenta $T_1$) y tasa local de opción 2 (creciente conforme aumenta $T_1$, porque $T_2 = 1 - T_1$ disminuye). La intersección marca el punto de equilibrio. Debajo del eje horizontal, flechas indican la dirección de movimiento del sistema: hacia la derecha cuando la tasa de opción 1 supera a la de opción 2, hacia la izquierda en el caso contrario. La zona donde el sistema converge está marcada con una banda sombreada alrededor del equilibrio.]*
+:::
 
 ### Evidencia empírica del proceso de mejoramiento
 
@@ -181,8 +200,6 @@ Vaughan (1981) diseñó un procedimiento  que permitía que  mejoramiento y maxi
 ### Una limitación importante
 
 El modelo de mejoramiento deja sin especificar la ventana temporal sobre la que el organismo estima las tasas locales. ¿Las estima a lo largo de la sesión completa? ¿Sobre los últimos diez minutos? ¿Reinicia el cómputo después de cada reforzador? Esta indeterminación no es un detalle menor: la respuesta tiene consecuencias profundas cuando las condiciones del entorno cambian a lo largo del tiempo. En entornos donde la disponibilidad de reforzadores fluctúa — que es la norma en el mundo natural, no la excepción — el tamaño de la ventana temporal determina qué tan rápido puede el organismo adaptarse a los cambios. Un organismo que promedia sobre ventanas muy largas será lento para detectar cambios; uno que usa ventanas cortas será veloz pero susceptible al ruido. Este problema — la elección adaptativa de la escala temporal de estimación — es uno de los temas centrales del módulo de incertidumbre, más adelante en el libro.
-
----
 
 ## Conclusión
 
@@ -195,8 +212,6 @@ El modelo de mejoramiento resuelve esto apelando a una escala temporal intermedi
 La limitación principal del modelo no es empírica sino de especificación: no determina la ventana temporal sobre la que se estiman las tasas locales. En entornos estables esa omisión es tolerable; en entornos que cambian — la norma fuera del laboratorio — la elección de esa ventana determina qué tan rápido puede adaptarse el organismo, y ese problema requiere herramientas que desarrollaremos en módulos posteriores.
 
 Volviendo al ejemplo con el que abrimos: la persona que alterna entre correos y mensajes instantáneos no computa probabilidades de llegada en cada instante ni maximiza globalmente sobre toda la jornada. Estima, de manera implícita, la tasa reciente de mensajes en cada canal — qué tan frecuentemente llegan mensajes de cada fuente — y redistribuye su atención hacia el canal que tiene mayor tasa cuando la diferencia entre las dos se vuelve suficientemente grande. Igualación emerge de esa regla simple, sin que la persona la conozca ni la aplique deliberadamente.
-
----
 
 ## Resumen
 
@@ -222,7 +237,7 @@ La igualación global que documentamos en el capítulo anterior puede ser el res
 
 **La ley del efecto relativa (capítulo posterior).** El modelo de mejoramiento describe cómo el organismo redistribuye su comportamiento entre opciones, pero no especifica cómo se determina el valor de cada opción a partir de su historia de reforzamiento. La ley del efecto relativa de Herrnstein completa ese cuadro: propone que el valor de una respuesta depende de su tasa de reforzamiento en relación al reforzamiento total disponible en el contexto. Esa dependencia contextual del valor, que el mejoramiento asume implícitamente, es la pieza que conecta los modelos moleculares de elección con los modelos de aprendizaje de valor de los bloques anteriores del libro.
 
-**Tasas de refuerzo como representación primaria: Gallistel (módulo posterior).** El mejoramiento opera sobre tasas de refuerzo locales, pero las estima a través de probabilidades: la probabilidad de encontrar el reforzador disponible en cada visita determina cuántos reforzadores acumula el organismo por unidad de tiempo en cada opción. En ese sentido, el mejoramiento ya trabaja en la lógica de las tasas, aunque las accede desde abajo — a partir de probabilidades individuales de recolección. En un capítulo posterior, el modelo de Gallistel llevará este argumento un paso más lejos: las tasas de refuerzo no son un cómputo derivado de probabilidades individuales sino la representación primaria que los organismos forman y actualizan. La comparación entre estas dos formas de llegar a la misma variable — probabilidad por arriba, tasa por abajo, versus tasa como cantidad representada directamente — será uno de los ejes del debate en ese módulo.
+**Tasas de refuerzo como representación primaria: Gallistel (módulo posterior).** La relevancia de las tasas de refuerzo, en lugar de las probabilidades, en el modelo de mejoramiento, es enfatizada por Gallistel.  Las tasas de refuerzo no constituyen un cálculo derivado de probabilidades individuales, sino que representan la forma primaria en que los organismos forman y actualizan sus representaciones. Estas tasas son fundamentales tanto para la adquisición del conocimiento como para la asignación de respuestas.  Su estudio constituirá uno de los temas centrales del debate en dicho módulo.
 
 **Incertidumbre y volatilidad ambiental (módulo posterior).** La limitación más seria del mejoramiento — la indeterminación de la ventana temporal para estimar tasas locales — se convierte en el problema central cuando el entorno cambia. La investigación contemporánea con protocolos de entornos volátiles estudia cómo los organismos ajustan esa escala temporal en función de la incertidumbre sobre el estado actual del entorno. En esos contextos, la exploración de opciones cuyo valor es incierto reemplaza al mejoramiento como principio explicativo.
 
@@ -241,8 +256,6 @@ La igualación global que documentamos en el capítulo anterior puede ser el res
 **5.** El modelo de mejoramiento deja sin especificar la ventana temporal sobre la que el organismo estima las tasas locales de refuerzo. Describe dos contextos naturales — uno donde una ventana corta sería adaptativa y uno donde una ventana larga lo sería — y explica por qué en cada caso. ¿Qué propiedad del entorno determinaría cuál ventana es más apropiada?
 
 **6.** *(Reflexión)* Este capítulo mostró que igualación puede producirse sin que el organismo tenga representación del patrón global que está produciendo. ¿Cómo se relaciona esto con la distinción entre el nivel computacional y el nivel algorítmico de explicación que introdujimos al inicio del libro? ¿Qué dice sobre la relación entre las metas funcionales de un sistema y los mecanismos que las implementan?
-
----
 
 ## Lecturas Recomendadas
 
